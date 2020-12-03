@@ -1,0 +1,32 @@
+/*
+    for player
+*/
+
+.player_controller {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10400;
+    height: 81px;
+    background-color: rgba(8, 8, 8, .82);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+.ly_playlist {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 81px;
+    left: 0;
+    z-index: 10200;
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition: visibility .3s, -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
+    transition: visibility .3s, -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
+    transition: visibility .3s, transform .3s cubic-bezier(.4, 0, .2, 1);
+    transition: visibility .3s, transform .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
+    -webkit-overflow-scrolling: touch;
+}
