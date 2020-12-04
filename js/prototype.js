@@ -5,12 +5,8 @@
 const libraryList = $('.library_menu_list');
 const headerGNB = $('#header');
 
-headerGNB.on('click', '.link_menu', function() {
-    if (!$(this).hasClass('on')) {
-        headerGNB.find('.link_menu').removeClass('on');
-        $(this).addClass('on');
-    }
-    $('.item_library').hasClass('on') ? libraryList.addClass('open') : libraryList.removeClass('open');
+headerGNB.on('click', '.item_library', function() {
+    libraryList.toggleClass('open');
 });
 
 headerGNB.on('click', '.btn_search', function() {
@@ -24,6 +20,23 @@ headerGNB.on('click', '.btn_search', function() {
 $('.more_option').on('click', '.btn_option_now', function() {
     $(this).next('.ly_option').toggle();
 });
+
+$('.scroll_list').each(function() {
+    let thisScroll = $(this);
+    let buttonNext = '<button type="button" class="VueCarousel-navigation-next"><span class="blind">다음</span></button>';
+    let buttonPrev = '<button type="button" class="VueCarousel-navigation-prev"><span class="blind">이전</span></button>';
+    // thisScroll.find('li').clone().appendTo(thisScroll);
+    thisScroll.closest('div').after(buttonNext, buttonPrev);
+});
+
+$('.today_section').on('click', '.VueCarousel-navigation-next', function() {
+
+});
+
+// $('.today_section').on('click', 'h3', function() {
+//     let motherSection = $(this).closest('.today_section');
+//     motherSection.find('.list_item:first-child').appendTo(motherSection.find('.scroll_list'));
+// });
 
 let headlineThumb = $('.today_headline .thumb');
 headlineThumb.clone().removeClass('thumb').addClass('cover').prependTo('.today_headline');

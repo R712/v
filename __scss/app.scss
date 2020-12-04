@@ -200,7 +200,7 @@
     .search_area {
         z-index: 50;
         position: fixed;
-        top: -150%;
+        top: -100%;
         left: 50%;
         max-width: 640px;
         width: 60vw;
@@ -308,11 +308,11 @@
         }
     }
     .cover {
-        opacity: .8;
+        opacity: .5;
         z-index: 0;
-        position: absolute;
+        position: fixed;
         width: 88%;
-        height: 88vh;
+        height: 100vh;
         top: -25%;
         left: 50%;
         transform: translateX(-50%);
@@ -400,7 +400,7 @@
         .sub {
             margin-top: 1.2vw;
             font-weight: 500;
-            font-size: 1.4vw;
+            font-size: 1.2vw;
             opacity: .5;
             .item {
                 &+.item::before {
@@ -417,6 +417,9 @@
     margin: 0 auto;
     padding-top: 6vw;
     width: 88%;
+    div {
+        position: relative;
+    }
     h3 {
         padding-bottom: 1.6vw;
         font-size: 1.6vw;
@@ -436,6 +439,7 @@
     }
     .title {
         display: block;
+        margin-top: 1vw;
         font-size: 1.25vw;
         line-height: 1.5;
         letter-spacing: 0;
@@ -447,22 +451,31 @@
     }
     .link_sub,
     .sub {
-        display: block;
         opacity: .5;
-        font-size: 1.25vw;
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
         line-height: 1.5;
         letter-spacing: 0;
     }
+    .scroll_list {
+        display: flex;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: none;
+    }
     .list_item {
+        flex: 1;
         position: relative;
-        margin-right: 1.8vw;
-        width: 100%;
+        vertical-align: top;
+        transition: all .2s cubic-bezier(.210, .60, .350, 1);
+        &+.list_item {
+            margin-left: 1.8vw;
+        }
         &:hover {
             .link:after {
                 opacity: .8;
-            }
-            .link img {
-                transform: scale(1.2);
             }
         }
         &:last-child {
@@ -474,7 +487,7 @@
             position: absolute;
             bottom: 12px;
             left: 12px;
-            transition: opacity .2s ease-in;
+            transition: all .1s ease-in;
             &:before {
                 content: '';
                 display: block;
@@ -499,8 +512,11 @@
             &:hover {
                 &:before {
                     background-color: var(--v-color);
-                    transform: scale(1.1);
+                    transform: scale(1.2);
                 }
+            }
+            &:active {
+                transform: rotateX(180deg);
             }
         }
         &:hover {
@@ -517,7 +533,6 @@
         flex: 1;
         position: relative;
         display: block;
-        margin-bottom: 1vw;
         width: 100%;
         max-height: 400px;
         overflow: hidden;
@@ -586,6 +601,41 @@
             }
         }
     }
+    .VueCarousel-navigation-next,
+    .VueCarousel-navigation-prev {
+        opacity: 0;
+        z-index: 5;
+        position: absolute;
+        top: calc(50% - 28px);
+        width: 48px;
+        height: 56px;
+        background: var(--v-body-bg);
+        cursor: pointer;
+        transition: all .1s ease;
+        &:after {
+            background-position: -396px -714px;
+            width: 24px;
+            height: 24px;
+            margin: 0 auto;
+            vertical-align: middle;
+        }
+    }
+    .VueCarousel-navigation-next {
+        right: -48px;
+        transform: rotate(180deg);
+    }
+    .VueCarousel-navigation-prev {
+        left: -48px;
+    }
+    &:hover {
+        .VueCarousel-navigation-next,
+        .VueCarousel-navigation-prev {
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 
@@ -594,12 +644,64 @@
 */
 
 .footer {
-    margin: 4vw auto;
-    padding: 2vw;
+    margin: 120px auto 0;
+    padding: 24px 0 120px;
     width: 88%;
-    background: rgb(24, 24, 24);
+    border-top: 1px dotted rgba(255, 255, 255, .08);
+    font-weight: 300;
+    font-size: 13px;
     .notice {
         display: flex;
+        margin-bottom: 16px;
+        padding: 12px 16px;
+        background: rgb(32, 32, 32);
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 3px;
+        li {
+            display: none;
+            margin-left: 16px;
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+    a {
+        display: inline-block;
+        margin: 2px 0;
+        border-bottom: 1px solid transparent;
+        color: rgba(255, 255, 255, .5);
+        font-weight: 400;
+        text-decoration: none;
+        &.item:hover {
+            border-bottom-color: rgba(255, 255, 255, .2);
+        }
+        &+a {
+            margin-left: 12px;
+        }
+    }
+    address {
+        font-weight: 300;
+        font-size: 13px;
+    }
+    .item {
+        display: inline-block;
+    }
+    .item+.item {
+        margin-left: 12px;
+    }
+    .item_head {
+        margin-right: 6px;
+        opacity: .5;
+    }
+    .naver_info {
+        >.item:first-child {
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+    }
+    .sns {
+        display: none;
     }
 }
 
@@ -625,15 +727,6 @@
     }
     100% {
         transform: scale(1);
-    }
-}
-
-@keyframes bounceLoop {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
     }
 }
 
@@ -690,11 +783,34 @@
 .header.white_theme .link_onstage:after,
 .header.white_theme .profile .nickname:after,
 .list_item .btn_play_now:after,
-.list_item .btn_option_now:after {
+.list_item .btn_option_now:after,
+.VueCarousel-navigation-prev:after,
+.VueCarousel-navigation-next:after,
+.link_facebook,
+.link_insta,
+.link_naver {
     content: '';
     display: inline-block;
     background-image: url('../img/sp_vibe.svg');
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url('../img/sp_vibe.svg');
     background-image: linear-gradient(transparent, transparent), url('../img/sp_vibe.svg');
     background-size: 808px 764px;
+}
+
+.link_facebook {
+    background-position: -710px -610px;
+    width: 26px;
+    height: 26px;
+}
+
+.link_insta {
+    background-position: -710px -644px;
+    width: 26px;
+    height: 26px;
+}
+
+.link_naver {
+    background-position: -597px -128px;
+    width: 26px;
+    height: 26px;
 }

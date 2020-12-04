@@ -261,7 +261,7 @@
 #header .search_area {
   z-index: 50;
   position: fixed;
-  top: -150%;
+  top: -100%;
   left: 50%;
   max-width: 640px;
   width: 60vw;
@@ -391,11 +391,11 @@
 }
 
 .today_headline .cover {
-  opacity: .8;
+  opacity: .5;
   z-index: 0;
-  position: absolute;
+  position: fixed;
   width: 88%;
-  height: 88vh;
+  height: 100vh;
   top: -25%;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -511,7 +511,7 @@
 .today_headline .text_area .sub {
   margin-top: 1.2vw;
   font-weight: 500;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   opacity: .5;
 }
 
@@ -525,6 +525,10 @@
   margin: 0 auto;
   padding-top: 6vw;
   width: 88%;
+}
+
+.today_section div {
+  position: relative;
 }
 
 .today_section h3 {
@@ -549,6 +553,7 @@
 
 .today_section .title {
   display: block;
+  margin-top: 1vw;
   font-size: 1.25vw;
   line-height: 1.5;
   letter-spacing: 0;
@@ -562,26 +567,40 @@
 
 .today_section .link_sub,
 .today_section .sub {
-  display: block;
   opacity: .5;
-  font-size: 1.25vw;
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
   line-height: 1.5;
   letter-spacing: 0;
 }
 
+.today_section .scroll_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+
 .today_section .list_item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: relative;
-  margin-right: 1.8vw;
-  width: 100%;
+  vertical-align: top;
+  -webkit-transition: all 0.2s cubic-bezier(0.21, 0.6, 0.35, 1);
+  transition: all 0.2s cubic-bezier(0.21, 0.6, 0.35, 1);
+}
+
+.today_section .list_item + .list_item {
+  margin-left: 1.8vw;
 }
 
 .today_section .list_item:hover .link:after {
   opacity: .8;
-}
-
-.today_section .list_item:hover .link img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 
 .today_section .list_item:last-child {
@@ -594,8 +613,8 @@
   position: absolute;
   bottom: 12px;
   left: 12px;
-  -webkit-transition: opacity .2s ease-in;
-  transition: opacity .2s ease-in;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
 }
 
 .today_section .list_item .btn_play_now:before {
@@ -626,8 +645,13 @@
 
 .today_section .list_item .btn_play_now:hover:before {
   background-color: var(--v-color);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.today_section .list_item .btn_play_now:active {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
 }
 
 .today_section .list_item:hover .btn_play_now,
@@ -645,7 +669,6 @@
           flex: 1;
   position: relative;
   display: block;
-  margin-bottom: 1vw;
   width: 100%;
   max-height: 400px;
   overflow: hidden;
@@ -731,20 +754,124 @@
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+.today_section .VueCarousel-navigation-next,
+.today_section .VueCarousel-navigation-prev {
+  opacity: 0;
+  z-index: 5;
+  position: absolute;
+  top: calc(50% - 28px);
+  width: 48px;
+  height: 56px;
+  background: var(--v-body-bg);
+  cursor: pointer;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.today_section .VueCarousel-navigation-next:after,
+.today_section .VueCarousel-navigation-prev:after {
+  background-position: -396px -714px;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.today_section .VueCarousel-navigation-next {
+  right: -48px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.today_section .VueCarousel-navigation-prev {
+  left: -48px;
+}
+
+.today_section:hover .VueCarousel-navigation-next,
+.today_section:hover .VueCarousel-navigation-prev {
+  opacity: 0.5;
+}
+
+.today_section:hover .VueCarousel-navigation-next:hover,
+.today_section:hover .VueCarousel-navigation-prev:hover {
+  opacity: 1;
+}
+
 /*
     footer
 */
 .footer {
-  margin: 4vw auto;
-  padding: 2vw;
+  margin: 120px auto 0;
+  padding: 24px 0 120px;
   width: 88%;
-  background: #181818;
+  border-top: 1px dotted rgba(255, 255, 255, 0.08);
+  font-weight: 300;
+  font-size: 13px;
 }
 
 .footer .notice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #202020;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.footer .notice li {
+  display: none;
+  margin-left: 16px;
+}
+
+.footer .notice li:first-child {
+  display: block;
+}
+
+.footer a {
+  display: inline-block;
+  margin: 2px 0;
+  border-bottom: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.footer a.item:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer a + a {
+  margin-left: 12px;
+}
+
+.footer address {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.footer .item {
+  display: inline-block;
+}
+
+.footer .item + .item {
+  margin-left: 12px;
+}
+
+.footer .item_head {
+  margin-right: 6px;
+  opacity: .5;
+}
+
+.footer .naver_info > .item:first-child {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.footer .sns {
+  display: none;
 }
 
 /*
@@ -790,28 +917,6 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-  }
-}
-
-@-webkit-keyframes bounceLoop {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
-@keyframes bounceLoop {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
   }
 }
 
@@ -866,11 +971,34 @@
 .header.white_theme .link_onstage:after,
 .header.white_theme .profile .nickname:after,
 .list_item .btn_play_now:after,
-.list_item .btn_option_now:after {
+.list_item .btn_option_now:after,
+.VueCarousel-navigation-prev:after,
+.VueCarousel-navigation-next:after,
+.link_facebook,
+.link_insta,
+.link_naver {
   content: '';
   display: inline-block;
   background-image: url("../img/sp_vibe.svg");
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url("../img/sp_vibe.svg");
   background-image: linear-gradient(transparent, transparent), url("../img/sp_vibe.svg");
   background-size: 808px 764px;
+}
+
+.link_facebook {
+  background-position: -710px -610px;
+  width: 26px;
+  height: 26px;
+}
+
+.link_insta {
+  background-position: -710px -644px;
+  width: 26px;
+  height: 26px;
+}
+
+.link_naver {
+  background-position: -597px -128px;
+  width: 26px;
+  height: 26px;
 }
