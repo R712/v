@@ -25,21 +25,16 @@ $('.scroll_list').each(function() {
     let thisScroll = $(this);
     let buttonNext = '<button type="button" class="VueCarousel-navigation-next"><span class="blind">다음</span></button>';
     let buttonPrev = '<button type="button" class="VueCarousel-navigation-prev"><span class="blind">이전</span></button>';
-    // thisScroll.find('li').clone().appendTo(thisScroll);
     thisScroll.closest('div').after(buttonNext, buttonPrev);
 });
 
-$('.today_section').on('click', '.VueCarousel-navigation-next', function() {
-
-});
-
-// $('.today_section').on('click', 'h3', function() {
+// $('.today_section').on('click', 'button', function() {
 //     let motherSection = $(this).closest('.today_section');
 //     motherSection.find('.list_item:first-child').appendTo(motherSection.find('.scroll_list'));
 // });
 
 let headlineThumb = $('.today_headline .thumb');
-headlineThumb.clone().removeClass('thumb').addClass('cover').prependTo('.today_headline');
+headlineThumb.clone().removeClass('thumb').addClass('cover').prependTo('.content');
 
 // $(window).scroll(function() {
 //     $(window).scrollTop('0') ? headerGNB.removeClass('on-scroll') : headerGNB.addClass('on-scroll');
@@ -48,10 +43,8 @@ headlineThumb.clone().removeClass('thumb').addClass('cover').prependTo('.today_h
 
 window.onscroll = function() { stickyNav() };
 
-
 function stickyNav() {
     let navbar = $('#header');
     let scrollY = $(window).scrollTop();
-    scrollY > 0 ? navbar.addClass('on_scroll') : navbar.removeClass('on_scroll');
-    // $('.today_headline, .today_section').addClass('anima_bounceIn');
+    scrollY > 24 ? navbar.addClass('on_scroll') : navbar.removeClass('on_scroll');
 }

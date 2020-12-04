@@ -155,7 +155,6 @@ html {
 
 a {
     color: #FFF;
-    font-weight: 400;
     cursor: pointer !important;
     -webkit-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
@@ -173,7 +172,7 @@ button {
     outline: none;
     border: 0;
     font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -.02em;
     line-height: 1.5;
     transition: all .2s ease;
@@ -192,7 +191,7 @@ body {
     width: 100%;
     background-color: #FFF;
     color: #303030;
-    font-weight: 300;
+    font-weight: 400;
     font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     font-size: 14px;
     line-height: 1.5;

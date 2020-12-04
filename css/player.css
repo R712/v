@@ -19,26 +19,26 @@
   bottom: 0;
   left: 0;
   z-index: 10400;
-  height: 80px;
-  background-color: rgba(8, 8, 8, 0.82);
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.88);
   font-size: 14px;
   letter-spacing: 0;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
-  -webkit-animation: playerShow .5s 1;
-          animation: playerShow .5s 1;
+  -webkit-animation: playerShow .8s 1;
+          animation: playerShow .8s 1;
 }
 
 .player_controller .song_info {
   position: absolute;
-  left: 6%;
+  left: 120px;
   bottom: 0;
 }
 
 .player_controller .thumb {
   float: left;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   margin-right: 24px;
   border-radius: 3px 3px 0 0;
   -webkit-box-shadow: 0 4px 16px rgba(8, 8, 8, 0.4);
@@ -53,9 +53,9 @@
 
 .player_controller .info_area {
   float: left;
-  max-width: 128px;
-  margin-top: 56px;
-  padding-right: 16px;
+  max-width: 150px;
+  margin-top: 64px;
+  padding-right: 24px;
 }
 
 .player_controller .info_area > * {
@@ -63,7 +63,8 @@
 }
 
 .player_controller .info_area .song {
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .player_controller .info_area .artist {
@@ -135,7 +136,7 @@
   position: absolute;
   left: 0;
   top: 34px;
-  margin-left: 120px;
+  margin-left: 140px;
   width: 320px;
   height: 6px;
   background: #242424;
@@ -175,7 +176,7 @@
   position: absolute;
   left: 0;
   top: 8px;
-  margin-left: 120px;
+  margin-left: 140px;
   padding: 0 24px;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
@@ -195,7 +196,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 80px;
+  bottom: 100px;
   left: 0;
   z-index: 10200;
   visibility: hidden;
@@ -214,9 +215,9 @@
             transform: translateY(80px);
     opacity: 0;
   }
-  88% {
-    -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
+  95% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
     opacity: 1;
   }
   100% {
@@ -231,9 +232,9 @@
             transform: translateY(80px);
     opacity: 0;
   }
-  88% {
-    -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
+  95% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
     opacity: 1;
   }
   100% {
