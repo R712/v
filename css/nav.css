@@ -1,0 +1,314 @@
+@charset "UTF-8";
+/*
+    컬러 팔레트 정의
+*/
+:root {
+  --v-c-black: #000;
+  --v-c-gray: #8E8E93;
+  --v-c-white: #FFF;
+  --v-c-border: #2C2C2E;
+  --v-c-border-light: rgba(255,255,255,.08);
+  --v-c-input: #1C1C1E;
+  --v-c-point: #FF0050;
+}
+
+/*
+    gnb nav
+    #header
+*/
+#header {
+  z-index: 555;
+  position: fixed;
+  left: 0;
+  bottom: 81px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 280px;
+  height: calc(100vh - 81px);
+  border-right: 1px solid var(--v-c-border-light);
+  background: var(--v-c-black);
+  color: var(--v-c-white);
+  -webkit-transition: all 0.1s cubic-bezier(0.21, 0.6, 0.35, 1);
+  transition: all 0.1s cubic-bezier(0.21, 0.6, 0.35, 1);
+  /* 임시 hidden 처리 */
+}
+
+#header.on_scroll {
+  background: var(--v-blur-bg);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+#header .link_logo {
+  display: block;
+  margin: 30px;
+  width: 128px;
+  height: 20px;
+  background: url("../svg/logo.svg") no-repeat left center;
+}
+
+#header .my_menu {
+  padding: 30px;
+  width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+#header .menu_list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+#header .menu_list .menu_item {
+  position: relative;
+}
+
+#header .menu_list .menu_item a {
+  opacity: 0.8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 9px 0;
+  color: var(--v-c-white);
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .menu_list .menu_item a.on {
+  opacity: 1;
+  color: var(--v-c-point);
+}
+
+#header .menu_list .menu_item a:hover {
+  opacity: 1;
+}
+
+#header .menu_list .menu_item > a:before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  -webkit-mask: no-repeat left center;
+          mask: no-repeat left center;
+  background-color: var(--v-c-white);
+}
+
+#header .menu_list .menu_item .link_today:before {
+  -webkit-mask-image: url("../svg/i-nav-today.svg");
+          mask-image: url("../svg/i-nav-today.svg");
+}
+
+#header .menu_list .menu_item .link_chart:before {
+  -webkit-mask-image: url("../svg/i-nav-chart.svg");
+          mask-image: url("../svg/i-nav-chart.svg");
+}
+
+#header .menu_list .menu_item .link_dj:before {
+  -webkit-mask-image: url("../svg/i-nav-djstation.svg");
+          mask-image: url("../svg/i-nav-djstation.svg");
+}
+
+#header .menu_list .menu_item .link_mag:before {
+  -webkit-mask-image: url("../svg/i-nav-mag.svg");
+          mask-image: url("../svg/i-nav-mag.svg");
+  background-position: 2px center;
+}
+
+#header .menu_list .menu_item .link_monthly:before {
+  -webkit-mask-image: url("../svg/i-nav-monthly.svg");
+          mask-image: url("../svg/i-nav-monthly.svg");
+  background-position: 2px center;
+}
+
+#header .menu_list .menu_item .on:before {
+  background-color: var(--v-c-point);
+}
+
+#header .menu_list .item_library {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--v-c-border-light);
+}
+
+#header .menu_list .item_library .sub_menu_title {
+  color: var(--v-c-gray);
+  font-size: 13px;
+}
+
+#header .menu_list .item_library ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 8px 0;
+}
+
+#header .menu_list .item_library ul a {
+  display: block;
+  padding: 4px 0;
+}
+
+#header .profile_m {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 24px;
+}
+
+#header .profile_m .img_wrap {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#header .profile_m .img_wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#header .profile_m .text_wrap {
+  color: var(--v-c-white);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#header .search_area {
+  padding: 0 30px;
+  width: 100%;
+}
+
+#header .search_area .input_area {
+  position: relative;
+  display: block;
+}
+
+#header .search_area .input_area:after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  width: 14px;
+  height: 14px;
+  background: url("../svg/i-search.svg") no-repeat center;
+}
+
+#header .search_area .input_area input {
+  display: block;
+  padding: 0 12px 0 36px;
+  width: 100%;
+  height: 36px;
+  border: 0;
+  background: var(--v-c-input);
+  color: var(--v-c-white);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 36px;
+  border-radius: 5px;
+}
+
+#header .btn_close_search,
+#header .floating_area,
+#header .extra_menu_m,
+#header .btn_close,
+#header .btn_menu {
+  display: none;
+}
+
+.extra_menu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 90px 0 50px;
+  font-size: 15px;
+}
+
+.extra_menu:before {
+  content: 'VIBE Spotlight On';
+  padding-left: 24px;
+  height: 20px;
+  background: url("../svg/i-v.svg") no-repeat left center;
+  color: var(--v-c-gray);
+  font-weight: 600;
+}
+
+.extra_menu a {
+  display: none;
+  margin-left: 10px;
+  color: var(--v-c-white);
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.extra_menu .link_wheresmymoney,
+.extra_menu .link_musician_league,
+.extra_menu .link_onstage {
+  display: block;
+}
+
+.extra_menu .link_wheresmymoney:before,
+.extra_menu .link_musician_league:before,
+.extra_menu .link_onstage:before {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.extra_menu .link_wheresmymoney:hover,
+.extra_menu .link_musician_league:hover,
+.extra_menu .link_onstage:hover {
+  opacity: .8;
+}
+
+.extra_menu .link_wheresmymoney:before {
+  width: 88px;
+  background-image: url("../svg/i-wheresmymoney.svg");
+  background-size: 88px;
+}
+
+.extra_menu .link_musician_league:before {
+  width: 98px;
+  background-image: url("../svg/i-musician-league.svg");
+  background-size: 98px;
+}
+
+.extra_menu .link_onstage:before {
+  width: 98px;
+  background-image: url("../svg/i-onstage.svg");
+  background-size: 98px;
+}

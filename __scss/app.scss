@@ -370,6 +370,9 @@
     }
 }
 
+//
+// for cover blur background
+//
 .cover {
     opacity: .4;
     position: fixed;
@@ -407,6 +410,38 @@
     }
 }
 
+// 배너
+.admin_banner_section {
+    position: relative;
+    a {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        img {
+            height: 50px;
+        }
+    }
+    .btn_close {
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        background: url('../svg/i-close.svg') no-repeat center;
+    }
+}
+
+//
+// 매거진 섹션
+//
+.today_headline {
+    display: none;
+}
 .today_section {
     position: relative;
     margin: 0 auto;
