@@ -91,13 +91,13 @@ $('.player_controller').on('click', '.btn_playlist', function() {
     $('#player').toggleClass('open');
 });
 
+$('.btn_shuffle, .btn_repeat').click(function(){
+    $(this).toggleClass('disabled');
+});
+
 $('.link_today').click(function(){
     location.href='./index.html';
 });
 $('.link_chart').click(function(){
     location.href='./chart.html';
-});
-
-$('.btn_shuffle, .btn_repeat').click(function(){
-    $(this).toggleClass('disabled');
 });

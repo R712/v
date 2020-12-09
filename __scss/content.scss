@@ -19,17 +19,14 @@
 
 .home {
     position: relative;
-    min-height: 100%;
+    height: calc(100vh);
     background-color: var(--v-c-black);
     color: var(--v-c-white);
     overflow-x: hidden;
+    overflow-y: auto;
     .container {
         position: relative;
         margin: 0 0 0 330px;
-        width: calc(100vw - 330px);
-        height: calc(100vh - 80px);
-        overflow-x: hidden;
-        overflow-y: auto;
         .content {
             width: 1080px;
         }
@@ -420,7 +417,7 @@
 */
 
 .footer {
-    margin-left: 330px;
+    margin: 120px 0 0 330px;
     padding: 0 0 120px;
     border-top: 1px dotted rgba(255, 255, 255, .08);
     color: rgba(255, 255, 255, .5);
