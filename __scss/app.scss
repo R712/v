@@ -4,11 +4,14 @@
 */
 
 :root {
-    --v-blur-bg: rgba(8, 8, 8, 0.8);
-    --v-body-bg: rgb(16, 16, 16);
-    --v-header-font: rgba(255, 255, 255, .5);
-    --v-color: #FF0050;
-    --v-header-height: 64px;
+    --v-c-black: #000;
+    --v-c-gray: #8E8E93;
+    --v-c-white: #FFF;
+    --v-c-border: #2C2C2E;
+    --v-c-border-light: rgba(255,255,255,.08);
+    --v-c-input: #1C1C1E;
+    --v-c-point: #FF0050;
+    --v-header-height: 80px;
 }
 
 .wrap {
@@ -17,14 +20,19 @@
 
 .home {
     position: relative;
-    min-height: 100%;
-    background-color: var(--v-body-bg);
-    color: #F5F5F7;
+    height: calc(100vh);
+    background-color: var(--v-c-black);
+    color: var(--v-c-white);
     overflow-x: hidden;
+    overflow-y: auto;
     .container {
+        position: relative;
         margin: 0 auto;
-        padding: var(--v-header-height) 0;
-        width: 1680px;
+        max-width: 1280px;
+        width: 90vw;
+        .content {
+            padding-top: 80px;
+        }
     }
 }
 
@@ -72,6 +80,9 @@
     padding: 0 20px;
     width: 100%;
     height: var(--v-header-height);
+    border-bottom: 1px solid var(--v-c-border-light);
+    background: rgba(0,0,0,.88);
+    backdrop-filter: blur(12px);
     color: var(--v-header-font);
     transition: all .2s cubic-bezier(.210, .60, .350, 1);
     &:before {
@@ -250,7 +261,6 @@
     position: relative;
     margin: 0 auto;
     padding-top: 120px;
-    width: 88%;
     h2 {
         padding-bottom: 24px;
         font-weight: 700;
@@ -370,46 +380,6 @@
     }
 }
 
-//
-// for cover blur background
-//
-.cover {
-    opacity: .4;
-    position: fixed;
-    width: 90%;
-    height: 90vh;
-    top: -25%;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
-    img {
-        display: block;
-        margin: 0 auto;
-        width: calc(100% - 2px);
-        filter: blur(20px);
-    }
-    &:before {
-        content: '';
-        z-index: 1;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient(to right, rgba(16, 16, 16, 1) 0%, rgba(16, 16, 16, .25) 40%, rgba(16, 16, 16, .25) 60%, rgba(16, 16, 16, 1) 90%);
-    }
-    &:after {
-        content: '';
-        z-index: 1;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient(to bottom, rgba(16, 16, 16, 0), rgba(16, 16, 16, 1));
-    }
-}
-
 // 배너
 .admin_banner_section {
     position: relative;
@@ -446,7 +416,6 @@
     position: relative;
     margin: 0 auto;
     padding-top: 80px;
-    width: 88%;
     font-size: 22px;
     div {
         position: relative;
@@ -667,20 +636,27 @@
 */
 
 .footer {
-    margin: 120px auto 0;
-    padding: 24px 0 120px;
-    width: 88%;
-    border-top: 1px dotted rgba(255, 255, 255, .08);
-    font-weight: 300;
-    font-size: 13px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin: 120px 0 120px 330px;
+    max-width: 1080px;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 400;
+    font-size: 12px;
     .notice {
         display: flex;
         margin-bottom: 16px;
         padding: 12px 16px;
-        background: rgb(32, 32, 32);
+        border-top: 1px dotted var(--v-c-border-light);
+        border-bottom: 1px solid var(--v-c-border-light);
         font-size: 14px;
         line-height: 1;
         border-radius: 3px;
+        > .link {
+            font-weight: 600;
+        }
         li {
             display: none;
             margin-left: 16px;
@@ -688,13 +664,18 @@
                 display: block;
             }
         }
+        a {
+            color: var(--v-c-white);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     a {
         display: inline-block;
-        margin: 2px 0;
+        margin: 6px 0;
         border-bottom: 1px solid transparent;
         color: rgba(255, 255, 255, .5);
-        font-weight: 400;
         text-decoration: none;
         &.item:hover {
             border-bottom-color: rgba(255, 255, 255, .2);
@@ -704,30 +685,51 @@
         }
     }
     address {
-        font-weight: 300;
-        font-size: 13px;
+        font-size: 12px;
     }
     .item {
         display: inline-block;
     }
     .item+.item {
-        margin-left: 12px;
+        margin-left: 16px;
     }
     .item_head {
         margin-right: 6px;
-        opacity: .5;
     }
     .naver_info {
         >.item:first-child {
-            margin-bottom: 4px;
-            font-size: 15px;
+            margin-bottom: 8px;
+            font-size: 12px;
         }
     }
     .sns {
-        display: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        a {
+            opacity: .4;
+            display: inline-block;
+            margin: 0 20px 0 0;
+            background: no-repeat center;
+            width: 30px;
+            height: 30px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .link_facebook {
+            background-image: url('../svg/i-facebook.svg');
+        }
+        .link_insta {
+            order: -1;
+            background-image: url('../svg/i-instagram.svg');
+        }
+        .link_naver {
+            background-image: url('../svg/i-naver.svg');
+        }
     }
 }
-
 
 /*
     animation
@@ -841,49 +843,6 @@
 
 /* media query */
 @media (max-width: 1680px) {
-    .home .container {
-        width: 1280px;
-    }
-    .today_headline h2,
-    .today_section h3 {
-        font-size: 24px;
-    }
-    .today_headline .text_area {
-        padding: 0 56px 56px;
-        .title {
-            font-size: 44px;
-        }
-        .info,
-        .sub {
-            font-size: 18px;
-        }
-    }
-    .today_section {
-        font-size: 18px;
-    }
 }
 @media (max-width: 1280px) {
-    #header {
-        min-width: 980px;
-    }
-    .home .container {
-        width: 980px;
-    }
-    .today_headline h2,
-    .today_section h3 {
-        font-size: 24px;
-    }
-    .today_headline .text_area {
-        padding: 0 36px 36px;
-        .title {
-            font-size: 36px;
-        }
-        .info,
-        .sub {
-            font-size: 16px;
-        }
-    }
-    .today_section {
-        font-size: 16px;
-    }
 }

@@ -4,11 +4,14 @@
     custom config
 */
 :root {
-  --v-blur-bg: rgba(8, 8, 8, 0.8);
-  --v-body-bg: rgb(16, 16, 16);
-  --v-header-font: rgba(255, 255, 255, .5);
-  --v-color: #FF0050;
-  --v-header-height: 64px;
+  --v-c-black: #000;
+  --v-c-gray: #8E8E93;
+  --v-c-white: #FFF;
+  --v-c-border: #2C2C2E;
+  --v-c-border-light: rgba(255,255,255,.08);
+  --v-c-input: #1C1C1E;
+  --v-c-point: #FF0050;
+  --v-header-height: 80px;
 }
 
 .wrap {
@@ -17,16 +20,22 @@
 
 .home {
   position: relative;
-  min-height: 100%;
-  background-color: var(--v-body-bg);
-  color: #F5F5F7;
+  height: calc(100vh);
+  background-color: var(--v-c-black);
+  color: var(--v-c-white);
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .home .container {
+  position: relative;
   margin: 0 auto;
-  padding: var(--v-header-height) 0;
-  width: 1680px;
+  max-width: 1280px;
+  width: 90vw;
+}
+
+.home .container .content {
+  padding-top: 80px;
 }
 
 #u_skip {
@@ -78,6 +87,10 @@
   padding: 0 20px;
   width: 100%;
   height: var(--v-header-height);
+  border-bottom: 1px solid var(--v-c-border-light);
+  background: rgba(0, 0, 0, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   color: var(--v-header-font);
   -webkit-transition: all 0.2s cubic-bezier(0.21, 0.6, 0.35, 1);
   transition: all 0.2s cubic-bezier(0.21, 0.6, 0.35, 1);
@@ -317,7 +330,6 @@
   position: relative;
   margin: 0 auto;
   padding-top: 120px;
-  width: 88%;
 }
 
 .today_headline h2 {
@@ -470,50 +482,6 @@
   padding: 0 4px;
 }
 
-.cover {
-  opacity: .4;
-  position: fixed;
-  width: 90%;
-  height: 90vh;
-  top: -25%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  overflow: hidden;
-}
-
-.cover img {
-  display: block;
-  margin: 0 auto;
-  width: calc(100% - 2px);
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
-}
-
-.cover:before {
-  content: '';
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  background-image: -webkit-gradient(linear, left top, right top, from(#101010), color-stop(40%, rgba(16, 16, 16, 0.25)), color-stop(60%, rgba(16, 16, 16, 0.25)), color-stop(90%, #101010));
-  background-image: linear-gradient(to right, #101010 0%, rgba(16, 16, 16, 0.25) 40%, rgba(16, 16, 16, 0.25) 60%, #101010 90%);
-}
-
-.cover:after {
-  content: '';
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 16, 16, 0)), to(#101010));
-  background-image: linear-gradient(to bottom, rgba(16, 16, 16, 0), #101010);
-}
-
 .admin_banner_section {
   position: relative;
 }
@@ -556,7 +524,6 @@
   position: relative;
   margin: 0 auto;
   padding-top: 80px;
-  width: 88%;
   font-size: 22px;
 }
 
@@ -826,12 +793,22 @@
     footer
 */
 .footer {
-  margin: 120px auto 0;
-  padding: 24px 0 120px;
-  width: 88%;
-  border-top: 1px dotted rgba(255, 255, 255, 0.08);
-  font-weight: 300;
-  font-size: 13px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  margin: 120px 0 120px 330px;
+  max-width: 1080px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .footer .notice {
@@ -840,10 +817,15 @@
   display: flex;
   margin-bottom: 16px;
   padding: 12px 16px;
-  background: #202020;
+  border-top: 1px dotted var(--v-c-border-light);
+  border-bottom: 1px solid var(--v-c-border-light);
   font-size: 14px;
   line-height: 1;
   border-radius: 3px;
+}
+
+.footer .notice > .link {
+  font-weight: 600;
 }
 
 .footer .notice li {
@@ -855,12 +837,19 @@
   display: block;
 }
 
+.footer .notice a {
+  color: var(--v-c-white);
+}
+
+.footer .notice a:hover {
+  text-decoration: underline;
+}
+
 .footer a {
   display: inline-block;
-  margin: 2px 0;
+  margin: 6px 0;
   border-bottom: 1px solid transparent;
   color: rgba(255, 255, 255, 0.5);
-  font-weight: 400;
   text-decoration: none;
 }
 
@@ -873,8 +862,7 @@
 }
 
 .footer address {
-  font-weight: 300;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .footer .item {
@@ -882,21 +870,53 @@
 }
 
 .footer .item + .item {
-  margin-left: 12px;
+  margin-left: 16px;
 }
 
 .footer .item_head {
   margin-right: 6px;
-  opacity: .5;
 }
 
 .footer .naver_info > .item:first-child {
-  margin-bottom: 4px;
-  font-size: 15px;
+  margin-bottom: 8px;
+  font-size: 12px;
 }
 
 .footer .sns {
-  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .sns a {
+  opacity: .4;
+  display: inline-block;
+  margin: 0 20px 0 0;
+  background: no-repeat center;
+  width: 30px;
+  height: 30px;
+}
+
+.footer .sns a:hover {
+  opacity: 1;
+}
+
+.footer .sns .link_facebook {
+  background-image: url("../svg/i-facebook.svg");
+}
+
+.footer .sns .link_insta {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  background-image: url("../svg/i-instagram.svg");
+}
+
+.footer .sns .link_naver {
+  background-image: url("../svg/i-naver.svg");
 }
 
 /*
@@ -1029,51 +1049,3 @@
 }
 
 /* media query */
-@media (max-width: 1680px) {
-  .home .container {
-    width: 1280px;
-  }
-  .today_headline h2,
-  .today_section h3 {
-    font-size: 24px;
-  }
-  .today_headline .text_area {
-    padding: 0 56px 56px;
-  }
-  .today_headline .text_area .title {
-    font-size: 44px;
-  }
-  .today_headline .text_area .info,
-  .today_headline .text_area .sub {
-    font-size: 18px;
-  }
-  .today_section {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 1280px) {
-  #header {
-    min-width: 980px;
-  }
-  .home .container {
-    width: 980px;
-  }
-  .today_headline h2,
-  .today_section h3 {
-    font-size: 24px;
-  }
-  .today_headline .text_area {
-    padding: 0 36px 36px;
-  }
-  .today_headline .text_area .title {
-    font-size: 36px;
-  }
-  .today_headline .text_area .info,
-  .today_headline .text_area .sub {
-    font-size: 16px;
-  }
-  .today_section {
-    font-size: 16px;
-  }
-}
