@@ -56,7 +56,7 @@
 }
 
 #header .my_menu {
-  padding: 30px;
+  padding: 0 30px 30px;
   width: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -86,7 +86,7 @@
   padding: 9px 0;
   color: var(--v-c-white);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   white-space: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -102,15 +102,14 @@
   opacity: 1;
 }
 
-#header .menu_list .menu_item > a:before {
+#header .menu_list .menu_item > .link_menu:before {
   content: '';
   display: inline-block;
-  width: 34px;
+  margin-right: 14px;
+  width: 20px;
   height: 20px;
-  background-repeat: no-repeat;
-  background-position: left center;
-  -webkit-mask: no-repeat left center;
-          mask: no-repeat left center;
+  -webkit-mask: no-repeat center center;
+          mask: no-repeat center center;
   background-color: var(--v-c-white);
 }
 
@@ -132,13 +131,11 @@
 #header .menu_list .menu_item .link_mag:before {
   -webkit-mask-image: url("../svg/i-nav-mag.svg");
           mask-image: url("../svg/i-nav-mag.svg");
-  background-position: 2px center;
 }
 
 #header .menu_list .menu_item .link_monthly:before {
   -webkit-mask-image: url("../svg/i-nav-monthly.svg");
           mask-image: url("../svg/i-nav-monthly.svg");
-  background-position: 2px center;
 }
 
 #header .menu_list .menu_item .on:before {
@@ -170,7 +167,7 @@
 
 #header .menu_list .item_library ul a {
   display: block;
-  padding: 4px 0 4px 34px;
+  padding: 8px 0 8px 34px;
 }
 
 #header .profile_m {
@@ -210,18 +207,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
   width: calc(100% - 34px);
   color: var(--v-c-white);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 #header .profile_m .text_wrap:after {
   content: '';
-  margin-right: 10px;
+  margin-left: 10px;
   border: 4px solid transparent;
   border-top-color: var(--v-c-gray);
 }
@@ -253,7 +250,7 @@
 }
 
 #header .search_area {
-  padding: 0 30px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -300,6 +297,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 50px 0;
   font-size: 15px;
 }
@@ -345,19 +345,19 @@
 }
 
 .extra_menu .link_wheresmymoney:before {
-  width: 88px;
+  width: 82px;
   background-image: url("../svg/i-wheresmymoney.svg");
-  background-size: 88px;
-}
-
-.extra_menu .link_musician_league:before {
-  width: 98px;
-  background-image: url("../svg/i-musician-league.svg");
-  background-size: 98px;
+  background-size: 82px;
 }
 
 .extra_menu .link_onstage:before {
-  width: 98px;
+  width: 104px;
   background-image: url("../svg/i-onstage.svg");
-  background-size: 98px;
+  background-size: 104px;
+}
+
+.extra_menu .link_musician_league:before {
+  width: 104px;
+  background-image: url("../svg/i-musician-league.svg");
+  background-size: 104px;
 }

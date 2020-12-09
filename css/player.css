@@ -16,7 +16,7 @@
 }
 
 #player.open .btn_playlist {
-  background-color: var(--v-c-point);
+  opacity: 1;
 }
 
 #player.open .ly_playlist {
@@ -43,7 +43,7 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(0, 0, 0, 0.9);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -91,76 +91,114 @@
 }
 
 .player_controller .info_area {
-  padding-right: 24px;
+  width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .player_controller .info_area > * {
   display: block;
 }
 
-.player_controller .info_area .song {
+.player_controller .info_area .song_area {
   font-weight: 500;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .player_controller .info_area .artist {
   opacity: .5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .player_controller .option_area {
   position: relative;
-  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
+}
+
+.player_controller .option_area a {
+  opacity: .4;
+  -webkit-transition: opacity .1s ease-in-out;
+  transition: opacity .1s ease-in-out;
+}
+
+.player_controller .option_area a:hover {
+  opacity: 1;
 }
 
 .player_controller .option_area .btn_like {
-  float: left;
-  width: 38px;
-  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 36px;
+  height: 36px;
   text-align: center;
 }
 
 .player_controller .option_area .btn_like:after {
-  vertical-align: top;
-  background-position: -328px -602px;
+  content: '';
+  background: url("../svg/i-heart.svg") no-repeat center;
   width: 22px;
   height: 22px;
-  margin-top: 12px;
 }
 
 .player_controller .option_area .btn_lyrics {
-  float: left;
-  width: 38px;
-  height: 46px;
-  vertical-align: top;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 36px;
+  height: 36px;
   text-align: center;
 }
 
 .player_controller .option_area .btn_lyrics:after {
-  vertical-align: top;
-  background-position: -418px -602px;
+  content: '';
+  background: url("../svg/i-lyric.svg") no-repeat center;
   width: 22px;
   height: 22px;
-  margin-top: 12px;
 }
 
-.player_controller .dropdown_wrap {
-  float: left;
-}
-
-.player_controller .btn_option {
-  display: inline-block;
-  width: 38px;
-  height: 46px;
-  vertical-align: top;
+.player_controller .option_area .btn_option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 36px;
+  height: 36px;
   text-align: center;
 }
 
-.player_controller .btn_option:after {
-  vertical-align: top;
-  background-position: -478px -602px;
+.player_controller .option_area .btn_option:after {
+  content: '';
+  background: url("../svg/i-more.svg") no-repeat center;
   width: 22px;
   height: 22px;
-  margin-top: 12px;
 }
 
 .player_controller .ly_option {
@@ -210,14 +248,10 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.player_controller .playtime span:first-child {
-  color: #FFF;
-}
-
 .player_controller .playtime span:first-child:after {
   content: '/';
   opacity: .4;
-  padding: 0 2px;
+  padding: 0 4px;
 }
 
 .player_controller .control_area {
@@ -293,12 +327,13 @@
 }
 
 .player_controller .btn_playlist {
+  opacity: .4;
   position: absolute;
   right: 15px;
   top: 15px;
   width: 50px;
   height: 50px;
-  background: var(--v-c-border-light) url("../svg/i-playlist.svg") no-repeat center;
+  background: var(--v-c-border) url("../svg/i-playlist.svg") no-repeat center;
   border-radius: 5px;
 }
 
@@ -338,11 +373,12 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 75vw;
+  height: calc(100vh - 80px);
 }
 
 .ly_playlist .cover_section .thumb_cover {
-  width: 50vw;
-  height: 50vw;
+  width: 512px;
+  height: 512px;
   border-radius: 10px;
   overflow: hidden;
 }

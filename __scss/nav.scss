@@ -44,7 +44,7 @@
         background: url('../svg/logo.svg') no-repeat left center;
     }
     .my_menu {
-        padding: 30px;
+        padding: 0 30px 30px;
         width: 100%;
         overflow-y: auto;
         scroll-behavior: smooth;
@@ -62,7 +62,7 @@
                 padding: 9px 0;
                 color: var(--v-c-white);
                 font-weight: 600;
-                font-size: 15px;
+                font-size: 16px;
                 white-space: nowrap;
                 align-items: center;
                 &.on {
@@ -73,14 +73,13 @@
                     opacity: 1;
                 }
             }
-            > a:before {
+            > .link_menu:before {
                 content: '';
                 display: inline-block;
-                width: 34px;
+                margin-right: 14px;
+                width: 20px;
                 height: 20px;
-                background-repeat: no-repeat;
-                background-position: left center;
-                mask: no-repeat left center;
+                mask: no-repeat center center;
                 background-color: var(--v-c-white);
             }
             .link_today:before {
@@ -94,11 +93,9 @@
             }
             .link_mag:before {
                 mask-image: url('../svg/i-nav-mag.svg');
-                background-position: 2px center;
             }
             .link_monthly:before {
                 mask-image: url('../svg/i-nav-monthly.svg');
-                background-position: 2px center;
             }
             .on:before {
                 background-color: var(--v-c-point);
@@ -119,7 +116,7 @@
                 padding: 8px 0;
                 a {
                     display: block;
-                    padding: 4px 0 4px 34px;
+                    padding: 8px 0 8px 34px;
                 }
             }
         }
@@ -146,14 +143,14 @@
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: stretch;
             width: calc(100% - 34px);
             color: var(--v-c-white);
             font-weight: 600;
-            font-size: 15px;
+            font-size: 16px;
             &:after {
                 content: '';
-                margin-right: 10px;
+                margin-left: 10px;
                 border: 4px solid transparent;
                 border-top-color: var(--v-c-gray);
             }
@@ -182,7 +179,7 @@
         }
     }
     .search_area {
-        padding: 0 30px;
+        margin-top: 10px;
         width: 100%;
         .input_area {
             position: relative;
@@ -225,6 +222,7 @@
 .extra_menu {
     position: relative;
     display: flex;
+    align-items: center;
     padding: 50px 0;
     font-size: 15px;
     &:before {
@@ -258,18 +256,18 @@
         }
     }
     .link_wheresmymoney:before {
-        width: 88px;
+        width: 82px;
         background-image: url('../svg/i-wheresmymoney.svg');
-        background-size: 88px;
-    }
-    .link_musician_league:before {
-        width: 98px;
-        background-image: url('../svg/i-musician-league.svg');
-        background-size: 98px;
+        background-size: 82px;
     }
     .link_onstage:before {
-        width: 98px;
+        width: 104px;
         background-image: url('../svg/i-onstage.svg');
-        background-size: 98px;
+        background-size: 104px;
+    }
+    .link_musician_league:before {
+        width: 104px;
+        background-image: url('../svg/i-musician-league.svg');
+        background-size: 104px;
     }
 }

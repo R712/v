@@ -108,12 +108,12 @@
   display: none;
 }
 
-.section_title {
+a.section_title {
   position: relative;
   cursor: pointer;
 }
 
-.section_title:after {
+a.section_title:after {
   opacity: 0;
   content: '';
   display: inline-block;
@@ -129,14 +129,14 @@
   transition: all .1s ease-in-out;
 }
 
-.section_title:hover {
+a.section_title:hover {
   text-decoration: underline;
 }
 
-.section_title:hover:after {
+a.section_title:hover:after {
   opacity: 1;
-  -webkit-transform: translateX(2px);
-          transform: translateX(2px);
+  -webkit-transform: translateX(-2px);
+          transform: translateX(-2px);
 }
 
 .today_section {
@@ -146,7 +146,7 @@
 }
 
 .today_section + .today_section {
-  padding-top: 72px;
+  padding-top: 70px;
 }
 
 .today_section div {
@@ -167,7 +167,7 @@
 
 .today_section h3 .section_title {
   display: block;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   font-weight: 700;
   font-size: 20px;
 }
@@ -185,16 +185,28 @@
   font-weight: 400;
 }
 
+.today_section .info .title,
+.today_section .info .artist {
+  max-height: 48px;
+  font-size: 15px;
+  line-height: 24px;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .today_section .info .artist {
   opacity: .5;
-  overflow: hidden;
 }
 
 .today_section .title {
   display: block;
   margin-top: 12px;
-  font-weight: 600;
   letter-spacing: 0;
+  font-size: 15px;
   line-height: 1.4;
   word-break: keep-all;
   white-space: pre-line;
@@ -215,15 +227,15 @@
 .today_section .sub {
   opacity: .5;
   display: block;
-  margin-top: 10px;
-  height: 66px;
+  margin-top: 4px;
+  height: 48px;
   font-size: 15px;
-  line-height: 22px;
+  line-height: 24px;
   word-break: break-all;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -294,8 +306,6 @@
 
 .today_section .list_item .btn_play_now:hover {
   background-color: var(--v-c-point);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .today_section .list_item .btn_play_now:active {
@@ -343,8 +353,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 17, 80, 0)), to(#ff1150));
-  background-image: linear-gradient(to bottom, rgba(255, 17, 80, 0), #ff1150);
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0), black);
   opacity: 0;
   -webkit-transition: all 0.5s cubic-bezier(0.21, 0.6, 0.35, 1);
   transition: all 0.5s cubic-bezier(0.21, 0.6, 0.35, 1);
@@ -407,6 +416,11 @@
   margin-left: 0;
 }
 
+.today_section .list_wrap_larger.is_mag .list_item .title,
+.today_section .list_wrap_news .list_item .title {
+  font-size: 20px;
+}
+
 .today_section .list_wrap_larger.play_for .list_item {
   width: calc(1100px/4);
 }
@@ -437,8 +451,7 @@
   font-size: 17px;
   white-space: pre-line;
   text-shadow: 0 1px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 0, 0, 0.2);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
 }
 
 .today_section .list_wrap_news .link_sub {
@@ -446,15 +459,9 @@
   text-align: right;
 }
 
-.today_section .list_wrap_news .btn_play_now,
-.today_section .list_wrap_news .more_option {
-  bottom: inherit;
-  top: 15px;
-}
-
-.today_section .list_wrap_news .btn_play_now .ly_option,
-.today_section .list_wrap_news .more_option .ly_option {
-  top: 40px;
+.today_section .list_wrap_news .list_item:hover .title {
+  color: transparent;
+  text-shadow: none;
 }
 
 .today_section .VueCarousel-navigation-next,
@@ -501,6 +508,7 @@
 }
 
 .end_title {
+  margin-top: 70px;
   font-weight: 600;
   font-size: 40px;
 }
@@ -518,7 +526,7 @@
 
 .list_wrap_track_rank {
   position: relative;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .list_wrap_track_rank > div {
@@ -544,13 +552,13 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 60px;
+  height: 70px;
   padding: 10px 0;
 }
 
 .list_wrap_track_rank .list_item .list_track_row .thumb {
   position: relative;
-  width: 40px;
+  width: 50px;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -573,8 +581,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.15s cubic-bezier(0.21, 0.6, 0.35, 1);
   transition: all 0.15s cubic-bezier(0.21, 0.6, 0.35, 1);
@@ -624,6 +632,10 @@
   border-top-color: var(--v-c-border);
 }
 
+.list_wrap_track_rank .list_item .list_track_row .song_area {
+  padding-top: 2px;
+}
+
 .list_wrap_track_rank .list_item .list_track_row .song_area .inner {
   display: block;
   overflow: hidden;
@@ -649,7 +661,7 @@
 }
 
 .list_wrap_track_rank .VueCarousel-navigation-next {
-  opacity: .4;
+  opacity: 0;
   position: absolute;
   right: 0;
   top: 50%;
@@ -663,6 +675,10 @@
 }
 
 .list_wrap_track_rank .VueCarousel-navigation-next:hover {
+  opacity: 1;
+}
+
+.list_wrap_track_rank:hover .VueCarousel-navigation-next {
   opacity: 1;
 }
 
@@ -783,6 +799,63 @@
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.list_wrap_genre .list_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list_wrap_genre .link_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10px 10px 0;
+  width: calc(100% / 3);
+}
+
+.list_wrap_genre .link_box a {
+  opacity: .8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px;
+  width: 100%;
+  height: 50px;
+  background: var(--v-c-input);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-transition: opacity .1s ease-in-out;
+  transition: opacity .1s ease-in-out;
+}
+
+.list_wrap_genre .link_box a .bar {
+  width: 4px;
+  height: 38px;
+  border-radius: 1px;
+}
+
+.list_wrap_genre .link_box a .text {
+  padding-left: 12px;
+  white-space: nowrap;
+}
+
+.list_wrap_genre .link_box a:hover {
+  opacity: 1;
 }
 
 .list_wrap_video > div,
@@ -1146,10 +1219,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 16px;
-  padding: 12px 16px;
-  border-top: 1px dotted var(--v-c-border-light);
-  border-bottom: 1px solid var(--v-c-border-light);
+  padding: 16px 0;
   font-size: 14px;
   line-height: 1;
   border-radius: 3px;
@@ -1172,24 +1242,18 @@
   color: var(--v-c-white);
 }
 
-.footer .notice a:hover {
-  text-decoration: underline;
-}
-
 .footer a {
   display: inline-block;
-  margin: 6px 0;
-  border-bottom: 1px solid transparent;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
 }
 
-.footer a.item:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-}
-
 .footer a + a {
   margin-left: 12px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .footer address {
@@ -1198,6 +1262,7 @@
 
 .footer .item {
   display: inline-block;
+  padding: 4px 0;
 }
 
 .footer .item + .item {
@@ -1209,21 +1274,20 @@
 }
 
 .footer .naver_info > .item:first-child {
-  margin-bottom: 8px;
-  font-size: 12px;
+  margin-bottom: 2px;
 }
 
 .footer .sns {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-bottom: 40px;
 }
 
 .footer .sns a {
-  opacity: .4;
   display: inline-block;
   margin: 0 20px 0 0;
   background: no-repeat center;
@@ -1232,7 +1296,7 @@
 }
 
 .footer .sns a:hover {
-  opacity: 1;
+  opacity: .6;
 }
 
 .footer .sns .link_facebook {
