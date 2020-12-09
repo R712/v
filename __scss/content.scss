@@ -62,9 +62,7 @@
 
 // 배너
 .admin_banner_section {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
     width: 100%;
     a {
         display: flex;
@@ -626,24 +624,25 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        margin-top: 12px;
-        padding: 0 12px;
+        margin-top: 16px;
+        padding: 0 16px;
         width: 180px;
         height: 44px;
         border: 0;
-        background: var(--v-c-white);
-        color: var(--v-c-black);
+        background: var(--v-c-input);
+        color: var(--v-c-white);
         font-weight: 600;
         font-size: 15px;
         border-radius: 5px;
         cursor: pointer;
         &:after {
+            opacity: .6;
             content: '';
             display: inline-block;
             margin-left: 10px;
             width: 15px;
             height: 12px;
-            background-color: var(--v-c-gray);
+            background-color: var(--v-c-white);
             mask: url('../svg/i-carousel-next.svg') no-repeat center;
             transform: rotate(90deg);
             transition: all .1s ease-in-out;
@@ -670,6 +669,7 @@
             width: 25%;
             font-weight: 600;
             font-size: 17px;
+            transition: color .1s ease-in-out;
             &:after {
                 opacity: 0;
                 content: '';
@@ -692,6 +692,9 @@
         }
     }
     &.open {
+        .btn_genre {
+            background: var(--v-c-point);
+        }
         .btn_genre:after {
             transform: rotate(-90deg);
         }

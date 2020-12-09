@@ -63,9 +63,7 @@
 }
 
 .admin_banner_section {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   width: 100%;
 }
 
@@ -765,13 +763,13 @@
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  margin-top: 12px;
-  padding: 0 12px;
+  margin-top: 16px;
+  padding: 0 16px;
   width: 180px;
   height: 44px;
   border: 0;
-  background: var(--v-c-white);
-  color: var(--v-c-black);
+  background: var(--v-c-input);
+  color: var(--v-c-white);
   font-weight: 600;
   font-size: 15px;
   border-radius: 5px;
@@ -779,12 +777,13 @@
 }
 
 .genre_wrap .btn_genre:after {
+  opacity: .6;
   content: '';
   display: inline-block;
   margin-left: 10px;
   width: 15px;
   height: 12px;
-  background-color: var(--v-c-gray);
+  background-color: var(--v-c-white);
   -webkit-mask: url("../svg/i-carousel-next.svg") no-repeat center;
           mask: url("../svg/i-carousel-next.svg") no-repeat center;
   -webkit-transform: rotate(90deg);
@@ -820,6 +819,8 @@
   width: 25%;
   font-weight: 600;
   font-size: 17px;
+  -webkit-transition: color .1s ease-in-out;
+  transition: color .1s ease-in-out;
 }
 
 .genre_wrap .genre_items a:after {
@@ -846,6 +847,10 @@
   opacity: 1;
   -webkit-transform: translateX(2px);
           transform: translateX(2px);
+}
+
+.genre_wrap.open .btn_genre {
+  background: var(--v-c-point);
 }
 
 .genre_wrap.open .btn_genre:after {

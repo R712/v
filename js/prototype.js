@@ -22,7 +22,7 @@ const headerGNB = $('#header');
 //
 // 아이템 더보기
 //
-$('.more_option').on('click', '.btn_option_now', function(e) {
+$('.home').on('click', '.btn_option_now', function(e) {
     e.preventDefault();
     let posX = $(this).position().left,
         posY = $(this).position().top;
@@ -35,7 +35,7 @@ $('.more_option').on('click', '.btn_option_now', function(e) {
     });
     $this.toggle();
 });
-$(document).on('scroll', function() {
+$('.home').on('scroll', function() {
     $('.ly_option').hide();
 });
 
