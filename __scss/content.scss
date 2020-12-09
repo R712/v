@@ -26,9 +26,10 @@
     overflow-y: auto;
     .container {
         position: relative;
-        margin: 0 0 0 330px;
+        margin: 0 0 0 280px;
         .content {
-            width: 1080px;
+            margin: 0 auto;
+            width: 1160px;
         }
     }
 }
@@ -199,7 +200,7 @@
     .list_item {
         display: inline-block;
         position: relative;
-        width: 200px;
+        width: calc(1080px / 5);
         vertical-align: top;
         font-size: 14px;
         transition: all .1s cubic-bezier(.210, .60, .350, 1);
@@ -325,19 +326,16 @@
     .list_wrap_news {
         .list_item {
             margin-bottom: 20px;
-            width: calc(1040px/3);
+            width: calc(1120px/3);
             font-size: 20px;
             &:nth-child(4) {
                 margin-left: 0;
             }
         }
-        &+.list_item {
-            margin-left: 2%;
-        }
     } 
     .list_wrap_larger.play_for {
         .list_item {
-            width: calc(1020px/4);
+            width: calc(1100px/4);
         }
     }
     .list_wrap_news {
@@ -353,7 +351,7 @@
             flex-direction: column;
             justify-content: flex-end;
             width: 100%;
-            height: 204px;
+            height: 220px;
             font-size: 17px;
             white-space: pre-line;
             text-shadow: 0 1px rgba(0,0,0,.15), 0 0 10px rgba(0,0,0,.20);
@@ -649,7 +647,7 @@
     }
     .list_item {
         display: inline-block;
-        width: 200px;
+        width: calc(1080px / 5);
         &+.list_item {
             margin-left: 20px;
         }
@@ -830,7 +828,7 @@
 .list_wrap_video {
     .list_item {
         margin-bottom: 20px;
-        width: calc(1040px/3);
+        width: calc(1120px/3);
         font-size: 20px;
         &:nth-child(4) {
             margin-left: 0;
@@ -905,11 +903,12 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    margin: 120px 0 120px 330px;
-    max-width: 1080px;
+    margin: 120px auto 150px;
+    width: 1160px;
     color: rgba(255, 255, 255, .5);
     font-weight: 400;
     font-size: 12px;
+    transform: translateX(140px);
     .notice {
         display: flex;
         margin-bottom: 16px;
