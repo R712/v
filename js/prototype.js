@@ -34,9 +34,20 @@ $('.home').on('click', '.btn_option_now', function(e) {
         top: e.pageY - posY
     });
     $this.toggle();
-});
-$('.home').on('scroll', function() {
+}).on('scroll', function() {
     $('.ly_option').hide();
+});
+
+//
+// gnb nav control
+// 유저 메뉴 레이어 토글, 현재 메뉴 스타일링
+//
+headerGNB.on('click', '.profile_m', function(e) {
+    e.preventDefault();
+    $('.profile_m .ly_option').toggle();
+}).on('click', '.link_menu, .link_sub_menu', function(){
+    headerGNB.find('.link_menu, .link_sub_menu').removeClass('on');
+    $(this).addClass('on');
 });
 
 $('list_wrap_album_today .scroll_list').each(function() {
