@@ -92,7 +92,7 @@ $('.player_controller').on('click', '.btn_playlist', function() {
 });
 
 $('.link_today').click(function(){
-    location.href='./index_side.html';
+    location.href='./index.html';
 });
 $('.link_chart').click(function(){
     location.href='./chart.html';
