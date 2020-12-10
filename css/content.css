@@ -1065,7 +1065,7 @@ a.section_title:hover:after {
 .list_wrap_video .link_artist,
 .list_wrap_album .link_artist,
 .list_wrap_artist .link_artist {
-  display: block;
+  display: inline-block;
   margin-top: 4px;
 }
 

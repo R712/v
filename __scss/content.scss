@@ -824,7 +824,7 @@ a.section_title {
         }
     }
     .link_artist {
-        display: block;
+        display: inline-block;
         margin-top: 4px;
         &:hover {
             text-decoration: underline;
