@@ -823,6 +823,13 @@ a.section_title {
             }
         }
     }
+    .link_artist {
+        display: block;
+        margin-top: 4px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 .list_wrap_artist {
     .thumb {
@@ -834,6 +841,12 @@ a.section_title {
         font-weight: 600;
         font-size: 15px;
         text-align: center;
+    }
+    .link {
+        display: block;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -886,8 +899,12 @@ a.section_title {
                 text-overflow: ellipsis;
                 overflow: hidden;
             }
+            &:hover .text {
+                text-decoration: underline;
+            }
         }
         .artist {
+            margin-top: 2px;
             opacity: .5;
         }
         a:hover {
@@ -1164,7 +1181,6 @@ a.section_title {
         }
     }
     .song {
-        width: calc(100% - 280px);
         a {
             display: block;
             padding-left: 10px;

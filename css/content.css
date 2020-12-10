@@ -1062,6 +1062,19 @@ a.section_title:hover:after {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+.list_wrap_video .link_artist,
+.list_wrap_album .link_artist,
+.list_wrap_artist .link_artist {
+  display: block;
+  margin-top: 4px;
+}
+
+.list_wrap_video .link_artist:hover,
+.list_wrap_album .link_artist:hover,
+.list_wrap_artist .link_artist:hover {
+  text-decoration: underline;
+}
+
 .list_wrap_artist .thumb {
   border-radius: 50%;
   overflow: hidden;
@@ -1072,6 +1085,14 @@ a.section_title:hover:after {
   font-weight: 600;
   font-size: 15px;
   text-align: center;
+}
+
+.list_wrap_artist .link {
+  display: block;
+}
+
+.list_wrap_artist .link:hover {
+  text-decoration: underline;
 }
 
 .list_wrap_album .info {
@@ -1133,7 +1154,12 @@ a.section_title:hover:after {
   overflow: hidden;
 }
 
+.list_wrap_album .info .title:hover .text {
+  text-decoration: underline;
+}
+
 .list_wrap_album .info .artist {
+  margin-top: 2px;
   opacity: .5;
 }
 
@@ -1490,10 +1516,6 @@ a.section_title:hover:after {
           mask: url("../svg/input-checkmark.svg") no-repeat center;
   -webkit-mask-size: 15px;
           mask-size: 15px;
-}
-
-.track_section .song {
-  width: calc(100% - 280px);
 }
 
 .track_section .song a {
