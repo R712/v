@@ -341,9 +341,10 @@ a.section_title {
             &:nth-child(4) {
                 margin-left: 0;
             }
-            .title {
-                font-size: 20px;
-            }
+        }
+        .title {
+            font-weight: 600;
+            font-size: 20px;
         }
     } 
     .list_wrap_larger.play_for {

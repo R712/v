@@ -417,8 +417,9 @@ a.section_title:hover:after {
   margin-left: 0;
 }
 
-.today_section .list_wrap_larger.is_mag .list_item .title,
-.today_section .list_wrap_news .list_item .title {
+.today_section .list_wrap_larger.is_mag .title,
+.today_section .list_wrap_news .title {
+  font-weight: 600;
   font-size: 20px;
 }
 
