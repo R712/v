@@ -577,6 +577,11 @@
           box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
 }
 
+.ly_playlist .playlist_section .list_item:hover .thumb {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
 .ly_playlist .playlist_section .list_item:hover .info_area {
   opacity: 1;
 }

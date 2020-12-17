@@ -425,6 +425,9 @@
                 z-index: 1;
                 background-color: var(--v-c-border-light);
                 box-shadow: 0 0 40px rgba(0,0,0,.6);
+                .thumb {
+                    filter: grayscale(100%);
+                }
                 .info_area {
                     opacity: 1;
                 }

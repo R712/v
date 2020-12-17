@@ -173,7 +173,7 @@ $('.btn_lyrics, .song').click(function(){
 $('.link_djstation, .link_dj').click(function(){
     location.href='./djstation.html';
 });
-$('.album, .link_album, .list_item .title, .list_item .link').click(function(){
+$('.album, .link_album, .list_item .title, .list_item .link, .title').click(function(){
     location.href='./album.html';
 });
 $('.artist, .link_artist, .link_sub_title').click(function(){
