@@ -286,11 +286,11 @@
     }
     .playlist_section {
         width: 25vw;
-        border-left: 1px solid var(--v-c-border-light);
-        background: var(--v-c-black);
+        // border-left: 1px solid var(--v-c-border-light);
+        // background: var(--v-c-black);
         .title_area {
             display: flex;
-            padding: 0 32px;
+            margin: 0 20px;
             height: 80px;
             align-items: center;
             justify-content: space-between;
@@ -321,7 +321,7 @@
             }
         }
         .normal_area {
-            padding: 16px 0 16px 32px;
+            padding: 16px 0 16px 10px;
             height: calc(100vh - 160px);
             overflow-y: auto;
             overflow-x: hidden;
@@ -331,10 +331,12 @@
             position: relative;
             display: flex;
             flex-direction: row;
+            padding: 10px 0 10px 10px;
             width: 100%;
             height: 60px;
-            padding: 10px 0;
             font-size: 14px;
+            border-radius: 4px;
+            transition: all .1s ease-in-out;
             .thumb {
                 position: relative;
                 margin-right: 10px;
@@ -348,7 +350,7 @@
             }
             .icon_play {
                 position: absolute;
-                left: 0;
+                left: 10px;
                 top: 10px;
                 display: flex;
                 align-items: center;
@@ -398,8 +400,8 @@
                     word-break: break-all;
                 }
                 .artist {
+                    opacity: .5;
                     display: block;
-                    color: var(--v-c-gray);
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
@@ -421,6 +423,7 @@
             }
             &:hover {
                 z-index: 1;
+                background-color: var(--v-c-border-light);
                 box-shadow: 0 0 40px rgba(0,0,0,.6);
                 .info_area {
                     opacity: 1;
@@ -439,7 +442,7 @@
                     }
                 }
                 .btn_delete {
-                    opacity: .5;
+                    opacity: 1;
                 }
             }
         }

@@ -22,19 +22,27 @@ const headerGNB = $('#header');
 //
 // 아이템 더보기
 //
-$('.home').on('click', '.btn_option_now', function(e) {
+$('.content').on('click', '.btn_option_now, .btn_option', function(e) {
     e.preventDefault();
-    let posX = $(this).position().left,
-        posY = $(this).position().top;
-    let $this = $(this).next('.ly_option');
-    $('.ly_option').not($this).hide();
-    $this.css({
+    let elm = $(this);
+    let elmNav = elm.next('.ly_option');
+    $('.ly_option').not(elmNav).hide();
+    elmNav.css({
         position: 'fixed',
-        left: e.pageX - posX,
-        top: e.pageY - posY
+        left: e.clientX - 60,
+        top: e.clientY + 20
     });
-    $this.toggle();
-}).on('scroll', function() {
+    elmNav.toggle();
+});
+headerGNB.on('click', '.profile_area .profile', function(e) {
+    e.preventDefault();
+    let elm = $(this);
+    let elmNav = elm.next('.ly_option');
+    $('.ly_option').not(elmNav).hide();
+    elmNav.toggle();
+});
+$(window).on('scroll', function(e) {
+    e.preventDefault();
     $('.ly_option').hide();
 });
 
@@ -52,15 +60,22 @@ headerGNB.on('click', '.profile_m', function(e) {
 
 $('list_wrap_album_today .scroll_list').each(function() {
     let thisScroll = $(this);
-    let buttonNext = '<button type="button" class="VueCarousel-navigation-next"><span class="blind">다음</span></button>';
-    let buttonPrev = '<button type="button" class="VueCarousel-navigation-prev"><span class="blind">이전</span></button>';
-    thisScroll.closest('div').after(buttonNext, buttonPrev);
+    let carouselButtons = `<button type="button" class="VueCarousel-navigation-next"><span class="blind">다음</span></button>
+    <button type="button" class="VueCarousel-navigation-prev"><span class="blind">이전</span></button>`;
+    thisScroll.closest('div').after(carouselButtons);
 });
 
-// $('.today_section').on('click', 'button', function() {
-//     let motherSection = $(this).closest('.today_section');
-//     motherSection.find('.list_item:first-child').appendTo(motherSection.find('.scroll_list'));
-// });
+$('.scroll_list').on('click', '.VueCarousel-navigation-next', function() {
+    let motherSection = $(this).closest('.scroll_list');
+    // motherSection.find('.list_item:first-child').appendTo(motherSection.find('.scroll_list'));
+    motherSection.animate({left: '-=100%'}, 200);
+});
+
+$('.end_section').on('click', '.VueCarousel-navigation-next', function() {
+    let motherSection = $(this).closest('.end_section');
+    // motherSection.find('.list_item:first-child').appendTo(motherSection.find('.scroll_list'));
+    motherSection.find('.scroll_list').animate({left: '-=50%'}, 300);
+});
 
 // 매거진 첫 thumb 카피후 백그라운드 블러 넣기
 // let headlineThumb = $('.today_headline .thumb');
@@ -74,17 +89,27 @@ $('list_wrap_album_today .scroll_list').each(function() {
 //
 //  스크롤 시 따라붙는 스티키 헤더
 //
-window.onscroll = function() { stickyNav() };
-
-function stickyNav() {
-    let navbar = $('#header');
-    let scrollY = $(window).scrollTop();
-    scrollY > 24 ? navbar.addClass('on_scroll') : navbar.removeClass('on_scroll');
-}
+// window.onscroll = function() { stickyNav() };
+// function stickyNav() {
+//     let navbar = $('#header');
+//     let scrollY = $(window).scrollTop();
+//     scrollY > 24 ? navbar.addClass('on_scroll') : navbar.removeClass('on_scroll');
+// }
+//
 
 $('a').each(function(){
     // 임시 하이퍼링크 제거
     $(this).removeAttr('href');
+});
+
+$('.search_area').on('keydown', 'input', function(){
+    $('.recent_keyword_area').slideDown(100);
+}).on('focusout', 'input', function(){
+    $('.recent_keyword_area').slideUp(100);
+});
+
+headerGNB.on('click', '.sub_menu_title', function(){
+    $(this).next('ul').slideToggle(100);
 });
 
 $('.list_wrap_track_rank').on('click', '.VueCarousel-navigation-next', function() {
@@ -100,6 +125,7 @@ $('.genre_wrap').on('click', '.btn_genre', function() {
 
 $('.player_controller').on('click', '.btn_playlist', function() {
     $('#player').toggleClass('open');
+    $('body').toggleClass('noscroll');
 });
 
 $('.btn_shuffle, .btn_repeat').click(function(){
@@ -111,4 +137,12 @@ $('.link_today').click(function(){
 });
 $('.link_chart').click(function(){
     location.href='./chart.html';
+});
+$('.album').click(function(){
+    location.href='./album.html';
+});
+$('.item_library, .library_menu').on('click', 'li:first-child', function(){
+    location.href='./archive.html';
+}).on('click', 'li:nth-child(2)', function(){
+    location.href='./archive-song.html';
 });

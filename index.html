@@ -49,12 +49,12 @@
                 <a href="#" role="button" aria-expanded="false" class="btn_menu"><span class="blind">전체 메뉴 펼쳐보기</span></a>
                 <div class="my_menu">
                     <!-- <a href="/today" aria-current="page" class="link_promotion in_topbar router-link-exact-active router-link-active">VIBE 시작하기</a>
-                    <a href="#" class="link_download"><span class="blind">Download VIBE</span></a><a href="/about" class="link_about">VIBE소개</a>
+                    <a href="#" class="link_download"><span class="blind">Download VIBE</span></a><a href="/about" class="link_about">VIBE소개</a> -->
                     <div class="profile_area">
                         <div class="dropdown_wrap">
                             <a href="#" role="button" aria-haspopup="menu" aria-expanded="false" class="profile">
                                 <div class="img_wrap"><img src="https://phinf.pstatic.net/contact/20190518_284/1558189944388DUerP_PNG/profileImage.png?type=s33" alt="내 프로필"></div>
-                                <div class="nickname"><span class="blind">내 닉네임</span><span class="text">양념언니</span></div>
+                                <div class="nickname"><span class="blind">내 닉네임</span><span class="text">정자동애옹이</span></div>
                             </a>
                             <div role="menu" class="ly_option">
                                 <a href="/membership/my" class="ly_item" role="menuitem">My 멤버십</a>
@@ -63,7 +63,7 @@
                                 <a href="#" role="menuitem" class="ly_item">로그아웃</a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="ly_menu">
                         <div class="menu_area">
                             <ul role="menu" class="menu_list">
@@ -85,8 +85,12 @@
                                     <a href="#" role="menuitem" class="link_menu link_monthly"><span class="text">이달의 노래</span></a>
                                 </li>
                                 <li class="search_area">
-                                    <span class="input_area"><input type="search" role="combobox" id="search_keyword" aria-expanded="false" aria-haspopup="listbox" title="검색창" placeholder="검색" autocomplete="off" class="input_search"></span>
+                                    <span class="input_area"><input type="search" role="combobox" id="search_keyword" aria-expanded="false" aria-haspopup="listbox" title="검색창" placeholder="VIBE 검색" autocomplete="off" class="input_search"></span>
                                     <a href="#" role="button" class="btn_close_search"><span class="blind">검색 닫기</span></a>
+                                    <div class="recent_keyword_area">
+                                        <h2 class="keyword_title"><span class="text">최근 검색어</span><a href="#" role="button" class="btn_delete_all"><span class="blind">전체 삭제</span></a></h2>
+                                        <ul role="listbox" class="recent_keyword_list"><li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">백예린</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li><li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">프롬</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li><li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">Slow Motion</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li><li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">Slow Motion (Album Version)</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li><li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">청하</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li></ul>
+                                    </div>
                                 </li>
                                 <li role="presentation" class="menu_item item_library">
                                     <div class="profile_m">
@@ -105,6 +109,20 @@
                                     </ul>
                                 </li>
                             </ul>
+                            <div role="menu" class="extra_menu">
+                                <a href="/wheresmymoney" target="_blank" rel="noopener noreferrer" class="link_extra link_wheresmymoney"><span class="blind">#내돈내듣</span></a>
+                                <a href="#" class="link_extra link_onstage"><span class="blind">온스테이지</span></a><a href="https://music.naver.com/musicianLeague/contents/home.nhn" target="_blank" rel="noopener noreferrer" class="link_extra link_musician_league"><span class="blind">뮤지션리그</span></a>
+                                <a href="/about" class="link_extra link_text" target="_blank" rel="noopener noreferrer">서비스 소개</a>
+                                <a href="/membership/vibe" class="link_extra link_text" role="menuitem">
+                                멤버십 구독</a>
+                                <a href="/2020vibe" class="link_extra link_text" target="_blank" rel="noopener noreferrer">2020 연말결산</a>
+                                <a href="/vibereview" class="link_extra link_text" role="menuitem">
+                                VIBE 사용자 리뷰</a>
+                                <a href="/comingsoonvibe" class="link_extra link_text" role="menuitem">
+                                커밍쑨VIBE</a>
+                                <a href="/jammtransfer" class="link_extra link_text" role="menuitem">
+                                JAMM 리스트 이전</a>
+                            </div>
                             <div class="extra_menu_m">
                                 <a href="/about" class="item" target="_blank" rel="noopener noreferrer">서비스 소개</a><a href="#" class="item">멤버십 구독</a>
                                 <a href="#" class="item">My 멤버십</a>
@@ -226,7 +244,7 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="js/prototype.js"></script>
 </body>
 

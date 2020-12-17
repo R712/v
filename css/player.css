@@ -389,15 +389,13 @@
 
 .ly_playlist .playlist_section {
   width: 25vw;
-  border-left: 1px solid var(--v-c-border-light);
-  background: var(--v-c-black);
 }
 
 .ly_playlist .playlist_section .title_area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 32px;
+  margin: 0 20px;
   height: 80px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -442,7 +440,7 @@
 }
 
 .ly_playlist .playlist_section .normal_area {
-  padding: 16px 0 16px 32px;
+  padding: 16px 0 16px 10px;
   height: calc(100vh - 160px);
   overflow-y: auto;
   overflow-x: hidden;
@@ -458,10 +456,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 10px 0 10px 10px;
   width: 100%;
   height: 60px;
-  padding: 10px 0;
   font-size: 14px;
+  border-radius: 4px;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
 }
 
 .ly_playlist .playlist_section .list_item .thumb {
@@ -479,7 +480,7 @@
 
 .ly_playlist .playlist_section .list_item .icon_play {
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -544,8 +545,8 @@
 }
 
 .ly_playlist .playlist_section .list_item .info_area .artist {
+  opacity: .5;
   display: block;
-  color: var(--v-c-gray);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -571,6 +572,7 @@
 
 .ly_playlist .playlist_section .list_item:hover {
   z-index: 1;
+  background-color: var(--v-c-border-light);
   -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
 }
@@ -595,7 +597,7 @@
 }
 
 .ly_playlist .playlist_section .list_item:hover .btn_delete {
-  opacity: .5;
+  opacity: 1;
 }
 
 @-webkit-keyframes playerShow {

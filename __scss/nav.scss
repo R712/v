@@ -20,7 +20,6 @@
 #header {
     z-index: 555;
     position: fixed;
-    left: 0;
     bottom: 81px;
     display: flex;
     flex-direction: column;
@@ -30,7 +29,14 @@
     border-right: 1px solid var(--v-c-border-light);
     background: var(--v-c-black);
     color: var(--v-c-white);
+    box-shadow: 1px 0 40px rgba(0,0,0,.8);
     transition: all .1s cubic-bezier(.210, .60, .350, 1);
+    &:focus-within {
+        .menu_item,
+        .extra_menu {
+            opacity: .15;
+        }
+    }
     &.on_scroll {
         background: var(--v-blur-bg);
         -webkit-backdrop-filter: blur(20px);
@@ -38,13 +44,14 @@
     }
     .link_logo {
         display: block;
-        margin: 30px;
-        width: 128px;
-        height: 20px;
+        margin: 40px 40px 20px;
+        width: 158px;
+        height: 30px;
         background: url('../svg/logo.svg') no-repeat left center;
+        background-size: 158px;
     }
     .my_menu {
-        padding: 0 30px 30px;
+        padding: 0 32px 30px;
         width: 100%;
         overflow-y: auto;
         scroll-behavior: smooth;
@@ -56,31 +63,53 @@
         width: 100%;
         .menu_item {
             position: relative;
-            a {
-                opacity: 0.8;
+            a,
+            .sub_menu_title {
+                position: relative;
                 display: flex;
-                padding: 9px 0;
+                margin-top: 5px;
+                padding: 0 8px;
+                height: 40px;
                 color: var(--v-c-white);
                 font-weight: 600;
-                font-size: 16px;
+                font-size: 18px;
+                line-height: 1;
                 white-space: nowrap;
                 align-items: center;
-                &.on {
+                border-radius: 4px;
+                &.on,
+                &.on:hover {
                     opacity: 1;
+                    background-color: transparent;
                     color: var(--v-c-point);
+                    &:after {
+                        border-top-color: var(--v-c-point);
+                    }
+                    &:before {
+                        background-color: var(--v-c-point);
+                    }
                 }
                 &:hover {
                     opacity: 1;
+                    background: rgba(255,0,80,.2);
+                    color: var(--v-c-point);
+                    &:after {
+                        border-top-color: var(--v-c-point);
+                    }
+                    &:before {
+                        background-color: var(--v-c-point);
+                    }
                 }
             }
             > .link_menu:before {
                 content: '';
                 display: inline-block;
                 margin-right: 14px;
-                width: 20px;
-                height: 20px;
-                mask: no-repeat center center;
+                width: 24px;
+                height: 24px;
+                mask: no-repeat center;
                 background-color: var(--v-c-white);
+                mask-size: 24px;
             }
             .link_today:before {
                 mask-image: url('../svg/i-nav-today.svg');
@@ -101,34 +130,153 @@
                 background-color: var(--v-c-point);
             }
         }
+        // .item_library {
+        //     margin-top: 30px;
+        //     padding-top: 30px;
+        //     border-top: 1px solid var(--v-c-border-light);
+        //     .sub_menu_title {
+        //         display: flex;
+        //         position: relative;
+        //         padding: 0 0 0 46px;
+        //         color: var(--v-c-gray);
+        //         font-size: 13px;
+        //     }
+        //     ul {
+        //         display: flex;
+        //         flex-direction: column;
+        //         margin-left: 38px;
+        //         padding: 8px 0;
+        //     }
+        //     a {
+        //         margin-top: 0;
+        //         height: 36px;
+        //         line-height: 36px;
+        //         font-size: 16px;
+        //     }
+        // }
         .item_library {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid var(--v-c-border-light);
+            margin-bottom: 20px;
             .sub_menu_title {
-                padding: 4px 0 4px 34px;
-                color: var(--v-c-gray);
-                font-size: 13px;
+                display: flex;
+                position: relative;
+                margin-top: 5px;
+                padding: 0 8px;
+                height: 40px;
+                color: var(--v-c-white);
+                font-size: 18px;
+                line-height: 1;
+                white-space: nowrap;
+                align-items: center;
+                border-radius: 4px;
+                cursor: pointer;
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    margin-right: 14px;
+                    width: 24px;
+                    height: 24px;
+                    mask: url('../svg/i-archive.svg') no-repeat center;
+                    background-color: var(--v-c-white);
+                    mask-size: 24px;
+                }
+                &:after {
+                    content: '';
+                    margin-top: 2px;
+                    margin-left: 6px;
+                    border: 4px solid transparent;
+                    border-top-color: var(--v-c-gray);
+                }
             }
             ul {
-                display: flex;
+                display: none;
                 flex-direction: column;
+                margin-left: 38px;
                 padding: 8px 0;
-                a {
-                    display: block;
-                    padding: 8px 0 8px 34px;
+            }
+            a {
+                opacity: .5;
+                margin-top: 0;
+                height: 36px;
+                line-height: 36px;
+                font-size: 16px;
+            }
+        }
+    }
+    .profile_area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 12px 8px;
+        border: 1px solid var(--v-c-border-light);
+        border-width: 1px 0;
+        cursor: pointer;
+        .profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .img_wrap {
+            margin-right: 14px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .nickname {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            width: calc(100% - 38px);
+            color: var(--v-c-white);
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            &:after {
+                content: '';
+                margin-top: 2px;
+                margin-left: 6px;
+                border: 4px solid transparent;
+                border-top-color: var(--v-c-gray);
+            }
+        }
+        .ly_option {
+            display: none;
+            z-index: 55;
+            position: absolute;
+            left: 36px;
+            top: 36px;
+            width: 150px;
+            background: #FFF;
+            border-radius: 4px;
+            a {
+                display: block;
+                padding: 6px 20px;
+                color: var(--v-c-black);
+                font-weight: 400;
+                font-size: 14px;
+                white-space: nowrap;
+                box-shadow: 0 1px rgba(0, 0, 0, .08);
+                &:hover {
+                    background-color: rgba(0, 0, 0, .05);
                 }
             }
         }
     }
     .profile_m {
-        display: flex;
+        display: none;
         flex-direction: row;
-        justify-content: stretch;
+        align-items: center;
         margin-bottom: 24px;
+        padding: 0 8px;
         cursor: pointer;
         .img_wrap {
-            margin-right: 10px;
+            margin-right: 14px;
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -141,16 +289,17 @@
         }
         .text_wrap {
             position: relative;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: stretch;
-            width: calc(100% - 34px);
+            width: calc(100% - 38px);
             color: var(--v-c-white);
             font-weight: 600;
-            font-size: 16px;
+            font-size: 18px;
+            line-height: 24px;
             &:after {
                 content: '';
-                margin-left: 10px;
+                margin-top: 2px;
+                margin-left: 6px;
                 border: 4px solid transparent;
                 border-top-color: var(--v-c-gray);
             }
@@ -166,19 +315,21 @@
             border-radius: 5px;
             a {
                 display: block;
-                padding: 8px 12px;
+                padding: 0 12px;
                 color: var(--v-c-black);
-                font-weight: 500;
-                font-size: 15px;
+                font-weight: 400;
+                font-size: 14px;
                 white-space: nowrap;
                 box-shadow: 0 1px rgba(0, 0, 0, .08);
                 &:hover {
                     background-color: rgba(0, 0, 0, .05);
+                    color: var(--v-c-black);
                 }
             }
         }
     }
     .search_area {
+        position: relative;
         margin-top: 10px;
         width: 100%;
         .input_area {
@@ -190,84 +341,247 @@
                 position: absolute;
                 left: 12px;
                 top: 11px;
-                width: 14px;
-                height: 14px;
-                background: url('../svg/i-search.svg') no-repeat center;
+                width: 18px;
+                height: 18px;
+                mask: url('../svg/i-search.svg') no-repeat center;
+                mask-size: 18px;
+                background-color: var(--v-c-gray);
             }
             input {
                 display: block;
-                padding: 0 12px 0 36px;
+                padding: 0 12px 0 46px;
                 width: 100%;
-                height: 36px;
+                height: 40px;
                 border: 0;
                 background: var(--v-c-input);
                 color: var(--v-c-white);
                 font-weight: 500;
-                font-size: 15px;
-                line-height: 36px;
-                border-radius: 5px;
+                font-size: 18px;
+                line-height: 40px;
+                border-radius: 4px;
+                transition: all .1s ease-in-out;
+                &:focus {
+                    background: var(--v-c-white);
+                    color: var(--v-c-black);
+                }
+                &::placeholder {
+                    color: var(--v-c-gray);
+                }
+            }
+        }
+    }
+    .search_area {
+        // 검색창이 위에 있을 때 테스트용
+        order: -1;
+        margin-bottom: 20px;
+    }
+    .recent_keyword_area {
+        display: none;
+        z-index: 1;
+        position: fixed;
+        margin-top: 10px;
+        padding: 5px 0;
+        width: 400px;
+        background: var(--v-c-white);
+        color: var(--v-c-input);
+        border-radius: 4px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, .08);
+        h2 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 36px;
+            color: var(--v-c-gray);
+            font-size: 13px;
+            .btn_delete_all {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 36px;
+                height: 36px;
+                background-color: var(--v-c-point);
+                mask: url('../svg/i-close.svg') no-repeat center;
+                mask-size: 10px;
+                transition: all .1s ease-in-out;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        li {
+            position: relative;
+        }
+        .recent_keyword {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 36px;
+            color: var(--v-c-black);
+            font-size: 16px;
+            &:hover {
+                background-color: rgba(0, 0, 0, .05);
+            }
+        }
+        .btn_delete {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background-color: var(--v-c-gray);
+            mask: url('../svg/i-close.svg') no-repeat center;
+            mask-size: 10px;
+            transition: all .1s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .extra_menu {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding-top: 30px;
+        border-top: 1px solid var(--v-c-border-light);
+        a {
+            margin: 0 8px;
+            height: 36px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all .1s ease-in-out;
+            &:hover {
+                color: var(--v-c-point);
+            }
+        }
+        .link_wheresmymoney,
+        .link_musician_league,
+        .link_onstage {
+            display: block;
+            &:before {
+                content: '';
+                display: block;
+                width: 90px;
+                height: 18px;
+                mask-repeat: no-repeat;
+                mask-position: left center;
+                background-color: var(--v-c-white);
+                transition: all .1s ease-in-out;
+            }
+            &:hover {
+                &:before {
+                    background-color: var(--v-c-point);
+                }
+            }
+        }
+        .link_wheresmymoney:before {
+            width: 82px;
+            mask-image: url('../svg/i-wheresmymoney.svg');
+            mask-size: 82px;
+        }
+        .link_onstage:before {
+            width: 104px;
+            mask-image: url('../svg/i-onstage.svg');
+            mask-size: 104px;
+        }
+        .link_musician_league:before {
+            width: 104px;
+            mask-image: url('../svg/i-musician-league.svg');
+            mask-size: 104px;
+        }
+    }
+    .floating_area {
+        margin-top: auto;
+        padding: 20px;
+        width: 100%;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50px;
+            background: var(--v-c-border-light);
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 4px;
+            &:before {
+                content: '';
+                display: inline-block;
+                margin-right: 10px;
+                width: 17px;
+                height: 19px;
+                background-color: var(--v-c-white);
+                mask: url('../svg/i-v.svg') no-repeat center;
+                mask-size: 17px;
+            }
+            &:hover {
+                background: rgba(255,0,80,.2);
+                color: var(--v-c-point);
+                &:before {
+                    background-color: var(--v-c-point);
+                }
             }
         }
     }
     /* 임시 hidden 처리 */
     .btn_close_search,
-    .floating_area,
     .extra_menu_m,
     .btn_close,
     .btn_menu {
         display: none;
     }
 }
-
-.extra_menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 50px 0;
-    font-size: 15px;
-    &:before {
-        content: 'VIBE Spotlight On';
-        padding-left: 24px;
-        height: 20px;
-        background: url('../svg/i-v.svg') no-repeat left center;
-        color: var(--v-c-gray);
-        font-weight: 600;
-    }
-    a {
+.content {
+    .extra_menu {
         display: none;
-        margin-left: 10px;
-        color: var(--v-c-white);
-        transition: all .1s ease;
-    }
-    .link_wheresmymoney,
-    .link_musician_league,
-    .link_onstage {
-        display: block;
+        position: relative;
+        align-items: center;
+        padding: 50px 0;
+        font-size: 15px;
         &:before {
-            content: '';
+            content: 'VIBE Spotlight On';
+            padding-left: 24px;
+            height: 20px;
+            background: url('../svg/i-v.svg') no-repeat left center;
+            color: var(--v-c-gray);
+            font-weight: 600;
+        }
+        a {
+            display: none;
+            margin-left: 10px;
+            color: var(--v-c-white);
+            transition: all .1s ease;
+        }
+        .link_wheresmymoney,
+        .link_musician_league,
+        .link_onstage {
             display: block;
-            width: 90px;
-            height: 18px;
-            background-repeat: no-repeat;
-            background-position: left center;
+            &:before {
+                content: '';
+                display: block;
+                width: 90px;
+                height: 18px;
+                background-repeat: no-repeat;
+                background-position: left center;
+            }
+            &:hover {
+                opacity: .8;
+            }
         }
-        &:hover {
-            opacity: .8;
+        .link_wheresmymoney:before {
+            width: 82px;
+            background-image: url('../svg/i-wheresmymoney.svg');
+            background-size: 82px;
         }
-    }
-    .link_wheresmymoney:before {
-        width: 82px;
-        background-image: url('../svg/i-wheresmymoney.svg');
-        background-size: 82px;
-    }
-    .link_onstage:before {
-        width: 104px;
-        background-image: url('../svg/i-onstage.svg');
-        background-size: 104px;
-    }
-    .link_musician_league:before {
-        width: 104px;
-        background-image: url('../svg/i-musician-league.svg');
-        background-size: 104px;
+        .link_onstage:before {
+            width: 104px;
+            background-image: url('../svg/i-onstage.svg');
+            background-size: 104px;
+        }
+        .link_musician_league:before {
+            width: 104px;
+            background-image: url('../svg/i-musician-league.svg');
+            background-size: 104px;
+        }
     }
 }
