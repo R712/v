@@ -132,7 +132,7 @@ $('.btn_shuffle, .btn_repeat').click(function(){
     $(this).toggleClass('disabled');
 });
 
-$('.link_today').click(function(){
+$('.link_today, .link_logo').click(function(){
     location.href='./index.html';
 });
 $('.link_chart').click(function(){
