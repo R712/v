@@ -12,6 +12,7 @@
     --v-c-point: #FF0050;
 }
 
+
 /*
     gnb nav
     #header
@@ -100,7 +101,7 @@
                 }
                 &:hover {
                     opacity: 1;
-                    background: rgba(255,0,80,.2);
+                    background: rgba(255, 0, 80, .2);
                     color: var(--v-c-point);
                     &:after {
                         border-top-color: var(--v-c-point);
@@ -110,7 +111,7 @@
                     }
                 }
             }
-            > .link_menu:before {
+            >.link_menu:before {
                 content: '';
                 display: inline-block;
                 margin-right: 10px;
@@ -167,7 +168,7 @@
                     mask-size: 24px;
                 }
                 &:after {
-                    content: '';
+                    // content: '';
                     margin-top: 2px;
                     margin-left: 6px;
                     border: 4px solid transparent;
@@ -631,7 +632,7 @@
         //     background-image: url('../svg/i-musician-league.svg');
         //     background-size: 104px;
         // }
-        & ~ .today_section {
+        &~.today_section {
             padding-top: 40px;
         }
     }

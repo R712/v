@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66">
+  <title>VIBE Animated SVG loader</title>
+  <style>
+    rect {
+        fill: #FFF;
+        animation: bling 1s infinite linear;
+        transform: scale(1);
+        transform-origin: center;
+    }
+    rect:nth-child(1) {
+        animation-delay:.05s;
+    }
+    rect:nth-child(2) {
+        animation-delay:.1s;
+    }
+    rect:nth-child(3) {
+        animation-delay:.15s;
+    }
+    rect:nth-child(4) {
+        animation-delay:.2s;
+    }
+    rect:nth-child(5) {
+        animation-delay:.25s;
+    }
+    rect:nth-child(6) {
+        animation-delay:.3s;
+    }
+    rect:nth-child(7) {
+        animation-delay:.35s;
+    }
+    @keyframes bling {  
+        60% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        80% {
+            opacity: 0;
+            transform: scaleY(1.2);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+  </style>
+  <g id="vibe-loader" data-name="vibe-loader">
+    <rect x="13" y="22" width="4" height="10" rx="1" ry="1"/>
+    <rect x="19" y="19" width="4" height="18" rx="1" ry="1"/>
+    <rect x="25" y="24" width="4" height="18" rx="1" ry="1"/>
+    <rect x="31" y="30" width="4" height="18" rx="1" ry="1"/>
+    <rect x="37" y="24" width="4" height="18" rx="1" ry="1"/>
+    <rect x="43" y="19" width="4" height="18" rx="1" ry="1"/>
+    <rect x="49" y="22" width="4" height="10" rx="1" ry="1"/>
+  </g>
+</svg>

@@ -219,12 +219,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(0,0,0);
+    background: rgb(0, 0, 0);
     border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-    border: 4px solid rgb(0,0,0);
+    border: 4px solid rgb(0, 0, 0);
     background: rgb(40, 40, 40);
     border-radius: 10px;
 }
@@ -265,6 +265,7 @@ input::-webkit-search-results-decoration {
     height: 1px;
     margin: -1px;
 }
+
 .img_m {
     display: none;
 }

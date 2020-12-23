@@ -3083,21 +3083,17 @@ input[type=checkbox]:checked:after {
 */
 .footer {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  margin: 0 0 0 280px;
-  padding: 140px 50px;
+  margin: 140px 0 0 280px;
+  padding: 60px 0 120px;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
   font-size: 12px;
+}
+
+.footer > div {
+  margin: 0 auto;
+  max-width: 980px;
+  width: inherit;
 }
 
 .footer .notice {
@@ -3163,13 +3159,12 @@ input[type=checkbox]:checked:after {
 }
 
 .footer .sns {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 40px;
+  -webkit-transform: translateY(-180px);
+          transform: translateY(-180px);
 }
 
 .footer .sns a {
@@ -3198,6 +3193,54 @@ input[type=checkbox]:checked:after {
 
 .footer .sns .link_naver {
   background-image: url("../svg/i-naver.svg");
+}
+
+/*
+    VIBE animate loader
+    애니메이션 제어코드는 svg 파일 안에 있습니다.
+*/
+.loading_vibe {
+  display: none;
+  z-index: 500;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 280px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--v-c-black);
+}
+
+.loading_vibe:before {
+  content: '';
+  width: 80px;
+  height: 80px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#8401E2), to(#FF1150));
+  background: linear-gradient(to bottom, #8401E2, #FF1150);
+  border-radius: 4px;
+}
+
+.loading_vibe:after {
+  content: url("../svg/loader.svg");
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+  width: 80px;
+  height: 80px;
 }
 
 @-webkit-keyframes bounceIn {

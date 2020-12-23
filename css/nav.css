@@ -236,7 +236,6 @@
 }
 
 #header .menu_list .item_library .sub_menu_title:after {
-  content: '';
   margin-top: 2px;
   margin-left: 6px;
   border: 4px solid transparent;
