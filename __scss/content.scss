@@ -31,11 +31,12 @@
     color: var(--v-c-white);
     .container {
         position: relative;
-        margin: 0 0 0 280px;
+        margin: 0 0 0 300px;
         .content {
             position: relative;
             margin: 0 auto;
-            max-width: 980px;
+            padding: 0 100px;
+            max-width: 1280px;
             width: inherit;
         }
     }
@@ -73,9 +74,7 @@
 
 // 배너
 .admin_banner_section {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
     width: 100%;
     a {
         display: flex;
@@ -107,9 +106,87 @@
 //
 // 매거진 섹션
 //
-.today_headline,
+
+.today_headline {
+    margin-top: 90px;
+    width: calc(100% + 200px);
+    transform: translateX(-100px);
+    .today_mag {
+        position: relative;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+        }
+    }
+    .thumb {
+        display: none;
+    }
+    .text_area {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 60px 100px;
+        height: 480px;
+    }
+    .icon_mag {
+        width: 80px;
+    }
+    .title {
+        padding: 20px 0;
+        font-weight: 700;
+        font-size: 3.2vw;
+        line-height: 3.6vw;
+        white-space: pre-line;
+        text-shadow: 0 0 3px rgba(0,0,0,.3);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .info {
+        display: block;
+        display: -webkit-box;
+        width: 68%;
+        height: 48px;
+        color: var(--v-c-white);
+        font-size: 17px;
+        line-height: 24px;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-all;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .sub {
+        opacity: .5;
+        display: flex;
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1;
+        .item + .item:before {
+            content: '';
+            display: inline-block;
+            margin: 0 6px 0 9px;
+            width: 3px;
+            height: 3px;
+            background: var(--v-c-white);
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+    }
+}
+
 .jamm_banner {
-    display: none;
 }
 
 a.section_title {
@@ -138,11 +215,8 @@ a.section_title {
 
 .today_section {
     position: relative;
-    padding-top: 90px;
+    padding-top: 70px;
     font-size: 20px;
-    &+.today_section {
-        padding-top: 70px;
-    }
     >div>div {
         overflow: hidden;
     }
@@ -2375,24 +2449,25 @@ input[type=checkbox] {
 
 .footer {
     position: relative;
-    margin: 140px 0 0 280px;
-    padding: 60px 0 120px;
+    display: flex;
+    flex-direction: column;
+    margin: 140px 0 0 300px;
+    padding: 0 0 150px;
     color: rgba(255, 255, 255, .5);
     font-weight: 400;
     font-size: 12px;
     >div {
-        margin: 0 auto;
-        max-width: 980px;
-        width: inherit;
+        margin: 0 100px;
+        max-width: 1280px;
     }
     .notice {
         display: flex;
-        padding: 16px 0;
+        padding: 20px 0;
         font-size: 14px;
         line-height: 1;
         border-radius: 3px;
         >.link {
-            font-weight: 600;
+            font-weight: 700;
         }
         li {
             display: none;
@@ -2435,9 +2510,20 @@ input[type=checkbox] {
         }
     }
     .sns {
+        order: -1;
         position: relative;
         display: flex;
-        transform: translateY(-180px);
+        padding: 40px 0 10px;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--v-c-border);
+            transform: scaleY(0.5);
+        }
         a {
             display: inline-block;
             margin: 0 20px 0 0;
@@ -2480,7 +2566,7 @@ input[type=checkbox] {
     left: 0;
     right: 0;
     bottom: 0;
-    padding-left: 280px;
+    padding-left: 300px;
     width: 100vw;
     height: 100vh;
     background: var(--v-c-black);

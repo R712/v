@@ -33,13 +33,14 @@
 
 .home .container {
   position: relative;
-  margin: 0 0 0 280px;
+  margin: 0 0 0 300px;
 }
 
 .home .container .content {
   position: relative;
   margin: 0 auto;
-  max-width: 980px;
+  padding: 0 100px;
+  max-width: 1280px;
   width: inherit;
 }
 
@@ -76,9 +77,7 @@
 }
 
 .admin_banner_section {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   width: 100%;
 }
 
@@ -117,9 +116,104 @@
   background: url("../svg/i-close.svg") no-repeat center;
 }
 
-.today_headline,
-.jamm_banner {
+.today_headline {
+  margin-top: 90px;
+  width: calc(100% + 200px);
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
+.today_headline .today_mag {
+  position: relative;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.today_headline .today_mag:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.today_headline .thumb {
   display: none;
+}
+
+.today_headline .text_area {
+  z-index: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 60px 100px;
+  height: 480px;
+}
+
+.today_headline .icon_mag {
+  width: 80px;
+}
+
+.today_headline .title {
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 3.2vw;
+  line-height: 3.6vw;
+  white-space: pre-line;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.today_headline .title:hover {
+  text-decoration: underline;
+}
+
+.today_headline .info {
+  display: block;
+  display: -webkit-box;
+  width: 68%;
+  height: 48px;
+  color: var(--v-c-white);
+  font-size: 17px;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-all;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.today_headline .sub {
+  opacity: .5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.today_headline .sub .item + .item:before {
+  content: '';
+  display: inline-block;
+  margin: 0 6px 0 9px;
+  width: 3px;
+  height: 3px;
+  background: var(--v-c-white);
+  border-radius: 2px;
+  vertical-align: middle;
 }
 
 a.section_title {
@@ -155,12 +249,8 @@ a.section_title:hover:after {
 
 .today_section {
   position: relative;
-  padding-top: 90px;
-  font-size: 20px;
-}
-
-.today_section + .today_section {
   padding-top: 70px;
+  font-size: 20px;
 }
 
 .today_section > div > div {
@@ -3083,31 +3173,37 @@ input[type=checkbox]:checked:after {
 */
 .footer {
   position: relative;
-  margin: 140px 0 0 280px;
-  padding: 60px 0 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 140px 0 0 300px;
+  padding: 0 0 150px;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
   font-size: 12px;
 }
 
 .footer > div {
-  margin: 0 auto;
-  max-width: 980px;
-  width: inherit;
+  margin: 0 100px;
+  max-width: 1280px;
 }
 
 .footer .notice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 16px 0;
+  padding: 20px 0;
   font-size: 14px;
   line-height: 1;
   border-radius: 3px;
 }
 
 .footer .notice > .link {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footer .notice li {
@@ -3159,12 +3255,26 @@ input[type=checkbox]:checked:after {
 }
 
 .footer .sns {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translateY(-180px);
-          transform: translateY(-180px);
+  padding: 40px 0 10px;
+}
+
+.footer .sns:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--v-c-border);
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
 }
 
 .footer .sns a {
@@ -3220,7 +3330,7 @@ input[type=checkbox]:checked:after {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-left: 280px;
+  padding-left: 300px;
   width: 100vw;
   height: 100vh;
   background: var(--v-c-black);

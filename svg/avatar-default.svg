@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+<defs><circle id="dqa" cx="15" cy="15" r="15"/></defs>
+<g fill="none" fill-rule="evenodd">
+<mask id="dqb" fill="#FFFFFF">
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dqa"/>
+</mask>
+<use fill="#FFFFFF" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#dqa"/>
+<path fill="#8E8E93" d="M15 30.076h11.154v-3.553c0-1.173-.802-2.657-1.782-3.297l-5.435-3.3c-.425-.253-.913-.62-.913-1.693 0-.703.593-1.26.772-1.48a5.116 5.116 0 001.354-3.474v-2.633c0-2.854-2.304-4.492-5.15-4.492-2.847 0-5.152 1.638-5.152 4.492v2.633c0 1.344.517 2.559 1.356 3.474.178.22.771.777.771 1.48 0 1.074-.488 1.44-.913 1.692l-5.436 3.301c-.979.64-1.78 2.124-1.78 3.297v3.553H15z" mask="url(#dqb)"/>
+</g>
+</svg>

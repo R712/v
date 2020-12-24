@@ -144,9 +144,9 @@ $('.search_area').on('keydown', 'input', function() {
     $('.recent_keyword_area').slideUp(100);
 });
 
-headerGNB.on('click', '.sub_menu_title', function() {
-    $(this).next('ul').slideToggle(100);
-});
+// headerGNB.on('click', '.sub_menu_title', function() {
+//     $(this).next('ul').slideToggle(100);
+// });
 
 $('.player_controller').on('click', '.btn_playlist', function() {
     $('#player').toggleClass('open');
@@ -179,16 +179,29 @@ $('.btn_lyrics, .song').click(function() {
 $('.link_djstation, .link_dj').click(function() {
     location.href = './djstation.html';
 });
-$('.album, .link_album, .list_item .title, .list_item .link, .title').click(function() {
+$('.album, .link_album').click(function() {
     location.href = './album.html';
 });
 $('.artist, .link_artist, .link_sub_title').click(function() {
     location.href = './artist.html';
 });
-$('.item_library, .library_menu').on('click', 'li:first-child', function() {
+$('.link_library').on('click', function() {
     location.href = './archive.html';
-}).on('click', 'li:nth-child(2)', function() {
+});
+$('.library_menu .menu_item:nth-child(2)').on('click', function() {
     location.href = './archive-song.html';
+});
+$('.membership_menu .item:first-child, .link_membership').on('click', function(){
+    location.href = './subscription.html';
+});
+$('.membership_menu .item:nth-child(2)').on('click', function(){
+    location.href = './mymembership.html';
+});
+$('.membership_menu .item:nth-child(3)').on('click', function(){
+    location.href = './listening.html';
+});
+$('.membership_menu .item:nth-child(4)').on('click', function(){
+    location.href = './giftcard.html';
 });
 
 //
@@ -202,9 +215,14 @@ function showPage() {
 }
 
 function loadingCheck() {
-    vibeApp = setTimeout(showPage, 1800);
+    vibeApp = setTimeout(showPage, 3000);
 }
 
 window.onload = function() {
     loadingCheck();
 }
+
+$('.loading_vibe').on('click', function(){
+    document.querySelector('.loading_vibe').style.display = 'none';
+    document.getElementById('container').style.display = 'block';
+});

@@ -22,6 +22,9 @@
     &.open {
         .btn_playlist {
             opacity: 1;
+            &::before {
+                transform: rotate(180deg);
+            }
         }
         .ly_playlist {
             visibility: visible;
@@ -37,6 +40,7 @@
     bottom: 0;
     left: 0;
     z-index: 10400;
+    width: 100vw;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -246,8 +250,20 @@
         top: 15px;
         width: 50px;
         height: 50px;
-        background: var(--v-c-border) url('../svg/i-playlist.svg') no-repeat center;
+        background: var(--v-c-border);
+        line-height: 50px;
+        text-align: center;
         border-radius: 5px;
+        transition: none;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url('../svg/i-playlist.svg') no-repeat center;
+            vertical-align: middle;
+            transition: none;
+        }
     }
     a:active {
         transform: scale(0.92);
@@ -257,13 +273,14 @@
 
 .ly_playlist {
     position: fixed;
-    top: 100vh;
+    top: 0;
     right: 0;
+    left: 0;
     z-index: 10200;
     display: flex;
     visibility: hidden;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     opacity: 0;
     background: rgba(0,0,0,.9);
     backdrop-filter: blur(20px);
