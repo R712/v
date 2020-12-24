@@ -164,11 +164,8 @@ $('.floating_select').appendTo('.floating_bar');
 //
 //  미리보기용 URL 연결
 //
-$('.link_today').click(function() {
+$('.link_today, .link_logo').click(function() {
     location.href = './index.html';
-});
-$('.link_logo').click(function() {
-    location.href = './index_sidebar.html';
 });
 $('.link_chart').click(function() {
     location.href = './chart.html';
