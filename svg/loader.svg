@@ -4,29 +4,37 @@
     rect {
         fill: #FFF;
         animation: bling 1s infinite linear;
+        -webkit-animation: bling 1s infinite linear;
         transform: scale(1);
         transform-origin: center;
     }
     rect:nth-child(1) {
         animation-delay:.05s;
+        -webkit-animation-delay:.05s;
     }
     rect:nth-child(2) {
         animation-delay:.1s;
+        -webkit-animation-delay:.1s;
     }
     rect:nth-child(3) {
         animation-delay:.15s;
+        -webkit-animation-delay:.15s;
     }
     rect:nth-child(4) {
         animation-delay:.2s;
+        -webkit-animation-delay:.2s;
     }
     rect:nth-child(5) {
         animation-delay:.25s;
+        -webkit-animation-delay:.25s;
     }
     rect:nth-child(6) {
         animation-delay:.3s;
+        -webkit-animation-delay:.3s;
     }
     rect:nth-child(7) {
         animation-delay:.35s;
+        -webkit-animation-delay:.35s;
     }
     @keyframes bling {  
         60% {
