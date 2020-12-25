@@ -138,8 +138,6 @@
 #header .menu_list .menu_item .link_menu:hover {
   opacity: 0.8;
   color: var(--v-c-white);
-  -webkit-transform: translateX(4px);
-          transform: translateX(4px);
 }
 
 #header .menu_list .menu_item .link_menu:hover:after {

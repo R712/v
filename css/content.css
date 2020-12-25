@@ -118,9 +118,6 @@
 
 .today_headline {
   margin-top: 90px;
-  width: calc(100% + 200px);
-  -webkit-transform: translateX(-100px);
-          transform: translateX(-100px);
 }
 
 .today_headline .today_mag {
@@ -128,6 +125,8 @@
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  -webkit-transition: background .5s ease;
+  transition: background .5s ease;
 }
 
 .today_headline .today_mag:before {
@@ -139,6 +138,10 @@
   height: 60%;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0)));
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.today_headline .today_mag:hover {
+  background-size: 102%;
 }
 
 .today_headline .thumb {
@@ -180,12 +183,13 @@
 }
 
 .today_headline .info {
+  opacity: .5;
   display: block;
   display: -webkit-box;
   width: 68%;
   height: 48px;
   color: var(--v-c-white);
-  font-size: 17px;
+  font-size: 15px;
   line-height: 24px;
   text-overflow: ellipsis;
   white-space: normal;

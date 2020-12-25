@@ -106,16 +106,16 @@
 //
 // 매거진 섹션
 //
-
 .today_headline {
     margin-top: 90px;
-    width: calc(100% + 200px);
-    transform: translateX(-100px);
+    // width: calc(100% + 200px);
+    // transform: translateX(-100px);
     .today_mag {
         position: relative;
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
+        transition: background .5s ease;
         &:before {
             content: '';
             position: absolute;
@@ -123,7 +123,10 @@
             bottom: 0;
             width: 100%;
             height: 60%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        }
+        &:hover {
+            background-size: 102%;
         }
     }
     .thumb {
@@ -147,18 +150,19 @@
         font-size: 3.2vw;
         line-height: 3.6vw;
         white-space: pre-line;
-        text-shadow: 0 0 3px rgba(0,0,0,.3);
+        text-shadow: 0 0 3px rgba(0, 0, 0, .3);
         &:hover {
             text-decoration: underline;
         }
     }
     .info {
+        opacity: .5;
         display: block;
         display: -webkit-box;
         width: 68%;
         height: 48px;
         color: var(--v-c-white);
-        font-size: 17px;
+        font-size: 15px;
         line-height: 24px;
         text-overflow: ellipsis;
         white-space: normal;
@@ -173,7 +177,7 @@
         margin-top: 10px;
         font-size: 15px;
         line-height: 1;
-        .item + .item:before {
+        .item+.item:before {
             content: '';
             display: inline-block;
             margin: 0 6px 0 9px;
@@ -186,8 +190,7 @@
     }
 }
 
-.jamm_banner {
-}
+.jamm_banner {}
 
 a.section_title {
     position: relative;
