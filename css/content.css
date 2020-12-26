@@ -172,8 +172,8 @@
 .today_headline .title {
   padding: 20px 0;
   font-weight: 700;
-  font-size: 3.2vw;
-  line-height: 3.6vw;
+  font-size: 38px;
+  line-height: 44px;
   white-space: pre-line;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
@@ -3225,12 +3225,9 @@ input[type=checkbox]:checked:after {
 
 .footer a {
   display: inline-block;
+  margin-right: 12px;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-}
-
-.footer a + a {
-  margin-left: 12px;
 }
 
 .footer a:hover {
@@ -3243,11 +3240,12 @@ input[type=checkbox]:checked:after {
 
 .footer .item {
   display: inline-block;
+  margin-right: 16px;
   padding: 4px 0;
 }
 
-.footer .item + .item {
-  margin-left: 16px;
+.footer .item:last-child {
+  margin-right: 0;
 }
 
 .footer .item_head {
@@ -3406,7 +3404,68 @@ input[type=checkbox]:checked:after {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+  #header {
+    left: -100%;
+  }
+  .home,
+  .home .player_controller {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .footer,
+  .home .container {
+    margin-left: 0;
+  }
+  .footer .content,
+  .home .container .content {
+    padding: 0 50px;
+  }
+  .footer > div {
+    margin: 0 50px;
+  }
+  .admin_banner_section {
+    margin-left: -50px;
+    width: calc(100% + 100px);
+  }
+  .admin_banner_section a {
+    border-radius: 0;
+  }
+  .admin_banner_section a .img_m {
+    display: block;
+  }
+  .admin_banner_section a .img_pc {
+    display: none;
+  }
+  .today_headline {
+    margin-top: 0;
+    margin-left: -50px;
+    width: calc(100% + 100px);
+  }
+  .today_headline .link_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    height: 420px;
+  }
+  .today_headline .text_area {
+    padding: 50px;
+    height: inherit;
+  }
+  .today_section {
+    padding-top: 50px;
+  }
   .today_section > div > div .list_item {
     min-width: calc((100% - 40px) / 2) !important;
   }
@@ -3415,6 +3474,30 @@ input[type=checkbox]:checked:after {
   }
   .today_section .is_mag > div .list_item {
     margin-left: 0;
+    margin-bottom: 0 !important;
     min-width: 100% !important;
+  }
+  #player .song_info .info_area {
+    width: 120px;
+  }
+  #player .song_info .option_area {
+    display: none;
+    margin-left: 5px;
+  }
+  #player .control_area {
+    position: relative;
+    left: inherit;
+    top: inherit;
+    margin-left: 20px;
+  }
+  #player .playtime,
+  #player .volume_area,
+  #player .btn_shuffle,
+  #player .btn_repeat,
+  #player .cover_section {
+    display: none;
+  }
+  #player .playlist_section {
+    width: 100vw;
   }
 }

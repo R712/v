@@ -147,8 +147,8 @@
     .title {
         padding: 20px 0;
         font-weight: 700;
-        font-size: 3.2vw;
-        line-height: 3.6vw;
+        font-size: 38px;
+        line-height: 44px;
         white-space: pre-line;
         text-shadow: 0 0 3px rgba(0, 0, 0, .3);
         &:hover {
@@ -2485,11 +2485,9 @@ input[type=checkbox] {
     }
     a {
         display: inline-block;
+        margin-right: 12px;
         color: rgba(255, 255, 255, .5);
         text-decoration: none;
-        &+a {
-            margin-left: 12px;
-        }
         &:hover {
             text-decoration: underline;
         }
@@ -2499,10 +2497,11 @@ input[type=checkbox] {
     }
     .item {
         display: inline-block;
+        margin-right: 16px;
         padding: 4px 0;
-    }
-    .item+.item {
-        margin-left: 16px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
     .item_head {
         margin-right: 6px;
@@ -2625,7 +2624,58 @@ input[type=checkbox] {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+    #header {
+        left: -100%;
+    }
+    .home,
+    .home .player_controller {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+    .footer,
+    .home .container {
+        margin-left: 0;
+        .content {
+            padding: 0 50px;
+        }
+    }
+    .footer>div {
+        margin: 0 50px;
+    }
+    .admin_banner_section {
+        margin-left: -50px;
+        width: calc(100% + 100px);
+        a {
+            border-radius: 0;
+            .img_m {
+                display: block;
+            }
+            .img_pc {
+                display: none;
+            }
+        }
+    }
+    .today_headline {
+        margin-top: 0;
+        margin-left: -50px;
+        width: calc(100% + 100px);
+        .link_wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 420px;
+        }
+    }
+    .today_headline .text_area {
+        padding: 50px;
+        height: inherit;
+    }
+    .today_section {
+        padding-top: 50px;
+    }
     .today_section>div>div {
         .list_item {
             min-width: calc((100% - 40px) / 2) !important;
@@ -2635,7 +2685,35 @@ input[type=checkbox] {
         width: 100% !important;
         .list_item {
             margin-left: 0;
+            margin-bottom: 0 !important;
             min-width: 100% !important;
+        }
+    }
+    #player {
+        .song_info {
+            .info_area {
+                width: 120px;
+            }
+            .option_area {
+                display: none;
+                margin-left: 5px;
+            }
+        }
+        .control_area {
+            position: relative;
+            left: inherit;
+            top: inherit;
+            margin-left: 20px;
+        }
+        .playtime,
+        .volume_area,
+        .btn_shuffle,
+        .btn_repeat,
+        .cover_section {
+            display: none;
+        }
+        .playlist_section {
+            width: 100vw;
         }
     }
 }
