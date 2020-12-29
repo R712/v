@@ -16,6 +16,7 @@
     --v-radius-l: 10px;
     --v-radius: 0;
     --v-radius-s: 3px;
+    --v-font-xl: 20px;
     --v-font-l: 17px;
     --v-font-m: 15px;
     --v-font-s: 13px;
@@ -253,12 +254,15 @@ a.section_title {
     .title {
         display: block;
         margin-top: 12px;
+        max-height: 48px;
         letter-spacing: 0;
         font-weight: 600;
-        font-size: 15px;
-        line-height: 1.4;
+        font-size: var(--v-font-m);
+        line-height: 24px;
         word-break: keep-all;
         white-space: pre-line;
+        text-overflow: ellipsis;
+        overflow: hidden;
         &:hover {
             text-decoration: underline;
         }
@@ -416,12 +420,13 @@ a.section_title {
     .list_wrap_larger.is_mag {
         .list_item {
             min-width: calc((100% - 40px) / 3);
-            margin-bottom: 20px;
             font-size: 20px;
         }
         .title {
+            max-height: 56px;
             font-weight: 600;
-            font-size: 20px;
+            font-size: var(--v-font-xl);
+            line-height: 28px;
         }
         .sub {
             display: none;
