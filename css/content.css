@@ -3657,10 +3657,14 @@ input[type=checkbox]:checked:after {
 }
 
 @media (max-width: 767px) {
+  html {
+    height: 100vh;
+  }
   body.noscroll .home {
     overflow: hidden;
   }
   body {
+    height: 100%;
     overflow: hidden;
   }
   .home {
