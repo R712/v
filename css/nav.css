@@ -932,6 +932,7 @@
             transform: rotate(45deg);
   }
   #header .btn_search {
+    z-index: 11;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1007,7 +1008,6 @@
             flex-direction: column;
     margin: 0;
     padding: 0;
-    width: calc(100% - 50px);
     background: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);

@@ -2017,6 +2017,7 @@ a.section_title {
     .menu_list {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         margin: 30px 0 50px;
         li {
             position: relative;
@@ -2030,6 +2031,7 @@ a.section_title {
             opacity: .5;
             font-weight: 600;
             font-size: 18px;
+            white-space: nowrap;
             transition: opacity .1s ease-in-out;
             &:hover {
                 opacity: 1;
@@ -2692,7 +2694,8 @@ input[type=checkbox] {
         width: calc(100% + 20px);
     }
     .list_wrap_station .list_item,
-    .station_wrap .list_item {
+    .station_wrap .list_item,
+    .subend_section .list_item {
         width: calc((100% - 60px) / 3);
     }
     .home,
