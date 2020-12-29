@@ -63,7 +63,7 @@
         font-weight: 700;
         font-size: 34px;
         line-height: 40px;
-        white-space: nowrap;
+        word-break: keep-all;
     }
     .description {
         display: block;
@@ -156,7 +156,7 @@
         &.now {
             background: #EA3323 url('../svg/i-now.svg') no-repeat center;
         }
-        & + .badge {
+        &+.badge {
             margin-left: -20px;
         }
     }
@@ -613,10 +613,12 @@
     justify-content: space-between;
     margin-top: 70px;
     .item {
+        flex: 1;
         position: relative;
         width: calc((100% - 140px) / 3);
         text-align: center;
-        & + .item {
+        overflow: hidden;
+        &+.item {
             margin-left: 70px;
         }
         &:first-child .ranking {
@@ -642,11 +644,14 @@
             border-radius: 50%;
         }
         .link_artist_multiline {
-            display: inline-block;
+            display: block;
             margin-top: 10px;
             font-weight: 700;
             font-size: 28px;
             line-height: 32px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             &:hover {
                 text-decoration: underline;
             }
@@ -695,7 +700,7 @@
         flex-direction: row;
         align-items: center;
         padding: 10px 0;
-        & + li::before {
+        &+li::before {
             content: '';
             position: absolute;
             right: 0;
@@ -704,7 +709,7 @@
             height: 1px;
             background: var(--v-c-border);
             transform: scaleY(0.5);
-        } 
+        }
     }
     .image {
         order: -1;
@@ -784,7 +789,7 @@
             background: url('https://vibe.naver.com/img/giftcard_3x.6bea6b80.png') no-repeat center top;
             background-size: 400px;
             border-radius: 20px;
-            box-shadow: 0 1px 1px rgba(0,0,0,.3), 0 9px 27px rgba(0,0,0,.3);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 9px 27px rgba(0, 0, 0, .3);
         }
     }
     .input_text {
@@ -903,6 +908,103 @@
 .after_register {
     display: none;
 }
+
 .break {
     display: block;
+}
+
+@media (max-width: 1273px) {
+    .benefit_list {
+        &::before {
+            display: none;
+        }
+        flex-direction: column;
+        align-items: center;
+        .list_item {
+            padding: 20px 0;
+        }
+        .list_item::before {
+            top: inherit;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            transform: scaleY(0.5);
+        }
+    }
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    section+.admin_banner_section {
+        margin: 80px 0 20px -50px;
+        border-radius: 0;
+        a {
+            width: 100%;
+        }
+        .img_pc {
+            display: none;
+        }
+        .img_m {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .membership_menu {
+        margin-top: 50px;
+    }
+    .section_item h3 {
+        margin: 0 auto;
+        width: 270px;
+        font-size: 28px;
+        line-height: 1.4;
+        text-align: center;
+    }
+    .section_item .description.point {
+        margin: 0 auto;
+        width: 320px;
+        font-size: 18px;
+        text-align: center;
+    }
+    .product_list,
+    .option_section .option_list {
+        flex-direction: column;
+        .list_item {
+            width: 100%;
+        }
+        .product_box,
+        .option_box {
+            margin: 10px 0;
+        }
+    }
+    .ranking_top .item {
+        flex: 1;
+        width: calc((100% -20px) / 3);
+    }
+    .ranking_top .item+.item {
+        margin-left: 10px;
+    }
+    .ranking_top .item .link_artist_multiline {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .membership_menu {
+        margin-top: 0;
+    }
+    .my_section .title {
+        font-size: 20px;
+    }
+    .banner_area {
+        .image_pc {
+            display: none;
+        }
+        .image_mobile {
+            display: block;
+        }
+    }
 }

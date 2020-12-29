@@ -19,7 +19,7 @@
 #header {
   z-index: 555;
   position: fixed;
-  bottom: 81px;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,13 +51,6 @@
           transform: scaleX(0.5);
 }
 
-#header:focus-within .menu_item,
-#header:focus-within .extra_menu {
-  opacity: .2;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
 #header.on_scroll {
   background: var(--v-blur-bg);
   -webkit-backdrop-filter: blur(20px);
@@ -73,6 +66,10 @@
   background-size: 158px;
 }
 
+#header .btn_search {
+  display: none;
+}
+
 #header .my_menu {
   padding: 0 0 30px 50px;
   width: 300px;
@@ -86,6 +83,10 @@
 
 #header .my_menu .ly_menu {
   width: 200px;
+}
+
+#header > .search_area {
+  display: none;
 }
 
 #header .menu_list {
@@ -305,7 +306,6 @@
 #header .profile_area .img_wrap img {
   display: block;
   width: 100%;
-  height: 100%;
 }
 
 #header .profile_area .nickname {
@@ -319,7 +319,7 @@
   width: calc(100% - 38px);
   color: var(--v-c-white);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 52px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -530,7 +530,8 @@
   opacity: 1;
 }
 
-#header .extra_menu {
+#header .extra_menu,
+#header .extra_menu_m {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -543,7 +544,8 @@
   padding-top: 30px;
 }
 
-#header .extra_menu:before {
+#header .extra_menu:before,
+#header .extra_menu_m:before {
   content: '';
   position: absolute;
   left: 0;
@@ -555,29 +557,39 @@
           transform: scaleY(0.5);
 }
 
-#header .extra_menu a {
+#header .extra_menu a,
+#header .extra_menu_m a {
   height: 36px;
   font-weight: 600;
   font-size: 17px;
 }
 
-#header .extra_menu a:hover {
+#header .extra_menu a:hover,
+#header .extra_menu_m a:hover {
   opacity: 0.8;
 }
 
-#header .extra_menu a.on, #header .extra_menu a.on:hover {
+#header .extra_menu a.on, #header .extra_menu a.on:hover,
+#header .extra_menu_m a.on,
+#header .extra_menu_m a.on:hover {
   color: var(--v-c-point);
 }
 
 #header .extra_menu .link_wheresmymoney,
 #header .extra_menu .link_musician_league,
-#header .extra_menu .link_onstage {
+#header .extra_menu .link_onstage,
+#header .extra_menu_m .link_wheresmymoney,
+#header .extra_menu_m .link_musician_league,
+#header .extra_menu_m .link_onstage {
   display: block;
 }
 
 #header .extra_menu .link_wheresmymoney:before,
 #header .extra_menu .link_musician_league:before,
-#header .extra_menu .link_onstage:before {
+#header .extra_menu .link_onstage:before,
+#header .extra_menu_m .link_wheresmymoney:before,
+#header .extra_menu_m .link_musician_league:before,
+#header .extra_menu_m .link_onstage:before {
   content: '';
   display: block;
   width: 90px;
@@ -589,13 +601,17 @@
   background-color: var(--v-c-white);
 }
 
-#header .extra_menu .link_wheresmymoney:hover:before,
-#header .extra_menu .link_musician_league:hover:before,
-#header .extra_menu .link_onstage:hover:before {
-  background-color: var(--v-c-point);
+#header .extra_menu .link_wheresmymoney:hover,
+#header .extra_menu .link_musician_league:hover,
+#header .extra_menu .link_onstage:hover,
+#header .extra_menu_m .link_wheresmymoney:hover,
+#header .extra_menu_m .link_musician_league:hover,
+#header .extra_menu_m .link_onstage:hover {
+  opacity: 0.8;
 }
 
-#header .extra_menu .link_wheresmymoney:before {
+#header .extra_menu .link_wheresmymoney:before,
+#header .extra_menu_m .link_wheresmymoney:before {
   width: 82px;
   -webkit-mask-image: url("../svg/i-wheresmymoney.svg");
           mask-image: url("../svg/i-wheresmymoney.svg");
@@ -603,7 +619,8 @@
           mask-size: 82px;
 }
 
-#header .extra_menu .link_onstage:before {
+#header .extra_menu .link_onstage:before,
+#header .extra_menu_m .link_onstage:before {
   width: 104px;
   -webkit-mask-image: url("../svg/i-onstage.svg");
           mask-image: url("../svg/i-onstage.svg");
@@ -611,7 +628,8 @@
           mask-size: 104px;
 }
 
-#header .extra_menu .link_musician_league:before {
+#header .extra_menu .link_musician_league:before,
+#header .extra_menu_m .link_musician_league:before {
   width: 104px;
   -webkit-mask-image: url("../svg/i-musician-league.svg");
           mask-image: url("../svg/i-musician-league.svg");
@@ -816,4 +834,275 @@
 
 .content .extra_menu ~ .today_section {
   padding-top: 40px;
+}
+
+@media (max-width: 767px) {
+  #header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    top: 0;
+    bottom: inherit;
+    padding: 0 15px;
+    width: 100%;
+    height: 70px;
+  }
+  #header .btn_menu {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  #header .btn_menu:after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 18px;
+    border: 2px solid var(--v-c-white);
+    border-width: 2px 0;
+  }
+  #header .btn_menu:before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--v-c-white);
+  }
+  #header .btn_menu.on {
+    border: 0;
+  }
+  #header .btn_menu.on:after, #header .btn_menu.on:before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 18px;
+    width: 26px;
+    height: 2px;
+    border: 0;
+    background: var(--v-c-white);
+  }
+  #header .btn_menu.on::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  #header .btn_menu.on:after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  #header .btn_search {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+  #header .btn_search:after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--v-c-white);
+    border-radius: 10px;
+  }
+  #header .btn_search:before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 24px;
+    width: 10px;
+    height: 2px;
+    background: var(--v-c-white);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  #header .btn_search.on {
+    -webkit-mask: none;
+            mask: none;
+    background: none;
+  }
+  #header .btn_search.on:after, #header .btn_search.on:before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 18px;
+    width: 26px;
+    height: 2px;
+    border: 0;
+    background: var(--v-c-white);
+  }
+  #header .btn_search.on::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  #header .btn_search.on:after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  #header .link_logo {
+    margin: 0;
+    width: 128px;
+    background-size: 128px;
+  }
+  #header .my_menu,
+  #header .floating_area,
+  #header .search_area {
+    display: none;
+  }
+  #header .search_area {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+    padding: 24px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  #header .search_area .input_area::after {
+    top: 15px;
+    left: 15px;
+  }
+  #header .search_area .input_area input {
+    padding: 0 24px 0 46px;
+    height: 50px;
+    list-style: 50px;
+  }
+  #header .search_area.on {
+    top: 70px;
+  }
+  #header .recent_keyword_area {
+    left: 0;
+    top: 98px;
+    margin: 0 24px;
+    width: calc(100% - 48px);
+    border-radius: 0;
+  }
+  #header .recent_keyword_area .keyword_title,
+  #header .recent_keyword_area .recent_keyword {
+    height: 44px;
+    font-size: 20px;
+  }
+  #header.on:before {
+    display: none;
+  }
+  #header.on .my_menu {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px;
+    width: 100%;
+    height: calc(100vh - 150px);
+    background: var(--v-c-black);
+    overflow-y: scroll;
+  }
+  #header.on .my_menu:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 1px;
+    background: var(--v-c-border);
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  #header.on .my_menu .profile_area,
+  #header.on .my_menu .ly_menu {
+    width: auto;
+  }
+  #header.on .my_menu .profile_area .search_area,
+  #header.on .my_menu .ly_menu .search_area {
+    display: none;
+  }
+  #header.on .my_menu .profile_area {
+    border: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #header.on .my_menu .profile_area .profile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #header.on .my_menu .profile_area .img_wrap {
+    margin-right: 0;
+    width: 80px;
+    height: 80px;
+  }
+  #header.on .my_menu .profile_area .nickname {
+    width: auto;
+    font-size: 20px;
+  }
+  #header.on .menu_list .menu_item .link_menu {
+    height: 56px;
+    line-height: 56px;
+    font-size: 24px;
+  }
+  #header.on .extra_menu {
+    display: none;
+  }
+  #header.on .extra_menu_m {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #header.on .extra_menu_m a {
+    height: 44px;
+    font-size: 17px;
+    line-height: 44px;
+  }
+  #header.on .extra_menu_m .link_musician_league {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  #header.on .extra_menu_m .link_musician_league:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background: var(--v-c-border);
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
 }

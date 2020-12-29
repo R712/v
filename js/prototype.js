@@ -5,6 +5,7 @@
 const libraryList = $('.library_menu_list');
 const headerGNB = $('#header');
 const appContent = $('#content');
+const vibePlayer = $('#player');
 
 //
 // script로 html include 시키기. 미리보기용.
@@ -91,6 +92,32 @@ headerGNB.on('click', '.profile_m, .profile_area .profile', function(e) {
 });
 
 //
+// gnb mobile
+//
+let searchHtml = headerGNB.find('.search_area').clone();
+headerGNB.find('.btn_search').after(searchHtml);
+
+headerGNB.on('click', '.btn_menu', function() {
+    if (headerGNB.find('.search_area').hasClass('on')) {
+        headerGNB.find('.btn_search').removeClass('on');
+        headerGNB.find('.search_area').removeClass('on');
+    }
+    $('body').toggleClass('noscroll');
+    $(this).toggleClass('on');
+    headerGNB.toggleClass('on');
+});
+
+headerGNB.on('click', '.btn_search', function() {
+    if (headerGNB.hasClass('on')) {
+        $('body').removeClass('noscroll');
+        headerGNB.find('.btn_menu').removeClass('on');
+        headerGNB.removeClass('on');
+    }
+    $(this).toggleClass('on');
+    headerGNB.find('.search_area').toggleClass('on').find('input').focus();
+});
+
+//
 // Carousel preview (미리보기용)
 //
 $('.content').on('click', '.VueCarousel-navigation-next', function() {
@@ -144,17 +171,23 @@ $('.search_area').on('keydown', 'input', function() {
     $('.recent_keyword_area').slideUp(100);
 });
 
-// headerGNB.on('click', '.sub_menu_title', function() {
-//     $(this).next('ul').slideToggle(100);
-// });
-
-$('.player_controller').on('click', '.btn_playlist', function() {
-    $('#player').toggleClass('open');
-    $('body').toggleClass('noscroll');
+vibePlayer.on('click', '.btn_playlist', function() {
+    if (vibePlayer.hasClass('open')) {
+        vibePlayer.removeClass('open');
+        $('body').removeClass('noscroll');
+    } else {
+        vibePlayer.addClass('open');
+        $('body').addClass('noscroll');
+    }
 });
-
-$('.btn_shuffle, .btn_repeat').click(function() {
+vibePlayer.on('click', '.control_area .btn_now', function() {
+    $(this).toggleClass('play');
+});
+vibePlayer.on('click', '.btn_shuffle, .btn_repeat', function() {
     $(this).toggleClass('disabled');
+});
+vibePlayer.on('click', '.btn_volume', function() {
+    $(this).toggleClass('mute');
 });
 
 $('.summary_thumb').clone().prependTo('.floating_bar .title');
@@ -188,16 +221,16 @@ $('.link_library').on('click', function() {
 $('.library_menu .menu_item:nth-child(2)').on('click', function() {
     location.href = './archive-song.html';
 });
-$('.membership_menu .item:first-child, .link_membership').on('click', function(){
+$('.membership_menu .item:first-child, .link_membership').on('click', function() {
     location.href = './subscription.html';
 });
-$('.membership_menu .item:nth-child(2)').on('click', function(){
+$('.membership_menu .item:nth-child(2)').on('click', function() {
     location.href = './mymembership.html';
 });
-$('.membership_menu .item:nth-child(3)').on('click', function(){
+$('.membership_menu .item:nth-child(3)').on('click', function() {
     location.href = './listening.html';
 });
-$('.membership_menu .item:nth-child(4)').on('click', function(){
+$('.membership_menu .item:nth-child(4)').on('click', function() {
     location.href = './giftcard.html';
 });
 
@@ -212,14 +245,14 @@ function showPage() {
 }
 
 function loadingCheck() {
-    vibeApp = setTimeout(showPage, 3000);
+    vibeApp = setTimeout(showPage, 1800);
 }
 
 window.onload = function() {
     loadingCheck();
 }
 
-$('.loading_vibe').on('click', function(){
+$('.loading_vibe').on('click', function() {
     document.querySelector('.loading_vibe').style.display = 'none';
     document.getElementById('container').style.display = 'block';
 });
