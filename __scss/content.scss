@@ -2315,9 +2315,11 @@ body.noscroll {
     &::after {
         content: '';
         display: inline-block;
-        width: 20px;
+        width: 18px;
         height: 2px;
         background: var(--v-c-white);
+        border-radius: 0.5;
+        transition: none;
     }
     &::after {
         position: absolute;
