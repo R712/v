@@ -779,8 +779,14 @@
 }
 
 @media (max-width: 767px) {
+  #header.on ~ #player {
+    display: none;
+  }
+  #player .song_info .thumb {
+    display: none;
+  }
   #player .song_info .info_area {
-    width: 120px;
+    width: 130px;
   }
   #player .song_info .option_area {
     display: none;
@@ -790,7 +796,7 @@
     position: absolute;
     left: inherit;
     top: 0;
-    right: 100px;
+    right: 70px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

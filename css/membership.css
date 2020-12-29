@@ -451,7 +451,7 @@
 }
 
 .subscribe_section .inform_list {
-  margin-top: 20px;
+  margin-top: 10px;
   color: var(--v-c-gray);
   font-size: 13px;
   line-height: 18px;
@@ -460,17 +460,33 @@
 .subscribe_section .inform_list .list_item {
   position: relative;
   margin-top: 5px;
+  padding-left: 10px;
 }
 
 .subscribe_section .inform_list .list_item:before {
   content: '';
-  display: inline-block;
-  margin-right: 5px;
+  position: absolute;
+  left: 0;
+  top: 6px;
   width: 4px;
   height: 4px;
   background: var(--v-c-gray);
   border-radius: 2px;
   vertical-align: middle;
+}
+
+.subscribe_section .inform_list a {
+  color: var(--v-c-gray);
+  text-decoration: underline;
+}
+
+.subscribe_section .inform_list a.button_more {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.subscribe_section .inform_list a:hover {
+  color: var(--v-c-white);
 }
 
 .subscribe_section .link_subscribe {
@@ -508,12 +524,13 @@
 }
 
 .notice_section .title_area .link_subscribe_cancel {
-  padding: 0 20px;
+  padding: 0 15px;
   height: 34px;
   border: 1px solid var(--v-c-border);
   font-weight: 600;
   font-size: 13px;
   line-height: 34px;
+  white-space: nowrap;
   border-radius: 5px;
 }
 
@@ -658,7 +675,7 @@
 
 .my_section .link_area .item {
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 15px;
   height: 34px;
   border: 1px solid var(--v-c-border);
   font-weight: 600;
@@ -744,12 +761,13 @@
           align-items: center;
   justify-self: center;
   margin: 30px 0 10px;
-  padding: 0 50px;
+  padding: 0 20px;
   height: 50px;
   background: var(--v-c-white);
   color: var(--v-c-black);
   font-weight: 600;
   font-size: 17px;
+  white-space: nowrap;
   border-radius: 5px;
 }
 
@@ -1223,6 +1241,10 @@
     -webkit-transform: scaleY(0.5);
             transform: scaleY(0.5);
   }
+  .benefit_list .badge {
+    width: 100px;
+    height: 100px;
+  }
   .pc {
     display: none;
   }
@@ -1249,17 +1271,12 @@
     margin-top: 50px;
   }
   .section_item h3 {
-    margin: 0 auto;
     width: 270px;
     font-size: 28px;
     line-height: 1.4;
-    text-align: center;
   }
   .section_item .description.point {
-    margin: 0 auto;
-    width: 320px;
     font-size: 18px;
-    text-align: center;
   }
   .product_list,
   .option_section .option_list {
@@ -1296,8 +1313,24 @@
   .membership_menu {
     margin-top: 0;
   }
+  .membership_menu a {
+    font-size: 14px;
+  }
   .my_section .title {
     font-size: 20px;
+  }
+  .subscribe_section,
+  .recommend_area {
+    padding: 24px;
+  }
+  .subscribe_section .desc,
+  .subscribe_section .btn_url,
+  .recommend_area .desc,
+  .recommend_area .btn_url {
+    font-size: 15px;
+  }
+  .recommend_area {
+    text-align: center;
   }
   .banner_area .image_pc {
     display: none;

@@ -516,7 +516,7 @@ a.section_title {
         font-size: 14px;
         line-height: 24px;
         color: var(--v-c-gray);
-        white-space: pre-wrap;
+        white-space: pre-line;
         cursor: pointer;
         &+.btn_more {
             display: none;
@@ -543,7 +543,7 @@ a.section_title {
             bottom: 0;
             display: flex;
             width: 100%;
-            height: 40px;
+            height: 48px;
             align-items: center;
             justify-content: center;
             border-top: 1px solid var(--v-c-border-light);
@@ -1339,11 +1339,11 @@ a.section_title {
         font-weight: 400;
         font-size: 16px;
         line-height: 27px;
-        white-space: pre-line;
         text-overflow: ellipsis;
         overflow: hidden;
         span {
             opacity: .5;
+            white-space: pre-line;
         }
         .more {
             opacity: .5;
@@ -2151,6 +2151,7 @@ body.noscroll {
     .area_inner {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
     .play_option {
         display: flex;
@@ -2298,6 +2299,43 @@ body.noscroll {
         &.on {
             background-color: var(--v-c-point);
             mask-image: url('../svg/i-heart-fill.svg');
+        }
+    }
+}
+
+.btn_add {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 44px;
+    vertical-align: middle;
+    &::before,
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--v-c-white);
+    }
+    &::after {
+        position: absolute;
+        transform: rotate(90deg);
+    }
+    &.on {
+        &::before {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: var(--v-c-white);
+            -webkit-mask: url(../svg/input-checkmark.svg) no-repeat center;
+            mask: url(../svg/input-checkmark.svg) no-repeat center;
+            -webkit-mask-size: 15px;
+            mask-size: 15px;
+        }
+        &::after {
+            display: none;
         }
     }
 }
@@ -2625,9 +2663,11 @@ input[type=checkbox] {
     .list_wrap_artist {
         .list_item {
             min-width: calc((100% - 80px) / 4) !important;
+            font-size: 17px;
         }
     }
     .today_section>div>div {
+        width: calc(100% + 20px);
         .list_item {
             min-width: calc((100% - 60px) / 3) !important;
         }
@@ -2712,7 +2752,7 @@ input[type=checkbox] {
         overflow-x: hidden;
     }
     .home .container {
-        padding: 0 24px;
+        padding: 70px 24px 50px;
     }
     .footer>div {
         margin: 0 24px;
@@ -2733,16 +2773,22 @@ input[type=checkbox] {
     .home .container {
         margin-left: 0;
         .content {
-            margin-top: 80px;
+            margin-top: 0;
         }
     }
-    .admin_banner_section a {
-        .img_m {
-            display: block;
-            height: 80px;
-        }
-        .img_pc {
-            display: none;
+    .admin_banner_section {
+        margin: 0 0 0 -24px;
+        width: calc(100% + 48px);
+        height: 70px;
+        overflow: hidden;
+        a {
+            .img_m {
+                display: block;
+                height: 70px;
+            }
+            .img_pc {
+                display: none;
+            }
         }
     }
     .today_section>div>div {
@@ -2750,7 +2796,8 @@ input[type=checkbox] {
             min-width: calc((100% - 40px) / 2) !important;
         }
     }
-    .today_section .is_mag>div {
+    .today_section .is_mag>div,
+    .today_section .play_for>div {
         width: 100% !important;
         .list_item {
             margin-left: 0;
@@ -2761,8 +2808,10 @@ input[type=checkbox] {
     .list_wrap_video,
     .list_wrap_album,
     .list_wrap_artist {
+        width: calc(100% + 20px);
         .list_item {
-            min-width: calc((100% - 60px) / 3) !important;
+            min-width: calc((100% - 40px) / 2) !important;
+            font-size: 15px;
         }
     }
     .list_wrap_track_rank {
@@ -2778,6 +2827,14 @@ input[type=checkbox] {
     .end_section>h3 {
         font-size: 20px;
     }
+    .end_section .album_info_area {
+        .thumb_area {
+            width: 150px;
+        }
+        .text_area {
+            padding-left: 20px;
+        }
+    }
     .end_title,
     .library_title {
         font-size: 32px;
@@ -2788,6 +2845,7 @@ input[type=checkbox] {
     .summary_section {
         flex-direction: column;
         align-items: center;
+        padding-top: 50px;
         .summary_thumb {
             width: 200px;
             height: 200px;
@@ -2796,7 +2854,7 @@ input[type=checkbox] {
             display: flex;
             flex-direction: column;
             padding: 20px 0 0;
-            width: inherit;
+            width: 100%;
             .option_area {
                 position: relative;
                 left: inherit;
@@ -2813,6 +2871,7 @@ input[type=checkbox] {
             margin-top: 10px;
             font-size: 13px;
             line-height: 20px;
+            text-align: center;
         }
         .info,
         .song_info {
@@ -2836,6 +2895,10 @@ input[type=checkbox] {
     }
     .track_section .album {
         width: 140px;
+    }
+    .footer {
+        margin-top: 0;
+        padding-bottom: 30px;
     }
 }
 

@@ -157,7 +157,7 @@ $('a').each(function() {
     $(this).removeAttr('href');
 });
 
-$('.btn_like').on('click', function() {
+$('.btn_like, .btn_add').on('click', function() {
     $(this).toggleClass('on');
 });
 
@@ -255,4 +255,8 @@ window.onload = function() {
 $('.loading_vibe').on('click', function() {
     document.querySelector('.loading_vibe').style.display = 'none';
     document.getElementById('container').style.display = 'block';
+});
+
+$('.admin_banner_section').on('click', '.btn_close', function() {
+    $('.admin_banner_section').hide();
 });
