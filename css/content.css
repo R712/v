@@ -86,28 +86,29 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 0 0 5px 5px;
   overflow: hidden;
 }
 
 .admin_banner_section a img {
   display: block;
-  max-width: 90%;
-  max-height: 80px;
+  height: 50px;
 }
 
 .admin_banner_section a .img_m {
   display: none;
+  height: 60px;
 }
 
 .admin_banner_section .btn_close {
   z-index: 55;
   position: absolute;
   right: 0;
-  top: 0;
-  width: 52px;
+  top: 50%;
+  width: 50px;
   height: 50px;
   background: url("../svg/i-close.svg") no-repeat center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .today_headline {
@@ -3568,6 +3569,10 @@ input[type=checkbox]:checked:after {
   .home .container {
     padding: 0 50px;
   }
+  .admin_banner_section {
+    margin-left: -50px;
+    width: calc(100% + 100px);
+  }
   .footer > div {
     margin: 0 50px;
   }
@@ -3609,12 +3614,11 @@ input[type=checkbox]:checked:after {
     max-width: 100%;
     width: 100%;
   }
-  .admin_banner_section {
-    margin-left: -50px;
-    width: calc(100% + 100px);
+  .admin_banner_section a .img_m {
+    display: block;
   }
-  .admin_banner_section a {
-    border-radius: 0;
+  .admin_banner_section a .img_pc {
+    display: none;
   }
   .today_headline {
     margin-top: 0;
@@ -3706,15 +3710,7 @@ input[type=checkbox]:checked:after {
   .admin_banner_section {
     margin: 0 0 0 -20px;
     width: calc(100% + 40px);
-    height: 70px;
     overflow: hidden;
-  }
-  .admin_banner_section a .img_m {
-    display: block;
-    height: 70px;
-  }
-  .admin_banner_section a .img_pc {
-    display: none;
   }
   .today_section > div > div .list_item {
     min-width: calc((100% - 40px) / 2) !important;
