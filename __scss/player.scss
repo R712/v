@@ -203,19 +203,20 @@
     .control_area {
         position: absolute;
         left: 50%;
-        top: 24px;
+        top: 18px;
         margin-left: -120px;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 240px;
         a {
-            margin: 0 8px;
-            width: 32px;
-            height: 32px;
+            margin: 0 4px;
+            width: 44px;
+            height: 44px;
             transition: all .1s ease;
             &.btn_now {
                 order: 3;
+                margin: 0 10px;
                 background: url('../svg/i-play.svg') no-repeat center;
                 background-size: 22px;
                 &.play {
