@@ -12,7 +12,13 @@
     --v-c-input: #1C1C1E;
     --v-c-point: #FF0050;
     --v-min-width: 319px;
-    --v-max-width: 1460px;
+    --v-max-width: 1800px;
+    --v-radius-l: 10px;
+    --v-radius: 0;
+    --v-radius-s: 3px;
+    --v-font-l: 17px;
+    --v-font-m: 15px;
+    --v-font-s: 13px;
 }
 
 .wrap {
@@ -121,8 +127,8 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 60px 100px;
-        height: 480px;
+        padding: 40px;
+        height: 420px;
     }
     .icon_mag {
         width: 80px;
@@ -139,7 +145,7 @@
         }
     }
     .info {
-        opacity: .5;
+        opacity: .75;
         display: block;
         display: -webkit-box;
         width: 68%;
@@ -155,7 +161,7 @@
         overflow: hidden;
     }
     .sub {
-        opacity: .5;
+        opacity: .75;
         display: flex;
         margin-top: 10px;
         font-size: 15px;
@@ -167,13 +173,11 @@
             width: 3px;
             height: 3px;
             background: var(--v-c-white);
-            border-radius: 2px;
+            border-radius: var(--v-radius-s);
             vertical-align: middle;
         }
     }
 }
-
-.jamm_banner {}
 
 a.section_title {
     position: relative;
@@ -184,7 +188,7 @@ a.section_title {
         display: inline-block;
         margin-left: 8px;
         width: 15px;
-        height: 12px;
+        height: 20px;
         background-color: var(--v-c-white);
         mask: url('../svg/i-carousel-next.svg') no-repeat center;
         transform: translateX(-8px);
@@ -217,7 +221,7 @@ a.section_title {
             display: block;
             padding-bottom: 20px;
             font-weight: 700;
-            font-size: 22px;
+            font-size: 28px;
         }
         .link_view_all {
             opacity: .85;
@@ -240,7 +244,7 @@ a.section_title {
             overflow: hidden;
         }
         .artist {
-            opacity: .5;
+            opacity: .75;
         }
         a:hover {
             text-decoration: underline;
@@ -260,7 +264,7 @@ a.section_title {
         }
     }
     .link_sub {
-        opacity: .5;
+        opacity: .75;
         display: block;
         margin-top: 2px;
         font-size: 15px;
@@ -269,7 +273,7 @@ a.section_title {
         }
     }
     .sub {
-        opacity: .5;
+        opacity: .75;
         display: block;
         margin-top: 4px;
         height: 48px;
@@ -295,7 +299,7 @@ a.section_title {
     .list_item {
         margin-right: 20px;
         min-width: calc((100% - 80px) / 5);
-        font-size: 14px;
+        font-size: var(--v-font-m);
         transition: all .1s cubic-bezier(.210, .60, .350, 1);
         &:hover {
             .link:after {
@@ -349,7 +353,7 @@ a.section_title {
         width: 100%;
         max-height: 400px;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: var(--v-radius);
         img {
             position: relative;
             display: block;
@@ -365,7 +369,7 @@ a.section_title {
             top: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(225deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
             opacity: 0;
             transition: all .5s cubic-bezier(.210, .60, .350, 1);
         }
@@ -393,14 +397,14 @@ a.section_title {
             top: 40px;
             min-width: 150px;
             background: #FFF;
-            border-radius: 5px;
+            border-radius: var(--v-radius-s);
             a {
                 display: flex;
                 align-items: center;
                 padding: 0 14px;
                 color: var(--v-c-black);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: var(--v-font-m);
                 white-space: nowrap;
                 box-shadow: 0 1px rgba(0, 0, 0, .08);
                 &:hover {
@@ -419,6 +423,9 @@ a.section_title {
             font-weight: 600;
             font-size: 20px;
         }
+        .sub {
+            display: none;
+        }
     }
     // .list_wrap_news {
     //     position: relative;
@@ -434,7 +441,7 @@ a.section_title {
     //         justify-content: flex-end;
     //         width: 100%;
     //         height: 220px;
-    //         font-size: 17px;
+    //         font-size: var(--v-font-l);
     //         white-space: pre-line;
     //         text-shadow: 0 1px rgba(0,0,0,.15), 0 0 10px rgba(0,0,0,.20);
     //         background-image: linear-gradient(225deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));
@@ -457,7 +464,7 @@ a.section_title {
             }
         }
         .title {
-            font-size: 17px;
+            font-size: var(--v-font-l);
         }
     }
     .play_for {
@@ -471,25 +478,27 @@ a.section_title {
 
 .VueCarousel-navigation-prev,
 .VueCarousel-navigation-next {
+    opacity: .5;
     position: absolute;
-    top: 50%;
-    margin-top: -27px;
-    width: 20px;
-    height: 54px;
-    background-color: var(--v-c-border);
-    mask: url('../svg/i-carousel-arrow.svg') no-repeat center;
-    transition: all .1s ease-in-out;
+    top: 0;
+    width: 44px;
+    height: 100%;
+    background: var(--v-c-black) url('../svg/i-carousel-next.svg') no-repeat 11px center;
+    background-size: 24px;
+    transition: all .1s ease;
+    border-radius: 0 3px 3px 0;
     &:hover {
-        background-color: var(--v-c-white);
+        opacity: 1;
+        background-color: var(--v-c-border-light);
     }
 }
 
 .VueCarousel-navigation-prev {
-    left: -36px;
+    left: -44px;
 }
 
 .VueCarousel-navigation-next {
-    right: -36px;
+    right: -44px;
 }
 
 //
@@ -508,12 +517,12 @@ a.section_title {
         display: block;
         padding-bottom: 20px;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 28px;
     }
     p.lyrics {
         position: relative;
         padding: 0 0 20px;
-        font-size: 14px;
+        font-size: var(--v-font-m);
         line-height: 24px;
         color: var(--v-c-gray);
         white-space: pre-line;
@@ -532,7 +541,7 @@ a.section_title {
                 bottom: 0;
                 width: 100%;
                 height: 80px;
-                background: linear-gradient(to top, var(--v-c-black), rgba(0, 0, 0, .0));
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             }
         }
         &:after {
@@ -548,7 +557,7 @@ a.section_title {
             justify-content: center;
             border-top: 1px solid var(--v-c-border-light);
             background: var(--v-c-black);
-            border-radius: 4px;
+            border-radius: var(--v-radius);
             cursor: pointer;
         }
         &.hide:after {
@@ -622,7 +631,7 @@ a.section_title {
             display: block;
             width: 100%;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: var(--v-radius);
             img {
                 position: relative;
                 display: block;
@@ -638,7 +647,7 @@ a.section_title {
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background-image: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
                 opacity: 0;
                 transition: all .5s cubic-bezier(.210, .60, .350, 1);
             }
@@ -666,13 +675,13 @@ a.section_title {
                 top: 40px;
                 width: 150px;
                 background: #FFF;
-                border-radius: 5px;
+                border-radius: var(--v-radius-s);
                 a {
                     display: block;
                     padding: 8px 20px;
                     color: var(--v-c-black);
                     font-weight: 400;
-                    font-size: 14px;
+                    font-size: var(--v-font-m);
                     white-space: nowrap;
                     box-shadow: 0 1px rgba(0, 0, 0, .08);
                     &:hover {
@@ -693,7 +702,7 @@ a.section_title {
 
 .list_wrap_track_rank {
     position: relative;
-    font-size: 16px;
+    font-size: var(--v-font-l);
     >div {
         position: relative;
         overflow: hidden;
@@ -720,7 +729,7 @@ a.section_title {
             .thumb {
                 position: relative;
                 width: 60px;
-                border-radius: 3px;
+                border-radius: var(--v-radius-s);
                 overflow: hidden;
                 img {
                     width: 100%;
@@ -844,7 +853,7 @@ a.section_title {
         color: var(--v-c-white);
         font-weight: 600;
         font-size: 15px;
-        border-radius: 5px;
+        border-radius: var(--v-radius-s);
         cursor: pointer;
         &:after {
             opacity: .6;
@@ -879,7 +888,7 @@ a.section_title {
             padding: 10px 0;
             width: 25%;
             font-weight: 600;
-            font-size: 17px;
+            font-size: var(--v-font-l);
             transition: color .1s ease-in-out;
             &:after {
                 opacity: 0;
@@ -938,13 +947,12 @@ a.section_title {
             background: var(--v-c-input);
             font-weight: 600;
             font-size: 15px;
-            border-radius: 5px;
+            border-radius: var(--v-radius-s);
             overflow: hidden;
             transition: opacity .1s ease-in-out;
             .bar {
                 width: 4px;
                 height: 38px;
-                border-radius: 1px;
             }
             .text {
                 padding-left: 12px;
@@ -962,6 +970,7 @@ a.section_title {
 .list_wrap_artist,
 .list_wrap_station,
 .station_wrap {
+    position: relative;
     >div {
         position: relative;
         overflow: hidden;
@@ -1034,7 +1043,7 @@ a.section_title {
         display: block;
         width: 100%;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: var(--v-radius);
         img {
             position: relative;
             display: block;
@@ -1050,7 +1059,7 @@ a.section_title {
             top: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
             opacity: 0;
             transition: all .5s cubic-bezier(.210, .60, .350, 1);
         }
@@ -1078,13 +1087,13 @@ a.section_title {
             top: 40px;
             width: 150px;
             background: #FFF;
-            border-radius: 5px;
+            border-radius: var(--v-radius-s);
             a {
                 display: block;
                 padding: 8px 20px;
                 color: var(--v-c-black);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: var(--v-font-m);
                 white-space: nowrap;
                 box-shadow: 0 1px rgba(0, 0, 0, .08);
                 &:hover {
@@ -1103,6 +1112,7 @@ a.section_title {
 }
 
 .station_wrap {
+    width: calc(100% + 20px);
     .list_item {
         margin-top: 20px;
         width: calc((100% - 100px) / 5);
@@ -1117,12 +1127,12 @@ a.section_title {
     align-items: center;
     justify-content: center;
     padding: 0 15px;
-    height: 40px;
+    height: 44px;
     border: 1px solid var(--v-c-border);
     color: var(--v-c-white);
     font-weight: 600;
-    font-size: 16px;
-    border-radius: 4px;
+    font-size: var(--v-font-l);
+    border-radius: var(--v-radius-s);
     &:before {
         content: '';
         margin-right: 8px;
@@ -1208,7 +1218,7 @@ a.section_title {
             }
         }
         .artist {
-            opacity: .5;
+            opacity: .75;
         }
         a:hover {
             text-decoration: underline;
@@ -1229,7 +1239,7 @@ a.section_title {
         width: 100%;
         max-height: 400px;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: var(--v-radius);
         img {
             position: relative;
             display: block;
@@ -1245,7 +1255,7 @@ a.section_title {
             top: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
             opacity: 0;
             transition: all .5s cubic-bezier(.210, .60, .350, 1);
         }
@@ -1267,7 +1277,7 @@ a.section_title {
         }
     }
     .artist {
-        opacity: .5;
+        opacity: .75;
         display: block;
         font-size: 15px;
     }
@@ -1288,7 +1298,7 @@ a.section_title {
         position: relative;
         width: 280px;
         height: 280px;
-        border-radius: 6px;
+        border-radius: var(--v-radius);
         overflow: hidden;
         img {
             width: 100%;
@@ -1300,7 +1310,7 @@ a.section_title {
             top: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4));
+            background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, .4));
         }
     }
     .summary {
@@ -1326,9 +1336,9 @@ a.section_title {
     }
     .sub {
         margin-top: 4px;
-        opacity: .5;
+        opacity: .75;
         font-weight: 400;
-        font-size: 16px;
+        font-size: var(--v-font-l);
         .item {
             margin-right: 4px;
         }
@@ -1337,16 +1347,16 @@ a.section_title {
         margin-top: 20px;
         height: 81px;
         font-weight: 400;
-        font-size: 16px;
+        font-size: var(--v-font-l);
         line-height: 27px;
         text-overflow: ellipsis;
         overflow: hidden;
         span {
-            opacity: .5;
+            opacity: .75;
             white-space: pre-line;
         }
         .more {
-            opacity: .5;
+            opacity: .75;
             font-weight: 600;
             &:hover {
                 opacity: 1;
@@ -1363,7 +1373,7 @@ a.section_title {
         margin-top: 20px;
         height: 81px;
         font-weight: 400;
-        font-size: 16px;
+        font-size: var(--v-font-l);
         line-height: 27px;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -1407,11 +1417,11 @@ a.section_title {
         margin-top: 15px;
         text-align: center;
         .title {
-            font-size: 28px;
+            font-size: 36px;
         }
         .sub_title {
             margin-top: 5px;
-            font-size: 16px;
+            font-size: var(--v-font-l);
         }
     }
     .btn_like {
@@ -1455,7 +1465,7 @@ a.section_title {
         color: var(--v-c-white);
         font-weight: 500;
         font-size: 15px;
-        border-radius: 3px;
+        border-radius: var(--v-radius-s);
     }
 }
 
@@ -1469,7 +1479,7 @@ a.section_title {
     table {
         width: 100%;
         table-layout: fixed;
-        font-size: 16px;
+        font-size: var(--v-font-l);
         thead {
             display: none;
         }
@@ -1517,7 +1527,7 @@ a.section_title {
             .img_thumb {
                 width: 36px;
                 height: 36px;
-                border-radius: 3px;
+                border-radius: var(--v-radius-s);
                 transition: all .1s ease-in-out;
             }
         }
@@ -1527,7 +1537,7 @@ a.section_title {
             height: 18px;
             border: 0;
             background: var(--v-c-input);
-            border-radius: 2px;
+            border-radius: var(--v-radius-s);
             vertical-align: middle;
             cursor: pointer;
             &:hover {
@@ -1585,7 +1595,7 @@ a.section_title {
                 color: var(--v-c-gray);
                 font-weight: 500;
                 font-size: 10px;
-                border-radius: 2px;
+                border-radius: var(--v-radius-s);
             }
         }
         .artist_sub {
@@ -1597,16 +1607,16 @@ a.section_title {
     }
     .artist,
     .album {
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .75);
         a {
-            color: rgba(255, 255, 255, .5);
+            color: rgba(255, 255, 255, .75);
         }
     }
     .lyrics {
         width: 50px;
         text-align: center;
         .btn_lyrics {
-            opacity: .25;
+            opacity: .5;
             display: inline-block;
             background-color: var(--v-c-white);
             mask: url(../svg/i-lyric.svg) no-repeat center;
@@ -1629,11 +1639,11 @@ a.section_title {
             justify-content: center;
             width: 30px;
             height: 18px;
-            background: var(--v-c-input);
-            color: var(--v-c-gray);
+            background: var(--v-c-border);
+            color: rgba(255, 255, 255, 0.8);
             font-weight: 500;
             font-size: 10px;
-            border-radius: 2px;
+            border-radius: var(--v-radius-s);
         }
         a:hover:after {
             opacity: 1;
@@ -1657,7 +1667,7 @@ a.section_title {
             }
         }
         .btn_like {
-            opacity: .25;
+            opacity: .5;
             display: inline-block;
             width: 40px;
             height: 44px;
@@ -1700,8 +1710,7 @@ a.section_title {
             }
         }
         .thumb img {
-            opacity: .4;
-            filter: grayscale(100%);
+            opacity: .5;
         }
         .icon_play {
             opacity: 1;
@@ -1749,7 +1758,7 @@ a.section_title {
         position: relative;
         .u_cbox_write_inner {
             background: var(--v-c-input);
-            border-radius: 5px;
+            border-radius: var(--v-radius);
         }
         .u_cbox_profile_area {
             padding: 20px 82px 0px 20px;
@@ -1773,7 +1782,7 @@ a.section_title {
             height: 60px;
             border: none;
             background-color: transparent;
-            font-size: 16px;
+            font-size: var(--v-font-l);
             line-height: 1.25;
             letter-spacing: -0.5px;
             color: rgb(51, 51, 51);
@@ -1786,7 +1795,7 @@ a.section_title {
             top: 0px;
             right: 20px;
             left: 20px;
-            font-size: 14px;
+            font-size: var(--v-font-m);
             color: rgb(153, 153, 153);
             text-overflow: initial;
             white-space: normal;
@@ -1816,9 +1825,9 @@ a.section_title {
             background: rgb(0, 199, 60);
             border: 1px solid rgba(0, 0, 0, 0.1);
             color: rgb(255, 255, 255);
-            font-size: 16px;
+            font-size: var(--v-font-l);
             font-weight: 600;
-            border-radius: 5px;
+            border-radius: var(--v-radius);
         }
     }
     .u_cbox_cleanbot {
@@ -1827,13 +1836,13 @@ a.section_title {
         min-height: 22px;
         margin: 15px 0px -1px;
         padding: 10px 55px 8px 10px;
-        border-radius: 4px;
+        border-radius: var(--v-radius);
     }
     .u_cbox_cleanbot_setbutton {
         position: absolute;
         top: 13px;
         right: 12px;
-        font-size: 13px;
+        font-size: var(--v-font-s);
         line-height: 1.23;
         letter-spacing: -0.5px;
         color: rgb(119, 119, 119);
@@ -1856,7 +1865,7 @@ a.section_title {
     .list_item {
         margin: 0 20px 20px 0;
         width: calc((100% - 100px) / 5);
-        font-size: 14px;
+        font-size: var(--v-font-m);
         transition: all .1s cubic-bezier(.210, .60, .350, 1);
         &:hover {
             .link:after {
@@ -1910,7 +1919,7 @@ a.section_title {
         width: 100%;
         max-height: 400px;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: var(--v-radius);
         img {
             position: relative;
             display: block;
@@ -1926,7 +1935,7 @@ a.section_title {
             top: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(225deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
             opacity: 0;
             transition: all .5s cubic-bezier(.210, .60, .350, 1);
         }
@@ -1981,13 +1990,13 @@ a.section_title {
             top: 40px;
             width: 150px;
             background: #FFF;
-            border-radius: 5px;
+            border-radius: var(--v-radius-s);
             a {
                 display: block;
                 padding: 8px 20px;
                 color: var(--v-c-black);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: var(--v-font-m);
                 white-space: nowrap;
                 box-shadow: 0 1px rgba(0, 0, 0, .08);
                 &:hover {
@@ -1997,7 +2006,7 @@ a.section_title {
         }
     }
     .track_section table {
-        font-size: 14px;
+        font-size: var(--v-font-m);
         .artist {
             display: table-cell;
         }
@@ -2083,7 +2092,7 @@ a.section_title {
         width: 200px;
         background: #FFF;
         color: var(--v-c-black);
-        border-radius: 5px;
+        border-radius: var(--v-radius-s);
         a {
             color: var(--v-c-black);
         }
@@ -2091,13 +2100,13 @@ a.section_title {
             display: flex;
             flex-direction: row;
             padding: 12px;
-            font-size: 13px;
+            font-size: var(--v-font-s);
             box-shadow: 0 1px rgba(0, 0, 0, .08);
             .ly_link_thumb {
                 margin-right: 10px;
                 width: 40px;
                 height: 40px;
-                border-radius: 4px;
+                border-radius: var(--v-radius-s);
                 overflow: hidden;
                 img {
                     width: 100%;
@@ -2128,7 +2137,7 @@ a.section_title {
             padding: 0 20px;
             height: 36px;
             font-weight: 400;
-            font-size: 14px;
+            font-size: var(--v-font-m);
             line-height: 1;
             text-align: left;
             white-space: nowrap;
@@ -2165,12 +2174,12 @@ body.noscroll {
             justify-content: center;
             margin-right: 10px;
             padding: 0 20px;
-            height: 40px;
+            height: 44px;
             background: var(--v-c-border-light);
             color: var(--v-c-white);
             font-weight: 600;
             font-size: 15px;
-            border-radius: 3px;
+            border-radius: var(--v-radius-s);
         }
         .btn_play {
             background: var(--v-c-white);
@@ -2179,8 +2188,8 @@ body.noscroll {
                 content: '';
                 display: inline-block;
                 margin-right: 10px;
-                width: 12px;
-                height: 12px;
+                width: 16px;
+                height: 16px;
                 background-color: var(--v-c-black);
                 mask: url('../svg/i-play.svg') no-repeat center;
                 mask-size: 12px;
@@ -2220,7 +2229,7 @@ body.noscroll {
             min-width: 100px;
             max-width: 180px;
             background: #FFF;
-            border-radius: 5px;
+            border-radius: var(--v-radius-s);
             a {
                 display: flex;
                 align-items: center;
@@ -2228,7 +2237,7 @@ body.noscroll {
                 height: 36px;
                 color: var(--v-c-black);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: var(--v-font-m);
                 white-space: nowrap;
                 box-shadow: 0 1px rgba(0, 0, 0, .08);
                 &:hover {
@@ -2256,6 +2265,8 @@ body.noscroll {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        margin-left: -24px;
+        width: calc(100% + 48px);
         height: 0;
         background-color: var(--v-c-black);
         box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
@@ -2284,7 +2295,7 @@ body.noscroll {
             width: 50px;
             height: 50px;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: var(--v-radius);
             img {
                 width: 100%;
             }
@@ -2347,15 +2358,16 @@ body.noscroll {
 .floating_select {
     display: none;
     position: absolute;
-    left: 0;
+    left: -24px;
     top: 0;
-    padding: 15px 0;
-    width: 100%;
-    height: 120px;
-    background-color: var(--v-c-black);
+    padding: 15px 24px;
+    width: calc(100% + 48px);
+    height: 125px;
+    background-color: rgba(0, 0, 0, .9);
+    backdrop-filter: blur(10px);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
     transition: all .1s ease-in-out;
-    font-size: 14px;
+    font-size: var(--v-font-m);
     &:before {
         content: '';
         position: absolute;
@@ -2402,41 +2414,93 @@ body.noscroll {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
+            margin-left: 10px;
             padding: 0 15px;
-            height: 32px;
+            height: 40px;
             background: var(--v-c-border-light);
             color: var(--v-c-white);
-            font-weight: 400;
-            font-size: 13px;
-            border-radius: 3px;
+            font-weight: 600;
+            font-size: var(--v-font-m);
+            border-radius: var(--v-radius-s);
         }
         .btn_play_select {
+            order: -1;
             margin: 0;
             padding: 0 20px;
+            width: 120px;
             background: var(--v-c-white);
             color: var(--v-c-black);
             &:before {
                 content: '';
                 display: inline-block;
                 margin-right: 10px;
-                width: 12px;
-                height: 12px;
+                width: 16px;
+                height: 16px;
                 background-color: var(--v-c-black);
                 mask: url('../svg/i-play.svg') no-repeat center;
                 mask-size: 12px;
             }
         }
+        .btn_play_next {
+            &:before {
+                content: '';
+                display: inline-block;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                background-color: var(--v-c-gray);
+                mask: url('../svg/i-add-next.svg') no-repeat center;
+            }
+        }
+        .btn_play_last {
+            &:before {
+                content: '';
+                display: inline-block;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                background-color: var(--v-c-gray);
+                mask: url('../svg/i-add-last.svg') no-repeat center;
+            }
+        }
+        .btn_add_playlist {
+            &:before {
+                content: '';
+                display: inline-block;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                background-color: var(--v-c-gray);
+                mask: url('../svg/i-add-playlist.svg') no-repeat center;
+            }
+        }
+        .btn_purchase {
+            &:before {
+                content: 'MP3';
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 8px;
+                width: 30px;
+                height: 18px;
+                background: var(--v-c-border);
+                color: rgba(255, 255, 255, 0.8);
+                font-weight: 500;
+                font-size: 10px;
+                border-radius: var(--v-radius-s);
+            }
+        }
     }
     .btn_close {
         position: absolute;
-        right: 0;
-        top: 20px;
-        width: 32px;
-        height: 32px;
-        background-color: var(--v-c-white);
-        mask: url('../svg/i-close.svg') no-repeat center;
-        mask-size: 14px;
+        right: 24px;
+        top: 50%;
+        width: 44px;
+        height: 44px;
+        background: var(--v-c-border) url('../svg/i-close.svg') no-repeat center;
+        background-size: 18px;
+        border-radius: var(--v-radius-s);
+        transform: translateY(-50%);
     }
 }
 
@@ -2513,9 +2577,8 @@ input[type=checkbox] {
     .notice {
         display: flex;
         padding: 20px 0;
-        font-size: 14px;
+        font-size: var(--v-font-m);
         line-height: 1;
-        border-radius: 3px;
         >.link {
             font-weight: 700;
         }
@@ -2624,7 +2687,7 @@ input[type=checkbox] {
         width: 80px;
         height: 80px;
         background: linear-gradient(to bottom, #8401E2, #FF1150);
-        border-radius: 4px;
+        border-radius: var(--v-radius);
     }
     &:after {
         content: url('../svg/loader.svg');
@@ -2667,7 +2730,7 @@ input[type=checkbox] {
     .list_wrap_artist {
         .list_item {
             min-width: calc((100% - 80px) / 4) !important;
-            font-size: 17px;
+            font-size: var(--v-font-l);
         }
     }
     .today_section>div>div {
@@ -2820,17 +2883,17 @@ input[type=checkbox] {
         }
     }
     .list_wrap_track_rank {
-        font-size: 14px;
+        font-size: var(--v-font-m);
     }
     .list_wrap_genre .link_box a {
-        font-size: 14px;
+        font-size: var(--v-font-m);
     }
     .list_wrap_genre .link_box {
         width: calc((100% - 30px) / 3);
     }
     .today_section h3 .section_title,
     .end_section>h3 {
-        font-size: 20px;
+        font-size: 22px;
     }
     .end_section .album_info_area {
         .thumb_area {
@@ -2874,7 +2937,7 @@ input[type=checkbox] {
         .info,
         .song_info {
             margin-top: 10px;
-            font-size: 13px;
+            font-size: var(--v-font-s);
             line-height: 20px;
             text-align: center;
         }

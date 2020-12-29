@@ -150,6 +150,24 @@ function stickyNav() {
 
 $('.tracklist').on('click', 'input', function() {
     $('.tracklist').find(':checked').length ? appContent.addClass('on-checked') : appContent.removeClass('on-checked');
+    let selectedTrack = $('.tracklist').find(':checked').length;
+    $('.count_track').html(selectedTrack + '곡 선택');
+});
+
+$('#chk_all, .label_check').click(function() {
+    if($('#chk_all').is(':checked')) {
+        $('.tracklist').find(':checkbox').prop('checked', true);
+        let selectedTrack = $('.tracklist').find(':checked').length;
+        $('.count_track').html(selectedTrack + '곡 선택');
+    } else {
+        $('.tracklist').find(':checkbox').prop('checked', false);
+        appContent.removeClass('on-checked');
+    }
+});
+
+$('.floating_select').on('click', '.btn_close', function() {
+    $('.tracklist').find(':checked').prop('checked', false);
+    appContent.removeClass('on-checked');
 });
 
 $('a').each(function() {
@@ -257,6 +275,8 @@ $('.loading_vibe').on('click', function() {
     document.getElementById('container').style.display = 'block';
 });
 
+
+// 배너 지우기
 $('.admin_banner_section').on('click', '.btn_close', function() {
     $('.admin_banner_section').hide();
 });

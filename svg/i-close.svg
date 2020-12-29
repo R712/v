@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Combined Shape</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g stroke="none" stroke-width="1.5" fill="none" fill-rule="evenodd">
         <g id="Sidebar" transform="translate(-1359.000000, -19.000000)" fill="#FFFFFF">
             <path d="M1365.66641,25 L1371,30.3335927 L1370.33359,31 L1365,25.6664073 L1359.66641,31 L1359,30.3335927 L1364.33359,25 L1359,19.6664073 L1359.66641,19 L1365,24.3335927 L1370.33359,19 L1371,19.6664073 L1365.66641,25 Z" id="Combined-Shape"></path>
         </g>

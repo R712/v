@@ -637,6 +637,25 @@
           mask-size: 104px;
 }
 
+#header .extra_menu .link_musician_league,
+#header .extra_menu_m .link_musician_league {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+#header .extra_menu .link_musician_league:after,
+#header .extra_menu_m .link_musician_league:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 1px;
+  background: var(--v-c-border);
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+
 #header .floating_area {
   margin-top: auto;
   padding: 20px;
@@ -1140,18 +1159,9 @@
     line-height: 44px;
   }
   #header.on .extra_menu_m .link_musician_league {
-    position: relative;
     margin-bottom: 20px;
   }
   #header.on .extra_menu_m .link_musician_league:after {
-    content: '';
-    position: absolute;
-    left: 0;
     bottom: -5px;
-    width: 100%;
-    height: 1px;
-    background: var(--v-c-border);
-    -webkit-transform: scaleY(0.5);
-            transform: scaleY(0.5);
   }
 }
