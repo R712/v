@@ -1119,11 +1119,13 @@
     display: none;
   }
   #header.on .my_menu .profile_area {
-    border: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-bottom: 20px;
+    height: 132px;
+    border: 0;
   }
   #header.on .my_menu .profile_area .profile {
     -webkit-box-orient: vertical;
@@ -1163,5 +1165,8 @@
   }
   #header.on .extra_menu_m .link_musician_league:after {
     bottom: -5px;
+  }
+  .ly_option {
+    visibility: hidden;
   }
 }

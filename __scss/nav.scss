@@ -889,8 +889,10 @@
                     }
                 }
                 .profile_area {
-                    border: 0;
                     flex-direction: column;
+                    margin-bottom: 20px;
+                    height: 132px;
+                    border: 0;
                     .profile {
                         flex-direction: column;
                     }
@@ -928,5 +930,8 @@
                 }
             }
         }
+    }
+    .ly_option {
+        visibility: hidden;
     }
 }
