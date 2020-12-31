@@ -20,6 +20,10 @@
   --v-font-l: 17px;
   --v-font-m: 15px;
   --v-font-s: 13px;
+  --v-font-xxxxl: 34px;
+  --v-font-xxxl: 28px;
+  --v-font-xxl: 22px;
+  --v-font-xs: 12px;
 }
 
 .wrap {

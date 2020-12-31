@@ -9,6 +9,9 @@
 */
 
 :root {
+    //
+    //  color rule
+    //
     --v-c-black: #000;
     --v-c-gray: #8E8E93;
     --v-c-white: #FFF;
@@ -16,15 +19,25 @@
     --v-c-border-light: #151515;
     --v-c-input: #1C1C1E;
     --v-c-point: #FF0050;
+    //
+    //  layout and style rule
+    //
     --v-min-width: 319px;
     --v-max-width: 1800px;
     --v-radius-l: 10px;
     --v-radius: 0;
     --v-radius-s: 3px;
+    //
+    //  font size rule
+    //
     --v-font-xl: 20px;
     --v-font-l: 17px;
     --v-font-m: 15px;
     --v-font-s: 13px;
+    --v-font-xxxxl: 34px;
+    --v-font-xxxl: 28px;
+    --v-font-xxl: 22px;
+    --v-font-xs: 12px;
 }
 
 #player {
