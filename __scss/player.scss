@@ -269,6 +269,10 @@
             &.disabled {
                 opacity: .4;
             }
+            &:active {
+                transform: scale(0.92);
+                opacity: .9;
+            }
         }
     }
     .volume_area {
@@ -351,10 +355,6 @@
             vertical-align: middle;
             transition: none;
         }
-    }
-    a:active {
-        transform: scale(0.92);
-        opacity: .9;
     }
 }
 

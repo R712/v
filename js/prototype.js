@@ -190,6 +190,13 @@ $('.floating_bar').prependTo('.content');
 $('.floating_select').appendTo('.floating_bar');
 
 //
+//  ON/OFF 상태를 보유한 버튼 제어
+//
+$('.btn_like, .btn_add').click(function() {
+    $(this).toggleClass('on');
+});
+
+//
 //  미리보기용 URL 연결
 //  +
 //  임시 하이퍼링크 제거
