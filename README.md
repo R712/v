@@ -2,11 +2,12 @@
 
 - - -
 
-### 목차 바로가기
+## <a id="guidemap" href="#guidemap">🧭</a> 목차 
+해당 섹션의 제목 옆 🧭 클릭시 이 곳으로 돌아옵니다.
 
 0. [안녕하세요](#prologue)
 1. [HTML 기본](#html-base)
-     [HTML 부가 요소](#html-add)
+    * [HTML 부가 요소](#html-add)
     * [유틸리티 클래스](#html-uitility)
     * [스티키 플로팅 바](#exp-sticky)
 2. [CSS 가이드](#css)
@@ -20,7 +21,7 @@
 
 - - -
 
-## 안녕하세요 <a id="prologue" href="#prologue">#</a>
+## 안녕하세요 <a id="prologue" href="#prologue"></a> [🧭](#guidemap)
 
 * 뼈대가 되는 마크업은 라이브 서버의 브라우저상에서 가져온 HTML입니다. 따라서 프론트엔드 개발 내부 설정과 프로세스에 따라 컴파일 과정을 유추하는데 한계가 있는 배경에서 디자이너 겸 퍼블리셔에 의해 작성된 내용입니다.
 * 위 내용때문에 class명과 html구조 전반적으로 기존 개발팀에서 작성한 내용을 따랐습니다.
@@ -34,7 +35,7 @@
 
 - - -
 
-## HTML 기본 <a id="html-base" href="#html-base">#</a>
+## HTML 기본 <a id="html-base" href="#html-base"></a> [🧭](#guidemap)
 
 기본적으로 아래와 같은 구조로 레이아웃이 구성되어 있습니다.
 
@@ -67,7 +68,7 @@
 
 - - -
 
-## HTML 부가 요소 <a id="html-add" href="#html-add">#</a>
+## HTML 부가 요소 <a id="html-add" href="#html-add">.</a> [🧭](#guidemap)
 
 **프리로더** pre-loader
 ```html
@@ -96,7 +97,7 @@
 
 - - -
 
-## 유틸리티 클래스 <a id="html-utility" href="#html-utility">#</a>
+## 유틸리티 클래스 <a id="html-utility" href="#html-utility">.</a> [🧭](#guidemap)
 
 아래는 바이브 웹 전역에서 사용중인 클래스명입니다.
 
@@ -129,7 +130,7 @@ ON/OFF와 같이 상태를 표시해야 하는 경우 `.on` 클래스를 추가�
 </a>
 ```
 
-## 스티키 플로팅 바 <a id="exp-sticky" href="#exp-sticky">#</a>
+## 스티키 플로팅 바 <a id="exp-sticky" href="#exp-sticky">.</a> [🧭](#guidemap)
 
 **해당되는 예시 페이지**
 * 보관함 - 노래
@@ -157,7 +158,7 @@ function stickyNav() {
 
 - - -
 
-## CSS <a id="css-rule" href="#css">#</a>
+## CSS 가이드 <a id="css-rule" href="#css">#</a> [🧭](#guidemap)
 
 이 작업은 `VScode`에서 `SCSS`를 이용하여 작성한 후, `Live Sass Compiler` 플러그인을 이용하여 최종 컴파일 된 CSS를 사용합니다. 작업자 기준 상황에 따라 유연한 선에서 아래를 지키며 작성되었습니다.
 
@@ -193,7 +194,7 @@ function stickyNav() {
 
 - - -
 
-## 전역 변수 사용법 <a id="css-config" href="#css-config">#</a>
+## 전역 변수 사용법 <a id="css-config" href="#css-config">#</a> [🧭](#guidemap)
 
 반복되어서 사용되는 컬러, 사이즈 등은 CSS의 최상단에 전역 설정인 `:root {...}` 를 이용해 아래처럼 사용할 수 있습니다. 기본적으로 보통의 개발언어에서 변수를 사용하는 법과 같습니다.   
 
@@ -243,7 +244,7 @@ function stickyNav() {
 
 - - -
 
-## 자주 사용된 CSS 트릭 <a id="css-trick" href="#css-trick">#</a>
+## 자주 사용된 CSS 트릭 <a id="css-trick" href="#css-trick">#</a> [🧭](#guidemap)
 
 **일반적인 방법으로 중앙 정렬 잡기 어려울 때**
 > 요소의 높이값이 고정인 경우 transform 대신에 margin값을 빼서 작성하여도 되나, 해상도마다 다른 크기여서 하나하나 작성하는 번거로움을 줄이면서 규격이 고정이지 않은 경우 용이합니다.
@@ -275,7 +276,7 @@ function stickyNav() {
 
 - - -
 
-## SVG 마스크 제어 <a id="css-mask" href="#css-mask">#</a>
+## SVG 마스크 제어 <a id="css-mask" href="#css-mask">#</a> [🧭](#guidemap)
 
 현재 반복되어 사용되는 단일컬러의 SVG는 컬러 제어가 필요한 경우 두가지 이상의 같은 모양의 아이콘을 사용하지 않고, 단일 파일과 CSS의 `mask` 속성을 사용해 작성되었습니다. CSS의 `background` 사용법과 동일하지만 아래와 같이 다름을 유의해주세요.
 
@@ -310,7 +311,7 @@ function stickyNav() {
 
 - - -
 
-## 가상 요소를 이용한 꾸밈 <a id="css-deco" href="#css-deco">#</a>
+## 가상 요소를 이용한 꾸밈 <a id="css-deco" href="#css-deco">#</a> [🧭](#guidemap)
 
 현재 바이브의 전반적인 마크업 구조는 꾸밈요소인 아이콘을 CSS에서 가상요소를 만들어 스타일을 입힙니다. 이와 같은 방식으로 명료한 텍스트 라벨링인 [MP3 구매하기]와 시각적 아이콘 디자인을 분리할 수 있습니다.
 
@@ -335,7 +336,7 @@ function stickyNav() {
 
 - - -
 
-## 그라데이션 덮기 <a id="css-gradation" href="#css-gradation">#</a>
+## 그라데이션 덮기 <a id="css-gradation" href="#css-gradation">#</a> [🧭](#guidemap)
 
 앨범 아트 등 썸네일에는 마우스오버시 그라데이션이 덮입니다. 아래와 같은 스타일로 작성되어 있습니다.
 
@@ -356,7 +357,7 @@ function stickyNav() {
 
 - - -
 
-## 0.5px 만드는 법 <a id="css-half-border" href="#css-half-border">#</a>
+## 0.5px 만드는 법 <a id="css-half-border" href="#css-half-border">#</a> [🧭](#guidemap)
 디자이너의 시안과 레티나 디스플레이 등에선 0.5px를 표현이 가능합니다.   
 다만 현재 표준 브라우저들의 대부분은 1px이 최소값이므로 섬세한 표현이 꼭 필요한 경우 아래와 같은 원리로 표현할 수 있습니다.
 * 현재 GNB 영역의 seperator 참고
