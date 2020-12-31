@@ -3282,9 +3282,6 @@ input[type=checkbox]:checked:after {
   .home .container {
     padding: 0 50px;
   }
-  .admin_banner_section {
-    margin: 0 -50px;
-  }
   .footer > div {
     margin: 0 50px;
   }
@@ -3440,7 +3437,6 @@ input[type=checkbox]:checked:after {
     margin-top: 0;
   }
   .admin_banner_section {
-    margin: 0 -20px;
     overflow: hidden;
   }
   .today_section > div > div .list_item {
