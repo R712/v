@@ -1,47 +1,20 @@
 //
-// for design prototype
+//  Script for Design prototype
+//  디자인 facelift 시연용으로 작성된 스크립트
+//
+//  - 대부분 시연을 위한 스크립트로 실 개발용은 해당 기능에 상응하게 작성되어야 합니다.
+//  - 기존 작업된 마크업과 클래스명을 고치지 않고 디자인을 변경 및 제안하는 과정에서 필요에 의해 작성된 부분이 많습니다.
+//  - 특히 carousel UI의 경우 실제로는 [vue-carousel] 을 이용하는 것으로 보여 그에 맞게 주의해주세요.
 //
 
+//  고정 레이아웃 요소
 const libraryList = $('.library_menu_list');
 const headerGNB = $('#header');
 const appContent = $('#content');
 const vibePlayer = $('#player');
 
 //
-// script로 html include 시키기. 미리보기용.
-//
-function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("vibe-include-html");
-        if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                    if (this.status == 404) { elmnt.innerHTML = "페이지 호출에 실패한 것 같습니다."; }
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("vibe-include-html");
-                    includeHTML();
-                }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
-        }
-    }
-}
-
-includeHTML();
-
-//
-// 아이템 더보기
+//  아이템 옵션 레이어
 //
 $('.content').on('click', '.btn_option_now, .btn_option', function(e) {
     e.preventDefault();
@@ -71,6 +44,7 @@ headerGNB.on('click', '.profile_area .profile', function(e) {
     $('.ly_option').not(elmNav).hide();
     elmNav.toggle();
 });
+
 //
 //  일정량 스크롤 시에만 열린 레이어메뉴 닫기
 //
@@ -80,8 +54,8 @@ $(window).on('scroll', function(e) {
 });
 
 //
-// gnb nav control
-// 유저 메뉴 레이어 토글, 현재 메뉴 스타일링
+//  gnb nav control
+//  유저 메뉴 레이어 토글, 현재 메뉴 스타일링
 //
 headerGNB.on('click', '.profile_m, .profile_area .profile', function(e) {
     e.preventDefault();
@@ -92,10 +66,13 @@ headerGNB.on('click', '.profile_m, .profile_area .profile', function(e) {
 });
 
 //
-// gnb mobile
+//  gnb mobile
 //
+
+//  모바일에서 검색 화면을 위해 스크립트로 구조를 변경했으나, 마크업에서 직접 변경하면 필요없는 코드
 let searchHtml = headerGNB.find('.search_area').clone();
 headerGNB.find('.btn_search').after(searchHtml);
+//  여기까지
 
 headerGNB.on('click', '.btn_menu', function() {
     if (headerGNB.find('.search_area').hasClass('on')) {
@@ -118,7 +95,7 @@ headerGNB.on('click', '.btn_search', function() {
 });
 
 //
-// Carousel preview (미리보기용)
+//  Carousel preview (미리보기용이므로 실제 개발 상황에는 필요없습니다.)
 //
 $('.content').on('click', '.VueCarousel-navigation-next', function() {
     let motherSection = $(this).parent('div').find('.scroll_list');
@@ -130,11 +107,11 @@ $('.content').on('click', '.VueCarousel-navigation-next', function() {
     motherSection.find('.list_item').each(function() {
         sumWidth += parseInt($(this).width());
     });
-    motherSection.animate({ left: '-=' + parseInt(motherSection.closest('div').width() + 20, 10) + 'px' }, 60);
+    motherSection.animate({ left: '-=' + parseInt(motherSection.closest('div').width() + 20, 10) + 'px' }, 120);
     let motherPosition = motherSection.position();
     let motherX = (parseInt(motherPosition.left) * -1) + motherSection.closest('div').width();
     if (sumWidth <= motherX) {
-        motherSection.animate({ left: '0' }, 100)
+        motherSection.animate({ left: '0' }, 200)
     }
 });
 
@@ -148,12 +125,18 @@ function stickyNav() {
     scrollY >= 150 ? appContent.addClass('on-scroll') : appContent.removeClass('on-scroll');
 }
 
+//
+//  트랙리스트에서 체크박스 클릭시 마다 숫자 카운팅 후 반영
+//
 $('.tracklist').on('click', 'input', function() {
     $('.tracklist').find(':checked').length ? appContent.addClass('on-checked') : appContent.removeClass('on-checked');
     let selectedTrack = $('.tracklist').find(':checked').length;
     $('.count_track').html(selectedTrack + '곡 선택');
 });
 
+//
+//  전체 선택 체크박스 클릭시
+//
 $('#chk_all, .label_check').click(function() {
     if($('#chk_all').is(':checked')) {
         $('.tracklist').find(':checkbox').prop('checked', true);
@@ -165,30 +148,24 @@ $('#chk_all, .label_check').click(function() {
     }
 });
 
+//  선택된 곡 있을때 보이는 플로팅 레이어 닫기
 $('.floating_select').on('click', '.btn_close', function() {
     $('.tracklist').find(':checked').prop('checked', false);
     appContent.removeClass('on-checked');
 });
 
-$('a').each(function() {
-    // 임시 하이퍼링크 제거
-    $(this).removeAttr('href');
-});
-
-$('.btn_like, .btn_add').on('click', function() {
-    $(this).toggleClass('on');
-});
-
-$('.lyrics').on('click', function() {
-    $(this).toggleClass('hide');
-});
-
+//
+//  검색창에서 키입력시 최근 검색어 목록 호출
+//
 $('.search_area').on('keydown', 'input', function() {
     $('.recent_keyword_area').slideDown(100);
 }).on('focusout', 'input', function() {
     $('.recent_keyword_area').slideUp(100);
 });
 
+//
+//  바이브 뮤직 플레이어 미리보기 제어
+//
 vibePlayer.on('click', '.btn_playlist', function() {
     if (vibePlayer.hasClass('open')) {
         vibePlayer.removeClass('open');
@@ -214,7 +191,13 @@ $('.floating_select').appendTo('.floating_bar');
 
 //
 //  미리보기용 URL 연결
+//  +
+//  임시 하이퍼링크 제거
+//  미리보기시 기존 html코드의 수많은 각기 다른 url연결로 방해가 되어 제거 후 별도 연결
 //
+$('a').each(function() {
+    $(this).removeAttr('href');
+});
 $('.link_today, .link_logo').click(function() {
     location.href = './index.html';
 });
@@ -256,27 +239,23 @@ $('.membership_menu .item:nth-child(4)').on('click', function() {
 //  페이지 로더 미리보기용
 //
 let vibeApp;
-
 function showPage() {
     document.querySelector('.loading_vibe').style.display = 'none';
     document.getElementById('container').style.display = 'block';
 }
-
 function loadingCheck() {
     vibeApp = setTimeout(showPage, 1800);
 }
-
 window.onload = function() {
     loadingCheck();
 }
-
+//  미리보기용으로 during이 임의로 들어가있기때문에 클릭하면 닫히게 만듦
 $('.loading_vibe').on('click', function() {
     document.querySelector('.loading_vibe').style.display = 'none';
     document.getElementById('container').style.display = 'block';
 });
 
-
-// 배너 지우기
-$('.admin_banner_section').on('click', '.btn_close', function() {
+// 배너 닫기
+$('.admin_banner_section, .banner_area').on('click', '.btn_close', function() {
     $('.admin_banner_section').hide();
 });

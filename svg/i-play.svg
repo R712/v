@@ -1,10 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="9px" height="12px" viewBox="0 0 9 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Listening-Status" transform="translate(-602.000000, -695.000000)" fill="#ffffff">
-            <g id="Group-4" transform="translate(602.000000, 690.000000)">
-                <path d="M0,6.02329901 L0,15.976701 C0,16.8173283 0.99150829,17.2992464 1.69348969,16.7939342 L8.57420137,11.8156737 C9.14193288,11.4086166 9.14193288,10.5913834 8.57420137,10.1843263 L1.69348969,5.20606575 C0.99150829,4.70075359 0,5.18267167 0,6.02329901 Z" id="Fill-419"></path>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19">
+<path d="M1.707.75l13.235 7.792a.942.942 0 010 1.623L1.707 17.958a.942.942 0 01-1.42-.812V1.56A.942.942 0 011.707.75z" fill="#FFFFFF" fill-rule="evenodd"/>
 </svg>

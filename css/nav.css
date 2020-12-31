@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*
-    컬러 팔레트 정의
+    css setting
+    custom config
 */
 :root {
   --v-c-black: #000;
@@ -10,6 +11,15 @@
   --v-c-border-light: #151515;
   --v-c-input: #1C1C1E;
   --v-c-point: #FF0050;
+  --v-min-width: 319px;
+  --v-max-width: 1800px;
+  --v-radius-l: 10px;
+  --v-radius: 0;
+  --v-radius-s: 3px;
+  --v-font-xl: 20px;
+  --v-font-l: 17px;
+  --v-font-m: 15px;
+  --v-font-s: 13px;
 }
 
 /*
@@ -414,7 +424,7 @@
   background: var(--v-c-input);
   color: var(--v-c-white);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 40px;
   border-radius: 5px;
 }
@@ -892,7 +902,7 @@
     bottom: inherit;
     padding: 0 15px;
     width: 100%;
-    height: 70px;
+    height: 64px;
     background: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
@@ -962,7 +972,7 @@
   #header .btn_search:after {
     content: '';
     position: absolute;
-    left: 7px;
+    left: 8px;
     top: 7px;
     width: 18px;
     height: 18px;
@@ -972,9 +982,9 @@
   #header .btn_search:before {
     content: '';
     position: absolute;
-    left: 21px;
+    left: 22px;
     top: 24px;
-    width: 10px;
+    width: 8px;
     height: 2px;
     background: var(--v-c-white);
     -webkit-transform: rotate(45deg);
@@ -1005,8 +1015,8 @@
   }
   #header .link_logo {
     margin: 0;
-    width: 128px;
-    background-size: 128px;
+    width: 120px;
+    background-size: 120px;
   }
   #header .my_menu,
   #header .floating_area,
@@ -1032,7 +1042,7 @@
             backdrop-filter: blur(10px);
   }
   #header .search_area .input_area::after {
-    top: 22px;
+    top: 19px;
     left: 20px;
     width: 24px;
     height: 24px;
@@ -1042,8 +1052,8 @@
   #header .search_area .input_area input {
     padding: 0 24px 0 56px;
     background-color: var(--v-c-black);
-    height: 70px;
-    line-height: 70px;
+    height: 64px;
+    line-height: 64px;
     border-radius: 0;
   }
   #header .search_area .input_area input:focus {
@@ -1058,7 +1068,7 @@
   }
   #header .recent_keyword_area {
     left: 0;
-    top: 70px;
+    top: 64px;
     margin: 0;
     width: 100vw;
     background: rgba(20, 20, 20, 0.9);
@@ -1085,17 +1095,11 @@
   #header.on .my_menu {
     position: fixed;
     left: 0;
-    top: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    top: 64px;
+    display: block;
     padding: 50px;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 64px);
     background: var(--v-c-black);
     overflow-y: scroll;
   }
@@ -1119,6 +1123,9 @@
     display: none;
   }
   #header.on .my_menu .profile_area {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1145,7 +1152,7 @@
   #header.on .menu_list .menu_item .link_menu {
     height: 56px;
     line-height: 56px;
-    font-size: 24px;
+    font-size: 20px;
   }
   #header.on .extra_menu {
     display: none;

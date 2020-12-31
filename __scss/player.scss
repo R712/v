@@ -16,6 +16,15 @@
     --v-c-border-light: #151515;
     --v-c-input: #1C1C1E;
     --v-c-point: #FF0050;
+    --v-min-width: 319px;
+    --v-max-width: 1800px;
+    --v-radius-l: 10px;
+    --v-radius: 0;
+    --v-radius-s: 3px;
+    --v-font-xl: 20px;
+    --v-font-l: 17px;
+    --v-font-m: 15px;
+    --v-font-s: 13px;
 }
 
 #player {
@@ -203,12 +212,13 @@
     .control_area {
         position: absolute;
         left: 50%;
-        top: 18px;
+        top: 50%;
         margin-left: -120px;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 240px;
+        transform: translateY(-50%);
         a {
             margin: 0 4px;
             width: 44px;
@@ -282,7 +292,7 @@
                 position: relative;
                 width: 100%;
                 height: 4px;
-                border-radius: 1.5px;
+                border-radius: 5px;
                 background-color: var(--v-c-border);
             }
             .bar_now {
@@ -291,7 +301,7 @@
                 left: 0;
                 width: 43%;
                 height: 4px;
-                border-radius: 1.5px;
+                border-radius: 5px;
                 background-color: var(--v-c-gray);
             }
         }
@@ -310,7 +320,7 @@
         opacity: .4;
         position: absolute;
         right: 15px;
-        top: 15px;
+        top: 50%;
         width: 50px;
         height: 50px;
         background: var(--v-c-border);
@@ -318,6 +328,7 @@
         text-align: center;
         border-radius: 5px;
         transition: none;
+        transform: translateY(-50%);
         &::before {
             content: '';
             display: inline-block;
@@ -357,7 +368,6 @@
         .thumb_cover {
             width: 512px;
             height: 512px;
-            border-radius: 10px;
             overflow: hidden;
             img {
                 width: 100%;
@@ -401,7 +411,7 @@
             }
         }
         .normal_area {
-            padding: 16px 0 16px 10px;
+            padding: 16px 10px;
             height: calc(100vh - 160px);
             overflow-y: auto;
             overflow-x: hidden;
@@ -411,18 +421,17 @@
             position: relative;
             display: flex;
             flex-direction: row;
-            padding: 10px 0 10px 10px;
+            padding: 10px;
             width: 100%;
             height: 60px;
             font-size: 14px;
-            border-radius: 4px;
-            transition: all .1s ease-in-out;
+            border-radius: 3px;
+            transition: all .1s ease;
             .thumb {
                 position: relative;
                 margin-right: 10px;
                 width: 40px;
                 height: 40px;
-                border-radius: 3px;
                 overflow: hidden;
                 img {
                     width: 100%;
@@ -437,7 +446,6 @@
                 justify-content: center;
                 width: 40px;
                 height: 40px;
-                border-radius: 3px;
                 overflow: hidden;
                 &:after {
                     opacity: 0;
@@ -523,6 +531,7 @@
                         background: rgba(0, 0, 0, .8) url('../svg/i-pause.svg') no-repeat center;
                         background-size: 12px;
                         animation: none;
+                        transition: none;
                     }
                 }
                 .btn_delete {
@@ -588,16 +597,17 @@
                 margin-left: 5px;
             }
         }
+        .player_controller {
+            height: 64px;
+        }
         .player_controller .control_area {
             position: absolute;
             left: inherit;
-            top: 0;
             right: 70px;
             display: flex;
             align-items: center;
             margin-left: 0;
             width: 150px;
-            height: 80px;
         }
         .playtime,
         .volume_area,

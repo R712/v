@@ -13,6 +13,15 @@
   --v-c-border-light: #151515;
   --v-c-input: #1C1C1E;
   --v-c-point: #FF0050;
+  --v-min-width: 319px;
+  --v-max-width: 1800px;
+  --v-radius-l: 10px;
+  --v-radius: 0;
+  --v-radius-s: 3px;
+  --v-font-xl: 20px;
+  --v-font-l: 17px;
+  --v-font-m: 15px;
+  --v-font-s: 13px;
 }
 
 #player.open .btn_playlist {
@@ -269,7 +278,7 @@
 .player_controller .control_area {
   position: absolute;
   left: 50%;
-  top: 18px;
+  top: 50%;
   margin-left: -120px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -281,6 +290,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 240px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .player_controller .control_area a {
@@ -398,7 +409,7 @@
   position: relative;
   width: 100%;
   height: 4px;
-  border-radius: 1.5px;
+  border-radius: 5px;
   background-color: var(--v-c-border);
 }
 
@@ -408,7 +419,7 @@
   left: 0;
   width: 43%;
   height: 4px;
-  border-radius: 1.5px;
+  border-radius: 5px;
   background-color: var(--v-c-gray);
 }
 
@@ -426,7 +437,7 @@
   opacity: .4;
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 50%;
   width: 50px;
   height: 50px;
   background: var(--v-c-border);
@@ -435,6 +446,8 @@
   border-radius: 5px;
   -webkit-transition: none;
   transition: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .player_controller .btn_playlist::before {
@@ -491,7 +504,6 @@
 .ly_playlist .cover_section .thumb_cover {
   width: 512px;
   height: 512px;
-  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -552,7 +564,7 @@
 }
 
 .ly_playlist .playlist_section .normal_area {
-  padding: 16px 0 16px 10px;
+  padding: 16px 10px;
   height: calc(100vh - 160px);
   overflow-y: auto;
   overflow-x: hidden;
@@ -568,13 +580,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 10px 0 10px 10px;
+  padding: 10px;
   width: 100%;
   height: 60px;
   font-size: 14px;
-  border-radius: 4px;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
+  border-radius: 3px;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
 
 .ly_playlist .playlist_section .list_item .thumb {
@@ -582,7 +594,6 @@
   margin-right: 10px;
   width: 40px;
   height: 40px;
-  border-radius: 3px;
   overflow: hidden;
 }
 
@@ -605,7 +616,6 @@
           justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 3px;
   overflow: hidden;
 }
 
@@ -713,6 +723,8 @@
   background-size: 12px;
   -webkit-animation: none;
           animation: none;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .ly_playlist .playlist_section .list_item:hover .btn_delete {
@@ -793,10 +805,12 @@
     display: none;
     margin-left: 5px;
   }
+  #player .player_controller {
+    height: 64px;
+  }
   #player .player_controller .control_area {
     position: absolute;
     left: inherit;
-    top: 0;
     right: 70px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -806,7 +820,6 @@
             align-items: center;
     margin-left: 0;
     width: 150px;
-    height: 80px;
   }
   #player .playtime,
   #player .volume_area,
