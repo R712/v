@@ -10,7 +10,7 @@
     * [HTML 부가 요소](#html-add)
     * [유틸리티 클래스](#html-uitility)
     * [스티키 플로팅 바](#exp-sticky)
-2. [CSS 가이드](#css)
+2. [CSS 가이드](#css-rule)
     * [전역 변수 사용법](#css-config)
     * [자주 사용된 CSS 트릭](#css-trick)
     * [SVG 마스크 제어](#css-mask)
@@ -158,7 +158,7 @@ function stickyNav() {
 
 - - -
 
-## CSS 가이드 <a id="css-rule" href="#css">#</a> [🧭](#guidemap)
+## CSS 가이드 <a id="css-rule" href="#css-rule">#</a> [🧭](#guidemap)
 
 이 작업은 `VScode`에서 `SCSS`를 이용하여 작성한 후, `Live Sass Compiler` 플러그인을 이용하여 최종 컴파일 된 CSS를 사용합니다. 작업자 기준 상황에 따라 유연한 선에서 아래를 지키며 작성되었습니다.
 
