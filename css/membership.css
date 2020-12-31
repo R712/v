@@ -1187,32 +1187,6 @@
   color: var(--v-c-white);
 }
 
-.banner_area {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.banner_area .link {
-  display: block;
-  background: #5723EF;
-}
-
-.banner_area .image_pc {
-  display: block;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.banner_area .image_mobile {
-  display: none;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
 .btn_delete {
   display: inline-block;
   width: 22px;
@@ -1333,18 +1307,28 @@
     font-size: var(--v-font-m);
   }
   [role=tabpanel] {
-    padding: 50px 20px 0;
+    padding: 50px 0 0;
   }
   .section_item,
   .main_section {
-    padding-top: 50px;
+    padding: 50px 20px 0;
   }
   .my_section,
   .recommend_area,
-  .ranking_bottom,
   .before_register,
-  .before_register .notice_area {
-    margin-top: 50px;
+  .before_register .notice_area,
+  .subscribe_section {
+    margin: 40px 20px 0;
+  }
+  .my_section .my_section,
+  .recommend_area .my_section,
+  .before_register .my_section,
+  .before_register .notice_area .my_section,
+  .subscribe_section .my_section {
+    margin: 40px 0 0;
+  }
+  .ranking_bottom {
+    margin-top: 40px;
   }
   .my_section:first-child {
     margin-top: 20px;
@@ -1359,6 +1343,9 @@
   .recommend_area .btn_url {
     font-size: var(--v-font-m);
   }
+  .subscribe_section {
+    margin-bottom: 40px;
+  }
   .section_item h3,
   .option_section .option_title,
   .main_section .title,
@@ -1371,24 +1358,17 @@
   .my_section .my_area.default .main_text {
     font-size: var(--v-font-xl);
   }
+  .my_section .my_area.default {
+    padding: 50px 0;
+  }
   .main_section .month_list {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .banner_area {
-    margin: 0 -20px;
-    border-radius: 0;
-  }
-  .banner_area .image_pc {
-    display: none;
-  }
-  .banner_area .image_mobile {
-    display: block;
-  }
   .ranking_top {
     display: block;
-    margin: 50px 0;
+    margin: 40px 0;
   }
   .ranking_top .item {
     float: left;
