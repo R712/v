@@ -1,0 +1,110 @@
+/*
+    modal 팝업 레이어
+*/
+
+.modal {
+    display: none;
+    z-index: 30000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: grayscale(100%);
+    outline: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .layer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .ly_btn_area {
+        margin-top: 20px;
+    }
+    .ly_popup .ly_btn_area,
+    .window_popup .ly_btn_area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            height: 40px;
+            padding: 0 15px;
+            border-radius: 4px;
+            border: 1px solid #d7d7d7;
+            background-color: #fbfbfb;
+            font-size: 15px;
+            color: #000;
+            box-sizing: border-box;
+            &+a {
+                margin-left: 10px;
+            }
+            &.point {
+                border-color: #FF1150;
+                background-color: #FF1150;
+                color: #FFF;
+            }
+            &.disabled .point {
+                border: 1px solid #E9E9E9;
+                background-color: #E9E9E9;
+                cursor: default;
+            }
+        }
+    }
+    .ly_popup {
+        overflow-y: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0;
+        padding: 40px 0;
+        background: #FFF;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+        border-radius: 4px;
+        .ly_top_text {
+            display: block;
+            margin: 0 35px 10px;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 1.45;
+            text-align: center;
+        }
+        input[type=text] {
+            margin: 0 35px 4px;
+            padding: 10px;
+            width: 250px;
+            height: 40px;
+            border: 1px solid transparent;
+            background: #EDEDED;
+            color: #000;
+            font-size: 15px;
+            line-height: 40px;
+            border-radius: 4px;
+            &:focus {
+                border-color: rgba(255, 0, 80, .65);
+                box-shadow: 0 0 1px 3px rgba(255, 0, 80, .15);
+            }
+        }
+    }
+}
+
+//  폼 요소 도움말
+.form-alert {
+    display: none;
+    margin-top: 10px;
+    color: #FF1150;
+    font-size: 14px;
+    text-align: center;
+    &:before {
+        content: '!';
+        margin-right: 8px;
+        font-weight: 700;
+    }
+}

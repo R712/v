@@ -1,134 +1,350 @@
 @media (max-width: 767px) {
-	
-	/* Loading */
-	.loading_vibe:before { width: 60px; height: 60px; }
-	.loading_vibe:after { width: 60px; height: 60px; transform: translateY(-60px); }
-	
-	/* 리스트 아이템 */
-	.today_section .is_mag > div .list_item, .today_section .play_for > div .list_item { min-width: 60% !important; margin-right: 10px; }
-	.today_section .list_wrap_news .scroll_list .list_item { min-width: 60% !important; }
-	.today_section > div > div .list_item { min-width: 40% !important; margin-right: 10px; }
-	.today_section .play_for .scroll_list .list_item { min-width: 40% !important; margin-right: 10px; }
-	
-	.list_wrap_video .list_item, .list_wrap_album .list_item, .list_wrap_artist .list_item { min-width: 40% !important; margin-right: 10px; }
-	.list_wrap_video .list_item { min-width: 60% !important; margin-bottom: 0; }
-	
-	/* 투데이 배너 */
-	.todayTop .img_m { width: 80%; }
-  	
-  	/* 투데이 헤드라인 */
-	.today_headline .text_area { padding: 20px; }
-	.today_headline .icon_mag { width: 70px; }
-	.today_headline .title { padding: 10px 0; font-size: 28px; line-height: 34px; }
-	.today_headline .info { display: none; }
-	.today_headline .link_wrap { align-items: flex-start; height: 320px; }
-	.today_headline .link_wrap .link { width: 100%; height: 100%; }
-	.today_headline .sub { display: none; }
-	
-	
-	/* 투데이 매거진 */
-	.today_section { padding: 30px 0 0 20px; }
-	.today_section h3 .section_title { margin-bottom: 10px; }
-	.today_section h3 .section_title, .end_section > h3 { font-size: 20px; }
-	.VueCarousel-navigation-prev, .VueCarousel-navigation-next { display: none; }
-	.today_section .list_wrap_larger.is_mag .title { font-size: var(--v-font-l); line-height: 22px; }
-	
-	/* 투데이 뉴스 */
-	.today_section .list_wrap_news .title { line-height: 22px; max-height: 44px; }
-	
-	/* 투데이 공통 */
-	.today_section .is_mag > div, .today_section .play_for > div { width: calc(100% + 20px) !important; }
-	
-	/* 푸터 */
-	.footer .item { padding: 2px 0; }
-	.footer a { margin-right: 0;}
-	
-	/* 사이드바 */
-	#header.on .my_menu { padding: 40px 30px 30px; }
-	#header.on .menu_list .menu_item .link_menu { height: 46px; line-height: 46px; }
-	#header.on .my_menu .profile_area .nickname { font-size: 17px; line-height: 44px; }
-	#header.on .extra_menu_m a { height: 36px; line-height: 36px; font-size: 15px; }
-	
-	/* 플레이리스트 */
-	.ly_playlist .playlist_section .title_area { height: 60px; }
-	.ly_playlist .playlist_section .normal_area { height: calc(100vh - 120px); }
-	
-	
-	/* 차트 */
-	.end_title, .end_section, .top_wrap { margin: 30px 20px 0;}
-	.end_section > h3 { padding-bottom: 10px; }
-	.list_wrap_track_rank .list_item { min-width: 90%; }
-	.list_wrap_genre .link_box { width: 48%; }
-	
-	
-	/* 보관함 */
-	.library_menu { margin-top: 20px; }
-	.library_menu .menu_list a { font-size: 20px; }
-	.sub_list { width: 100%; margin: 0 20px; }
-	.list_wrap_station .list_item, .station_wrap .list_item, .subend_section .list_item { width: calc((100% - 80px) / 2)}
-	.option_area .btn_play, .option_area .btn_shuffle, .option_area .btn { margin-right: 0; }
-	.top_wrap .option_area .inner_option { width: 49%; }
-	.top_wrap .option_area { display: flex; justify-content: space-between; }
-	.play_option_area a, .play_control_area a { padding: 0; background-color: transparent; }
-	.play_option_area a + a, .play_control_area a + a { margin-left: 20px; }
-	.track_section .icon_play { left: 0; }
-	
-	
-	/* 플로팅 */
-	.floating_bar { top: 0; width: 100%; margin: 0; }
-	.floating_select { left: 0; width: 100%; padding: 20px; }
-	.floating_select .play_option_area .btn_play_select { background-color: white; }
-	
-	
-	/* 아티스트 */
-	.artist_summary_section { margin-top: 40px; }
-	.summary_section .summary_thumb:after, .artist_summary_section .summary_thumb:after { background: inherit; }
-	.artist_summary_section .summary_thumb { width: 180px; height: 180px; }
-	.artist_summary_section .title_area .title { font-size: 28px; font-weight: 700; }
-	.artist_summary_section .title_area .sub_title { font-size: var(--v-font-s); }
-	.track_section table .thumb .inner { padding: 5px 0 5px 0; }
-	.track_section .album { padding-left: 20px; }
-	
-	
-	
-	/* 멤버쉽 */
-	.membership_menu { z-index: 20; -webkit-backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.8);	 }
-	.membership_menu a { font-size: var(--v-font-m); }
-	.benefit_list { margin-top: 30px; }
-	.section_item h3, .option_section .option_title, .main_section .title, .before_register .main_text { font-size: 24px; }
-	.benefit_list .list_item { width: 100%;}
-	.benefit_list .badge { background-size: 60% 60% !important; }
-	.benefit_list .text_explain { font-size: var(--v-font-m); }
-	
-	.product_list .product_box, .product_list .option_box, .option_section .option_list .product_box, .option_section .option_list .option_box { margin: 5px 0; }
-	
-	.product_list .product_box { height: 180px; display: flex; align-items: center; justify-content: center;}
-	.product_list .product_box .text_wrap { height: auto; margin-bottom: 10px; }
-	.product_list .product_box .title { font-size: 24px; }
-	.product_list .product_box .charge { margin-bottom: 0; font-size: 20px; }
-	
-	.option_section .option_title { font-size: 24px; }
-	.option_section .option_list .option_box { padding: 0 20px; height: 90px; }
-	.option_section .option_list .title { font-size: 20px; }
-	.option_section .option_list .charge { font-size: 20px; }
-	ba
-	.subscribe_section .subscribe_title { font-size: 17px; }
-	.subscribe_section .total_charge { margin-top: 0; }
-	.subscribe_section .total_charge .point { font-size: 24px; }
-	.subscribe_section .link_subscribe { font-size: 20px; margin-top: 20px; }
-	
-	.recommend_area { margin: 0; }
-	
-	
-	.streaming_list { margin-top: 20px; }
-	.ranking_top { margin: 30px 0; }
-	.ranking_top .item:first-child .ranking { width: 60px; height: 112px; background-size: 100%; }
-	.ranking_top .item .image { width: 100%; }
-	.ranking_top .item .link_artist_multiline { font-size: 17px; margin-top: 5px; }
-	.ranking_top .item .play_info { font-size: 15px; padding-top: 0; }
-	
-	.ranking_bottom .image { width: 40px; height: 40px; }
-	.ranking_bottom li { font-size: 15px; }
-	
-	.before_register .btn_submit { margin: 15px 0 0; height: 40px; }
+    /* Loading */
+    .loading_vibe:before {
+        width: 60px;
+        height: 60px;
+    }
+    .loading_vibe:after {
+        width: 60px;
+        height: 60px;
+        transform: translateY(-60px);
+    }
+    /* 리스트 아이템 */
+    .today_section .is_mag>div .list_item,
+    .today_section .play_for>div .list_item {
+        min-width: 60% !important;
+        margin-right: 10px;
+    }
+    .today_section .list_wrap_news .scroll_list .list_item {
+        min-width: 60% !important;
+    }
+    .today_section>div>div .list_item {
+        min-width: 40% !important;
+        margin-right: 10px;
+    }
+    .today_section .play_for .scroll_list .list_item {
+        min-width: 40% !important;
+        margin-right: 10px;
+    }
+    .list_wrap_video .list_item,
+    .list_wrap_album .list_item,
+    .list_wrap_artist .list_item {
+        min-width: 40% !important;
+        margin-right: 10px;
+    }
+    .list_wrap_video .list_item {
+        min-width: 60% !important;
+        margin-bottom: 0;
+    }
+    /* 투데이 배너 */
+    .todayTop .img_m {
+        width: 80%;
+    }
+    /* 투데이 헤드라인 */
+    .today_headline .text_area {
+        padding: 20px;
+    }
+    .today_headline .icon_mag {
+        width: 70px;
+    }
+    .today_headline .title {
+        padding: 10px 0;
+        font-size: 28px;
+        line-height: 34px;
+    }
+    .today_headline .info {
+        display: none;
+    }
+    .today_headline .link_wrap {
+        align-items: flex-start;
+        height: 320px;
+    }
+    .today_headline .link_wrap .link {
+        width: 100%;
+        height: 100%;
+    }
+    .today_headline .sub {
+        display: none;
+    }
+    /* 투데이 매거진 */
+    .today_section {
+        padding: 30px 0 0 20px;
+    }
+    .today_section h3 .section_title {
+        margin-bottom: 10px;
+    }
+    .today_section h3 .section_title,
+    .end_section>h3 {
+        font-size: 20px;
+    }
+    .VueCarousel-navigation-prev,
+    .VueCarousel-navigation-next {
+        display: none;
+    }
+    .today_section .list_wrap_larger.is_mag .title {
+        font-size: var(--v-font-l);
+        line-height: 22px;
+    }
+    /* 투데이 뉴스 */
+    .today_section .list_wrap_news .title {
+        line-height: 22px;
+        max-height: 44px;
+    }
+    /* 투데이 공통 */
+    .today_section .is_mag>div,
+    .today_section .play_for>div {
+        width: calc(100% + 20px) !important;
+    }
+    /* 푸터 */
+    .footer .item {
+        padding: 2px 0;
+    }
+    .footer a {
+        margin-right: 0;
+    }
+    /* 사이드바 */
+    #header.on .my_menu {
+        padding: 40px 30px 30px;
+    }
+    #header.on .menu_list .menu_item .link_menu {
+        height: 46px;
+        line-height: 46px;
+    }
+    #header.on .my_menu .profile_area .nickname {
+        font-size: 17px;
+        line-height: 44px;
+    }
+    #header.on .extra_menu_m a {
+        height: 36px;
+        line-height: 36px;
+        font-size: 15px;
+    }
+    /* 플레이리스트 */
+    .ly_playlist .playlist_section .title_area {
+        height: 60px;
+    }
+    .ly_playlist .playlist_section .normal_area {
+        height: calc(100vh - 120px);
+    }
+    /* 차트 */
+    .end_title,
+    .end_section,
+    .top_wrap {
+        margin: 30px 20px 0;
+    }
+    .end_section>h3 {
+        padding-bottom: 10px;
+    }
+    .list_wrap_track_rank .list_item {
+        min-width: 90%;
+    }
+    .list_wrap_genre .link_box {
+        width: 48%;
+    }
+    /* 보관함 */
+    .library_menu {
+        margin-top: 20px;
+    }
+    .library_menu .menu_list {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    .library_menu .menu_list a {
+        font-size: 20px;
+    }
+    .sub_list {
+        width: 100%;
+        margin: 0 20px;
+    }
+    .top_wrap .library_title {
+        display: none;
+    }
+    .list_wrap_station .list_item,
+    .station_wrap .list_item,
+    .subend_section .list_item {
+        width: calc((100% - 40px) / 2)
+    }
+    .option_area .btn_play,
+    .option_area .btn_shuffle,
+    .option_area .btn {
+        margin-right: 0;
+    }
+    .top_wrap .option_area .inner_option {
+        width: 49%;
+    }
+    .top_wrap .option_area {
+        display: flex;
+        justify-content: space-between;
+    }
+    .play_option_area a,
+    .play_control_area a {
+        padding: 0;
+        background-color: transparent;
+    }
+    .play_option_area a+a,
+    .play_control_area a+a {
+        margin-left: 20px;
+    }
+    .track_section .icon_play {
+        left: 0;
+    }
+    /* 플로팅 */
+    .floating_bar {
+        top: 0;
+        width: 100%;
+        margin: 0;
+    }
+    .floating_select {
+        left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    .floating_select .play_option_area .btn_play_select {
+        background-color: white;
+    }
+    /* 아티스트 */
+    .artist_summary_section {
+        margin-top: 40px;
+    }
+    .summary_section .summary_thumb:after,
+    .artist_summary_section .summary_thumb:after {
+        background: inherit;
+    }
+    .artist_summary_section .summary_thumb {
+        width: 180px;
+        height: 180px;
+    }
+    .artist_summary_section .title_area .title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    .artist_summary_section .title_area .sub_title {
+        font-size: var(--v-font-s);
+    }
+    .track_section table .thumb .inner {
+        padding: 5px 0 5px 0;
+    }
+    .track_section .album {
+        padding-left: 20px;
+        max-width: 25%;
+    }
+    .track_section .option {
+        width: 40px;
+    }
+    .track_section .option .btn_option {
+        opacity: .5;
+    }
+    /* 멤버쉽 */
+    .membership_menu {
+        z-index: 20;
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .membership_menu a {
+        font-size: var(--v-font-m);
+    }
+    .benefit_list {
+        margin-top: 30px;
+    }
+    .section_item h3,
+    .option_section .option_title,
+    .main_section .title,
+    .before_register .main_text {
+        font-size: 24px;
+    }
+    .benefit_list .list_item {
+        width: 100%;
+    }
+    .benefit_list .badge {
+        background-size: 60% 60% !important;
+    }
+    .benefit_list .text_explain {
+        font-size: var(--v-font-m);
+    }
+    .product_list .product_box,
+    .product_list .option_box,
+    .option_section .option_list .product_box,
+    .option_section .option_list .option_box {
+        margin: 5px 0;
+    }
+    .product_list .product_box {
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .product_list .product_box .text_wrap {
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .product_list .product_box .title {
+        font-size: 24px;
+    }
+    .product_list .product_box .charge {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    .option_section .option_title {
+        font-size: 24px;
+    }
+    .option_section .option_list .option_box {
+        padding: 0 20px;
+        height: 90px;
+    }
+    .option_section .option_list .title {
+        font-size: 20px;
+    }
+    .option_section .option_list .charge {
+        font-size: 20px;
+    }
+    ba .subscribe_section .subscribe_title {
+        font-size: 17px;
+    }
+    .subscribe_section .total_charge {
+        margin-top: 0;
+    }
+    .subscribe_section .total_charge .point {
+        font-size: 24px;
+    }
+    .subscribe_section .link_subscribe {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .recommend_area {
+        margin: 0;
+    }
+    .streaming_list {
+        margin-top: 20px;
+    }
+    .ranking_top {
+        margin: 30px 0;
+    }
+    .ranking_top .item:first-child .ranking {
+        width: 60px;
+        height: 112px;
+        background-size: 100%;
+    }
+    .ranking_top .item .image {
+        width: 100%;
+    }
+    .ranking_top .item .link_artist_multiline {
+        font-size: 17px;
+        margin-top: 5px;
+    }
+    .ranking_top .item .play_info {
+        font-size: 15px;
+        padding-top: 0;
+    }
+    .ranking_bottom .image {
+        width: 40px;
+        height: 40px;
+    }
+    .ranking_bottom li {
+        font-size: 15px;
+    }
+    .before_register .btn_submit {
+        margin: 15px 0 0;
+        height: 40px;
+    }
 }

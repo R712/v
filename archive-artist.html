@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="ko" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" data-platform="pc">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="좋아하는 음악은 물론, 좋아할 음악까지 들려주는 취향 저격 뮤직 서비스">
+    <meta name="apple-itunes-app" content="app-id=1338631589">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://music-phinf.pstatic.net/20201019_118/16031004163365Jexk_JPEG/about.jpg">
+    <meta property="og:title" content="NAVER VIBE(바이브)">
+    <meta property="og:description" content="#나만을 위한 음악이 듣고 싶을 땐 #내돈내듣 VIBE.">
+    <meta property="og:url" content="https://vibe.naver.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://music-phinf.pstatic.net/20201019_118/16031004163365Jexk_JPEG/about.jpg">
+    <meta name="twitter:title" content="NAVER VIBE(바이브)">
+    <meta name="twitter:site" content="NAVER VIBE(바이브)">
+    <meta name="twitter:creator" content="VIBE">
+    <meta name="twitter:description" content="#나만을 위한 음악이 듣고 싶을 땐 #내돈내듣 VIBE.">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>NAVER VIBE(바이브)</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/player.css">
+    <!-- 모바일 기기 환경일 때 추가 로드할 CSS -->
+    <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/_mobile.css" />
+    <!-- 임시 데모용 owlcarousel2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+        </head>
+
+    <body>
+
+        <noscript><strong>자바스크립트가 비활성화 되어있어 화면을 표시할 수 없습니다. 브라우저 설정에서 자바스크립트를 활성화 후 다시 시도해 주세요.</strong></noscript>
+
+        <div id="app" class="wrap">
+
+            <div class="home">
+
+                <div id="u_skip"><a href="#content"><span>본문으로 바로가기</span></a><a href="#player"><span>플레이어로 바로가기(alt + 1)</span></a></div>
+                <div class="loading_vibe"></div>
+
+                <header id="header" class="header">
+                    <h1 class="logo">
+                        <a href="/" class="link_logo router-link-active"><span class="blind">VIBE</span></a>
+                    </h1>
+                    <a href="#" role="button" aria-expanded="false" class="btn_search">
+                        <span class="blind">검색</span>
+                    </a>
+                    <a href="#" role="button" aria-expanded="false" class="btn_menu"><span class="blind">전체 메뉴 펼쳐보기</span></a>
+                    <div class="my_menu">
+                        <!-- <a href="/today" aria-current="page" class="link_promotion in_topbar router-link-exact-active router-link-active">VIBE 시작하기</a>
+                    <a href="#" class="link_download"><span class="blind">Download VIBE</span></a><a href="/about" class="link_about">VIBE소개</a> -->
+                        <div class="profile_area">
+                            <div class="dropdown_wrap">
+                                <a href="#" role="button" aria-haspopup="menu" aria-expanded="false" class="profile">
+                                    <div class="img_wrap"><img src="img/avatar_dummy.jpg" alt="내 프로필"></div>
+                                    <div class="nickname"><span class="blind">내 닉네임</span><span class="text">정자동애옹이</span></div>
+                                </a>
+                                <div role="menu" class="ly_option">
+                                    <a href="/membership/my" class="ly_item" role="menuitem">My 멤버십</a>
+                                    <a href="https://m.post.naver.com/my.nhn?memberNo=42980762" role="menuitem" target="_blank" rel="noopener noreferrer" class="ly_item">공지사항</a>
+                                    <a href="https://nid.naver.com/user2/help/myInfo.nhn?lang=ko_KR" role="menuitem" target="_blank" rel="noopener noreferrer" class="ly_item">계정설정</a>
+                                    <a href="#" role="menuitem" class="ly_item">로그아웃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ly_menu">
+                            <div class="menu_area">
+                                <ul role="menu" class="menu_list">
+                                    <li role="presentation" class="menu_item">
+                                        <a href="#" role="menuitem" class="link_menu link_today">
+                                            <span class="text">투데이</span>
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="menu_item">
+                                        <a href="#" role="menuitem" class="link_menu link_chart"><span class="text">차트</span></a>
+                                    </li>
+                                    <li role="presentation" class="menu_item">
+                                        <a href="#" role="menuitem" class="link_menu link_dj"><span class="text">DJ 스테이션</span></a>
+                                    </li>
+                                    <li role="presentation" class="menu_item">
+                                        <a href="#" role="menuitem" class="link_menu link_mag"><span class="text">VIBE MAG</span></a>
+                                    </li>
+                                    <li role="presentation" class="menu_item">
+                                        <a href="#" role="menuitem" class="link_menu link_monthly"><span class="text">이달의 노래</span></a>
+                                    </li>
+                                    <li role="presentation" class="menu_item">
+                                        <a href="#" role="menuitem" class="link_menu link_library on"><span class="text">보관함</span></a>
+                                    </li>
+                                    <li class="search_area">
+                                        <span class="input_area"><input type="search" role="combobox" id="search_keyword" aria-expanded="false" aria-haspopup="listbox" title="검색창" placeholder="VIBE 검색" autocomplete="off" class="input_search"></span>
+                                        <a href="#" role="button" class="btn_close_search"><span class="blind">검색 닫기</span></a>
+                                        <div class="recent_keyword_area">
+                                            <h2 class="keyword_title"><span class="text">최근 검색어</span><a href="#" role="button" class="btn_delete_all"><span class="blind">전체 삭제</span></a></h2>
+                                            <ul role="listbox" class="recent_keyword_list">
+                                                <li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">백예린</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li>
+                                                <li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">프롬</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li>
+                                                <li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">Slow Motion</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li>
+                                                <li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">Slow Motion (Album Version)</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li>
+                                                <li role="presentation" class="keyword_list_item"><a href="#" role="option" aria-selected="false" class="recent_keyword"><span class="text">청하</span></a><a href="#" role="button" class="btn_delete"><span class="blind">삭제</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li role="presentation" class="menu_item item_library">
+                                        <div class="profile_m">
+                                            <div class="img_wrap"><img src="https://phinf.pstatic.net/contact/20190518_284/1558189944388DUerP_PNG/profileImage.png?type=s160" width="60" height="60" alt="내 프로필"></div>
+                                            <div class="text_wrap"><span class="nickname"><span class="blind">내 닉네임</span> 쿠크다스가루</span>
+                                            </div>
+                                            <div role="menu" class="ly_option">
+                                                <a href="/membership/my" class="ly_item" role="menuitem">My 멤버십</a>
+                                                <a href="https://m.post.naver.com/my.nhn?memberNo=42980762" role="menuitem" target="_blank" rel="noopener noreferrer" class="ly_item">공지사항</a>
+                                                <a href="https://nid.naver.com/user2/help/myInfo.nhn?lang=ko_KR" role="menuitem" target="_blank" rel="noopener noreferrer" class="ly_item">계정설정</a>
+                                                <a href="#" role="menuitem" class="ly_item">로그아웃</a>
+                                            </div>
+                                        </div>
+                                        <span class="sub_menu_title">보관함</span>
+                                        <ul role="menu">
+                                            <li role="presentation" class="sub_menu_item"><a href="/library/mixtapes" class="link_sub_menu" role="menuitem">믹스테잎</a></li>
+                                            <li role="presentation" class="sub_menu_item"><a href="/library/tracks" class="link_sub_menu" role="menuitem">노래</a></li>
+                                            <li role="presentation" class="sub_menu_item on"><a href="/library/artists" class="link_sub_menu" role="menuitem">아티스트</a></li>
+                                            <li role="presentation" class="sub_menu_item"><a href="/library/albums" class="link_sub_menu" role="menuitem">앨범</a></li>
+                                            <li role="presentation" class="sub_menu_item"><a href="/library/playlists" class="link_sub_menu" role="menuitem">플레이리스트</a></li>
+                                            <li role="presentation" class="sub_menu_item"><a href="/library/social-tracks" class="link_sub_menu" role="menuitem">받은노래</a></li>
+                                            <li role="presentation" class="sub_menu_item"><a href="/mp3/my" class="link_sub_menu" role="menuitem">구매한 MP3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div role="menu" class="extra_menu">
+                                    <a href="/wheresmymoney" target="_blank" rel="noopener noreferrer" class="link_extra link_wheresmymoney"><span class="blind">#내돈내듣</span></a>
+                                    <a href="#" class="link_extra link_onstage"><span class="blind">온스테이지</span></a>
+                                    <a href="https://music.naver.com/musicianLeague/contents/home.nhn" target="_blank" rel="noopener noreferrer" class="link_extra link_musician_league"><span class="blind">뮤지션리그</span></a>
+                                    <a href="/about" class="link_extra link_text" target="_blank" rel="noopener noreferrer">서비스 소개</a>
+                                    <a href="/membership/vibe" class="link_extra link_text link_membership" role="menuitem">
+                                멤버십 구독</a>
+                                </div>
+                                <div class="extra_menu_m">
+                                    <a href="/wheresmymoney" target="_blank" rel="noopener noreferrer" class="item link_wheresmymoney"><span class="blind">#내돈내듣</span></a>
+                                    <a href="#" class="item link_onstage"><span class="blind">온스테이지</span></a>
+                                    <a href="https://music.naver.com/musicianLeague/contents/home.nhn" target="_blank" rel="noopener noreferrer" class="item link_musician_league"><span class="blind">뮤지션리그</span></a>
+                                    <a href="/about" class="item" target="_blank" rel="noopener noreferrer">서비스 소개</a>
+                                    <a href="#" class="item link_membership">멤버십 구독</a>
+                                    <a href="#" class="item">My 멤버십</a>
+                                    <a href="https://m.post.naver.com/my.nhn?memberNo=42980762" target="_blank" rel="noopener noreferrer" class="item">공지사항</a>
+                                    <a href="https://nid.naver.com/user2/help/myInfo.nhn?lang=ko_KR" target="_blank" rel="noopener noreferrer" class="item">계정설정</a>
+                                    <a href="#" role="button" class="item">로그아웃</a>
+                                </div>
+                            </div>
+                            <a href="#" role="button" class="btn_close"><span class="blind">전체 메뉴 닫기</span></a>
+                        </div>
+                    </div>
+                    <div class="floating_area"><a href="/desktopapp" class="link_desktopapp">데스크톱앱 설치</a></div>
+                </header>
+
+                <div id="container" class="container">
+                    <div id="content" class="content">
+                        <div class="subend_section">
+                            <div class="top_wrap">
+                                <h2 class="library_title"><span class="sub">보관함</span><span class="main">아티스트</span></h2>
+                                <div class="function_area">
+                                    <div class="library_menu">
+                                        <ul role="menubar" class="menu_list owl-carousel">
+                                            <li role="presentation" class="menu_item"><a href="/library/mixtapes" class="link_menu" role="menuitem">믹스테잎</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/tracks" class="link_menu" role="menuitem">노래</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item on"><a href="/library/artists" aria-current="page" class="link_menu router-link-exact-active ">아티스트<span class="blind">현재 페이지</span></a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/albums" class="link_menu" role="menuitem">앨범</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/playlists" class="link_menu" role="menuitem">플레이리스트</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/social-tracks" class="link_menu" role="menuitem">받은노래</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/mp3/my" class="link_menu" role="menuitem">구매한 MP3</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div aria-hidden="true" class="floating_bar">
+                                <div class="bar_inner">
+                                    <div class="library_menu">
+                                        <ul role="menubar" class="menu_list">
+                                            <li role="presentation" class="menu_item"><a href="/library/mixtapes" class="link_menu" role="menuitem">믹스테잎</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/tracks" class="link_menu" role="menuitem">노래</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/artists" aria-current="page" class="link_menu router-link-exact-active router-link-active on" role="menuitem">아티스트<span class="blind">현재 페이지</span></a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/albums" class="link_menu" role="menuitem">앨범</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/playlists" class="link_menu" role="menuitem">플레이리스트</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/library/social-tracks" class="link_menu" role="menuitem">받은노래</a>
+                                            </li>
+                                            <li role="presentation" class="menu_item"><a href="/mp3/my" class="link_menu" role="menuitem">구매한 MP3</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_list">
+                                <ul>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/112579" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/112/112579.jpg?type=ff300_300&amp;v=20200508101508" class="v-lazy-image v-lazy-image-loaded" alt="아이유(IU)"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/112579" class="artist">아이유(IU)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/258892" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/258/258892.jpg?type=ff300_300&amp;v=20180809175101" class="v-lazy-image v-lazy-image-loaded" alt="Before You Exit"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/258892" class="artist">Before You Exit<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/486484" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/486/486484.jpg?type=ff300_300&amp;v=20180911195018" class="v-lazy-image v-lazy-image-loaded" alt="Fickle Friends"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/486484" class="artist">Fickle Friends<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/3000" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/003/3000.jpg?type=ff300_300&amp;v=20190724234801" class="v-lazy-image v-lazy-image-loaded" alt="Snow Patrol"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/3000" class="artist">Snow Patrol<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/2049" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/002/2049.jpg?type=ff300_300&amp;v=20190711173904" class="v-lazy-image v-lazy-image-loaded" alt="Travis"></a><a href="#" role="button"
+                                                    class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/2049" class="artist">Travis<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/12052" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/012/12052.jpg?type=ff300_300&amp;v=20190726100300" class="v-lazy-image v-lazy-image-loaded" alt="Death Cab for Cutie"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/12052" class="artist">Death Cab for Cutie<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/9458" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/009/9458.jpg?type=ff300_300&amp;v=20180911174605" class="v-lazy-image v-lazy-image-loaded" alt="Keane"></a><a href="#" role="button"
+                                                    class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/9458" class="artist">Keane<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/203948" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/203/203948.jpg?type=ff300_300&amp;v=20181018115641" class="v-lazy-image v-lazy-image-loaded" alt="Lana Del Rey"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/203948" class="artist">Lana Del Rey<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/243907" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/243/243907.jpg?type=ff300_300&amp;v=20180809182803" class="v-lazy-image v-lazy-image-loaded" alt="곽푸른하늘"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/243907" class="artist">곽푸른하늘<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/171416" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/171/171416.jpg?type=ff300_300&amp;v=20200831121708 " class="v-lazy-image v-lazy-image-loaded" alt="Fromm (프롬)"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/171416" class="artist">Fromm (프롬)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/243100" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/000/243/243100.jpg?type=ff300_300&amp;v=20201116175910" class="v-lazy-image v-lazy-image-loaded" alt="AKMU (악동뮤지션)"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/243100" class="artist">AKMU (악동뮤지션)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/1619511" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/artist/001/619/1619511.jpg?type=ff300_300&amp;v=20190424144907" class="v-lazy-image v-lazy-image-loaded" alt="Joypark (조이파크)"></a>
+                                                <a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/1619511" class="artist">Joypark (조이파크)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/339277" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="Shawn Mendes "></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/339277" class="artist">Shawn Mendes<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/366510" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="SURAN(수란)"></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/366510" class="artist">SURAN(수란)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/278016" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="Nieah(니아)"></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/278016" class="artist">Nieah(니아)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/314811" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="헤이즈 (Heize)"></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/314811" class="artist">헤이즈 (Heize)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/330256" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="잔나비"></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/330256" class="artist">잔나비<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/121224" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="f(x)"></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/121224" class="artist">f(x)<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/268313" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="Serebro"></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/268313" class="artist">Serebro<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                    <li class="list_item">
+                                        <div>
+                                            <div class="thumb_area">
+                                                <a href="/artist/125673" class="thumb"><img data-v-71785a38="" src="/img/default_artist.png" class="v-lazy-image" alt="사비나앤드론즈 "></a><a href="#" role="button" class="btn_like"><span class="blind">좋아요 취소</span></a>
+                                            </div>
+                                            <a href="/artist/125673" class="artist">사비나앤드론즈<span class="blind">아티스트 페이지로 이동</span></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn_more_list"><a href="#" role="button" class="link"><span class="text">더 보기</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="notice">
+                        <a data-v-3b78f1c8="" href="https://m.post.naver.com/my.nhn?memberNo=42980762" target="_blank" rel="noopener noreferrer" class="link">공지사항</a>
+                        <div data-v-3b78f1c8="" class="title">
+                            <ul data-v-3b78f1c8="">
+                                <li data-v-3b78f1c8="" class="list_item"><span data-v-3b78f1c8="" class="inner"><a data-v-3b78f1c8="" href="http://naver.me/GhIggacR" target="_blank" rel="noopener noreferrer" class="link">구독도 해지도 쉬운 VIBE!</a></span>
+                                </li>
+                                <li data-v-3b78f1c8="" class="list_item"><span data-v-3b78f1c8="" class="inner"><a data-v-3b78f1c8="" href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=29628009&amp;memberNo=42980762" target="_blank
+               " rel="noopener noreferrer" class="link">VIBE 2.0 : NOW. 다시듣기 / VIBE 노래방 / 나만의 EQ설정</a></span>
+                                </li>
+                                <li data-v-3b78f1c8="" class="list_item"><span data-v-3b78f1c8="" class="inner"><a data-v-3b78f1c8="" href="https://blog.naver.com/naver_diary/221843533625" target="_blank" rel="noopener noreferrer" class="link">[안내] 네이버 VIBE, 새로운 음원 사용료 정산 방식 도입</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div data-v-3b78f1c8="" class="naver_info">
+                        <span data-v-3b78f1c8="" class="item">네이버(주) 대표이사 한성숙</span>
+                        <div data-v-3b78f1c8=""><span data-v-3b78f1c8="" class="item"><span data-v-3b78f1c8="" class="item_head">사업자등록번호</span>220-81-62517</span><span data-v-3b78f1c8="" class="item"><span data-v-3b78f1c8="" class="item_head">통신판매업신고번호</span>제2006-경기성남-0692호</span>
+                        </div><address data-v-3b78f1c8=""><span data-v-3b78f1c8="" class="item"><span data-v-3b78f1c8="" class="item_head">주소</span>경기도 성남시 분당구 불정로 6 네이버 그린팩토리</span><span data-v-3b78f1c8="" class="item"><span data-v-3b78f1c8="
+               " class="item_head">대표전화</span>1588-3820</span><span data-v-3b78f1c8="" class="item"><span data-v-3b78f1c8="" class="item_head">이메일</span><a data-v-3b78f1c8="" href="mailto:ccnaver@naver.com" class="link_email
+               ">ccnaver@naver.com</a></span><span data-v-3b78f1c8="" class="item"><span data-v-3b78f1c8="" class="item_head">호스팅 서비스 제공</span>NAVER Business Platform</span></address>
+                    </div>
+                    <div data-v-3b78f1c8="" class="terms">
+                        <a data-v-3b78f1c8="" href="https://music.naver.com" target="_blank" rel="noopener noreferrer" class="item"><strong data-v-3b78f1c8="">(구) 네이버 뮤직</strong></a>
+                        <a data-v-3b78f1c8="" href="https://policy.naver.com/policy/privacy.html" target="_blank" rel="noopener noreferrer" class="item"><strong data-v-3b78f1c8="">개인정보처리방침</strong></a>
+                        <a data-v-3b78f1c8="" href="https://policy.naver.com/rules/service.html" target="_blank" rel="noopener noreferrer" class="item">네이버 이용약관</a>
+                        <a data-v-3b78f1c8="" target="_blank" class="item">VIBE 이용약관</a>
+                        <a data-v-3b78f1c8="" href="https://help.naver.com/support/alias/contents1/vibe/vibe_7.naver" target="_blank" rel="noopener noreferrer" class="item">고객센터</a>
+                        <a data-v-3b78f1c8="" href="https://help.naver.com/support/alias/contents1/vibe/vibe_6.naver" target="_blank" rel="noopener noreferrer" class="item">결제/환불 안내</a>
+                        <a data-v-3b78f1c8="" href="https://talk.naver.com/ct/w4xq3a" target="_blank" rel="noopener noreferrer" class="item link_talktalk">톡톡상담</a>
+                        <a data-v-3b78f1c8="" href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208162517" target="_blank" rel="noopener noreferrer" class="item">사업자정보 확인</a>
+                        <a data-v-3b78f1c8="" href="https://www.navercorp.com" target="_blank" rel="noopener noreferrer" class="item">© NAVER Corp.</a>
+                    </div>
+                    <div data-v-3b78f1c8="" class="sns">
+                        <a data-v-3b78f1c8="" href="https://www.facebook.com/officialvibemusic" target="_blank" rel="noopener noreferrer" class="link_facebook"><span data-v-3b78f1c8="" class="blind">페이스북</span></a>
+                        <a data-v-3b78f1c8="" href="https://instagram.com/vibe.official.kr" target="_blank" rel="noopener noreferrer" class="link_insta"><span data-v-3b78f1c8="" class="blind">인스타그램</span></a>
+                        <a data-v-3b78f1c8="" href="https://post.naver.com/my.nhn?memberNo=42980762" target="_blank" rel="noopener noreferrer" class="link_naver"><span data-v-3b78f1c8="" class="blind">네이버</span></a>
+                    </div>
+                </footer>
+                <div data-v-f4c13f84="" class="toast-container"></div>
+                <div data-v-32ffb16a="" class="bottom-layer-container"></div>
+                <div id="player">
+                    <h1 class="blind">플레이어</h1>
+                    <div class="player_controller">
+                        <div class="song_info">
+                            <a href="/album/5100782" class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100782.jpg?type=r100Fll&amp;v=20201208091606" class="v-lazy-image v-lazy-image-loaded" alt="쇼미더머니 9 Episode
+                1 앨범 커버" width="45" height="45"><span class="blind">앨범 정보 더보기</span></a>
+                            <div class="info_area"><em class="song_area"><span class="song"><span class="blind">재생 중인 곡명</span><a href="/track/43350585" class="link">VVS (Feat. JUSTHIS) (Prod. GroovyRoom)</a></span></em><span class="artist
+               "><span class="blind">아티스트명</span><span><span><a href="/artist/3592382" class="link_artist" disabled="disabled"><span class="text">미란이(Mirani)</span></a><span>, </span></span><span><a href="/artist/3009681" class="link_artist" disabled="disabled
+               "><span class="text">먼치맨</span></a><span>, </span></span><span><a href="/artist/1620782" class="link_artist" disabled="disabled"><span class="text">쿤디판다(Khundi Panda)</span></a><span>, </span></span><span><a href="/artist/3002627" class="link_artist
+               " disabled="disabled"><span class="text">머쉬베놈(MUSHVENOM)</span></a>
+                                </span>
+                                </span>
+                                </span>
+                            </div>
+                            <div class="option_area"><a href="#" role="button" class="btn_like"><span class="blind">좋아요</span></a><a href="#" role="button" aria-haspopup="dialog" class="btn_lyrics"><span class="blind">가사 보기</span></a>
+                                <div class="dropdown_wrap"><a href="#" role="button" aria-haspopup="menu" aria-expanded="false" class="btn_option"><span class="blind">옵션 보기</span></a>
+                                    <div role="menu" class="ly_option">
+                                        <div class="ly_song_info">
+                                            <a href="/album/5100782" class="ly_link_thumb"><img data-v-71785a38="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAD3lJREFUeAHtnel23CoQhO3se+K8/wP6V+zse3LzyYdEnisxSCCGQsU5ssZaWKq76AZa0vnl5eXvMycjYAQmEbgzedQHjYARGBAwQawIRiCCgAkSAcenjIAJYh0wAhEETJAIOD5lBEwQ64ARiCBggkTA8SkjYIJYB4xABAETJAKOTxkBE8Q6YAQiCJggEXB8ygiYINYBIxBBwASJgONTRsAEsQ4YgQgCJkgEHJ8yAiaIdcAIRBAwQSLg+JQRMEGsA0YggoAJEgHHp4yACWIdMAIRBEyQCDg+ZQRMEOuAEYggYIJEwPEpI2CCWAeMQAQBEyQCjk8ZARPEOmAEIgiYIBFwfMoImCDWASMQQcAEiYDjU0bABLEOGIEIAiZIBByfMgImiHXACEQQMEEi4PiUETBBrANGIIKACRIBx6eMgAliHTACEQRMkAg4PmUETBDrgBGIIGCCRMDxKSNwzxBsj8Dv37/Pfv36dfbjx4+znz9/Dnv+D8epAb/ZSOfn58PG7zt37gy/2d+7d+/s7t27wz4c5xqn7RAwQTbAFiJ8//797Nu3b39JsaSYQBTugVBzKZDlwYMHZ/fv3x+IM3etj69DwARZh9utu7AGX79+HQgBMfi/RoI8bJRNwqpAFAjz8OHD4f8a9ei5jPPLy8sbu95zKzdoG708FuLLly9/FXSDYrKyhCSPHj0aCIPb5rQcAVuQhZhhISAF29gVWphNlcuxLGyQA6KwYWGc0hEwQRKxwlp8/PhxGFsk3tLMZRD58+fPwwZBnj59OliVZirYcEVMkCPCUSbGVNOwgNfX14MlMVGmELp9zAS5jcff/1CkDx8+SFqMv42I/BgT5dmzZ3a9ZrAyQQ6AYQYKYjDG2EOCKFdXV8P4BKIwE+b0DwET5B8Wg4/OOKPWNO2o6JP/pEPAncTtevz48cnr00oFTJA/kmAt4d27d926U6nKRsfw/v37wXq+ePFiWLVPvbfX63ZvT5kGxcXA1XC6QSC4XWEBcs+47JogjDXevn27S5fqmNJjTcAGjPacduliBeHbahxX/U+fPg3W9eXLl7scwO/OghBIaJfqODHGVwSXC+z2lnZFEATMIlksQnZvCpDaXjADu72RZDcEYQoTy7HHKdxUEhy7DuzAECz3knZBEOb46f1aDy5UUDowBMu9LKR2TxB6O9Y4nMoiAKZ7sCRdEwR/malKp20QANvexyTdEiQMyO1WbUMOcg3uVs8k6ZIgYZ3DA/LtyBFy7h3rLgniqdygvml73paSk5gC7tWV7Y4ghEb0bPJzFHnq3idPnpxdXFwML3mYOp96jMXEHsNSuiIIwXWERjilIcDbT3gGhGfWCSXJDXMH+94CHLshCGaeUG2nNAR4MIqQ9nF6/vz5QJjxsaW/kUFPkQrdEIR5eQ/K09Q5WIyppwdxuQ6Jk5brzVXIoKd1py4Iwhs7HJmbrsbHnkHn9UBcszYhC2TSQ5InCD0Wj8k6pSGA8qeMNbAkKdfNldrLo8vyBGHmxK7VnJrePs50LuOM1MS1vJ1xTUImPcxqSRMEU76XoLk1Sjq+J4w72C9JjEfWrpMgG3XXV5ogPfRQS5Q159q1L2HAVcpZV1KXkSxBiCRV751yFH7JvbzKZ6mrhItERELuuhIyUo76lSWIB+ZpFGExEIIsSViMN2/eFFNsZVlJEsTWI13dmY1akpieLf3kpbIVkSSIco+0RFlLXEsQYYqLQ+g6C3yshG/xiICqzOQIQm/ksUc6dcIzG7GFO0JDsBpbzgiqyi0vzjldTsWujAm6WCEdZhTi1A4X/wguxHJsYTUOYUR2ah/wkSIIQuwtWvRQibb8H5Lw4U8G7iTcnpquD7JDhkvXYrbE5FjeUi4WvnSNnu4YaMrnw5iEKdya5AAzZJcyHmoJXykLsqWPXFso9OSsTeBy0KPyf4iuZQ2CcQEKhe9Oz1sqhJw8IcepEjJcuiZzqrpSrgxBUBp19woCMAZAQWLhG5CFjcS1RNayNkH78ePBQjXRBuofOoPW2yFDEGVyYCFYj2Bb639DKDbyYHWbTdXdRJaHkwWtEkWGIGq+axA4FoCo2FI9JgQLX4Fi0K3YcSBLFYLIDNIV1z5Q5K0+GwDhyHtpGEkg7in3SrKUIAj+t5LfTS9P9GwN5aUMylrrup2CKMgyJ0K4Zp0lCKLU4yA8XCqe3KuVKGvJg1C16hUrR0WmEgRRGn/Qo9ckR1BCyqxhsUJ5uXsVmUoQRMUcMyA/pZJSNnVQSCoybZ4gTGWWWiTbUnEYA7Tg5lAHhfFIWAjdUiYl8m6eICqDc9YnSk3l5giWOlAXhaQg2+YJomCKW1PKVsh6jKQSsj3WiFOfV3CvUMiW3BrqorAQpyBbW5ACPUAIHy+QVbEsFAbrtiAFxN26n0pQYSzwsAAEq7KgTiHgcVUGFW5qXbZA0HwsVusBeSV6ahbNCD4Mi2eEwOO25T59R91yX9uzJU9al60JUkD6uUqMAh++XI0ARDbC3HNmpHLrVgCeaBYKFqT5MUjrvUzO4ByLcUiOsUZxLliV8fHU3zl1Sy2j9+tMkEwJ5/j5Ke5PyjVzTcip21yeJY+33vnRVhMkU+I5i4Mp1iHlmrkm5NRtLs+Sx02Qkmg6LyNwAgSatyCt+9E5A82UQXTKNXN6k1O3uTxLHm9dtrTVBMmUeM5qcMoMVco1c03IqdtcniWPmyAl0Ww0rxw/GusQ+xYg53IsSE7dGoW7erWaXyhkoNlyT8ggOmexMCwIMlsVBuSQIhzP0YiQX04eW97b+iQCbW+eIK2b4bCgl6NIEIIXMJROrb/xpHXZIo/mxyCt9zJYtxaD7qhTy5Z3UL4/3kHrqfkathgIeCjUFnvqFut0iJuCbJsnSOurwQid14G2NCCmLgqfiVCQbfMEUehlWG/ICQk57Flz/6cura+B0EYF2TZPkNbHIEGZW1HK1sga8JnaK8i2eYIw06FginFrwlecppSh1jHq0JK7N9duZOpZrDl0Fh5XMMU0iYFx7Y/SjKGkbIXBOXVWkWnzFgQwW3zmm3pNJZT0FB/6ocxTknMKi9gxFZlKECQn3CImpK3O4ebUJAllteDeLcFTRaYSBMEcKwzogoIwBuDLsTV6dMqo9ZXa0L7cPbK0i5WL4sH9Kj3OuNooLx/N3GLKlTzJuwYJx20q8VtJls3HYgWB4LOqDEBDndlTZ95kTvAhW+7MDdaJKWU2hdmqMRbht8r4g/rKEISIWTU/OygEikxPz+p2ykc8w33jPbFVkE39I560KSf6eYxJjd8yBMFvBVhFKxIEiVsEUdhYB6A9uBthrSeMs7iOQEOIRcg6bW498DC08dieNod2Hru2hfMyBAEsPhJzCoLgEuAe4fOXcmtQeNykvaVTfFwoB2OJWazQQBQ114cPeaXu+SjNq1evhrWYLZ7ZSK1HD9chO6XxB5hLEQSAa/mvlHX4FVmE28JHclTJgvWo3cHlYiVFEBpb47X+zNG/fv16koyUb5KsUzs194pWyhGEQe2W8+gI8eLiIhogCUlwu9R6w3VqXeaureVWppb/z0WOIDRhiw9louxYhtRvjuNueUzyf4WaO7KFzObKKnlcahYrNBzlpEcq9dYOph2xCEvDH/Y4CxVksGSPrNQG56F9khaEypfqkRAc442l5GAtQ+Vb30HYp9qXktUp6i9pQQCqhBVhbSP24rY5gbAWA0GcjiOgbD1onawFofJrlJv7SFiMNT0bC3xEzzqlIZAjo7QStr1KmiD0TmunDoltWqrorKKXXE3fVrSnzx3ZICPlJE0QgKeHWhvbg6u0JACSa1t8SVyLCohM1K0HuMoTBEGscZWCUhEdmzIbxXU1nxIM9VPdI5O1HVdLbZYnCGCycJdjyvkWYEz5sRqxbwm2JNAW6oIsakQ81GhrFwQBKBb4cnosxiNTloTQ8+vr62JRvDWEesoykAGy6CV1QxCer8iNkcJKHI5JIA4kcUpDABkovMcsrTUdjEHGDSXSl7WNnMRYI8xUQRgvBqajCfa1oq3Ta5V3pexC4VyzmTkhBCUnDIXZraurK89YzYE8cZxxRw+zVodN68bFGjeMIMJcM+/p3DGi8d9g3WvgZpcEYaCIwHIG7XGV8NmAQO9Yd0kQhEcoiZ/ZCGq8zZ5HBNZEQW9Tm21y7ZYgwAVJejX926jDslzBdmkU9LISTn911wQBXqJ+e5qXP73K3NQATFWf8ViCYXezWFONJ2gOXzlM305d42NpCOBWYTn2QA4Q6d6CBLEjUJ4198A9ILJ8D3ZguBdygNBuCEJjw8A9dwqYvPaWwKz3AfmUTHdFEACAJPSCOcGNU0D2fAyswKz3AfmUDHdHEEAIrkJuWMoUoL0dA6M9u6a7GKTPKS2hEfSOBCg6IPE2SnQiBB72Flt1u5XH/9s1QYAHBcB1IGo3J37rONQ6V9BpMI3rsdofl1xHbNvVFEXAjSCSl7eV7NWaYDV4ErCXh51KaIwJMkIRxcCiHHvCcHRLNz9ZK8LlhCRO/xAwQf5hMfxCQXAvIAtE6d3twp0KY7EDKPzvHwRMkBk1CFObPDCF29UbUWgf7tSeFv1mRB09bIJE4bmJ5UKJeiGKiXFE4AenTZADQOb+hSRsWBIG8zx1WOpzbHNlljpO/BRjK9xGCOKUjoAJko7VcCUKxgY5sCq8LgiytJggBYNviA1JnJYjYIIsx2y4I/TKKCHTwpAEwmBhTjVNzAQD5IUQ1MszUiuFO7rNBBmBsfYnioj7wkbieXaIAmH4vdUnnFm/YZETQkCMPcZKrZVZ6n0mSCpSC65DUdkCYXDHsCqBLOz5Pxwna36zkbBOwSWCfPxmT56BFOH4cIP/bIaACbIZtP8yRsFRbDYnLQS8bKolL9e2MgImSGXAXZwWAiaIlrxc28oImCCVAXdxWgiYIFrycm0rI2CCVAbcxWkhYIJoycu1rYyACVIZcBenhYAJoiUv17YyAiZIZcBdnBYCJoiWvFzbygiYIJUBd3FaCJggWvJybSsjYIJUBtzFaSFggmjJy7WtjIAJUhlwF6eFgAmiJS/XtjICJkhlwF2cFgImiJa8XNvKCJgglQF3cVoImCBa8nJtKyNgglQG3MVpIWCCaMnLta2MgAlSGXAXp4WACaIlL9e2MgImSGXAXZwWAiaIlrxc28oImCCVAXdxWgiYIFrycm0rI2CCVAbcxWkhYIJoycu1rYyACVIZcBenhYAJoiUv17YyAiZIZcBdnBYCJoiWvFzbygiYIJUBd3FaCJggWvJybSsjYIJUBtzFaSFggmjJy7WtjMB/DQa7SDGiD8IAAAAASUVORK5CYII="
+                                                    class=" ly_img_thumb v-lazy-image" alt="쇼미더머니 9 Episode 1 앨범 커버" width="40" height="40"></a>
+                                            <div class="ly_info_area"><a href="/album/5100782" class="ly_info_album" title="쇼미더머니 9 Episode 1"><span class="blind">앨범명</span>
+                  쇼미더머니 9 Episode 1
+                </a><a href="/artist/3592382" class="ly_info_artist" title="미란이(Mirani)"><span class="blind">아티스트명</span>
+                  미란이(Mirani)
+                </a></div>
+                                        </div><a href="#" role="button" class="ly_item"><span>좋아요</span></a><a href="#" role="button" class="ly_item">내 플레이리스트 추가</a><a href="#" role="button" class="ly_item">가사 보기</a><a href="#" data-style="unity-v2
+               " data-oninitialize="window.__splugin_oninitialize()" data-url="https://vibe.naver.com/track/43350585" data-title="VVS (Feat. JUSTHIS) (Prod. GroovyRoom)" class="naver-splugin spi_sns_share" splugin-id="9690343555">공유</a><a href="#" role="button"
+                                            class="ly_item">가사 수정 제안</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control_section">
+                            <div class="control_area"><a href="#" role="button" id="btn_now" title="재생/일시정지 선택" class="btn_now play" style=""><span class="inner_background"><span class="blind">재생 중 입니다</span></span></a><a href="#" role="button
+               " class="btn_play_prev"><span class="blind">이전 곡 재생</span></a>
+                                <a href="#" role="button" class="btn_play_next"><span class="blind">다음 곡 재생</span></a><a href="#" role="button" title="재생 방법 변경" class="btn_shuffle disabled"><span class="blind">순차 재생 중 입니다</span></a><a href="#
+               " role="button" title="반복 재생 설정" class="btn_repeat"><span class="blind">반복 해제되었습니다</span></a></div>
+                        </div>
+                        <div class="playing_progress">
+                            <div data-v-513c69bb="" class="bar_progress"><span data-v-513c69bb="" class="blind">재생시간 조절</span>
+                                <div data-v-513c69bb="" class="bar_load" style="width: 17.91%;"></div>
+                                <div data-v-513c69bb="" tabindex="0" role="slider" aria-orientation="horizontal" aria-labelledby="playtime" aria-valuetext="00분11초" class="bar_play" style="width: 3.28%;"><span data-v-513c69bb="" class="time no-drag
+               " style=""><span data-v-513c69bb="" id="playtime" class="blind">재생된 시간</span> 00:11
+                                    </span>
+                                </div><span data-v-513c69bb="" class="time_tooltip" style="left: 1524px;">
+    05:28
+    <span data-v-513c69bb="" class="blind">부터 재생</span></span>
+                            </div>
+                        </div>
+                        <div class="playtime"><span class="now"><span class="blind">재생된 시간</span> 00:11
+                            </span><span class="remain"><span class="blind">전체 재생 시간</span> 05:35
+                            </span>
+                        </div>
+                        <div class="volume_area"><a href="#" role="button" class="btn_volume mute"><span class="blind">볼륨 켜기</span></a>
+                            <div class="bar_volume">
+                                <div class="bar_status">
+                                    <div tabindex="0" role="slider" aria-orientation="horizontal" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1" class="bar_now" style="width: 0%;"><span class="blind">볼륨 조절</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_playlist_area"><a href="#" role="button" class="btn_playlist"><span class="blind">플레이리스트 펼쳐보기</span></a></div>
+                    </div>
+                    <div class="ly_playlist">
+                        <div class="dimmed"></div>
+                        <div class="cover_section"><span class="thumb_cover"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100782.jpg?type=r720Fll&amp;v=20201208091606
+               " alt="쇼미더머니 9 Episode 1 앨범 커버"></span></div>
+                        <div class="playlist_section">
+                            <div class="title_area">
+                                <h2 class="title">이어지는 노래</h2>
+                                <div class="control_area"><a href="#" role="button" title="재생 방법 변경" class="btn_shuffle"><span class="blind">순차 재생 중 입니다</span></a>
+                                    <a href="#" role="button" title="반복 재생 설정" class="btn_repeat"><span class="blind">반복 해제되었습니다</span></a>
+                                </div>
+                            </div>
+                            <div class="list_wrap">
+                                <div class="list_inner">
+                                    <div class="normal_area"><span class="blind blind_pc">곡 순서 변경 버튼을 space bar 키로 선택한 후, 위아래 방향키로 곡 순서를 변경할 수 있습니다. 순서 변경을
+            완료하시려면 space bar 키를 한번 더 입력해주세요.</span><span class="blind blind_m">곡 순서 변경 버튼을 선택한 후, 두 손가락으로 위, 아래로 스와이프하여 곡 순서를 변경할 수 있습니다.</span>
+                                        <ul>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100782.jpg?type=r100Fll&amp;v=20201208091606" alt="쇼미더머니 9 Episode
+                1 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">VVS (Feat. JUSTHIS) (Prod. GroovyRoom)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">미란이(Mirani), 먼치맨, 쿤디판다(Khundi Panda), 머쉬베놈(MUSHVENOM)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play on"><span class="blind">일시정지</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/820/4820425.jpg?type=r100Fll&amp;v=20200918130108" alt="Dynamite (DayTime
+                Version) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Dynamite<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100133.jpg?type=r100Fll&amp;v=20201120161148" alt="BE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Life Goes On<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/141/5141786.jpg?type=r100Fll&amp;v=20201208183143" alt="쇼미더머니 9 Episode
+                3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">내일이 오면 (Feat. 기리보이, BIG Naughty (서동현))<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">릴보이(lIlBOI)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/051/5051742.jpg?type=r100Fll&amp;v=20201023235903" alt="잠이 오질 않네요 앨범
+                커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">잠이 오질 않네요<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">장범준<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/983/4983288.jpg?type=r100Fll&amp;v=20201106182509" alt="THE ALBUM 앨범
+                커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Lovesick Girls<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">BLACKPINK<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/141/5141786.jpg?type=r100Fll&amp;v=20201208183143" alt="쇼미더머니 9 Episode
+                3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">Achoo (Feat. pH-1, HAON) (Prod. GroovyRoom)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">미란이(Mirani)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a><a href="#" role="button
+               " title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a></li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/686/4686872.jpg?type=r100Fll&amp;v=20200720175905" alt="취기를 빌려 (취향저격
+                그녀 X 산들) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">취기를 빌려 (취향저격 그녀 X 산들)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">산들<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/083/5083052.jpg?type=r100Fll&amp;v=20201119095606" alt="밤하늘의 별을 (2020)
+                앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">밤하늘의 별을 (2020)<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em><span class="artist">경서<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/042/5042552.jpg?type=r100Fll&amp;v=20201019175907" alt="힘든 건 사랑이 아니다
+                앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">힘든 건 사랑이 아니다<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em><span class="artist">임창정<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100782.jpg?type=r100Fll&amp;v=20201208091606" alt="쇼미더머니 9 Episode
+                1 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">Freak (Prod. Slom)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">릴보이(lIlBOI), 원슈타인, Chillin Homie, 스카이민혁(Skyminhyuk)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/199/3199865.jpg?type=r100Fll&amp;v=20200218131211" alt="항해 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">어떻게 이별까지 사랑하겠어, 널 사랑하는 거지<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">AKMU (악동뮤지션)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/044/5044090.jpg?type=r100Fll&amp;v=20201030111601" alt="딩가딩가 (Dingga)
+                앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">딩가딩가 (Dingga)<span data-v-8eec5cfc="
+               " class="blind">곡명</span></span></span></em><span class="artist">마마무(Mamamoo)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/550/4550593.jpg?type=r100Fll&amp;v=20200508163228" alt="에잇 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song
+               ">에잇(Prod.&amp;Feat. SUGA of BTS)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">아이유(IU)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/020/5020831.jpg?type=r100Fll&amp;v=20201010175904" alt="DON 'T TOUCH ME 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">DON'T TOUCH ME<span class="blind">곡명</span>
+                </span>
+                </span>
+                </em><span class="artist">환불원정대<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/052/5052634.jpg?type=r100Fll&amp;v=20201026175910" alt="Eyes wide open 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">I CAN'T STOP ME<span class="blind">곡명</span></span></span></em><span class="artist">TWICE(트와이스)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/000/004/4689.jpg?type=r100Fll&amp;v=20201104210117" alt="Merry Christmas (Deluxe Anniversary Edition) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">All I Want for Christmas Is You<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">Mariah Carey<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/051/5051001.jpg?type=r100Fll&amp;v=20201023175909" alt="나랑 같이 걸을래 (바른연애 길잡이 X 적재) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">나랑 같이 걸을래 (바른연애 길잡이 X 적재)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">적재<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/141/5141786.jpg?type=r100Fll&amp;v=20201208183143" alt="쇼미더머니 9 Episode 3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">뿌리 (Feat. JUSTHIS) (Prod. GroovyRoom)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">쿤디판다(Khundi Panda)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/141/5141786.jpg?type=r100Fll&amp;v=20201208183143" alt="쇼미더머니 9 Episode 3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">적외선 카메라<span class="blind">곡명</span></span></span></em><span class="artist">원슈타인<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/000/466/466046.jpg?type=r100Fll&amp;v=20200218131711" alt="Santa Tell Me 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Santa Tell Me<span class="blind">곡명</span></span></span></em><span class="artist">Ariana Grande<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/991/4991304.jpg?type=r100Fll&amp;v=20201118115806" alt="Savage Love (Laxed - Siren Beat) [BTS Remix] 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Savage Love (Laxed - Siren Beat) (BTS Remix)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">Jawsh 685, Jason Derulo, 방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/073/5073202.jpg?type=r100Fll&amp;v=20201124173205" alt="잔나비 소곡집 l 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">가을밤에 든 생각<span class="blind">곡명</span></span></span></em><span class="artist">잔나비<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/780/4780824.jpg?type=r100Fll&amp;v=20200814103002" alt="When We Disco 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">When We Disco (Duet with 선미)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">박진영<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/094/5094974.jpg?type=r100Fll&amp;v=20201117183730" alt="Black Mamba 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Black Mamba<span class="blind">곡명</span></span></span></em><span class="artist">aespa<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/535/4535336.jpg?type=r100Fll&amp;v=20200904220111" alt="NONSTOP 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Dolphin<span class="blind">곡명</span></span></span></em><span class="artist">오마이걸(OH MY GIRL)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/614/4614746.jpg?type=r100Fll&amp;v=20200629184748" alt="María 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">마리아 (Maria)<span class="blind">곡명</span></span></span></em><span class="artist">화사(Hwa Sa)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100133.jpg?type=r100Fll&amp;v=20201120161148" alt="BE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Blue &amp; Grey<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/821/4821722.jpg?type=r100Fll&amp;v=20200823175908" alt="내 마음이 움찔했던 순간 (취향저격 그녀 X 규현) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">내 마음이 움찔했던 순간 (취향저격 그녀 X 규현)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">규현(KYUHYUN)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/613/4613637.jpg?type=r100Fll&amp;v=20201106182509" alt="How You Like That 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">How You Like That<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">BLACKPINK<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/156/3156245.jpg?type=r100Fll&amp;v=20200218131210" alt="멜로가 체질 OST Part 3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">장범준<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/399/3399860.jpg?type=r100Fll&amp;v=20200218131210" alt="Love poem 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Love poem<span class="blind">곡명</span></span></span></em><span class="artist">아이유(IU)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/083/5083045.jpg?type=r100Fll&amp;v=20201115175908" alt="뻔한남자 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">뻔한남자<span class="blind">곡명</span></span></span></em><span class="artist">이승기<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/406/3406157.jpg?type=r100Fll&amp;v=20200218131210" alt="늦은 밤 너의 집 앞 골목길에서 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">늦은 밤 너의 집 앞 골목길에서<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">노을<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100133.jpg?type=r100Fll&amp;v=20201120161148" alt="BE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">내 방을 여행하는 법<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/039/5039442.jpg?type=r100Fll&amp;v=20201016175906" alt="ALIEN 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">ALIEN<span class="blind">곡명</span></span></span></em><span class="artist">이수현<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/399/3399860.jpg?type=r100Fll&amp;v=20200218131210" alt="Love poem 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Blueming<span class="blind">곡명</span></span></span></em><span class="artist">아이유(IU)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/498/4498641.jpg?type=r100Fll&amp;v=20200327115935" alt="슬기로운 의사생활 OST Part 3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">아로하<span class="blind">곡명</span></span></span></em><span class="artist">조정석<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/733/4733872.jpg?type=r100Fll&amp;v=20201008170116" alt="NUNA 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">눈누난나 (NUNU NANA)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">제시(Jessi)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/141/5141786.jpg?type=r100Fll&amp;v=20201208183143" alt="쇼미더머니 9 Episode 3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">부어라 비워라 (Tricker) (Prod. GroovyRoom)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">머쉬베놈(MUSHVENOM)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/053/5053394.jpg?type=r100Fll&amp;v=20201027175909" alt="너도 아는 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">너도 아는<span class="blind">곡명</span></span></span></em><span class="artist">폴킴<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/701/4701143.jpg?type=r100Fll&amp;v=20200723175910" alt="홀로 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">홀로<span class="blind">곡명</span></span></span></em><span class="artist">이하이<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/064/5064545.jpg?type=r100Fll&amp;v=20201103175909" alt="TRAVEL 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">AYA<span class="blind">곡명</span></span></span></em><span class="artist">마마무(Mamamoo)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/535/4535336.jpg?type=r100Fll&amp;v=20200904220111" alt="NONSTOP 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">살짝 설렜어 (Nonstop)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">오마이걸(OH MY GIRL)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/789/4789953.jpg?type=r100Fll&amp;v=20200818184107" alt="Not Shy 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Not Shy<span class="blind">곡명</span></span></span></em><span class="artist">ITZY(있지)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/147/5147124.jpg?type=r100Fll&amp;v=20201208113610" alt="One-reeler / Act IV 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Panorama<span class="blind">곡명</span></span></span></em><span class="artist">IZ*ONE(아이즈원)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/074/5074359.jpg?type=r100Fll&amp;v=20201109175908" alt="回:Walpurgis Night 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">MAGO<span class="blind">곡명</span></span></span></em><span class="artist">여자친구(GFRIEND)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100782.jpg?type=r100Fll&amp;v=20201208091606" alt="쇼미더머니 9 Episode 1 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">원해 (Feat. 팔로알토) (Prod. 코드 쿤스트)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">스윙스(Swings), 맥대디 (Mckdaddy), Khakii (카키), 래원(Layone)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/093/5093933.jpg?type=r100Fll&amp;v=20201116175909" alt="HAPPENING 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">HAPPENING<span class="blind">곡명</span></span></span></em><span class="artist">AKMU (악동뮤지션)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/938/4938035.jpg?type=r100Fll&amp;v=20200918150013" alt="Holy 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Holy (Feat. Chance The Rapper)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">Justin Bieber<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/001/855/1855408.jpg?type=r100Fll&amp;v=20200218131711" alt="밤편지 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">밤편지<span class="blind">곡명</span></span></span></em><span class="artist">아이유(IU)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/103/5103168.jpg?type=r100Fll&amp;v=20201124115926" alt="싱어게인 - 무명가수전 Episode.2 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">누구 없소<span class="blind">곡명</span></span></span></em><span class="artist">싱어게인 63호 가수<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/000/329/329778.jpg?type=r100Fll&amp;v=20200703204107" alt="오래된 노래 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">오래된 노래<span class="blind">곡명</span></span></span></em><span class="artist">스탠딩 에그(Standing Egg)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/574/2574254.jpg?type=r100Fll&amp;v=20200218131711" alt="너를 만나 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">너를 만나<span class="blind">곡명</span></span></span></em><span class="artist">폴킴<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/660/4660376.jpg?type=r100Fll&amp;v=20201021123211" alt="거짓말이라도 해서 널 보고싶어 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">거짓말이라도 해서 널 보고싶어<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">백지영<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/000/468/468281.jpg?type=r100Fll&amp;v=20180814162606" alt="Under The Influence : Holiday Edition 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Text Me Merry Christmas (Feat. Kristen Bell)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">Straight No Chaser<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/591/3591286.jpg?type=r100Fll&amp;v=20200218131210" alt="Boyhood 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">METEOR<span class="blind">곡명</span></span></span></em><span class="artist">창모(CHANGMO)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/132/5132012.jpg?type=r100Fll&amp;v=20201201175911" alt="BETTER – The 10th Album 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Better<span class="blind">곡명</span></span></span></em><span class="artist">보아(BoA)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/117/5117948.jpg?type=r100Fll&amp;v=20201128115909" alt="쇼미더머니 9 Episode 2 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Upgrade 2020 (Feat. 팔로알토) (Prod. 코드 쿤스트)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">스윙스(Swings)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/198/3198839.jpg?type=r100Fll&amp;v=20201116082535" alt="Memories 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Memories<span class="blind">곡명</span></span></span></em><span class="artist">Maroon 5<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/855/4855575.jpg?type=r100Fll&amp;v=20201027190213" alt="Ice Cream (with Selena Gomez) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Ice Cream (with Selena Gomez)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">BLACKPINK<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/421/2421567.jpg?type=r100Fll&amp;v=20201113045009" alt="'키스 먼저 할까요?' OST Part 3 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">모든 날, 모든 순간 (Every day, Every Moment)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">폴킴<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/051/5051499.jpg?type=r100Fll&amp;v=20201105050016" alt="positions 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">positions<span class="blind">곡명</span></span></span></em><span class="artist">Ariana Grande<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/413/4413282.jpg?type=r100Fll&amp;v=20200205180913" alt="아무노래 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">아무노래<span class="blind">곡명</span></span></span></em><span class="artist">지코 (ZICO)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/752/4752246.jpg?type=r100Fll&amp;v=20200803175908" alt="덤디덤디 (DUMDi DUMDi) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">덤디덤디 (DUMDi DUMDi)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">(여자) 아이들<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/574/4574324.jpg?type=r100Fll&amp;v=20200522115942" alt="슬기로운 의사생활 OST Part 11 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">사랑하게 될 줄 알았어<span class="blind">곡명</span></span></span></em><span class="artist">전미도<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100133.jpg?type=r100Fll&amp;v=20201120161148" alt="BE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">잠시<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100782.jpg?type=r100Fll&amp;v=20201208091606" alt="쇼미더머니 9 Episode 1 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">윈윈 (Feat. 개코, BewhY) (Prod. BewhY)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">허성현 (Rose de Penny), dsel(디젤), 가오가이(kaogaii), Untell (언텔)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/959/4959277.jpg?type=r100Fll&amp;v=20200925101907" alt="Bad Boy 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Bad Boy<span class="blind">곡명</span></span></span></em><span class="artist">청하, Christopher<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/103/5103093.jpg?type=r100Fll&amp;v=20201123175907" alt="NCT RESONANCE Pt. 2 - The 2nd Album 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">90's Love<span class="blind">곡명</span></span></span></em><span class="artist">NCT U<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/000/468/468522.jpg?type=r100Fll&amp;v=20200907220218" alt="LAST CHRISTMAS 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Last Christmas<span class="blind">곡명</span></span></span></em><span class="artist">Wham!<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/043/5043408.jpg?type=r100Fll&amp;v=20201020175911" alt="with HER 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">놓아줘 (with 태연)<span class="blind">곡명</span></span></span></em><span class="artist">Crush<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/058/5058862.jpg?type=r100Fll&amp;v=20201118135516" alt="Positions 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">34+35<span class="blind">곡명</span></span></span></em><span class="artist">Ariana Grande<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/497/4497010.jpg?type=r100Fll&amp;v=20200326181603" alt="CEREMONIA 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">처음처럼<span class="blind">곡명</span></span></span></em><span class="artist">엠씨더맥스(M.C the MAX)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/343/2343021.jpg?type=r100Fll&amp;v=20200813190505" alt="Speak Your Mind (Deluxe) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">2002<span class="blind">곡명</span></span></span></em><span class="artist">Anne-Marie<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/001/781/1781318.jpg?type=r100Fll&amp;v=20190402193714" alt="YOU NEVER WALK ALONE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">봄날<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/673/4673490.jpg?type=r100Fll&amp;v=20200718175908" alt="다시 여기 바닷가 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">다시 여기 바닷가<span class="blind">곡명</span></span></span></em><span class="artist">싹쓰리(유두래곤, 린다G, 비룡)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/950/2950189.jpg?type=r100Fll&amp;v=20201113093013" alt="사계 (Four Seasons) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">사계 (Four Seasons)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">태연 (TAEYEON)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/923/2923941.jpg?type=r100Fll&amp;v=20200218131711" alt="전설 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">주저하는 연인들을 위해<span class="blind">곡명</span></span></span></em><span class="artist">잔나비<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100133.jpg?type=r100Fll&amp;v=20201120161148" alt="BE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Stay<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/058/5058524.jpg?type=r100Fll&amp;v=20201030175910" alt="TAKE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">도망가<span class="blind">곡명</span></span></span></em><span class="artist">MINO (송민호)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/042/5042552.jpg?type=r100Fll&amp;v=20201019175907" alt="힘든 건 사랑이 아니다 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">소확행<span class="blind">곡명</span></span></span></em><span class="artist">임창정<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/948/3948913.jpg?type=r100Fll&amp;v=20201113091013" alt="‘The ReVe Festival' Finale 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Psycho<span class="blind">곡명</span></span></span></em><span class="artist">Red Velvet (레드벨벳)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/983/4983288.jpg?type=r100Fll&amp;v=20201106182509" alt="THE ALBUM 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Pretty Savage<span class="blind">곡명</span></span></span></em><span class="artist">BLACKPINK<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/614/4614748.jpg?type=r100Fll&amp;v=20200629184551" alt="보라빛 밤 (pporappippam) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">보라빛 밤 (pporappippam)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">선미<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/137/3137158.jpg?type=r100Fll&amp;v=20190902142129" alt="The Kids Are Coming 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Dance Monkey<span class="blind">곡명</span></span></span></em><span class="artist">Tones And I<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/288/2288765.jpg?type=r100Fll&amp;v=20201204201512" alt="Downtown Baby 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Downtown Baby<span class="blind">곡명</span></span></span></em><span class="artist">블루(BLOO)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/417/4417123.jpg?type=r100Fll&amp;v=20200709150702" alt="MAP OF THE SOUL : 7 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">ON<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/587/4587246.jpg?type=r100Fll&amp;v=20200607175908" alt="한 걸음 : 흔적 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">사랑은 지날수록 더욱 선명하게 남아<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">전상근<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/035/5035639.jpg?type=r100Fll&amp;v=20201113185511" alt="NCT RESONANCE Pt. 1 - The 2nd Album 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Make A Wish (Birthday Song)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">NCT U<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/703/4703289.jpg?type=r100Fll&amp;v=20200724114006" alt="Mood 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Mood (Feat. iann dior)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">24KGoldn<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/100/5100133.jpg?type=r100Fll&amp;v=20201120161148" alt="BE 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">병<span class="blind">곡명</span></span></span></em><span class="artist">방탄소년단<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/880/4880952.jpg?type=r100Fll&amp;v=20200903175911" alt="밤새 (취향저격 그녀 X 카더가든) 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">밤새 (취향저격 그녀 X 카더가든)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">카더가든<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/081/5081044.jpg?type=r100Fll&amp;v=20201113095207" alt="2006 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">반짝 빛나던, 나의 2006년<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">적재<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/477/4477123.jpg?type=r100Fll&amp;v=20200609121610" alt="어떻게 지내 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">어떻게 지내 (Prod. By VAN.C)<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">오반<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/005/080/5080767.jpg?type=r100Fll&amp;v=20201113103108" alt="Star To A Young Culture 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">SO BAD<span class="blind">곡명</span></span></span></em><span class="artist">STAYC(스테이씨)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/004/448/4448098.jpg?type=r100Fll&amp;v=20200421184507" alt="사랑의 불시착 OST Part 11 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">마음을 드려요<span class="blind">곡명</span></span></span></em><span class="artist">아이유(IU)<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/003/406/3406111.jpg?type=r100Fll&amp;v=20200607041022" alt="Like It's Christmas 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">Like It's Christmas<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">Jonas Brothers<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/000/300/300788.jpg?type=r100Fll&amp;v=20190524094539" alt="Christmas 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">It's Beginning To Look A Lot Like Christmas<span class="blind">곡명</span></span></span></em>
+                                                    <span class="artist">Michael Buble<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                            <li class="list_item">
+                                                <div class="thumb"><img data-v-71785a38="" src="https://musicmeta-phinf.pstatic.net/album/002/946/2946382.jpg?type=r100Fll&amp;v=20200218132210" alt="장범준 3집 앨범 커버"></div>
+                                                <div class="info_area"><em class="song_area"><span class="inner"><span class="song">노래방에서<span class="blind">곡명</span></span></span></em><span class="artist">장범준<span class="blind">아티스트명</span></span>
+                                                </div><a href="#" role="button" class="icon_play"><span class="blind">재생하기</span></a>
+                                                <a href="#" role="button" class="btn_delete" style="cursor: pointer;"><span class="blind">재생목록에서 삭제</span></a>
+                                                <a href="#" role="button" title="곡 순서 변경" class="btn_move"><span class="blind blind_pc">위아래 방향키로 곡 순서를 변경하세요</span><span class="blind blind_m">위, 아래로 스와이프하여 곡 순서를 변경하세요</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="js/prototype.js"></script>
+        <!-- owlcarousel2 / vue-carousel 구현 불가로 미리보기 대용 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
