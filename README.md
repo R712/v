@@ -6,8 +6,8 @@
 해당 섹션의 제목 옆 🧭 클릭시 이 곳으로 돌아옵니다.
 
 0. **[안녕하세요](#prologue)**
-1. **[미리보기](#preview)**
-2. **[구성](#filemap)**
+1. **[구성](#filemap)**
+2. **[미리보기](#preview)**
 3. **[HTML 기본](#html-base)**
     * [HTML 부가 요소](#html-add)
     * [유틸리티 클래스](#html-uitility)
