@@ -116,6 +116,7 @@
         background: url('../svg/i-close.svg') no-repeat center;
     }
 }
+
 .streport_membership .banner_area {
     background: #5723EF;
 }
@@ -1125,12 +1126,15 @@ a.section_title {
     음반/앨범/아티스트
     싱글 페이지 상단
 */
+
 .summary_section {
     padding: 80px 0 40px;
 }
+
 .artist_summary_section {
     padding: 80px 0 0;
 }
+
 .summary_section,
 .artist_summary_section {
     display: flex;
@@ -1170,7 +1174,7 @@ a.section_title {
         }
         .sub_title {
             font-size: 24px;
-            .item + .item {
+            .item+.item {
                 margin-left: 16px;
             }
         }
@@ -1874,6 +1878,7 @@ a.section_title {
         }
     }
 }
+
 .btn_play_now {
     opacity: 0;
     z-index: 25;
@@ -1917,7 +1922,7 @@ a.section_title {
         min-width: 180px;
         background: #FFF;
         border-radius: var(--v-radius-s);
-        > a {
+        >a {
             display: flex;
             align-items: center;
             padding: 0 14px;
@@ -1991,6 +1996,7 @@ body.noscroll {
 .break {
     display: none;
 }
+
 
 /*
     플레이어 관련 버튼 셋
@@ -2236,6 +2242,7 @@ body.noscroll {
 .play_control_area {
     margin: 20px 0;
 }
+
 .play_option_area,
 .play_control_area {
     display: flex;
@@ -2258,7 +2265,7 @@ body.noscroll {
         &:before {
             margin-right: 10px;
         }
-        & + a {
+        &+a {
             margin-left: 10px;
         }
     }
@@ -2784,7 +2791,7 @@ input[type=checkbox] {
     .summary_section {
         flex-direction: column;
         align-items: center;
-        padding: 40px 0 ;
+        padding: 40px 0;
         .summary_thumb {
             width: 200px;
             height: 200px;
