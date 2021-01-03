@@ -2315,7 +2315,7 @@ a.section_title:hover:after {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 10px;
+  margin: 0 -10px;
 }
 
 .subend_section .list_item {
