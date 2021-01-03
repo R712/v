@@ -6,12 +6,13 @@
 해당 섹션의 제목 옆 🧭 클릭시 이 곳으로 돌아옵니다.
 
 0. **[안녕하세요](#prologue)**
-1. **[미리보기](#preview)**   
-2. **[HTML 기본](#html-base)**
+1. **[미리보기](#preview)**
+2. **[구성](#filemap)**
+3. **[HTML 기본](#html-base)**
     * [HTML 부가 요소](#html-add)
     * [유틸리티 클래스](#html-uitility)
     * [스티키 플로팅 바](#exp-sticky)
-3. **[CSS 가이드](#css-rule)**
+4. **[CSS 가이드](#css-rule)**
     * [전역 변수 사용법](#css-config)
     * [자주 사용된 CSS 트릭](#css-trick)
     * [SVG 마스크 제어](#css-mask)
@@ -21,7 +22,7 @@
 
 - - -
 
-## 안녕하세요 <a id="prologue" href="#prologue"></a> [🧭](#guidemap)
+## 😃 안녕하세요 <a id="prologue" href="#prologue"></a> [🧭](#guidemap)
 
 * 뼈대가 되는 마크업은 라이브 서버의 브라우저상에서 가져온 HTML입니다. 따라서 프론트엔드 개발 내부 설정과 프로세스에 따라 컴파일 과정을 유추하는데 한계가 있는 배경에서 디자이너 겸 퍼블리셔에 의해 작성된 내용입니다.
 * 위 내용때문에 class명과 html구조 전반적으로 기존 개발팀에서 작성한 내용을 따랐습니다.
@@ -35,15 +36,24 @@
 
 - - -
 
-## 구성 <a id="directory" href="#directory"></a> [🧭](#guidemap)
+## 👀 구성 <a id="filemap" href="#filemap"></a> [🧭](#guidemap)
 
-**`__scss/`** 컴파일 전 SASS
-**`css/`** 컴파일 후 css
-**`js/prototype.js`** 시연용 jquery + javascript
-**`svg/`** 코드형 벡터 이미지
-`img/` 사진 더미
-**`xxx.html`** 라이브서버 카피 html 뼈대
-`xxx.bak` 파일들은 라이브서버의 원본 파일이거나 작업 히스토리 보관용입니다.
+**`__scss/`** 컴파일 전 SASS   
+**`css/`** 컴파일 후 css   
+**`js/prototype.js`** 시연용 jquery + javascript   
+**`svg/`** 코드형 벡터 이미지   
+`img/` 사진 더미   
+**`xxx.html`** 라이브서버 카피 html 뼈대   
+`xxx.bak` 파일들은 라이브서버의 원본 파일이거나 작업 히스토리 보관용입니다.   
+
+### 모바일 웹 밸런스 이해가 높고 꼼꼼하신 분의 모바일 서포트용 css
+```html
+<!-- 모바일 기기 환경일 때 추가 로드할 CSS -->
+<link rel="stylesheet" media="screen and (max-width: 767px)" href="css/mobile.css" />
+```
+
+### 그외 사용된 라이브러리 및 언어
+**`css/scss, jquery, owl-carousel, Noto sans kr webfonts`**
 
 - - -
 
@@ -73,7 +83,7 @@
    - 받은노래 https://r712.github.io/v/archive-received.html
    - 구매한노래 https://r712.github.io/v/archive-paid.html
    
-### 확인사항
+### ✔ 확인사항
 - 모바일 해상도 및 중간 태블릿 해상도 반응형 대응.
 - 모던브라우저 지원. (IE10 이하 미지원)
 - 실 개발에서는 Vue-carousel을 쓴 것으로 보이는 부분을 구현할 수 없어 owl-carousel로 대치해 두었음. ex) 보관함 모바일 해상도 메뉴
