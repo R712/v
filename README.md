@@ -5,6 +5,7 @@
 ## <a id="guidemap" href="#guidemap">🧭</a> 목차 
 해당 섹션의 제목 옆 🧭 클릭시 이 곳으로 돌아옵니다.
 
+🌍 [미리보기](#preview)
 0. [안녕하세요](#prologue)
 1. [HTML 기본](#html-base)
     * [HTML 부가 요소](#html-add)
@@ -17,6 +18,43 @@
     * [가상 요소를 이용한 꾸밈](#css-deco)
     * [그라데이션 덮기](#css-gradation)
     * [0.5px 만드는 법](#css-half-border)
+
+- - -
+
+## 🌍 미리보기 <a id="preview" href="#preview"></a> [🧭](#guidemap)
+
+* GNB
+   - 홈 투데이 https://r712.github.io/v/
+   - 차트 https://r712.github.io/v/chart.html
+   - DJ스테이션 https://r712.github.io/v/djstation.html
+   - 이달의노래 https://r712.github.io/v/monthly.html
+   - 그 외 검색 및 플로팅 레이어등
+* 싱글페이지
+   - 앨범 https://r712.github.io/v/album.html
+   - 아티스트 https://r712.github.io/v/artist.html
+   - 노래가사 https://r712.github.io/v/song-lyrics.html
+* 멤버십
+   - 멤버십구독 https://r712.github.io/v/subscription.html
+   - 내멤버십 https://r712.github.io/v/mymembership.html
+   - 내감상량 https://r712.github.io/v/listening.html
+   - 기프트카드 https://r712.github.io/v/giftcard.html
+* 보관함
+   - 믹스테잎 https://r712.github.io/v/archive.html
+   - 노래 https://r712.github.io/v/archive-song.html
+   - 아티스트 https://r712.github.io/v/archive-artist.html
+   - 앨범 https://r712.github.io/v/archive-album.html
+   - 플레이리스트 https://r712.github.io/v/archive-playlist.html
+   - 받은노래 https://r712.github.io/v/archive-received.html
+   - 구매한노래 https://r712.github.io/v/archive-paid.html
+   
+### 확인사항
+- 모바일 해상도 및 중간 태블릿 해상도 반응형 대응.
+- 모던브라우저 지원. (IE10 이하 미지원)
+- 실 개발에서는 Vue-carousel을 쓴 것으로 보이는 부분을 구현할 수 없어 owl-carousel로 대치해 두었음. ex) 보관함 모바일 해상도 메뉴
+- 대부분의 jquery, javascript는 비교적 쉬운 웹 프로토타입 시연을 위해 간단히 작성되었으며 사용을 권하지 않습니다.
+- 웹폰트 Noto Sans를 가져옵니다.
+- 사진 및 library 대부분을 외부 CDN에 의존하고 있고, github pages를 이용한 미리보기라 느릴 수 있습니다.
+   
 
 
 - - -
@@ -68,7 +106,7 @@
 
 - - -
 
-## HTML 부가 요소 <a id="html-add" href="#html-add">.</a> [🧭](#guidemap)
+## HTML 부가 요소 <a id="html-add" href="#html-add"></a> [🧭](#guidemap)
 
 **프리로더** pre-loader
 ```html
