@@ -35,6 +35,18 @@
 
 - - -
 
+## 구성 <a id="directory" href="#directory"></a> [🧭](#guidemap)
+
+**`__scss/`** 컴파일 전 SASS
+**`css/`** 컴파일 후 css
+**`js/prototype.js`** 시연용 jquery + javascript
+**`svg/`** 코드형 벡터 이미지
+`img/` 사진 더미
+**`xxx.html`** 라이브서버 카피 html 뼈대
+`xxx.bak` 파일들은 라이브서버의 원본 파일이거나 작업 히스토리 보관용입니다.
+
+- - -
+
 ## 🌍 미리보기 <a id="preview" href="#preview"></a> [🧭](#guidemap)
 
 * GNB
