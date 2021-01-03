@@ -355,7 +355,6 @@ $(document).ready(function() {
         startPosition = owl.find('.menu_item.on').index();
     }
     owl.owlCarousel({
-        center: true,
         margin: 20,
         startPosition: startPosition,
         mouseDrag: true,
