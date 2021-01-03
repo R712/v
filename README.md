@@ -5,7 +5,7 @@
 ## <a id="guidemap" href="#guidemap">🧭</a> 목차 
 해당 섹션의 제목 옆 🧭 클릭시 이 곳으로 돌아옵니다.
 
-🌍 [미리보기](#preview)
+🌍 [미리보기](#preview)   
 0. [안녕하세요](#prologue)
 1. [HTML 기본](#html-base)
     * [HTML 부가 요소](#html-add)
