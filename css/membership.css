@@ -741,8 +741,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 80px;
-  padding: 50px;
+  margin: 70px auto 0;
+  padding: 50px 70px;
+  max-width: 560px;
   background: #0f0f0f;
   border-radius: 10px;
 }
@@ -755,6 +756,7 @@
 .recommend_area .desc {
   margin-top: 10px;
   font-size: var(--v-font-l);
+  text-align: center;
 }
 
 .recommend_area .point {
@@ -1203,6 +1205,10 @@
 .device_list_wrap,
 .after_register {
   display: none;
+}
+
+#content {
+  max-width: 950px;
 }
 
 @media (max-width: 1273px) {

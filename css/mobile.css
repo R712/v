@@ -13,24 +13,20 @@
     .today_section .is_mag>div .list_item,
     .today_section .play_for>div .list_item {
         min-width: 60% !important;
-        margin-right: 10px;
     }
     .today_section .list_wrap_news .scroll_list .list_item {
         min-width: 60% !important;
     }
     .today_section>div>div .list_item {
         min-width: 40% !important;
-        margin-right: 10px;
     }
     .today_section .play_for .scroll_list .list_item {
         min-width: 40% !important;
-        margin-right: 10px;
     }
     .list_wrap_video .list_item,
     .list_wrap_album .list_item,
     .list_wrap_artist .list_item {
         min-width: 40% !important;
-        margin-right: 10px;
     }
     .list_wrap_video .list_item {
         min-width: 60% !important;
@@ -90,11 +86,6 @@
         line-height: 22px;
         max-height: 44px;
     }
-    /* 투데이 공통 */
-    .today_section .is_mag>div,
-    .today_section .play_for>div {
-        width: calc(100% + 20px) !important;
-    }
     /* 푸터 */
     .footer .item {
         padding: 2px 0;
@@ -146,15 +137,12 @@
         margin-top: 20px;
     }
     .library_menu .menu_list {
-        overflow-y: hidden;
-        overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
     }
     .library_menu .menu_list a {
         font-size: 20px;
     }
     .sub_list {
-        width: 100%;
         margin: 0 20px;
     }
     .top_wrap .library_title {
@@ -312,7 +300,7 @@
         margin-top: 20px;
     }
     .recommend_area {
-        margin: 0;
+        margin: 30px 0;
     }
     .streaming_list {
         margin-top: 20px;

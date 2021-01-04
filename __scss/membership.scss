@@ -566,8 +566,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
-    padding: 50px;
+    margin: 70px auto 0;
+    padding: 50px 70px;
+    max-width: 560px;
     background: rgb(15, 15, 15);
     border-radius: 10px;
     .title {
@@ -577,6 +578,7 @@
     .desc {
         margin-top: 10px;
         font-size: var(--v-font-l);
+        text-align: center;
     }
     .point {
         color: #02E759;
@@ -921,6 +923,10 @@
 .device_list_wrap,
 .after_register {
     display: none;
+}
+
+#content {
+    max-width: 950px;
 }
 
 @media (max-width: 1273px) {

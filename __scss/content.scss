@@ -105,7 +105,6 @@
     .image_pc {
         width: auto;
         max-width: 768px;
-        height: 100%;
     }
     .img_m,
     .image_mobile {
@@ -2915,6 +2914,18 @@ input[type=checkbox] {
     .admin_banner_section {
         margin: 0 -50px;
         width: calc(100% + 100px);
+        .img_pc,
+        .image_pc {
+            display: none;
+        }
+        .img_m,
+        .image_mobile {
+            display: block;
+            width: 100%;
+        }
+        .link.todayTop {
+            height: auto;
+        }
     }
     .list_wrap_station .list_item,
     .station_wrap .list_item,
@@ -2965,7 +2976,7 @@ input[type=checkbox] {
     */
      ::-webkit-scrollbar {
         width: 8px;
-        background: transparent;
+        background: var(--v-c-black);
     }
      ::-webkit-scrollbar-track {
         background: transparent;
@@ -3011,6 +3022,7 @@ input[type=checkbox] {
     }
     .banner_area,
     .admin_banner_section {
+        margin: 0;
         width: 100vw;
         .img_pc,
         .image_pc {
@@ -3045,9 +3057,13 @@ input[type=checkbox] {
     }
     .today_section {
         padding: 40px 20px 0;
+        .scroll_list {
+            margin: 0 -5px;
+        }
     }
     .today_section>div>div {
         .list_item {
+            padding: 5px;
             min-width: calc(100% / 2) !important;
         }
     }
@@ -3055,8 +3071,6 @@ input[type=checkbox] {
     .today_section .play_for>div {
         width: 100% !important;
         .list_item {
-            margin-left: 0;
-            margin-bottom: 0 !important;
             min-width: 100% !important;
         }
     }
@@ -3189,6 +3203,7 @@ input[type=checkbox] {
         display: none;
     }
     .track_section {
+        padding: 0 10px;
         max-width: 100vw;
     }
     .subend_section {
