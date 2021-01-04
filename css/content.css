@@ -361,7 +361,7 @@
   width: 68%;
   height: 48px;
   color: var(--v-c-white);
-  font-size: 15px;
+  font-size: var(--v-font-m);
   line-height: 24px;
   text-overflow: ellipsis;
   white-space: normal;
@@ -377,7 +377,7 @@
   display: -ms-flexbox;
   display: flex;
   margin-top: 10px;
-  font-size: 15px;
+  font-size: var(--v-font-m);
   line-height: 1;
 }
 
@@ -459,7 +459,7 @@ a.section_title:hover:after {
 
 .today_section h3 .link_view_all {
   opacity: .85;
-  font-size: 15px;
+  font-size: var(--v-font-m);
 }
 
 .today_section h3 .link_view_all:hover {
@@ -473,7 +473,7 @@ a.section_title:hover:after {
 .today_section .info .title,
 .today_section .info .artist {
   display: block;
-  font-size: 15px;
+  font-size: var(--v-font-m);
   line-height: 24px;
   white-space: nowrap;
   word-break: break-all;
@@ -491,7 +491,7 @@ a.section_title:hover:after {
 
 .today_section .title {
   display: block;
-  margin-top: 12px;
+  margin-top: 10px;
   max-height: 48px;
   letter-spacing: 0;
   font-weight: 600;
@@ -523,7 +523,7 @@ a.section_title:hover:after {
   display: block;
   margin-top: 4px;
   height: 48px;
-  font-size: 15px;
+  font-size: var(--v-font-m);
   line-height: 24px;
   word-break: break-all;
   text-overflow: ellipsis;
@@ -792,7 +792,7 @@ a.section_title:hover:after {
           align-items: center;
   padding-left: 40px;
   color: var(--v-c-gray);
-  font-size: 15px;
+  font-size: var(--v-font-m);
 }
 
 .end_section .album_info_area .text_area .title {
@@ -866,7 +866,6 @@ a.section_title:hover:after {
 
 .end_section .album_info_area .more_option .link_artist {
   display: inline-block;
-  margin-top: 4px;
 }
 
 .end_section .album_info_area .more_option .link_artist:hover {
@@ -975,7 +974,7 @@ a.section_title:hover:after {
           align-items: center;
   width: 50px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--v-font-m);
 }
 
 .list_wrap_track_rank .list_item .list_track_row .rank .up:before {
@@ -1055,7 +1054,7 @@ a.section_title:hover:after {
   background: var(--v-c-input);
   color: var(--v-c-white);
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--v-font-m);
   border-radius: var(--v-radius-s);
   cursor: pointer;
 }
@@ -1190,7 +1189,7 @@ a.section_title:hover:after {
   height: 50px;
   background: var(--v-c-input);
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--v-font-m);
   border-radius: var(--v-radius-s);
   overflow: hidden;
   -webkit-transition: opacity .1s ease-in-out;
@@ -1377,7 +1376,6 @@ a.section_title:hover:after {
 .list_wrap_station .link_artist,
 .station_wrap .link_artist {
   display: inline-block;
-  margin-top: 4px;
 }
 
 .list_wrap_video .link_artist:hover,
@@ -1435,7 +1433,7 @@ a.section_title:hover:after {
 .list_wrap_artist .artist {
   margin-top: 10px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--v-font-m);
   text-align: center;
 }
 
@@ -1449,7 +1447,7 @@ a.section_title:hover:after {
 
 .list_wrap_album .info {
   position: relative;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .list_wrap_album .info .rank {
@@ -1467,7 +1465,7 @@ a.section_title:hover:after {
   width: 40px;
   height: 40px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--v-font-m);
 }
 
 .list_wrap_album .info .rank .up:before {
@@ -1567,7 +1565,7 @@ a.section_title:hover:after {
 
 .list_wrap_video .title {
   display: block;
-  margin-top: 12px;
+  margin-top: 10px;
   font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
@@ -1583,7 +1581,7 @@ a.section_title:hover:after {
 .list_wrap_video .artist {
   opacity: .75;
   display: block;
-  font-size: 15px;
+  font-size: var(--v-font-m);
 }
 
 /*
@@ -1805,7 +1803,7 @@ a.section_title:hover:after {
   margin: 40px 0 20px;
   color: var(--v-c-gray);
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--v-font-m);
 }
 
 .track_section table {
@@ -1824,18 +1822,8 @@ a.section_title:hover:after {
 }
 
 .track_section table td {
-  height: 50px;
+  height: 60px;
   vertical-align: middle;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-}
-
-.track_section table td:first-child {
-  border-radius: 4px 0 0 4px;
-}
-
-.track_section table td:last-child {
-  border-radius: 0 4px 4px 0;
 }
 
 .track_section table td.disabled * {
@@ -1880,8 +1868,6 @@ a.section_title:hover:after {
 .track_section table .thumb .img_thumb {
   width: 50px;
   height: 50px;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
 }
 
 .track_section table .input_check {
@@ -4131,7 +4117,7 @@ input[type=checkbox]:checked:after {
   .list_wrap_album .list_item,
   .list_wrap_artist .list_item {
     min-width: calc(100% / 2) !important;
-    font-size: 15px;
+    font-size: var(--v-font-m);
   }
   .list_wrap_station .list_item,
   .station_wrap .list_item {
@@ -4172,6 +4158,9 @@ input[type=checkbox]:checked:after {
   .top_wrap {
     margin: 40px 20px 0;
   }
+  .end_section .track_section {
+    padding: 0;
+  }
   .top_wrap .option_area {
     position: relative;
     right: inherit;
@@ -4184,7 +4173,7 @@ input[type=checkbox]:checked:after {
     padding: 0 20px;
   }
   .library_menu .menu_list a {
-    font-size: 15px;
+    font-size: var(--v-font-m);
   }
   .summary_section {
     -webkit-box-orient: vertical;
@@ -4258,7 +4247,7 @@ input[type=checkbox]:checked:after {
     margin: 4px 0;
   }
   .track_section table {
-    font-size: 15px;
+    font-size: var(--v-font-m);
   }
   .track_section table .artist_sub {
     display: block;

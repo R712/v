@@ -184,7 +184,7 @@
         width: 68%;
         height: 48px;
         color: var(--v-c-white);
-        font-size: 15px;
+        font-size: var(--v-font-m);
         line-height: 24px;
         text-overflow: ellipsis;
         white-space: normal;
@@ -197,7 +197,7 @@
         opacity: .75;
         display: flex;
         margin-top: 10px;
-        font-size: 15px;
+        font-size: var(--v-font-m);
         line-height: 1;
         .item+.item:before {
             content: '';
@@ -259,7 +259,7 @@ a.section_title {
         }
         .link_view_all {
             opacity: .85;
-            font-size: 15px;
+            font-size: var(--v-font-m);
             &:hover {
                 opacity: 1;
             }
@@ -270,7 +270,7 @@ a.section_title {
         .title,
         .artist {
             display: block;
-            font-size: 15px;
+            font-size: var(--v-font-m);
             line-height: 24px;
             white-space: nowrap;
             word-break: break-all;
@@ -286,7 +286,7 @@ a.section_title {
     }
     .title {
         display: block;
-        margin-top: 12px;
+        margin-top: 10px;
         max-height: 48px;
         letter-spacing: 0;
         font-weight: 600;
@@ -314,7 +314,7 @@ a.section_title {
         display: block;
         margin-top: 4px;
         height: 48px;
-        font-size: 15px;
+        font-size: var(--v-font-m);
         line-height: 24px;
         word-break: break-all;
         text-overflow: ellipsis;
@@ -540,7 +540,7 @@ a.section_title {
             align-items: center;
             padding-left: 40px;
             color: var(--v-c-gray);
-            font-size: 15px;
+            font-size: var(--v-font-m);
             .title {
                 display: inline-flex;
                 margin-bottom: 10px;
@@ -596,7 +596,6 @@ a.section_title {
             }
             .link_artist {
                 display: inline-block;
-                margin-top: 4px;
                 &:hover {
                     text-decoration: underline;
                 }
@@ -668,7 +667,7 @@ a.section_title {
                 align-items: center;
                 width: 50px;
                 font-weight: 600;
-                font-size: 15px;
+                font-size: var(--v-font-m);
                 .up {
                     &:before {
                         content: '';
@@ -743,7 +742,7 @@ a.section_title {
         background: var(--v-c-input);
         color: var(--v-c-white);
         font-weight: 600;
-        font-size: 15px;
+        font-size: var(--v-font-m);
         border-radius: var(--v-radius-s);
         cursor: pointer;
         &:after {
@@ -841,7 +840,7 @@ a.section_title {
             height: 50px;
             background: var(--v-c-input);
             font-weight: 600;
-            font-size: 15px;
+            font-size: var(--v-font-m);
             border-radius: var(--v-radius-s);
             overflow: hidden;
             transition: opacity .1s ease-in-out;
@@ -946,7 +945,6 @@ a.section_title {
     }
     .link_artist {
         display: inline-block;
-        margin-top: 4px;
         &:hover {
             text-decoration: underline;
         }
@@ -993,7 +991,7 @@ a.section_title {
     .artist {
         margin-top: 10px;
         font-weight: 600;
-        font-size: 15px;
+        font-size: var(--v-font-m);
         text-align: center;
     }
     .link {
@@ -1007,7 +1005,7 @@ a.section_title {
 .list_wrap_album {
     .info {
         position: relative;
-        margin-top: 12px;
+        margin-top: 10px;
         .rank {
             float: left;
             display: flex;
@@ -1016,7 +1014,7 @@ a.section_title {
             width: 40px;
             height: 40px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: var(--v-font-m);
             .up {
                 &:before {
                     content: '';
@@ -1105,7 +1103,7 @@ a.section_title {
     }
     .title {
         display: block;
-        margin-top: 12px;
+        margin-top: 10px;
         font-weight: 600;
         letter-spacing: 0;
         white-space: nowrap;
@@ -1119,7 +1117,7 @@ a.section_title {
     .artist {
         opacity: .75;
         display: block;
-        font-size: 15px;
+        font-size: var(--v-font-m);
     }
 }
 
@@ -1281,7 +1279,7 @@ a.section_title {
         margin: 40px 0 20px;
         color: var(--v-c-gray);
         font-weight: 600;
-        font-size: 15px;
+        font-size: var(--v-font-m);
     }
     table {
         width: 100%;
@@ -1295,15 +1293,8 @@ a.section_title {
             border-top: 1px solid var(--v-c-border-light);
         }
         td {
-            height: 50px;
+            height: 60px;
             vertical-align: middle;
-            transition: all .1s ease-in-out;
-            &:first-child {
-                border-radius: 4px 0 0 4px;
-            }
-            &:last-child {
-                border-radius: 0 4px 4px 0;
-            }
             &.disabled {
                 * {
                     opacity: 0.2;
@@ -1341,7 +1332,6 @@ a.section_title {
             .img_thumb {
                 width: 50px;
                 height: 50px;
-                transition: all .1s ease-in-out;
             }
         }
         .input_check {
@@ -3084,7 +3074,7 @@ input[type=checkbox] {
     .list_wrap_artist {
         .list_item {
             min-width: calc(100% / 2) !important;
-            font-size: 15px;
+            font-size: var(--v-font-m);
         }
     }
     .list_wrap_station .list_item,
@@ -3127,6 +3117,9 @@ input[type=checkbox] {
     .top_wrap {
         margin: 40px 20px 0;
     }
+    .end_section .track_section {
+        padding: 0;
+    }
     .top_wrap .option_area {
         position: relative;
         right: inherit;
@@ -3139,7 +3132,7 @@ input[type=checkbox] {
         padding: 0 20px;
     }
     .library_menu .menu_list a {
-        font-size: 15px;
+        font-size: var(--v-font-m);
     }
     .summary_section {
         flex-direction: column;
@@ -3196,7 +3189,7 @@ input[type=checkbox] {
         }
     }
     .track_section table {
-        font-size: 15px;
+        font-size: var(--v-font-m);
         .artist_sub {
             display: block;
         }
