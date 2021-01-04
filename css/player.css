@@ -302,8 +302,6 @@
   margin: 0 4px;
   width: 44px;
   height: 44px;
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
 }
 
 .player_controller .control_area a.btn_now {
@@ -313,10 +311,13 @@
   margin: 0 10px;
   background: url("../svg/i-play.svg") no-repeat center;
   background-size: 22px;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .player_controller .control_area a.btn_now.play {
   background: url("../svg/i-pause.svg") no-repeat center;
+  background-size: 20px;
 }
 
 .player_controller .control_area a.btn_play_prev {

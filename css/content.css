@@ -4011,8 +4011,7 @@ input[type=checkbox]:checked:after {
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    border: 1px solid transparent;
-    background-color: var(--v-c-point);
+    background-color: var(--v-c-white);
   }
 }
 

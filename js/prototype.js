@@ -176,10 +176,8 @@ $('.search_area').on('keydown', 'input', function() {
 vibePlayer.on('click', '.btn_playlist', function() {
     if (vibePlayer.hasClass('open')) {
         vibePlayer.removeClass('open');
-        $('body').removeClass('noscroll');
     } else {
         vibePlayer.addClass('open');
-        $('body').addClass('noscroll');
     }
 });
 vibePlayer.on('click', '.control_area .btn_now', function() {
@@ -349,16 +347,17 @@ $('.ly_popup').on('keydown', 'input[type=text]', function() {
 //  미리보기용 owlcarousel2
 //  vue-carousel 대용
 $(document).ready(function() {
-    const owl = $('.owl-carousel');
     let startPosition = false;
-    if (owl.has('.menu_item.on')) {
-        startPosition = owl.find('.menu_item.on').index();
+    if ($('.owl-carousel').has('.menu_item.on')) {
+        startPosition = $('.owl-carousel').find('.menu_item.on').index();
     }
-    owl.owlCarousel({
-        margin: 20,
-        startPosition: startPosition,
-        mouseDrag: true,
-        touchDrag: true,
-        autoWidth: true
-    });
+    if ($('.owl-carousel')) {
+        $('.owl-carousel').owlCarousel({
+            margin: 20,
+            startPosition: startPosition,
+            mouseDrag: true,
+            touchDrag: true,
+            autoWidth: true
+        });
+    }
 });

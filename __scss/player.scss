@@ -236,14 +236,15 @@
             margin: 0 4px;
             width: 44px;
             height: 44px;
-            transition: all .1s ease;
             &.btn_now {
                 order: 3;
                 margin: 0 10px;
                 background: url('../svg/i-play.svg') no-repeat center;
                 background-size: 22px;
+                transition: none;
                 &.play {
                     background: url('../svg/i-pause.svg') no-repeat center;
+                    background-size: 20px;
                 }
             }
             &.btn_play_prev {
