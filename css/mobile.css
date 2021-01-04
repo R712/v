@@ -163,7 +163,7 @@
     .list_wrap_station .list_item,
     .station_wrap .list_item,
     .subend_section .list_item {
-        width: calc((100% - 40px) / 2)
+        width: calc(100% / 2);
     }
     .option_area .btn_play,
     .option_area .btn_shuffle,

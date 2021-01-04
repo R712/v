@@ -262,7 +262,9 @@
 .admin_banner_section .image_pc,
 .banner_area .img_pc,
 .banner_area .image_pc {
-  max-width: 100%;
+  width: auto;
+  max-width: 768px;
+  height: 100%;
 }
 
 .admin_banner_section .img_m,
@@ -282,6 +284,10 @@
   width: 32px;
   height: 32px;
   background: url("../svg/i-close.svg") no-repeat center;
+}
+
+.admin_banner_section .link.todayTop {
+  height: 50px;
 }
 
 .streport_membership .banner_area {
@@ -505,7 +511,7 @@ a.section_title:hover:after {
 .today_section .link_sub {
   opacity: .75;
   display: block;
-  margin-top: 1px;
+  margin-top: 3px;
   font-size: var(--v-font-s);
 }
 
@@ -654,7 +660,7 @@ a.section_title:hover:after {
 }
 
 .today_section .list_wrap_news .title {
-  font-size: var(--v-font-m);
+  font-size: var(--v-font-l);
 }
 
 .today_section .play_for .scroll_list .list_item {
@@ -1381,10 +1387,6 @@ a.section_title:hover:after {
 .list_wrap_station .link_artist:hover,
 .station_wrap .link_artist:hover {
   text-decoration: underline;
-}
-
-.station_wrap {
-  margin: 0 -10px;
 }
 
 .station_wrap .list_item {
@@ -3576,7 +3578,7 @@ body.noscroll {
 }
 
 #content.on-scroll .summary .option_area {
-  opacity: .25;
+  opacity: .4;
   cursor: default;
 }
 
@@ -3601,7 +3603,7 @@ body.noscroll {
 #content.on-checked .summary .option_area,
 #content.on-checked .function_area .option_area,
 #content.on-checked .play_control_area {
-  opacity: .25;
+  opacity: .4;
   cursor: default;
 }
 
@@ -3940,10 +3942,6 @@ input[type=checkbox]:checked:after {
   .admin_banner_section {
     margin: 0 -50px;
     width: calc(100% + 100px);
-  }
-  .list_wrap_station,
-  .station_wrap {
-    margin: 0 -10px;
   }
   .list_wrap_station .list_item,
   .station_wrap .list_item,

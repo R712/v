@@ -103,7 +103,9 @@
     }
     .img_pc,
     .image_pc {
-        max-width: 100%;
+        width: auto;
+        max-width: 768px;
+        height: 100%;
     }
     .img_m,
     .image_mobile {
@@ -119,6 +121,10 @@
         height: 32px;
         background: url('../svg/i-close.svg') no-repeat center;
     }
+}
+
+.admin_banner_section .link.todayTop {
+    height: 50px;
 }
 
 .streport_membership .banner_area {
@@ -298,7 +304,7 @@ a.section_title {
     .link_sub {
         opacity: .75;
         display: block;
-        margin-top: 1px;
+        margin-top: 3px;
         font-size: var(--v-font-s);
         &:hover {
             text-decoration: underline;
@@ -422,7 +428,7 @@ a.section_title {
             }
         }
         .title {
-            font-size: var(--v-font-m);
+            font-size: var(--v-font-l);
         }
     }
     .play_for {
@@ -949,7 +955,6 @@ a.section_title {
 }
 
 .station_wrap {
-    margin: 0 -10px;
     .list_item {
         padding: 10px;
         width: calc(100% / 5);
@@ -2626,7 +2631,7 @@ body.noscroll {
 
 #content.on-scroll {
     .summary .option_area {
-        opacity: .25;
+        opacity: .4;
         cursor: default;
     }
     .floating_bar>.bar_inner {
@@ -2649,7 +2654,7 @@ body.noscroll {
     .summary .option_area,
     .function_area .option_area,
     .play_control_area {
-        opacity: .25;
+        opacity: .4;
         cursor: default;
     }
 }
@@ -2910,10 +2915,6 @@ input[type=checkbox] {
     .admin_banner_section {
         margin: 0 -50px;
         width: calc(100% + 100px);
-    }
-    .list_wrap_station,
-    .station_wrap {
-        margin: 0 -10px;
     }
     .list_wrap_station .list_item,
     .station_wrap .list_item,
