@@ -994,7 +994,16 @@ a.section_title:hover:after {
 }
 
 .list_wrap_track_rank .list_item .list_track_row .song_area {
-  padding-top: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: calc(100% - 110px);
   overflow: hidden;
 }
@@ -1153,6 +1162,7 @@ a.section_title:hover:after {
 .list_wrap_genre {
   position: relative;
   margin: 0 -5px;
+  width: calc(100% - 10px);
   overflow: hidden;
 }
 
@@ -1161,31 +1171,28 @@ a.section_title:hover:after {
 }
 
 .list_wrap_genre .list_item {
-  display: inline-block;
-  width: calc(100% / 5);
+  display: inline;
+  width: auto;
+  white-space: normal;
 }
 
 .list_wrap_genre .link_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-shadow: border-box;
+          box-shadow: border-box;
+  display: inline-block;
+  width: 25%;
+  white-space: normal;
+  vertical-align: middle;
 }
 
 .list_wrap_genre .link_box a {
   opacity: .8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 5px;
   padding: 6px;
-  width: calc(100% - 10px);
   height: 50px;
   background: var(--v-c-input);
   font-weight: 600;
@@ -1208,12 +1215,6 @@ a.section_title:hover:after {
 
 .list_wrap_genre .link_box a:hover {
   opacity: 1;
-}
-
-.list_wrap_genre .link_box:last-child {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .list_wrap_video,
@@ -3914,7 +3915,8 @@ input[type=checkbox]:checked:after {
   }
   .list_wrap_video .list_item,
   .list_wrap_album .list_item,
-  .list_wrap_artist .list_item {
+  .list_wrap_artist .list_item,
+  .list_wrap_genre .list_item {
     min-width: calc(100% / 4) !important;
     font-size: var(--v-font-l);
   }
@@ -3956,7 +3958,8 @@ input[type=checkbox]:checked:after {
   }
   .list_wrap_station .list_item,
   .station_wrap .list_item,
-  .subend_section .list_item {
+  .subend_section .list_item,
+  .list_wrap_genre .list_item {
     width: calc(100% / 3);
   }
   .home {
@@ -4115,7 +4118,8 @@ input[type=checkbox]:checked:after {
   }
   .list_wrap_video .list_item,
   .list_wrap_album .list_item,
-  .list_wrap_artist .list_item {
+  .list_wrap_artist .list_item,
+  .list_wrap_genre .list_item {
     min-width: calc(100% / 2) !important;
     font-size: var(--v-font-m);
   }
@@ -4129,9 +4133,6 @@ input[type=checkbox]:checked:after {
   .list_wrap_track_rank .list_item {
     min-width: 100%;
   }
-  .list_wrap_genre .link_box {
-    width: 50%;
-  }
   .list_wrap_genre .link_box a {
     font-size: var(--v-font-m);
   }
@@ -4143,6 +4144,9 @@ input[type=checkbox]:checked:after {
   .today_section h3 .section_title,
   .end_section > h3 {
     font-size: 22px;
+  }
+  .end_section > h3 {
+    padding-bottom: 5px;
   }
   .end_section .album_info_area .thumb_area {
     width: 150px;
@@ -4156,7 +4160,7 @@ input[type=checkbox]:checked:after {
   .end_title,
   .end_section,
   .top_wrap {
-    margin: 40px 20px 0;
+    margin: 30px 0 0 20px;
   }
   .end_section .track_section {
     padding: 0;

@@ -688,7 +688,9 @@ a.section_title {
                 }
             }
             .song_area {
-                padding-top: 6px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 width: calc(100% - 110px);
                 overflow: hidden;
                 .inner {
@@ -819,24 +821,28 @@ a.section_title {
 .list_wrap_genre {
     position: relative;
     margin: 0 -5px;
+    width: calc(100% - 10px);
     overflow: hidden;
     .scroll_list {
         white-space: nowrap;
     }
     .list_item {
-        display: inline-block;
-        width: calc(100% / 5);
+        display: inline;
+        width: auto;
+        white-space: normal;
     }
     .link_box {
-        display: flex;
-        flex-direction: row;
+        box-shadow: border-box;
+        display: inline-block;
+        width: 25%;
+        white-space: normal;
+        vertical-align: middle;
         a {
             opacity: .8;
-            display: flex;
+            display: block;
             align-items: center;
             margin: 5px;
             padding: 6px;
-            width: calc(100% - 10px);
             height: 50px;
             background: var(--v-c-input);
             font-weight: 600;
@@ -855,11 +861,6 @@ a.section_title {
             &:hover {
                 opacity: 1;
             }
-        }
-        &:last-child {
-            content: '';
-            display: block;
-            clear: both;
         }
     }
 }
@@ -2881,7 +2882,8 @@ input[type=checkbox] {
     }
     .list_wrap_video,
     .list_wrap_album,
-    .list_wrap_artist {
+    .list_wrap_artist,
+    .list_wrap_genre {
         .list_item {
             min-width: calc(100% / 4) !important;
             font-size: var(--v-font-l);
@@ -2924,7 +2926,8 @@ input[type=checkbox] {
     }
     .list_wrap_station .list_item,
     .station_wrap .list_item,
-    .subend_section .list_item {
+    .subend_section .list_item,
+    .list_wrap_genre .list_item {
         width: calc(100% / 3);
     }
     .home {
@@ -3071,7 +3074,8 @@ input[type=checkbox] {
     }
     .list_wrap_video,
     .list_wrap_album,
-    .list_wrap_artist {
+    .list_wrap_artist,
+    .list_wrap_genre {
         .list_item {
             min-width: calc(100% / 2) !important;
             font-size: var(--v-font-m);
@@ -3087,9 +3091,6 @@ input[type=checkbox] {
         }
         font-size: var(--v-font-m);
     }
-    .list_wrap_genre .link_box {
-        width: 50%;
-    }
     .list_wrap_genre .link_box a {
         font-size: var(--v-font-m);
     }
@@ -3100,6 +3101,9 @@ input[type=checkbox] {
     .today_section h3 .section_title,
     .end_section>h3 {
         font-size: 22px;
+    }
+    .end_section>h3 {
+        padding-bottom: 5px;
     }
     .end_section .album_info_area {
         .thumb_area {
@@ -3115,7 +3119,7 @@ input[type=checkbox] {
     .end_title,
     .end_section,
     .top_wrap {
-        margin: 40px 20px 0;
+        margin: 30px 0 0 20px;
     }
     .end_section .track_section {
         padding: 0;
