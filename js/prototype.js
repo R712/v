@@ -201,8 +201,9 @@ $('.btn_like, .btn_add').click(function() {
     $(this).toggleClass('on');
 });
 //  보관함에서 좋아하는 아티스트 취소
-$('.thumb_area').on('click', '.btn_like', function() {
+$('.subend_section').on('click', '.btn_like', function() {
     $(this).closest('.list_item').addClass('dislike').fadeOut(200);
+    $(this).closest('tr').addClass('dislike').fadeOut(200);
 });
 
 //

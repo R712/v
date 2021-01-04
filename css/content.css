@@ -2316,7 +2316,6 @@ a.section_title:hover:after {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 -10px;
 }
 
 .subend_section .list_item {
@@ -2329,11 +2328,6 @@ a.section_title:hover:after {
 
 .subend_section .list_item:hover .link:after {
   opacity: 1;
-}
-
-.subend_section .list_item.dislike .thumb {
-  -webkit-animation: fadeOutThumb 1s cubic-bezier(0.21, 0.6, 0.35, 1);
-          animation: fadeOutThumb 1s cubic-bezier(0.21, 0.6, 0.35, 1);
 }
 
 .subend_section .thumb_area {
@@ -2431,39 +2425,6 @@ a.section_title:hover:after {
   background: var(--v-gradientOverlay);
 }
 
-.subend_section .thumb + .btn_like {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 44px;
-  text-align: center;
-}
-
-.subend_section .thumb + .btn_like::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 44px;
-  height: 44px;
-  background-color: rgba(0, 0, 0, 0.4);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  border-radius: 50%;
-}
-
-.subend_section .thumb + .btn_like::after {
-  background-color: var(--v-c-point);
-  -webkit-mask-image: url("../svg/i-heart-fill.svg");
-          mask-image: url("../svg/i-heart-fill.svg");
-}
-
-.subend_section .thumb + .btn_like:hover::after {
-  background-color: var(--v-c-gray);
-  -webkit-mask-image: url("../svg/i-heart.svg");
-          mask-image: url("../svg/i-heart.svg");
-}
-
 .subend_section .thumb_area + .artist {
   display: block;
   padding-top: 12px;
@@ -2528,6 +2489,54 @@ a.section_title:hover:after {
 
 .subend_section .track_section table {
   font-size: var(--v-font-m);
+}
+
+.subend_section .thumb + .btn_like {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+}
+
+.subend_section .thumb + .btn_like::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 50%;
+}
+
+.subend_section .thumb + .btn_like::after {
+  -webkit-mask-size: 28px;
+          mask-size: 28px;
+}
+
+.subend_section .btn_like {
+  text-align: center;
+}
+
+.subend_section .btn_like::after {
+  background-color: var(--v-c-point);
+  -webkit-mask-image: url("../svg/i-heart-fill.svg");
+          mask-image: url("../svg/i-heart-fill.svg");
+}
+
+.subend_section .btn_like:hover::after {
+  background-color: var(--v-c-gray);
+  -webkit-mask-image: url("../svg/i-heart.svg");
+          mask-image: url("../svg/i-heart.svg");
+  -webkit-transition: none;
+  transition: none;
+}
+
+.subend_section .dislike {
+  -webkit-animation: fadeOutThumb 1s cubic-bezier(0.21, 0.6, 0.35, 1);
+          animation: fadeOutThumb 1s cubic-bezier(0.21, 0.6, 0.35, 1);
 }
 
 .top_wrap {
@@ -3257,7 +3266,7 @@ body.noscroll {
 .btn_like::after {
   content: '';
   display: inline-block;
-  width: 40px;
+  width: 44px;
   height: 44px;
   background-color: var(--v-c-white);
   -webkit-mask: url("../svg/i-heart.svg") no-repeat center;
@@ -3432,7 +3441,7 @@ body.noscroll {
 }
 
 .play_control_area {
-  margin: 20px 0;
+  margin: 20px;
 }
 
 .play_option_area,
@@ -4185,7 +4194,7 @@ input[type=checkbox]:checked:after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 40px 0;
+    padding: 40px;
   }
   .summary_section .summary_thumb {
     width: 200px;
@@ -4276,6 +4285,18 @@ input[type=checkbox]:checked:after {
   .subend_section .sub_list .artist {
     display: block;
     white-space: nowrap;
+  }
+  .sub_list ul {
+    margin: 0 -5px;
+  }
+  .sub_list .thumb + .btn_like {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .sub_list .thumb + .btn_like:before {
+    width: 60px;
+    height: 60px;
   }
   .footer {
     margin-top: 0;

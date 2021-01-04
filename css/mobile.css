@@ -67,7 +67,7 @@
         padding: 30px 0 0 20px;
     }
     .today_section h3 .section_title {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     .today_section h3 .section_title,
     .end_section>h3 {
@@ -153,11 +153,6 @@
     .subend_section .list_item {
         width: calc(100% / 2);
     }
-    .option_area .btn_play,
-    .option_area .btn_shuffle,
-    .option_area .btn {
-        margin-right: 0;
-    }
     .top_wrap .option_area .inner_option {
         width: 49%;
     }
@@ -189,7 +184,9 @@
         padding: 20px;
     }
     .floating_select .play_option_area .btn_play_select {
-        background-color: white;
+        margin-right: 20px;
+        max-width: 100px;
+        background-color: #FFF;
     }
     /* 아티스트 */
     .artist_summary_section {
@@ -218,7 +215,7 @@
         max-width: 25%;
     }
     .track_section .option {
-        width: 40px;
+        width: 50px;
     }
     .track_section .option .btn_option {
         opacity: .5;

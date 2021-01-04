@@ -1695,7 +1695,6 @@ a.section_title {
         ul {
             display: flex;
             flex-wrap: wrap;
-            margin: 0 -10px;
         }
     }
     .list_item {
@@ -1707,10 +1706,6 @@ a.section_title {
             .link:after {
                 opacity: 1;
             }
-        }
-        // 보관함에서 좋아요 취소할 때
-        &.dislike .thumb {
-            animation: fadeOutThumb 1s cubic-bezier(.210, .60, .350, 1);
         }
     }
     .thumb_area {
@@ -1790,32 +1785,6 @@ a.section_title {
             background: var(--v-gradientOverlay);
         }
     }
-    .thumb+.btn_like {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 44px;
-        text-align: center;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 44px;
-            height: 44px;
-            background-color: rgba(0, 0, 0, .4);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-        }
-        &::after {
-            background-color: var(--v-c-point);
-            mask-image: url('../svg/i-heart-fill.svg');
-        }
-        &:hover::after {
-            background-color: var(--v-c-gray);
-            mask-image: url('../svg/i-heart.svg');
-        }
-    }
     .thumb_area+.artist {
         display: block;
         padding-top: 12px;
@@ -1870,6 +1839,42 @@ a.section_title {
     }
     .track_section table {
         font-size: var(--v-font-m);
+    }
+    .thumb+ .btn_like {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, .4);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+        }
+        &::after {
+            mask-size: 28px;
+        }
+    }
+    .btn_like {
+        text-align: center;
+        &::after {
+            background-color: var(--v-c-point);
+            mask-image: url('../svg/i-heart-fill.svg');
+        }
+        &:hover::after {
+            background-color: var(--v-c-gray);
+            mask-image: url('../svg/i-heart.svg');
+            transition: none;
+        }
+    }
+    // 보관함에서 좋아요 취소할 때
+    .dislike {
+        animation: fadeOutThumb 1s cubic-bezier(.210, .60, .350, 1);
     }
 }
 
@@ -2391,7 +2396,7 @@ body.noscroll {
     &::after {
         content: '';
         display: inline-block;
-        width: 40px;
+        width: 44px;
         height: 44px;
         background-color: var(--v-c-white);
         mask: url('../svg/i-heart.svg') no-repeat center;
@@ -2525,7 +2530,7 @@ body.noscroll {
 }
 
 .play_control_area {
-    margin: 20px 0;
+    margin: 20px;
 }
 
 .play_option_area,
@@ -3139,7 +3144,7 @@ input[type=checkbox] {
     .summary_section {
         flex-direction: column;
         align-items: center;
-        padding: 40px 0;
+        padding: 40px;
         .summary_thumb {
             width: 200px;
             height: 200px;
@@ -3195,6 +3200,8 @@ input[type=checkbox] {
         .artist_sub {
             display: block;
         }
+        .option {
+        }
     }
     .track_section .mp3,
     .track_section .lyrics,
@@ -3217,6 +3224,20 @@ input[type=checkbox] {
         .sub_list .artist {
             display: block;
             white-space: nowrap;
+        }
+    }
+    .sub_list {
+        ul {
+            margin: 0 -5px;
+        }
+        .thumb+.btn_like {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            &:before {
+                width: 60px;
+                height: 60px;
+            }
         }
     }
     .footer {
