@@ -200,7 +200,17 @@ $('.floating_select').appendTo('.floating_bar');
 $('.btn_like, .btn_add').click(function() {
     $(this).toggleClass('on');
 });
+
+//
+//  차트 - 장르보기 펼치기
+//
+$('.end_section').on('click', '.btn_more_list', function() {
+    $(this).prev('.list_wrap_genre').toggleClass('open');
+});
+
+//
 //  보관함에서 좋아하는 아티스트 취소
+//
 $('.subend_section').on('click', '.btn_like', function() {
     $(this).closest('.list_item').addClass('dislike').fadeOut(200);
     $(this).closest('tr').addClass('dislike').fadeOut(200);
