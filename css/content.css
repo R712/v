@@ -666,16 +666,23 @@ a.section_title:hover:after {
 
 .VueCarousel-navigation-prev,
 .VueCarousel-navigation-next {
-  opacity: .75;
+  opacity: .6;
   position: absolute;
   top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 44px;
   height: 44px;
-  background: var(--v-c-input) url("../svg/i-carousel-next.svg") no-repeat 11px center;
-  background-size: 24px;
   border-radius: 50%;
-  -webkit-transition: background-color .1s ease;
-  transition: background-color .1s ease;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -683,15 +690,39 @@ a.section_title:hover:after {
 .VueCarousel-navigation-prev:hover,
 .VueCarousel-navigation-next:hover {
   opacity: 1;
-  background-color: var(--v-c-border-light);
+}
+
+.VueCarousel-navigation-prev::before,
+.VueCarousel-navigation-next::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-color: var(--v-c-white);
+  -webkit-mask: url("../svg/i-carousel-next.svg") no-repeat center;
+          mask: url("../svg/i-carousel-next.svg") no-repeat center;
+  -webkit-mask-size: 24px;
+          mask-size: 24px;
 }
 
 .VueCarousel-navigation-prev {
-  left: -44px;
+  left: -40px;
+}
+
+.VueCarousel-navigation-prev::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.VueCarousel-navigation-prev:hover {
+  left: -45px;
 }
 
 .VueCarousel-navigation-next {
-  right: -44px;
+  right: -40px;
+}
+
+.VueCarousel-navigation-next:hover {
+  right: -45px;
 }
 
 .end_title {
