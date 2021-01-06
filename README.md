@@ -1,3 +1,14 @@
+- - -
+
+### 최근 수정
+
+* 1월 6일 사파리 버그 다수 수정
+   - carousel arrow not working
+   - browser height wrong with wrapper
+   - background svg flicking
+
+- - -
+
 # 바이브 웹 PC facelift 마크업 가이드
 
 - - -
