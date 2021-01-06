@@ -449,7 +449,7 @@ a.section_title {
     background: var(--v-c-input) url('../svg/i-carousel-next.svg') no-repeat 11px center;
     background-size: 24px;
     border-radius: 50%;
-    transition: all .1s ease;
+    transition: background-color .1s ease;
     transform: translateY(-50%);
     &:hover {
         opacity: 1;

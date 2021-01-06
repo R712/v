@@ -676,8 +676,8 @@ a.section_title:hover:after {
   background: var(--v-c-input) url("../svg/i-carousel-next.svg") no-repeat 11px center;
   background-size: 24px;
   border-radius: 50%;
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
+  -webkit-transition: background-color .1s ease;
+  transition: background-color .1s ease;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
