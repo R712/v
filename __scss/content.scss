@@ -253,7 +253,7 @@ a.section_title {
             display: block;
             margin-bottom: 20px;
             font-weight: 700;
-            font-size: 28px;
+            font-size: var(--v-font-xxxl);
         }
         .link_view_all {
             opacity: .85;
@@ -1082,15 +1082,6 @@ a.section_title {
         img {
             width: 100%;
         }
-        &:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 60%;
-            background: var(--v-gradientOverlay);
-        }
     }
     .summary {
         position: relative;
@@ -1101,15 +1092,19 @@ a.section_title {
         display: flex;
         flex-direction: column;
         font-weight: 500;
-        font-size: 28px;
-        line-height: 1.5;
+        font-size: var(--v-font-xxl);
+        line-height: 1.42;
         .title {
             font-weight: 600;
         }
         .sub_title {
-            font-size: 24px;
+            font-size: var(--v-font-xl);
             .item+.item {
-                margin-left: 16px;
+                &::before {
+                    content: '\22C5';
+                    margin: 0 10px;
+                    color: var(--v-c-gray);
+                }
             }
         }
         a:hover {
@@ -1134,7 +1129,7 @@ a.section_title {
         text-overflow: ellipsis;
         overflow: hidden;
         span {
-            opacity: .75;
+            color: var(--v-c-gray);
             white-space: pre-line;
         }
         .more {
@@ -1616,6 +1611,7 @@ a.section_title {
 .subend_section {
     padding-top: 90px;
     .sub_list {
+        margin: 40px -10px;
         ul {
             display: flex;
             flex-wrap: wrap;
@@ -1831,7 +1827,7 @@ a.section_title {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        margin: 20px 0 40px;
+        margin: 20px 0 0;
         height: 50px;
         border-bottom: 1px solid var(--v-c-border);
         overflow: hidden;
@@ -1893,7 +1889,7 @@ a.section_title {
         &::before {
             content: '';
             display: block;
-            margin: 20px auto;
+            margin: 60px auto 20px;
             width: 56px;
             height: 56px;
             background: url('../svg/i-track.svg') no-repeat center;
@@ -2141,9 +2137,7 @@ body.noscroll {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-left: -30px;
-        padding: 0 46px;
-        width: calc(100% + 60px);
+        width: 100%;
         height: 0;
         background-color: var(--v-c-black);
         box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
@@ -2202,11 +2196,10 @@ body.noscroll {
     justify-content: stretch;
     align-content: center;
     margin-bottom: 30px;
-    padding-left: 10px;
-    height: 44px;
-    background: var(--v-c-border-light);
+    height: 50px;
+    border-bottom: 1px solid var(--v-c-border-light);
+    font-weight: 600;
     font-size: var(--v-font-s);
-    border-radius: var(--v-radius-s);
     .dropdown_wrap {
         position: absolute;
         right: 0;
@@ -2232,19 +2225,16 @@ body.noscroll {
         }
     }
     .tab_item {
-        padding: 0 10px;
-        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
         color: var(--v-c-gray);
-        line-height: 46px;
-        border-radius: 4px 4px 0 0;
         &.selected {
             color: var(--v-c-white);
-            span {
-                display: block;
-                height: 44px;
-                line-height: 45px;
-                border-bottom: 2px solid var(--v-c-white);
-            }
+        }
+        &+.tab_item {
+            margin-left: 20px;
         }
     }
     .text_mobile {
@@ -2412,10 +2402,9 @@ body.noscroll {
 .floating_select {
     display: none;
     position: absolute;
-    left: -46px;
     top: 0;
-    padding: 15px 46px 20px;
-    width: calc(100% + 60px);
+    padding: 20px 0 20px;
+    width: 100%;
     background-color: rgba(0, 0, 0, .8);
     backdrop-filter: blur(10px);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .4), 0 -1px var(--v-c-border-light);
@@ -2457,19 +2446,18 @@ body.noscroll {
     }
     .btn_close {
         position: absolute;
-        right: 24px;
-        top: 50%;
+        right: 0;
+        top: 20px;
         width: 44px;
         height: 44px;
         background: var(--v-c-border) url('../svg/i-close.svg') no-repeat center;
         background-size: 18px;
         border-radius: var(--v-radius-s);
-        transform: translateY(-50%);
     }
 }
 
 .play_control_area {
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .play_option_area,
@@ -2646,7 +2634,7 @@ input[type=checkbox] {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 140px 0 0 300px;
+    margin: 100px 0 0 300px;
     padding: 0 0 150px;
     color: rgba(255, 255, 255, .5);
     font-weight: 400;
@@ -2759,7 +2747,7 @@ input[type=checkbox] {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px 0 0 300px;
+    padding: 10px 0 0 300px;
     width: 100vw;
     height: 100vh;
     background: var(--v-c-black);
@@ -3081,15 +3069,14 @@ input[type=checkbox] {
         padding: 0;
     }
     .top_wrap .option_area {
+        display: flex;
         position: relative;
         right: inherit;
         top: inherit;
+        margin: 0 10px 0 0;
         .inner_option {
             width: 50%;
         }
-    }
-    .control_sort_area {
-        padding: 0 20px;
     }
     .library_menu .menu_list a {
         font-size: var(--v-font-m);
@@ -3137,6 +3124,9 @@ input[type=checkbox] {
     .play_option>.btn:nth-child(2) {
         display: none;
     }
+    .play_control_area {
+        margin: 10px 20px;
+    }
     .floating_select .play_option_area a {
         flex-direction: column;
         align-items: center;
@@ -3156,6 +3146,8 @@ input[type=checkbox] {
     }
     .track_section .mp3,
     .track_section .lyrics,
+    .track_section .download,
+    .track_section .option,
     .subend_section .track_section .album,
     .subend_section .track_section .artist {
         display: none;
@@ -3166,8 +3158,8 @@ input[type=checkbox] {
     }
     .subend_section {
         padding-top: 0;
-        .library_menu .menu_list {
-            margin: 0 0 20px;
+        .library_menu {
+            margin: 0 20px 20px 0;
         }
         .tab_menu {
             display: none;
@@ -3177,9 +3169,10 @@ input[type=checkbox] {
             white-space: nowrap;
         }
     }
-    .sub_list {
+    .subend_section .sub_list {
+        margin: 0 20px;
         ul {
-            margin: 0 -5px;
+            margin: 0 -10px;
         }
         .thumb+.btn_like {
             width: 60px;

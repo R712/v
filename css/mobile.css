@@ -131,9 +131,6 @@
     .library_menu .menu_list a {
         font-size: 20px;
     }
-    .sub_list {
-        margin: 0 20px;
-    }
     .top_wrap .library_title {
         display: none;
     }
@@ -143,11 +140,10 @@
         width: calc(100% / 2);
     }
     .top_wrap .option_area .inner_option {
-        width: 49%;
+        width: 50%;
     }
     .top_wrap .option_area {
         display: flex;
-        justify-content: space-between;
     }
     .play_option_area a,
     .play_control_area a {

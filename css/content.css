@@ -452,7 +452,7 @@ a.section_title:hover:after {
   display: block;
   margin-bottom: 20px;
   font-weight: 700;
-  font-size: 28px;
+  font-size: var(--v-font-xxxl);
 }
 
 .today_section h3 .link_view_all {
@@ -1547,17 +1547,6 @@ a.section_title:hover:after {
   width: 100%;
 }
 
-.summary_section .summary_thumb:after,
-.artist_summary_section .summary_thumb:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 60%;
-  background: var(--v-gradientOverlay);
-}
-
 .summary_section .summary,
 .artist_summary_section .summary {
   position: relative;
@@ -1575,8 +1564,8 @@ a.section_title:hover:after {
       -ms-flex-direction: column;
           flex-direction: column;
   font-weight: 500;
-  font-size: 28px;
-  line-height: 1.5;
+  font-size: var(--v-font-xxl);
+  line-height: 1.42;
 }
 
 .summary_section .title_area .title,
@@ -1586,12 +1575,14 @@ a.section_title:hover:after {
 
 .summary_section .title_area .sub_title,
 .artist_summary_section .title_area .sub_title {
-  font-size: 24px;
+  font-size: var(--v-font-xl);
 }
 
-.summary_section .title_area .sub_title .item + .item,
-.artist_summary_section .title_area .sub_title .item + .item {
-  margin-left: 16px;
+.summary_section .title_area .sub_title .item + .item::before,
+.artist_summary_section .title_area .sub_title .item + .item::before {
+  content: '\22C5';
+  margin: 0 10px;
+  color: var(--v-c-gray);
 }
 
 .summary_section .title_area a:hover,
@@ -1625,7 +1616,7 @@ a.section_title:hover:after {
 
 .summary_section .info span,
 .artist_summary_section .info span {
-  opacity: .75;
+  color: var(--v-c-gray);
   white-space: pre-line;
 }
 
@@ -2222,6 +2213,10 @@ a.section_title:hover:after {
   padding-top: 90px;
 }
 
+.subend_section .sub_list {
+  margin: 40px -10px;
+}
+
 .subend_section .sub_list ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2496,7 +2491,7 @@ a.section_title:hover:after {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  margin: 20px 0 40px;
+  margin: 20px 0 0;
   height: 50px;
   border-bottom: 1px solid var(--v-c-border);
   overflow: hidden;
@@ -2586,7 +2581,7 @@ a.section_title:hover:after {
 .page_default .main_text::before {
   content: '';
   display: block;
-  margin: 20px auto;
+  margin: 60px auto 20px;
   width: 56px;
   height: 56px;
   background: url("../svg/i-track.svg") no-repeat center;
@@ -2960,9 +2955,7 @@ body.noscroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: -30px;
-  padding: 0 46px;
-  width: calc(100% + 60px);
+  width: 100%;
   height: 0;
   background-color: var(--v-c-black);
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -3039,11 +3032,10 @@ body.noscroll {
   -ms-flex-line-pack: center;
       align-content: center;
   margin-bottom: 30px;
-  padding-left: 10px;
-  height: 44px;
-  background: var(--v-c-border-light);
+  height: 50px;
+  border-bottom: 1px solid var(--v-c-border-light);
+  font-weight: 600;
   font-size: var(--v-font-s);
-  border-radius: var(--v-radius-s);
 }
 
 .tab_menu .dropdown_wrap {
@@ -3075,22 +3067,25 @@ body.noscroll {
 }
 
 .tab_menu .tab_item {
-  padding: 0 10px;
-  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
   color: var(--v-c-gray);
-  line-height: 46px;
-  border-radius: 4px 4px 0 0;
 }
 
 .tab_menu .tab_item.selected {
   color: var(--v-c-white);
 }
 
-.tab_menu .tab_item.selected span {
-  display: block;
-  height: 44px;
-  line-height: 45px;
-  border-bottom: 2px solid var(--v-c-white);
+.tab_menu .tab_item + .tab_item {
+  margin-left: 20px;
 }
 
 .tab_menu .text_mobile {
@@ -3290,10 +3285,9 @@ body.noscroll {
 .floating_select {
   display: none;
   position: absolute;
-  left: -46px;
   top: 0;
-  padding: 15px 46px 20px;
-  width: calc(100% + 60px);
+  padding: 20px 0 20px;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -3361,19 +3355,17 @@ body.noscroll {
 
 .floating_select .btn_close {
   position: absolute;
-  right: 24px;
-  top: 50%;
+  right: 0;
+  top: 20px;
   width: 44px;
   height: 44px;
   background: var(--v-c-border) url("../svg/i-close.svg") no-repeat center;
   background-size: 18px;
   border-radius: var(--v-radius-s);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .play_control_area {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .play_option_area,
@@ -3598,7 +3590,7 @@ input[type=checkbox]:checked:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 140px 0 0 300px;
+  margin: 100px 0 0 300px;
   padding: 0 0 150px;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
@@ -3745,7 +3737,7 @@ input[type=checkbox]:checked:after {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 20px 0 0 300px;
+  padding: 10px 0 0 300px;
   width: 100vw;
   height: 100vh;
   background: var(--v-c-black);
@@ -4119,15 +4111,16 @@ input[type=checkbox]:checked:after {
     padding: 0;
   }
   .top_wrap .option_area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
     right: inherit;
     top: inherit;
+    margin: 0 10px 0 0;
   }
   .top_wrap .option_area .inner_option {
     width: 50%;
-  }
-  .control_sort_area {
-    padding: 0 20px;
   }
   .library_menu .menu_list a {
     font-size: var(--v-font-m);
@@ -4185,6 +4178,9 @@ input[type=checkbox]:checked:after {
   .play_option > .btn:nth-child(2) {
     display: none;
   }
+  .play_control_area {
+    margin: 10px 20px;
+  }
   .floating_select .play_option_area a {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4211,6 +4207,8 @@ input[type=checkbox]:checked:after {
   }
   .track_section .mp3,
   .track_section .lyrics,
+  .track_section .download,
+  .track_section .option,
   .subend_section .track_section .album,
   .subend_section .track_section .artist {
     display: none;
@@ -4222,8 +4220,8 @@ input[type=checkbox]:checked:after {
   .subend_section {
     padding-top: 0;
   }
-  .subend_section .library_menu .menu_list {
-    margin: 0 0 20px;
+  .subend_section .library_menu {
+    margin: 0 20px 20px 0;
   }
   .subend_section .tab_menu {
     display: none;
@@ -4232,15 +4230,18 @@ input[type=checkbox]:checked:after {
     display: block;
     white-space: nowrap;
   }
-  .sub_list ul {
-    margin: 0 -5px;
+  .subend_section .sub_list {
+    margin: 0 20px;
   }
-  .sub_list .thumb + .btn_like {
+  .subend_section .sub_list ul {
+    margin: 0 -10px;
+  }
+  .subend_section .sub_list .thumb + .btn_like {
     width: 60px;
     height: 60px;
     line-height: 60px;
   }
-  .sub_list .thumb + .btn_like::before {
+  .subend_section .sub_list .thumb + .btn_like::before {
     width: 60px;
     height: 60px;
   }
