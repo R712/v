@@ -1,11 +1,14 @@
 - - -
 
 ### 최근 수정
-
-* 1월 6일 사파리 버그 다수 수정
-   - carousel arrow not working
-   - browser height wrong with wrapper
-   - background svg flicking
+* 1월 7일
+   - owlCarousel index값 계산. (보관함 모바일에서 현재 메뉴 위치로 가게끔)
+   - 모바일 여백 간격 밸런스 수정
+   - 필요없는 그라디언트 제거
+* 1월 6일
+   - safari: carousel arrow not working
+   - safari: browser height wrong with wrapper
+   - safari: background svg flicking
 
 - - -
 
