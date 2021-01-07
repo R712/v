@@ -294,9 +294,9 @@ function loadingCheck() {
     vibeApp = setTimeout(showPage, 1800);
 }
 window.onload = function() {
-    loadingCheck();
-}
-//  미리보기용으로 during이 임의로 들어가있기때문에 클릭하면 닫히게 만듦
+        loadingCheck();
+    }
+    //  미리보기용으로 during이 임의로 들어가있기때문에 클릭하면 닫히게 만듦
 $('.loading_vibe').on('click', function() {
     document.querySelector('.loading_vibe').style.display = 'none';
     document.getElementById('container').style.display = 'block';
@@ -359,10 +359,10 @@ $('.ly_popup').on('keydown', 'input[type=text]', function() {
 //  vue-carousel 대용으로 가져왔는데 역시 완벽히 맘에 들게 커스텀이 잘 안 됨 ㅜㅠ
 $(document).ready(function() {
     let startPosition = false;
-    if ($('.owl-carousel').has('.menu_item.on')) {
-        startPosition = $('.owl-carousel').find('.menu_item.on').index();
-    }
-    if ($('.owl-carousel')) {
+    if ($('.owl-carousel').length) {
+        if ($('.owl-carousel').has('.menu_item.on')) {
+            startPosition = $('.owl-carousel').find('.menu_item.on').index();
+        }
         $('.owl-carousel').owlCarousel({
             margin: 20,
             startPosition: startPosition,
