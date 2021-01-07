@@ -59,7 +59,7 @@
         .content {
             position: relative;
             margin: 0 auto;
-            max-width: 1280px;
+            max-width: 964px;
         }
     }
     .player_controller {
@@ -1764,7 +1764,7 @@ a.section_title {
     .track_section table {
         font-size: var(--v-font-m);
     }
-    .thumb+ .btn_like {
+    .thumb+.btn_like {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -2402,7 +2402,8 @@ body.noscroll {
         transform: rotate(90deg);
     }
 }
-.open + .btn_more_list {
+
+.open+.btn_more_list {
     &::after {
         transform: rotate(-90deg);
     }
@@ -2652,7 +2653,7 @@ input[type=checkbox] {
     font-size: 12px;
     >div {
         margin: 0 100px;
-        max-width: 1280px;
+        max-width: 964px;
     }
     .notice {
         display: flex;
@@ -2877,7 +2878,7 @@ input[type=checkbox] {
         width: calc(100% / 3);
     }
     .list_wrap_genre .link_box {
-            width: calc(100% / 3);
+        width: calc(100% / 3);
     }
     .home {
         max-width: 100vw;
@@ -3151,8 +3152,6 @@ input[type=checkbox] {
         font-size: var(--v-font-m);
         .artist_sub {
             display: block;
-        }
-        .option {
         }
     }
     .track_section .mp3,
