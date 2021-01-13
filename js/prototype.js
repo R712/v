@@ -216,84 +216,87 @@ $('.subend_section').on('click', '.btn_like', function() {
     $(this).closest('tr').addClass('dislike').fadeOut(200);
 });
 
+$(document).ready(function() {
 
-//  미리보기용 owlcarousel2
-//  vue-carousel 대용으로 가져왔음.
-//  원본 dom에서 on class를 가지는 현재 위치 메뉴의 index값을 기억하고
-//  recover된 owl에서 그 index값으로 x좌표 이동시키기
-if ($('.owl-carousel').length) {
-    let onPosition = $('.menu_item.on').index();
-    $('.owl-carousel').owlCarousel({
-        margin: 20,
-        startPosition: onPosition,
-        mouseDrag: true,
-        touchDrag: true,
-        autoWidth: true
+    //  미리보기용 owlcarousel2
+    //  vue-carousel 대용으로 가져왔음.
+    //  원본 dom에서 on class를 가지는 현재 위치 메뉴의 index값을 기억하고
+    //  recover된 owl에서 그 index값으로 x좌표 이동시키기
+    if ($('.owl-carousel').length) {
+        let onPosition = $('.menu_item.on').index();
+        $('.owl-carousel').owlCarousel({
+            margin: 20,
+            startPosition: onPosition,
+            mouseDrag: true,
+            touchDrag: true,
+            autoWidth: true
+        });
+    }
+
+    //
+    //  미리보기용 URL 연결
+    //  +
+    //  임시 하이퍼링크 제거
+    //  미리보기시 기존 html코드의 수많은 각기 다른 url연결로 방해가 되어 제거 후 별도 연결
+    //
+    $('a').each(function() {
+        $(this).removeAttr('href');
     });
-}
+    $('.link_today, .link_logo').click(function() {
+        location.href = './index.html';
+    });
+    $('.link_chart').click(function() {
+        location.href = './chart.html';
+    });
+    $('.btn_lyrics, .song').click(function() {
+        location.href = './song-lyrics.html';
+    });
+    $('.link_djstation, .link_dj').click(function() {
+        location.href = './djstation.html';
+    });
+    $('.link_monthly').click(function() {
+        location.href = './monthly.html';
+    });
+    $('.album, .link_album').click(function() {
+        location.href = './album.html';
+    });
+    $('.artist, .link_artist, .link_sub_title').click(function() {
+        location.href = './artist.html';
+    });
+    $('.link_library, .link_achive').click(function() {
+        location.href = './archive.html';
+    });
+    $('.library_menu .menu_item:nth-child(2), .link_achive_song').click(function() {
+        location.href = './archive-song.html';
+    });
+    $('.library_menu .menu_item:nth-child(3), .link_achive_artist').click(function() {
+        location.href = './archive-artist.html';
+    });
+    $('.library_menu .menu_item:nth-child(4), .link_achive_album').click(function() {
+        location.href = './archive-album.html';
+    });
+    $('.library_menu .menu_item:nth-child(5), .link_achive_playlist').click(function() {
+        location.href = './archive-playlist.html';
+    });
+    $('.library_menu .menu_item:nth-child(6), .link_achive_received').click(function() {
+        location.href = './archive-received.html';
+    });
+    $('.link_achive_paid').click(function() {
+        location.href = './archive-paid.html';
+    });
+    $('.membership_menu .item:first-child, .link_membership').click(function() {
+        location.href = './subscription.html';
+    });
+    $('.membership_menu .item:nth-child(2)').click(function() {
+        location.href = './mymembership.html';
+    });
+    $('.membership_menu .item:nth-child(3)').click(function() {
+        location.href = './listening.html';
+    });
+    $('.membership_menu .item:nth-child(4)').click(function() {
+        location.href = './giftcard.html';
+    });
 
-//
-//  미리보기용 URL 연결
-//  +
-//  임시 하이퍼링크 제거
-//  미리보기시 기존 html코드의 수많은 각기 다른 url연결로 방해가 되어 제거 후 별도 연결
-//
-$('a').each(function() {
-    $(this).removeAttr('href');
-});
-$('.link_today, .link_logo').click(function() {
-    location.href = './index.html';
-});
-$('.link_chart').click(function() {
-    location.href = './chart.html';
-});
-$('.btn_lyrics, .song').click(function() {
-    location.href = './song-lyrics.html';
-});
-$('.link_djstation, .link_dj').click(function() {
-    location.href = './djstation.html';
-});
-$('.link_monthly').click(function() {
-    location.href = './monthly.html';
-});
-$('.album, .link_album').click(function() {
-    location.href = './album.html';
-});
-$('.artist, .link_artist, .link_sub_title').click(function() {
-    location.href = './artist.html';
-});
-$('.link_library, .link_achive').click(function() {
-    location.href = './archive.html';
-});
-$('.library_menu .menu_item:nth-child(2), .link_achive_song').click(function() {
-    location.href = './archive-song.html';
-});
-$('.library_menu .menu_item:nth-child(3), .link_achive_artist').click(function() {
-    location.href = './archive-artist.html';
-});
-$('.library_menu .menu_item:nth-child(4), .link_achive_album').click(function() {
-    location.href = './archive-album.html';
-});
-$('.library_menu .menu_item:nth-child(5), .link_achive_playlist').click(function() {
-    location.href = './archive-playlist.html';
-});
-$('.library_menu .menu_item:nth-child(6), .link_achive_received').click(function() {
-    location.href = './archive-received.html';
-});
-$('.link_achive_paid').click(function() {
-    location.href = './archive-paid.html';
-});
-$('.membership_menu .item:first-child, .link_membership').click(function() {
-    location.href = './subscription.html';
-});
-$('.membership_menu .item:nth-child(2)').click(function() {
-    location.href = './mymembership.html';
-});
-$('.membership_menu .item:nth-child(3)').click(function() {
-    location.href = './listening.html';
-});
-$('.membership_menu .item:nth-child(4)').click(function() {
-    location.href = './giftcard.html';
 });
 
 //
