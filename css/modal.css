@@ -137,6 +137,86 @@
           box-shadow: 0 0 1px 3px rgba(255, 0, 80, 0.15);
 }
 
+.modal .ly_song_info,
+.modal .ly_contents {
+  padding: 0 35px;
+  max-width: 468px;
+}
+
+.modal .ly_song_info .ly_text,
+.modal .ly_contents .ly_text {
+  font-size: 14px;
+  line-height: 22px;
+  white-space: pre-wrap;
+}
+
+.modal .ly_contents {
+  margin-top: 25px;
+  max-height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal .ly_song_info .ly_thumb {
+  float: left;
+  width: 84px;
+  height: 84px;
+  margin-right: 20px;
+}
+
+.modal .ly_song_info .ly_thumb img {
+  width: 100%;
+}
+
+.modal .ly_info_area {
+  display: table;
+  margin-right: 34px;
+  height: 84px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.modal .ly_info_area .ly_inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal .ly_info_area .ly_title {
+  display: block;
+  max-height: 38px;
+  color: #232323;
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: 700;
+  white-space: normal;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal .ly_info_area .ly_artist {
+  display: block;
+  padding-top: 4px;
+  max-width: 342px;
+  color: #232323;
+  word-break: break-all;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal .ly_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  background-color: #232323;
+  -webkit-mask: url("../svg/i-close.svg") no-repeat center;
+          mask: url("../svg/i-close.svg") no-repeat center;
+}
+
 .form-alert {
   display: none;
   margin-top: 10px;

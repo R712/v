@@ -93,6 +93,76 @@
             }
         }
     }
+    .ly_song_info,
+    .ly_contents {
+        padding: 0 35px;
+        max-width: 468px;
+        .ly_text {
+            font-size: 14px;
+            line-height: 22px;
+            white-space: pre-wrap;
+        }
+    }
+    .ly_contents {
+        margin-top: 25px;
+        max-height: 350px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .ly_song_info {
+        .ly_thumb {
+            float: left;
+            width: 84px;
+            height: 84px;
+            margin-right: 20px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .ly_info_area {
+        display: table;
+        margin-right: 34px;
+        height: 84px;
+        text-align: left;
+        overflow: hidden;
+        .ly_inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .ly_title {
+            display: block;
+            max-height: 38px;
+            color: #232323;
+            font-size: 15px;
+            line-height: 19px;
+            font-weight: 700;
+            white-space: normal;
+            word-break: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .ly_artist {
+            display: block;
+            padding-top: 4px;
+            max-width: 342px;
+            color: #232323;
+            word-break: break-all;
+            line-height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .ly_close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        background-color: #232323;
+        mask: url('../svg/i-close.svg') no-repeat center;
+    }
 }
 
 //  폼 요소 도움말

@@ -141,20 +141,6 @@ $('.tracklist').on('click', 'input', function() {
     $('.count_track').html(selectedTrack + '곡 선택');
 });
 
-//
-//  전체 선택 체크박스 클릭시
-//
-$('#chk_all, .label_check').click(function() {
-    if ($('#chk_all').is(':checked')) {
-        $('.tracklist').find(':checkbox').prop('checked', true);
-        let selectedTrack = $('.tracklist').find(':checked').length;
-        $('.count_track').html(selectedTrack + '곡 선택');
-    } else {
-        $('.tracklist').find(':checkbox').prop('checked', false);
-        appContent.removeClass('on-checked');
-    }
-});
-
 //  선택된 곡 있을때 보이는 플로팅 레이어 닫기
 $('.floating_select').on('click', '.btn_close', function() {
     $('.tracklist').find(':checked').prop('checked', false);
@@ -188,17 +174,6 @@ vibePlayer.on('click', '.btn_shuffle, .btn_repeat', function() {
 });
 vibePlayer.on('click', '.btn_volume', function() {
     $(this).toggleClass('mute');
-});
-
-$('.summary_thumb').clone().prependTo('.floating_bar .title');
-$('.floating_bar').prependTo('.content');
-$('.floating_select').appendTo('.floating_bar');
-
-//
-//  ON/OFF 상태를 보유한 버튼 제어
-//
-$('.btn_like, .btn_add').click(function() {
-    $(this).toggleClass('on');
 });
 
 //
@@ -248,7 +223,7 @@ $(document).ready(function() {
     $('.link_chart').click(function() {
         location.href = './chart.html';
     });
-    $('.btn_lyrics, .song').click(function() {
+    $('.song').click(function() {
         location.href = './song-lyrics.html';
     });
     $('.link_djstation, .link_dj').click(function() {
@@ -296,6 +271,42 @@ $(document).ready(function() {
     $('.membership_menu .item:nth-child(4)').click(function() {
         location.href = './giftcard.html';
     });
+    $('.btn_lyrics').click(function() {
+        $('.modal').fadeIn(200);
+    });
+    $('.modal').on('click', '.ly_close', function() {
+        $(this).closest('.modal').fadeOut(200);
+    });
+
+    //
+    //  ON/OFF 상태를 보유한 버튼 제어
+    //
+    $('.btn_like, .btn_add').click(function() {
+        $(this).toggleClass('on');
+    });
+
+    $('.summary_thumb').clone().prependTo('.floating_bar .title');
+    $('.floating_bar').prependTo('.content');
+    $('.floating_select').appendTo('.floating_bar');
+
+    //  플레이리스트 추가 팝업 모달 레이어 제어
+    $('.btn_add_item').click(function() {
+        $('.modal').fadeIn(200);
+    });
+
+    //
+    //  전체 선택 체크박스 클릭시
+    //
+    $('#chk_all, .label_check').click(function() {
+        if ($('#chk_all').is(':checked')) {
+            $('.tracklist').find(':checkbox').prop('checked', true);
+            let selectedTrack = $('.tracklist').find(':checked').length;
+            $('.count_track').html(selectedTrack + '곡 선택');
+        } else {
+            $('.tracklist').find(':checkbox').prop('checked', false);
+            appContent.removeClass('on-checked');
+        }
+    });
 
 });
 
@@ -327,10 +338,6 @@ $('.admin_banner_section, .banner_area').on('click', '.btn_close', function() {
     $('.admin_banner_section').hide();
 });
 
-//  플레이리스트 추가 팝업 모달 레이어 제어
-$('.btn_add_item').click(function() {
-    $('.modal').fadeIn(200);
-});
 $('.ly_btn_area').on('click', 'a[role=button]:not(.point)', function() {
     $('.modal').fadeOut(200);
 }).on('click', 'a.point', function() {

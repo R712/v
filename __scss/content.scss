@@ -392,7 +392,7 @@ a.section_title {
     }
     .list_wrap_larger.is_mag {
         .list_item {
-            min-width: calc(100% / 3);
+            min-width: calc(100% / 4);
         }
         .title {
             max-height: 56px;
@@ -455,11 +455,11 @@ a.section_title {
     }
     &::before {
         content: '';
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
         background-color: var(--v-c-white);
         mask: url('../svg/i-carousel-next.svg') no-repeat center;
-        mask-size: 24px;
+        mask-size: 32px;
     }
 }
 
@@ -468,16 +468,10 @@ a.section_title {
     &::before {
         transform: rotate(180deg);
     }
-    &:hover {
-        left: -45px;
-    }
 }
 
 .VueCarousel-navigation-next {
     right: -40px;
-    &:hover {
-        right: -45px;
-    }
 }
 
 //
@@ -1805,10 +1799,11 @@ a.section_title {
     .library_title {
         display: flex;
         flex-direction: column;
-        color: var(--v-c-gray);
-        font-size: var(--v-font-s);
+        color: var(--v-c-white);
+        font-size: var(--v-font-xxxl);
         line-height: 1.42;
         .main {
+            display: none;
             color: var(--v-c-white);
             font-weight: 600;
             font-size: var(--v-font-xxl);
@@ -2195,7 +2190,7 @@ body.noscroll {
     display: flex;
     justify-content: stretch;
     align-content: center;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
     height: 50px;
     border-bottom: 1px solid var(--v-c-border-light);
     font-weight: 600;
@@ -2205,7 +2200,6 @@ body.noscroll {
         right: 0;
         top: 0;
         .btn_drop_menu {
-            padding: 0 15px;
             height: 46px;
             color: var(--v-c-gray);
             line-height: 46px;
@@ -2228,7 +2222,7 @@ body.noscroll {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 50px;
+        height: 46px;
         color: var(--v-c-gray);
         &.selected {
             color: var(--v-c-white);
@@ -2635,13 +2629,14 @@ input[type=checkbox] {
     display: flex;
     flex-direction: column;
     margin: 100px 0 0 300px;
-    padding: 0 0 150px;
+    padding: 0 100px 150px;
     color: rgba(255, 255, 255, .5);
     font-weight: 400;
     font-size: 12px;
     >div {
-        margin: 0 100px;
+        margin: 0 auto;
         max-width: 964px;
+        width: 100%;
     }
     .notice {
         display: flex;
@@ -2752,7 +2747,6 @@ input[type=checkbox] {
     height: 100vh;
     background: var(--v-c-black);
     &:before {
-        content: '';
         width: 80px;
         height: 80px;
         background: linear-gradient(to bottom, #8401E2, #FF1150);
@@ -3162,7 +3156,10 @@ input[type=checkbox] {
             margin: 0 20px 20px 0;
         }
         .tab_menu {
-            display: none;
+            margin: -20px 20px 0 0;
+            .dropdown_wrap .btn_drop_menu {
+                padding: 0;
+            }
         }
         .sub_list .artist {
             display: block;
