@@ -4133,6 +4133,9 @@ input[type=checkbox]:checked:after {
   .end_section .track_section {
     padding: 0;
   }
+  .end_comment {
+    padding: 50px 20px 70px !important;
+  }
   .top_wrap .option_area {
     display: -webkit-box;
     display: -ms-flexbox;
