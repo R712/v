@@ -102,12 +102,14 @@
     .img_pc,
     .image_pc {
         width: auto;
+        height: auto;
         max-width: 768px;
     }
     .img_m,
     .image_mobile {
         display: none;
         max-width: 100vw;
+        height: 70px;
     }
     .btn_close {
         z-index: 55;
@@ -126,6 +128,26 @@
 
 .streport_membership .banner_area {
     background: #5723EF;
+}
+
+.jamm_banner {
+    position: relative;
+    display: block;
+    margin-top: 40px;
+    background: #eef4fb;
+    text-align: center;
+    img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        width: auto;
+    }
+    .image_w688 {
+        display: none;
+    }
+    .image_w375 {
+        display: none;
+    }
 }
 
 //
@@ -350,12 +372,10 @@ a.section_title {
             position: relative;
             display: block;
             width: 100%;
-            padding-bottom: 100%;
             overflow: hidden;
             img {
-                position: absolute;
-                left: 0;
-                top: 0;
+                display: block;
+                position: relative;
                 width: 100%;
                 height: 100%;
                 transition: transform .5s cubic-bezier(.210, .60, .350, 1);
@@ -406,9 +426,6 @@ a.section_title {
         .link {
             padding: 0;
         }
-        .thumb {
-            padding-bottom: 100%;
-        }
     }
     .list_wrap_news {
         .scroll_list {
@@ -437,11 +454,14 @@ a.section_title {
     }
 }
 
+.jamm_banner+.today_section {
+    padding-top: 50px;
+}
+
 .VueCarousel-navigation-prev,
 .VueCarousel-navigation-next {
     opacity: .6;
     position: absolute;
-    top: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -449,7 +469,6 @@ a.section_title {
     height: 44px;
     border-radius: 50%;
     transition: all .1s ease;
-    transform: translateY(-50%);
     &:hover {
         opacity: 1;
     }
@@ -1482,122 +1501,121 @@ a.section_title {
     todo 코멘트 모양 작업
 */
 
-.end_comment {
-    display: none;
-    position: relative;
-    padding-top: 50px;
-    div {
-        position: relative;
-    }
-    .u_vc {
-        clip: rect(0px, 0px, 0px, 0px);
-        position: absolute;
-        margin: -1px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-    }
-    .u_cbox_head {
-        display: flex;
-    }
-    .u_cbox_head_tools {
-        display: none;
-    }
-    .u_cbox_write {
-        position: relative;
-        .u_cbox_write_inner {
-            background: var(--v-c-input);
-            border-radius: var(--v-radius);
-        }
-        .u_cbox_profile_area {
-            padding: 20px 82px 0px 20px;
-            border-radius: 5px 5px 0px 0px;
-        }
-        .u_cbox_write_area {
-            padding: 8px 0px 0px;
-        }
-        .u_cbox_inbox {
-            margin-right: 0px;
-            padding: 0px 20px;
-        }
-        .u_cbox_text {
-            box-sizing: content-box;
-            padding-right: 15px;
-            display: block;
-            overflow: hidden auto;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 60px;
-            border: none;
-            background-color: transparent;
-            font-size: var(--v-font-l);
-            line-height: 1.25;
-            letter-spacing: -0.5px;
-            color: rgb(51, 51, 51);
-            appearance: none;
-            resize: none;
-        }
-        .u_cbox_guide {
-            position: absolute;
-            overflow: auto;
-            top: 0px;
-            right: 20px;
-            left: 20px;
-            font-size: var(--v-font-m);
-            color: rgb(153, 153, 153);
-            text-overflow: initial;
-            white-space: normal;
-        }
-        .u_cbox_write_count {
-            position: absolute;
-            left: 20px;
-            bottom: 24px;
-            margin: 0px;
-        }
-        .u_cbox_upload {
-            display: block;
-            height: 68px;
-            padding-right: 0px;
-            border-top: none;
-        }
-        .u_cbox_btn_upload {
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            bottom: 16px;
-            right: 16px;
-            min-width: 69px;
-            height: 36px;
-            background: rgb(0, 199, 60);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            color: rgb(255, 255, 255);
-            font-size: var(--v-font-l);
-            font-weight: 600;
-            border-radius: var(--v-radius);
-        }
-    }
-    .u_cbox_cleanbot {
-        position: relative;
-        z-index: 10;
-        min-height: 22px;
-        margin: 15px 0px -1px;
-        padding: 10px 55px 8px 10px;
-        border-radius: var(--v-radius);
-    }
-    .u_cbox_cleanbot_setbutton {
-        position: absolute;
-        top: 13px;
-        right: 12px;
-        font-size: var(--v-font-s);
-        line-height: 1.23;
-        letter-spacing: -0.5px;
-        color: rgb(119, 119, 119);
-        text-align: center;
-    }
-}
+// .end_comment {
+//     position: relative;
+//     padding-top: 50px;
+//     div {
+//         position: relative;
+//     }
+//     .u_vc {
+//         clip: rect(0px, 0px, 0px, 0px);
+//         position: absolute;
+//         margin: -1px;
+//         width: 1px;
+//         height: 1px;
+//         overflow: hidden;
+//     }
+//     .u_cbox_head {
+//         display: flex;
+//     }
+//     .u_cbox_head_tools {
+//         display: none;
+//     }
+//     .u_cbox_write {
+//         position: relative;
+//         .u_cbox_write_inner {
+//             background: var(--v-c-input);
+//             border-radius: var(--v-radius);
+//         }
+//         .u_cbox_profile_area {
+//             padding: 20px 82px 0px 20px;
+//             border-radius: 5px 5px 0px 0px;
+//         }
+//         .u_cbox_write_area {
+//             padding: 8px 0px 0px;
+//         }
+//         .u_cbox_inbox {
+//             margin-right: 0px;
+//             padding: 0px 20px;
+//         }
+//         .u_cbox_text {
+//             box-sizing: content-box;
+//             padding-right: 15px;
+//             display: block;
+//             overflow: hidden auto;
+//             position: relative;
+//             z-index: 1;
+//             width: 100%;
+//             height: 60px;
+//             border: none;
+//             background-color: transparent;
+//             font-size: var(--v-font-l);
+//             line-height: 1.25;
+//             letter-spacing: -0.5px;
+//             color: rgb(51, 51, 51);
+//             appearance: none;
+//             resize: none;
+//         }
+//         .u_cbox_guide {
+//             position: absolute;
+//             overflow: auto;
+//             top: 0px;
+//             right: 20px;
+//             left: 20px;
+//             font-size: var(--v-font-m);
+//             color: rgb(153, 153, 153);
+//             text-overflow: initial;
+//             white-space: normal;
+//         }
+//         .u_cbox_write_count {
+//             position: absolute;
+//             left: 20px;
+//             bottom: 24px;
+//             margin: 0px;
+//         }
+//         .u_cbox_upload {
+//             display: block;
+//             height: 68px;
+//             padding-right: 0px;
+//             border-top: none;
+//         }
+//         .u_cbox_btn_upload {
+//             z-index: 10;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             position: absolute;
+//             bottom: 16px;
+//             right: 16px;
+//             min-width: 69px;
+//             height: 36px;
+//             background: rgb(0, 199, 60);
+//             border: 1px solid rgba(0, 0, 0, 0.1);
+//             color: rgb(255, 255, 255);
+//             font-size: var(--v-font-l);
+//             font-weight: 600;
+//             border-radius: var(--v-radius);
+//         }
+//     }
+//     .u_cbox_cleanbot {
+//         position: relative;
+//         z-index: 10;
+//         min-height: 22px;
+//         margin: 15px 0px -1px;
+//         padding: 10px 55px 8px 10px;
+//         border-radius: var(--v-radius);
+//     }
+//     .u_cbox_cleanbot_setbutton {
+//         position: absolute;
+//         top: 13px;
+//         right: 12px;
+//         font-size: var(--v-font-s);
+//         line-height: 1.23;
+//         letter-spacing: -0.5px;
+//         color: rgb(119, 119, 119);
+//         text-align: center;
+//     }
+// }
 
 //
 //  서브엔드 컨텐츠
@@ -1800,6 +1818,7 @@ a.section_title {
         display: flex;
         flex-direction: column;
         color: var(--v-c-white);
+        font-weight: 600;
         font-size: var(--v-font-xxxl);
         line-height: 1.42;
         .main {
@@ -1965,7 +1984,7 @@ a.section_title {
         position: absolute;
         left: -8px;
         top: 40px;
-        min-width: 180px;
+        width: 180px;
         background: #FFF;
         border-radius: var(--v-radius-s);
         >a {
@@ -2318,7 +2337,7 @@ body.noscroll {
     &.on::after {
         background-color: var(--v-c-point);
         mask-image: url('../svg/i-heart-fill.svg');
-        animation: likeHeart 0.5s cubic-bezier(.15, .90, .30, 1.5) 1;
+        animation: likeHeart 0.5s ease-in-out 1;
     }
     &:hover::after {
         background-color: var(--v-c-point);
@@ -2791,7 +2810,7 @@ input[type=checkbox] {
     15% {
         transform: scale(0.25);
     }
-    80% {
+    85% {
         transform: scale(1.25);
     }
 }
@@ -2807,8 +2826,8 @@ input[type=checkbox] {
     .home .container {
         padding: 0 50px;
     }
-    .footer>div {
-        margin: 0 50px;
+    .footer {
+        padding: 0 50px 150px;
     }
     .list_wrap_video,
     .list_wrap_album,
@@ -2852,6 +2871,14 @@ input[type=checkbox] {
         }
         .link.todayTop {
             height: auto;
+        }
+    }
+    .jamm_banner {
+        .image_w864 {
+            display: none;
+        }
+        .image_w688 {
+            display: block;
         }
     }
     .list_wrap_station .list_item,
@@ -2944,7 +2971,7 @@ input[type=checkbox] {
         width: 100vw;
     }
     .footer {
-        margin-left: 0;
+        margin: 0 0 64px;
         padding: 50px 20px;
         &>div {
             margin: 0;
@@ -2965,6 +2992,14 @@ input[type=checkbox] {
     }
     .banner_area {
         margin: 0 -20px;
+    }
+    .jamm_banner {
+        .image_w688 {
+            display: none;
+        }
+        .image_w375 {
+            display: block;
+        }
     }
     .floating_bar {
         top: 64px;
@@ -3003,6 +3038,12 @@ input[type=checkbox] {
         .list_item {
             min-width: 100% !important;
         }
+    }
+    .jamm_banner {
+        margin-top: 30px;
+    }
+    .jamm_banner + .today_section {
+        padding-top: 30px;
     }
     .list_wrap_video,
     .list_wrap_album,

@@ -18,6 +18,26 @@
   overflow-x: hidden;
 }
 
+.modal ::-webkit-scrollbar {
+  width: 8px;
+  background: #FFF;
+}
+
+.modal ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal ::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+}
+
+.modal ::-webkit-scrollbar-thumb:hover {
+  background-color: #AAA;
+}
+
 .modal .layer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,12 +121,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: calc(100vw - 40px);
+  width: 420px;
   margin: 50px 0;
   padding: 40px 0;
   background: #FFF;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+.modal .ly_popup:before {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFF), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to top, #FFF, rgba(255, 255, 255, 0));
 }
 
 .modal .ly_popup .ly_top_text {
@@ -119,7 +153,7 @@
 }
 
 .modal .ly_popup input[type=text] {
-  margin: 0 35px 4px;
+  margin: 0 auto 4px;
   padding: 10px;
   width: 250px;
   height: 40px;
@@ -151,7 +185,8 @@
 }
 
 .modal .ly_contents {
-  margin-top: 25px;
+  position: relative;
+  margin: 25px 0 -40px;
   max-height: 350px;
   overflow-x: hidden;
   overflow-y: auto;

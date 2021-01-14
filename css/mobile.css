@@ -32,10 +32,6 @@
         min-width: 60% !important;
         margin-bottom: 0;
     }
-    /* 투데이 배너 */
-    .todayTop .img_m {
-        width: 80%;
-    }
     /* 투데이 헤드라인 */
     .today_headline .text_area {
         padding: 20px;

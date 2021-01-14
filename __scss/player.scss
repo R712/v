@@ -45,7 +45,7 @@
         .btn_playlist {
             opacity: 1;
             &::before {
-                transform: rotate(180deg);
+                background-image: url('../svg/i-playlist-close.svg');
             }
         }
         .ly_playlist {
@@ -346,9 +346,10 @@
         &::before {
             content: '';
             display: inline-block;
-            width: 18px;
-            height: 18px;
+            width: 24px;
+            height: 24px;
             background: url('../svg/i-playlist.svg') no-repeat center;
+            background-size: 18px;
             vertical-align: middle;
             transition: none;
         }
