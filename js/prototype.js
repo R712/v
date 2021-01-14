@@ -45,7 +45,7 @@ $(document).ready(function() {
                 left: e.clientX - 50,
                 top: e.clientY + 25
             });
-        };
+        }
         elmNav.toggle();
     });
     $('.layer_drop_menu').on('click', 'a', function() {
@@ -384,6 +384,15 @@ $(document).ready(function() {
         }
         $('.admin_banner_section').hide();
     });
+
+    //
+    //  매거진 헤드라인 썸네일 카피해서 백그라운드 넣기
+    //
+    if ($('.today_headline')) {
+        let copyThumb = $('.today_headline').find('img').attr('src');
+        console.log(copyThumb);
+        $('.today_headline .link_wrap').css('background-image', 'url("'+ copyThumb +'")');
+    }
 
 });
 
