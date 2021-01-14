@@ -245,26 +245,40 @@
 }
 
 a.section_title {
-    position: relative;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     cursor: pointer;
     &:after {
-        opacity: 0;
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 15px;
-        height: 20px;
-        background-color: var(--v-c-white);
-        mask: url('../svg/i-carousel-next.svg') no-repeat center;
-        transform: translateX(8px) translateY(-50%);
+        opacity: .4;
+        content: '더보기';
+        display: block;
+        padding-right: 20px;
+        background: url('../svg/i-carousel-next.svg') no-repeat right center;
+        font-weight: 500;
+        font-size: var(--v-font-m);
+        text-decoration: none !important;
+        transform: translateX(8px);
         transition: all .1s ease-in-out;
     }
     &:hover {
         text-decoration: underline;
         &:after {
             opacity: 1;
-            transform: translateX(16px) translateY(-50%);
+            text-decoration: none !important;
+        }
+    }
+}
+.today_section,
+.end_section {
+    &:hover {
+        a.section_title {
+            &:after {
+                opacity: 1;
+                text-decoration: none !important;
+            }
         }
     }
 }

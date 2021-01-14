@@ -552,23 +552,34 @@
 }
 
 a.section_title {
-  position: relative;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
   cursor: pointer;
 }
 
 a.section_title:after {
-  opacity: 0;
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 15px;
-  height: 20px;
-  background-color: var(--v-c-white);
-  -webkit-mask: url("../svg/i-carousel-next.svg") no-repeat center;
-          mask: url("../svg/i-carousel-next.svg") no-repeat center;
-  -webkit-transform: translateX(8px) translateY(-50%);
-          transform: translateX(8px) translateY(-50%);
+  opacity: .4;
+  content: '더보기';
+  display: block;
+  padding-right: 20px;
+  background: url("../svg/i-carousel-next.svg") no-repeat right center;
+  font-weight: 500;
+  font-size: var(--v-font-m);
+  text-decoration: none !important;
+  -webkit-transform: translateX(8px);
+          transform: translateX(8px);
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
 }
@@ -579,8 +590,13 @@ a.section_title:hover {
 
 a.section_title:hover:after {
   opacity: 1;
-  -webkit-transform: translateX(16px) translateY(-50%);
-          transform: translateX(16px) translateY(-50%);
+  text-decoration: none !important;
+}
+
+.today_section:hover a.section_title:after,
+.end_section:hover a.section_title:after {
+  opacity: 1;
+  text-decoration: none !important;
 }
 
 .today_section {
