@@ -19,7 +19,7 @@ function stickyNav() {
     let scrollY = $(window).scrollTop();
     scrollY >= 150 ? appContent.addClass('on-scroll') : appContent.removeClass('on-scroll');
 }
-window.onscroll = function() { stickyNav() };
+window.onscroll = function() { stickyNav(); }
 
 $(document).ready(function() {
 

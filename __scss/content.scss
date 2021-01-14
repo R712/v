@@ -55,11 +55,11 @@
     .container {
         position: relative;
         margin: 0 0 0 300px;
-        padding: 0 100px;
+        padding: 0 80px;
         .content {
             position: relative;
             margin: 0 auto;
-            max-width: 964px;
+            max-width: 980px;
         }
     }
     .player_controller {
@@ -171,8 +171,19 @@
             background: var(--v-gradientOverlay);
         }
     }
+    .link_wrap {
+        background-size: cover;
+    }
+    .link {
+        display: flex;
+        flex-direction: row;
+    }
     .thumb {
-        display: none;
+        width: 50%;
+        img {
+            display: block;
+            width: 100%;
+        }
     }
     .text_area {
         z-index: 1;
@@ -180,8 +191,10 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 40px;
-        height: 490px;
+        padding: 50px 40px;
+        width: 50%;
+        background: rgba(0,0,0,.75);
+        backdrop-filter: blur(10px);
     }
     .icon_mag {
         width: 80px;
@@ -189,7 +202,7 @@
     .title {
         padding: 20px 0;
         font-weight: 700;
-        font-size: 38px;
+        font-size: var(--v-font-xxxxl);
         line-height: 44px;
         white-space: pre-line;
         text-shadow: 0 0 3px rgba(0, 0, 0, .3);
@@ -201,7 +214,6 @@
         opacity: .75;
         display: block;
         display: -webkit-box;
-        width: 68%;
         height: 48px;
         color: var(--v-c-white);
         font-size: var(--v-font-m);
@@ -2648,13 +2660,13 @@ input[type=checkbox] {
     display: flex;
     flex-direction: column;
     margin: 100px 0 0 300px;
-    padding: 0 100px 150px;
+    padding: 0 80px 150px;
     color: rgba(255, 255, 255, .5);
     font-weight: 400;
     font-size: 12px;
     >div {
         margin: 0 auto;
-        max-width: 964px;
+        max-width: 980px;
         width: 100%;
     }
     .notice {
@@ -2822,7 +2834,7 @@ input[type=checkbox] {
     white-space: nowrap;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1380px) {
     .home .container {
         padding: 0 50px;
     }
@@ -2840,12 +2852,12 @@ input[type=checkbox] {
     }
     .today_section>div>div {
         .list_item {
-            min-width: calc(100% / 3) !important;
+            min-width: calc(100% / 4) !important;
         }
     }
     .today_section .is_mag>div {
         .list_item {
-            min-width: calc(100% / 2) !important;
+            min-width: calc(100% / 3) !important;
         }
     }
     .list_wrap_station .list_item,
@@ -2867,7 +2879,6 @@ input[type=checkbox] {
         .img_m,
         .image_mobile {
             display: block;
-            width: 100%;
         }
         .link.todayTop {
             height: auto;
@@ -2897,17 +2908,22 @@ input[type=checkbox] {
         margin-top: 0;
         margin-left: -50px;
         width: calc(100% + 100px);
-        .link_wrap {
-            display: flex;
-            flex-direction: column;
+        .link {
+            display: block;
             justify-content: flex-end;
             align-items: flex-end;
             height: 420px;
         }
-    }
-    .today_headline .text_area {
-        padding: 50px;
-        height: inherit;
+        .thumb {
+            display: none;
+        }
+        .text_area {
+            padding: 50px;
+            width: auto;
+            height: inherit;
+            backdrop-filter: none;
+            background-color: transparent;
+        }
     }
     .subend_section,
     .today_section {
