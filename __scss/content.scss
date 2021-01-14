@@ -2349,7 +2349,7 @@ body.noscroll {
     &.on::after {
         background-color: var(--v-c-point);
         mask-image: url('../svg/i-heart-fill.svg');
-        animation: likeHeart 0.5s ease-in-out 1;
+        animation: likeHeart 0.2s ease-in-out 1;
     }
     &:hover::after {
         background-color: var(--v-c-point);

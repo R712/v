@@ -3197,8 +3197,8 @@ body.noscroll {
   background-color: var(--v-c-point);
   -webkit-mask-image: url("../svg/i-heart-fill.svg");
           mask-image: url("../svg/i-heart-fill.svg");
-  -webkit-animation: likeHeart 0.5s ease-in-out 1;
-          animation: likeHeart 0.5s ease-in-out 1;
+  -webkit-animation: likeHeart 0.2s ease-in-out 1;
+          animation: likeHeart 0.2s ease-in-out 1;
 }
 
 .btn_like:hover::after {
