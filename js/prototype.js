@@ -234,12 +234,11 @@
 
     // 썸네일 크기에 맞춰서 화살표 위치 맞추기
     $('.VueCarousel-navigation-next, .VueCarousel-navigation-prev').each(function() {
-        thisNavH = parseInt($(this).outerHeight());
-        thisThumbH = parseInt($(this).parent().find('img').parent().outerHeight());
-        navPosition = "";
+        thisNavH = parseInt($(this).height());
+        thisThumbH = parseInt($(this).parent().find('img').height());
 
         if ($(this).parent().is('.list_wrap_track_rank')) {
-            thisThumbH = parseInt($(this).parent().outerHeight());
+            thisThumbH = parseInt($(this).parent().height());
         }
         navPosition = parseInt((thisThumbH / 2) - (thisNavH / 4));
         

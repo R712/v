@@ -205,12 +205,11 @@ $('.ly_popup').on('keydown', 'input[type=text]', function () {
 }); // 썸네일 크기에 맞춰서 화살표 위치 맞추기
 
 $('.VueCarousel-navigation-next, .VueCarousel-navigation-prev').each(function () {
-  thisNavH = parseInt($(this).outerHeight());
-  thisThumbH = parseInt($(this).parent().find('img').parent().outerHeight());
-  navPosition = "";
+  thisNavH = parseInt($(this).height());
+  thisThumbH = parseInt($(this).parent().find('img').height());
 
   if ($(this).parent().is('.list_wrap_track_rank')) {
-    thisThumbH = parseInt($(this).parent().outerHeight());
+    thisThumbH = parseInt($(this).parent().height());
   }
 
   navPosition = parseInt(thisThumbH / 2 - thisNavH / 4); // 캐로셀 높이 값의 절반에서 화살표 높이의 1/4 값 빼기
