@@ -63,7 +63,7 @@
 ### 모바일 웹 밸런스 이해가 높고 꼼꼼하신 분의 모바일 서포트용 css
 ```html
 <!-- 모바일 기기 환경일 때 추가 로드할 CSS -->
-<link rel="stylesheet" media="screen and (max-width: 767px)" href="css/mobile.css" />
+<link rel="stylesheet" media="screen and (max-width: 767px)" href="css/mobile.css">
 ```
 
 ### 그외 사용된 라이브러리 및 언어

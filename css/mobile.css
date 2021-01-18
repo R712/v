@@ -1,37 +1,4 @@
 @media (max-width: 767px) {
-    /* Loading */
-    .loading_vibe:before {
-        width: 60px;
-        height: 60px;
-    }
-    .loading_vibe:after {
-        width: 60px;
-        height: 60px;
-        transform: translateY(-60px);
-    }
-    /* 리스트 아이템 */
-    .today_section .is_mag>div .list_item,
-    .today_section .play_for>div .list_item {
-        min-width: 60% !important;
-    }
-    .today_section .list_wrap_news .scroll_list .list_item {
-        min-width: 60% !important;
-    }
-    .today_section>div>div .list_item {
-        min-width: 40% !important;
-    }
-    .today_section .play_for .scroll_list .list_item {
-        min-width: 40% !important;
-    }
-    .list_wrap_video .list_item,
-    .list_wrap_album .list_item,
-    .list_wrap_artist .list_item {
-        min-width: 40% !important;
-    }
-    .list_wrap_video .list_item {
-        min-width: 60% !important;
-        margin-bottom: 0;
-    }
     /* 투데이 헤드라인 */
     .today_headline .text_area {
         padding: 20px;
@@ -64,10 +31,6 @@
     }
     .today_section h3 .section_title {
         margin-bottom: 5px;
-    }
-    .today_section h3 .section_title,
-    .end_section>h3 {
-        font-size: 20px;
     }
     .VueCarousel-navigation-prev,
     .VueCarousel-navigation-next {
@@ -129,11 +92,6 @@
     }
     .top_wrap .library_title {
         display: none;
-    }
-    .list_wrap_station .list_item,
-    .station_wrap .list_item,
-    .subend_section .list_item {
-        width: calc(100% / 2);
     }
     .top_wrap .option_area .inner_option {
         width: 50%;
@@ -204,7 +162,7 @@
     /* 멤버쉽 */
     .membership_menu {
         z-index: 20;
-        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         background-color: rgba(0, 0, 0, 0.8);
     }
     .membership_menu a {

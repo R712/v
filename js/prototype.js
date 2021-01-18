@@ -7,27 +7,41 @@
 //  - 특히 carousel UI의 경우 실제로는 [vue-carousel] 을 이용하는 것으로 보여 그에 맞게 주의해주세요.
 //
 
-//  고정 레이아웃 요소
-const headerGNB = $('#header');
-const appContent = $('#content');
-const vibePlayer = $('#player');
 
-//
-//  스크롤 시 따라붙는 스티키 헤더
-//
-function stickyNav() {
-    let scrollY = $(window).scrollTop();
-    scrollY >= 150 ? appContent.addClass('on-scroll') : appContent.removeClass('on-scroll');
-}
-window.onscroll = function() { stickyNav(); }
+    //  고정 레이아웃 요소
+    const headerGNB = $('#header');
+    const appContainer = $('.home');
+    const vibePlayer = $('#player');
+    
+    //
+    //  스크롤된 상황인지 체크하여 UI 통 제어
+    //
+    appContainer.on('scroll', function() {
+        let scrollY = appContainer.scrollTop();
+        console.log(scrollY);
+        scrollY >= 64 ? appContainer.addClass('is_scroll') : appContainer.removeClass('is_scroll');
+    });
 
-$(document).ready(function() {
-
+    //
+    //  페이지 로더 미리보기용
+    //
+    let vibeApp;
+    
+    function showPage() {
+        $('.loading_vibe').hide();
+        $('#container').show();
+    }
+    function loadingCheck() {
+        vibeApp = setTimeout(showPage, 1800);
+    }
+    window.onload = function() {
+        loadingCheck();
+    }
     
     //
     //  아이템 옵션 레이어
     //
-    $('.content').on('click', '.btn_option_now, .btn_option, .btn_drop_menu', function(e) {
+    $('.btn_option_now, .btn_option, .btn_drop_menu').click(function(e) {
         e.preventDefault();
         let elm = $(this);
         let elmNav = elm.next('.ly_option, .layer_drop_menu');
@@ -119,7 +133,7 @@ $(document).ready(function() {
     //
     //  Carousel preview (미리보기용이므로 실제 개발 상황에는 필요없습니다.)
     //
-    $('.content').on('click', '.VueCarousel-navigation-next', function() {
+    $('.VueCarousel-navigation-next').click(function() {
         let motherSection = $(this).parent('div').find('.scroll_list');
         let sumWidth = 0;
         motherSection.find('.list_item').each(function() {
@@ -129,7 +143,7 @@ $(document).ready(function() {
         let motherPosition = motherSection.position();
         let motherX = (parseInt(motherPosition.left) * -1) + motherSection.closest('div').width();
         if (sumWidth <= motherX) {
-            motherSection.animate({ left: '0' }, 250)
+            motherSection.animate({ left: '0' }, 250);
         }
     });
     
@@ -137,11 +151,7 @@ $(document).ready(function() {
     //  바이브 뮤직 플레이어 미리보기 제어
     //
     vibePlayer.on('click', '.btn_playlist', function() {
-        if (vibePlayer.hasClass('open')) {
-            vibePlayer.removeClass('open');
-        } else {
-            vibePlayer.addClass('open');
-        }
+        vibePlayer.hasClass('open') ? vibePlayer.removeClass('open') : vibePlayer.addClass('open');
     });
     vibePlayer.on('click', '.control_area .btn_now', function() {
         $(this).toggleClass('play');
@@ -153,106 +163,16 @@ $(document).ready(function() {
         $(this).toggleClass('mute');
     });
 
-    //  미리보기용 owlcarousel2
-    //  vue-carousel 대용으로 가져왔음.
-    //  원본 dom에서 on class를 가지는 현재 위치 메뉴의 index값을 기억하고
-    //  recover된 owl에서 그 index값으로 x좌표 이동시키기
-    if ($('.owl-carousel').length) {
-        let onPosition = $('.menu_item.on').index();
-        $('.owl-carousel').owlCarousel({
-            margin: 20,
-            startPosition: onPosition,
-            mouseDrag: true,
-            touchDrag: true,
-            autoWidth: true
-        });
-    }
-
-    //
-    //  미리보기용 URL 연결
-    //  +
-    //  임시 하이퍼링크 제거
-    //  미리보기시 기존 html코드의 수많은 각기 다른 url연결로 방해가 되어 제거 후 별도 연결
-    //
-    $('a').each(function() {
-        $(this).removeAttr('href');
-    });
-    $('.link_today, .link_logo').click(function() {
-        location.href = './index.html';
-    });
-    $('.link_chart').click(function() {
-        location.href = './chart.html';
-    });
-    $('.song').click(function() {
-        location.href = './song-lyrics.html';
-    });
-    $('.link_djstation, .link_dj').click(function() {
-        location.href = './djstation.html';
-    });
-    $('.link_monthly').click(function() {
-        location.href = './monthly.html';
-    });
-    $('.album, .link_album').click(function() {
-        location.href = './album.html';
-    });
-    $('.artist, .link_artist, .link_sub_title').click(function() {
-        location.href = './artist.html';
-    });
-    $('.link_library, .link_achive').click(function() {
-        location.href = './archive.html';
-    });
-    $('.library_menu .menu_item:nth-child(2), .link_achive_song').click(function() {
-        location.href = './archive-song.html';
-    });
-    $('.library_menu .menu_item:nth-child(3), .link_achive_artist').click(function() {
-        location.href = './archive-artist.html';
-    });
-    $('.library_menu .menu_item:nth-child(4), .link_achive_album').click(function() {
-        location.href = './archive-album.html';
-    });
-    $('.library_menu .menu_item:nth-child(5), .link_achive_playlist').click(function() {
-        location.href = './archive-playlist.html';
-    });
-    $('.library_menu .menu_item:nth-child(6), .link_achive_received').click(function() {
-        location.href = './archive-received.html';
-    });
-    $('.link_achive_paid').click(function() {
-        location.href = './archive-paid.html';
-    });
-    $('.membership_menu .item:first-child, .link_membership').click(function() {
-        location.href = './subscription.html';
-    });
-    $('.membership_menu .item:nth-child(2)').click(function() {
-        location.href = './mymembership.html';
-    });
-    $('.membership_menu .item:nth-child(3)').click(function() {
-        location.href = './listening.html';
-    });
-    $('.membership_menu .item:nth-child(4)').click(function() {
-        location.href = './giftcard.html';
-    });
-    $('.btn_lyrics').click(function() {
-        $('.modal').fadeIn(200);
-    });
-    $('.modal').on('click', '.ly_close', function() {
-        $(this).closest('.modal').fadeOut(200);
-    });
-
     //
     //  ON/OFF 상태를 보유한 버튼 제어
     //
-    $('.btn_like, .btn_add').click(function() {
+    $('a.btn_like').click(function() {
         $(this).toggleClass('on');
     });
 
     $('.summary_thumb').clone().prependTo('.floating_bar .title');
     $('.floating_bar').prependTo('.content');
     $('.floating_select').appendTo('.floating_bar');
-
-    //  플레이리스트 추가 팝업 모달 레이어 제어
-    $('.btn_add_item').click(function() {
-        $('.modal').fadeIn(200);
-    });
 
     //
     //  전체 선택 체크박스 클릭시
@@ -264,14 +184,8 @@ $(document).ready(function() {
             $('.count_track').html(selectedTrack + '곡 선택');
         } else {
             $('.tracklist').find(':checkbox').prop('checked', false);
-            appContent.removeClass('on-checked');
+            appContainer.removeClass('on_checked');
         }
-    });
-
-    //  미리보기용으로 during이 임의로 들어가있기때문에 클릭하면 닫히게 만듦
-    $('.loading_vibe').on('click', function() {
-        document.querySelector('.loading_vibe').style.display = 'none';
-        document.getElementById('container').style.display = 'block';
     });
 
     $('.ly_btn_area').on('click', 'a[role=button]:not(.point)', function() {
@@ -283,7 +197,7 @@ $(document).ready(function() {
         <div>
             <div class="thumb_area">
                 <a class="link">
-                    <img src="img/album-dummy.jpg" class="thumb" alt="` + newPlaylist.val() + ` 플레이리스트 커버" />
+                    <img src="img/album_dummy.jpg" class="thumb" alt="` + newPlaylist.val() + ` 플레이리스트 커버" />
                 </a>
                 <a role="button" aria-haspopup="dialog" class="btn_play_now"><span class="blind">재생하기</span></a>
                 <div class="more_option only">
@@ -322,10 +236,13 @@ $(document).ready(function() {
     $('.VueCarousel-navigation-next, .VueCarousel-navigation-prev').each(function() {
         thisNavH = parseInt($(this).outerHeight());
         thisThumbH = parseInt($(this).parent().find('img').parent().outerHeight());
+        navPosition = "";
+
         if ($(this).parent().is('.list_wrap_track_rank')) {
             thisThumbH = parseInt($(this).parent().outerHeight());
         }
         navPosition = parseInt((thisThumbH / 2) - (thisNavH / 4));
+        
         // 캐로셀 높이 값의 절반에서 화살표 높이의 1/4 값 빼기
         $(this).css({ top: navPosition });
         console.log(navPosition);
@@ -335,7 +252,7 @@ $(document).ready(function() {
     //  트랙리스트에서 체크박스 클릭시 마다 숫자 카운팅 후 반영
     //
     $('.tracklist').on('click', 'input', function() {
-        $('.tracklist').find(':checked').length ? appContent.addClass('on-checked') : appContent.removeClass('on-checked');
+        $('.tracklist').find(':checked').length ? appContainer.addClass('on_checked') : appContainer.removeClass('on_checked');
         let selectedTrack = $('.tracklist').find(':checked').length;
         $('.count_track').html(selectedTrack + '곡 선택');
     });
@@ -343,7 +260,7 @@ $(document).ready(function() {
     //  선택된 곡 있을때 보이는 플로팅 레이어 닫기
     $('.floating_select').on('click', '.btn_close', function() {
         $('.tracklist').find(':checked').prop('checked', false);
-        appContent.removeClass('on-checked');
+        appContainer.removeClass('on_checked');
     });
 
     //
@@ -371,15 +288,20 @@ $(document).ready(function() {
     });
 
     //
-    //  모바일에서 투명 헤더 케이스 추가하기
+    //  컨텐츠 제일 처음 배너가 있는지 체크 후 has_banner 클래스 주기
+    //  모바일에서 배너가 있을 때 헤더 위치가 달라져야함.
     //
-    if(appContent.find('.admin_banner_section:first-child')) {
-        $('.home').addClass('has_banner');
+    if ($('#content > .admin_banner_section:first-child').is(':visible')) {
+        appContainer.addClass('has_banner');
+    }
+
+    if ($('.today_headline').is(':visible')) {
+        appContainer.addClass('is_gradation');
     }
 
     //  배너 닫기
     $('.admin_banner_section, .banner_area').on('click', '.btn_close', function() {
-        if($(this).closest('.admin_banner_section').is(':first-child')) {
+        if ($(this).closest('.admin_banner_section').is(':first-child')) {
             $('.home').removeClass('has_banner');
         }
         $('.admin_banner_section').hide();
@@ -390,28 +312,61 @@ $(document).ready(function() {
     //
     if ($('.today_headline')) {
         let copyThumb = $('.today_headline').find('img').attr('src');
-        console.log(copyThumb);
         $('.today_headline .link_wrap').css('background-image', 'url("'+ copyThumb +'")');
     }
 
-});
+    //
+    //  모달 - 팝업 레이어
+    //  가사 아이콘 클릭, 보관함-플레이리스트 추가시
+    //
+    $('a.btn_lyrics').click(function() {
+        $('.modal_lyrics').fadeIn(200);
+    });
 
-//
-//  페이지 로더 미리보기용
-//
-let vibeApp;
+    $('.sub_list').on('click', '.btn_add_item', function() {
+        console.log('클릭했음');
+        $('.modal_playlist').fadeIn(200);
+    });
 
-function showPage() {
-    document.querySelector('.loading_vibe').style.display = 'none';
-    document.getElementById('container').style.display = 'block';
-}
-
-function loadingCheck() {
-    vibeApp = setTimeout(showPage, 1800);
-}
-window.onload = function() {
-    loadingCheck();
-}
-
-//  유니코드 공백 버그
-appContent.html(appContent.html().replace(/\u200B/g, ''));
+    $('.modal').on('click', '.ly_close', function() {
+        $(this).closest('.modal').fadeOut(200);
+    });
+    
+    //  미리보기용 owlcarousel2
+    //  vue-carousel 대용으로 가져왔음.
+    //  원본 dom에서 on class를 가지는 현재 위치 메뉴의 index값을 기억하고
+    //  recover된 owl에서 그 index값으로 x좌표 이동시키기
+    if ($('.menu_list.owl-carousel').length) {
+        let onPosition = $('.menu_item.on').parent().index();
+        $('.menu_list.owl-carousel').owlCarousel({
+            margin: 20,
+            startPosition: onPosition,
+            mouseDrag: true,
+            touchDrag: true,
+            autoWidth: true,
+            nav: true,
+            dots: false
+        });
+    }
+    if ($('.list_wrap_genre .owl-carousel').length) {
+        $('.list_wrap_genre .owl-carousel').owlCarousel({
+            mouseDrag: true,
+            touchDrag: true,
+            nav: true,
+            dots: false,
+            responsive:{
+                0: {
+                    items: 2
+                },
+                767: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1280: {
+                    items: 5
+                }
+            }
+        });
+    }
