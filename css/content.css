@@ -857,6 +857,7 @@ a.section_title:hover:after {
           justify-content: center;
   width: 44px;
   height: 44px;
+  background: transparent;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
 }
@@ -1263,7 +1264,6 @@ a.section_title:hover:after {
 
 .list_wrap_genre {
   position: relative;
-  margin: 0 -5px;
 }
 
 .list_wrap_genre::after {
@@ -1301,7 +1301,7 @@ a.section_title:hover:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5px;
+  margin: 0 10px 10px 0;
   padding: 6px;
   height: 50px;
   background: var(--v-c-input);
@@ -1311,6 +1311,10 @@ a.section_title:hover:after {
   overflow: hidden;
   -webkit-transition: opacity .1s ease-in-out;
   transition: opacity .1s ease-in-out;
+}
+
+.list_wrap_genre .link_genre:first-child {
+  margin-top: 10px;
 }
 
 .list_wrap_genre .link_genre .bar {
@@ -4117,7 +4121,11 @@ input[type=checkbox]:checked:after {
     margin-right: 20px;
   }
   .list_wrap_genre .link_genre {
+    margin: 0 5px 5px 0;
     font-size: var(--v-font-m);
+  }
+  .list_wrap_genre .link_genre:first-child {
+    margin-top: 5px;
   }
   .today_section .is_mag .list_item,
   .today_section .list_wrap_news .list_item,
@@ -4336,9 +4344,16 @@ input[type=checkbox]:checked:after {
   .VueCarousel-navigation-next,
   .owl-carousel .owl-nav .owl-prev,
   .owl-carousel .owl-nav .owl-next {
-    width: 40px;
+    width: 20px;
     height: 50px;
     background: var(--v-c-black);
+  }
+  .VueCarousel-navigation-prev::before,
+  .VueCarousel-navigation-next::before,
+  .owl-carousel .owl-nav .owl-prev::before,
+  .owl-carousel .owl-nav .owl-next::before {
+    -webkit-mask-size: 24px;
+            mask-size: 24px;
   }
   .owl-carousel .owl-nav .owl-prev,
   .owl-carousel .owl-nav .owl-next {

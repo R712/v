@@ -158,8 +158,8 @@ a,
 a::before,
 a::after,
 input {
-    -webkit-transition: all .1s ease-in;
-    transition: all .1s ease-in;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
 }
 
 a,

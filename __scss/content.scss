@@ -492,6 +492,7 @@ a.section_title {
     justify-content: center;
     width: 44px;
     height: 44px;
+    background: transparent;
     transition: all .1s ease;
     span {
         display: none;
@@ -795,7 +796,6 @@ a.section_title {
 
 .list_wrap_genre {
     position: relative;
-    margin: 0 -5px;
     &::after {
         content: '';
         position: absolute;
@@ -821,7 +821,7 @@ a.section_title {
         opacity: .8;
         display: flex;
         align-items: center;
-        margin: 5px;
+        margin: 0 10px 10px 0;
         padding: 6px;
         height: 50px;
         background: var(--v-c-input);
@@ -830,6 +830,9 @@ a.section_title {
         border-radius: var(--v-radius-s);
         overflow: hidden;
         transition: opacity .1s ease-in-out;
+        &:first-child {
+            margin-top: 10px;
+        }
         .bar {
             width: 4px;
             height: 38px;
@@ -3078,7 +3081,11 @@ input[type=checkbox] {
     .list_wrap_genre {
         margin-right: 20px;
         .link_genre {
+            margin: 0 5px 5px 0;
             font-size: var(--v-font-m);
+            &:first-child {
+                margin-top: 5px;
+            }
         }
     }
     .today_section .is_mag,
@@ -3284,9 +3291,12 @@ input[type=checkbox] {
     .VueCarousel-navigation-next,
     .owl-carousel .owl-nav .owl-prev,
     .owl-carousel .owl-nav .owl-next {
-        width: 40px;
+        width: 20px;
         height: 50px;
         background: var(--v-c-black);
+        &::before {
+            mask-size: 24px;
+        }
     }
     .owl-carousel .owl-nav .owl-prev,
     .owl-carousel .owl-nav .owl-next {
