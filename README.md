@@ -1,6 +1,8 @@
 - - -
 
-### 최근 수정
+### 업데이트 로그
+* 이후 피드백 반영 로그는 아래 문서에 기록
+   - <a href="https://github.com/R712/v/blob/master/%ED%94%BC%EB%93%9C%EB%B0%B1-%EB%A1%9C%EA%B7%B8.md">📄피드백-로그.md</a>
 * 1월 7일
    - owlCarousel index값 계산. (보관함 모바일에서 현재 메뉴 위치로 가게끔)
    - 모바일 여백 간격 밸런스 수정
