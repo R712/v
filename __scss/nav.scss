@@ -4,6 +4,9 @@
 */
 
 :root {
+    //
+    //  color rule
+    //
     --v-c-black: #000;
     --v-c-gray: #8E8E93;
     --v-c-white: #FFF;
@@ -11,15 +14,25 @@
     --v-c-border-light: #151515;
     --v-c-input: #1C1C1E;
     --v-c-point: #FF0050;
-    --v-min-width: 319px;
-    --v-max-width: 1800px;
+    //
+    //  layout and style rule
+    //
     --v-radius-l: 10px;
     --v-radius: 0;
     --v-radius-s: 3px;
+    --v-gradientOverlay: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    //
+    //  font size rule
+    //
     --v-font-xl: 20px;
     --v-font-l: 17px;
     --v-font-m: 15px;
     --v-font-s: 13px;
+    --v-font-mega: 40px;
+    --v-font-xxxxl: 34px;
+    --v-font-xxxl: 28px;
+    --v-font-xxl: 22px;
+    --v-font-xs: 12px;
 }
 
 
@@ -577,7 +590,7 @@
         justify-content: flex-end;
         top: 0;
         bottom: inherit;
-        width: 100%;
+        width: 100vw;
         height: 64px;
         background: rgba(0, 0, 0, .8);
         backdrop-filter: blur(10px);
@@ -589,12 +602,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 20px 0 12px;
             width: 54px;
             height: 64px;
             &:after {
                 content: '';
                 position: absolute;
-                margin: 0 20px 0 12px;
                 width: 22px;
                 height: 16px;
                 border: 2px solid var(--v-c-white);
@@ -603,7 +616,6 @@
             &:before {
                 content: '';
                 position: absolute;
-                margin: 0 20px 0 12px;
                 width: 22px;
                 height: 2px;
                 background: var(--v-c-white);
@@ -635,7 +647,7 @@
             &:after {
                 content: '';
                 position: absolute;
-                left: 10px;
+                right: 10px;
                 top: 22px;
                 width: 17px;
                 height: 17px;
@@ -645,7 +657,7 @@
             &:before {
                 content: '';
                 position: absolute;
-                left: 23px;
+                right: 7px;
                 top: 38px;
                 width: 7px;
                 height: 2px;
@@ -661,9 +673,8 @@
                 &:after,
                 &:before {
                     content: '';
-                    left: inherit;
+                    right: 20px;
                     top: inherit;
-                    margin: 0 20px 0 12px;
                     width: 26px;
                     height: 2px;
                     border: 0;
@@ -748,6 +759,7 @@
         }
         &.on {
             z-index: 8888;
+            top: 0 !important;
             background: var(--v-c-black) !important;
             &:before {
                 display: none;
@@ -757,7 +769,7 @@
                 left: 0;
                 top: 64px;
                 display: block;
-                padding: 50px;
+                padding: 40px 30px 30px;
                 width: 100vw;
                 height: calc(100vh - 64px);
                 background: var(--v-c-black);

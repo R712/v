@@ -53,9 +53,6 @@
         margin-right: 0;
     }
     /* 사이드바 */
-    #header.on .my_menu {
-        padding: 40px 30px 30px;
-    }
     #header.on .menu_list .menu_item .link_menu {
         height: 46px;
         line-height: 46px;

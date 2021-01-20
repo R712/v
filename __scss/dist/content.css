@@ -223,7 +223,7 @@
   --v-c-input: #1C1C1E;
   --v-c-point: #FF0050;
   --v-min-width: 319px;
-  --v-max-width: 1800px;
+  --v-max-width: 1560px;
   --v-radius-l: 10px;
   --v-radius: 0;
   --v-radius-s: 3px;
@@ -262,7 +262,7 @@
 .home .container .content {
   position: relative;
   margin: 0 auto;
-  max-width: 1180px;
+  max-width: 1340px;
 }
 .home .player_controller {
   min-width: var(--v-min-width);
@@ -458,7 +458,7 @@ a.section_title {
   width: 100%;
   cursor: pointer;
 }
-a.section_title:after {
+a.section_title::after {
   opacity: 0.4;
   content: "더보기";
   display: block;
@@ -466,22 +466,19 @@ a.section_title:after {
   background: url("../svg/i-carousel-next.svg") no-repeat right center;
   font-weight: 500;
   font-size: var(--v-font-m);
-  text-decoration: none !important;
+  text-decoration: none;
   transform: translateX(8px);
   transition: all 0.1s ease-in-out;
 }
-a.section_title:hover {
+a.section_title:hover::after {
+  opacity: 1;
   text-decoration: underline;
 }
-a.section_title:hover:after {
-  opacity: 1;
-  text-decoration: none !important;
-}
 
-.today_section:hover a.section_title:after,
-.end_section:hover a.section_title:after {
+.today_section:hover a.section_title::after,
+.end_section:hover a.section_title::after {
   opacity: 1;
-  text-decoration: none !important;
+  text-decoration: underline;
 }
 
 .today_section {
