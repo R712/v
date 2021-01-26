@@ -184,28 +184,42 @@
           justify-content: center;
   width: 120px;
   height: 120px;
-  background: #FFF;
-  border-radius: 50%;
   vertical-align: top;
 }
 
-.benefit_list .badge.naverplus {
+.benefit_list .badge::after {
+  content: '';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.benefit_list .badge.naverplus::after {
   background: #EBF6FE url("../svg/i-naverplus.svg") no-repeat center;
 }
 
 .benefit_list .badge.billboard {
-  background: var(--v-c-white);
+  padding: 0;
+  background: #FFF;
+  border-radius: 50%;
 }
 
-.benefit_list .badge.billboard::before {
+.benefit_list .badge.billboard::after {
   background-color: var(--v-c-black);
+  -webkit-mask: url("../svg/i-billboard.svg") no-repeat center;
+          mask: url("../svg/i-billboard.svg") no-repeat center;
+  -webkit-mask-size: 84px;
+          mask-size: 84px;
 }
 
-.benefit_list .badge.singing {
+.benefit_list .badge.singing::after {
   background: #342FA5 url("../svg/i-mic.svg") no-repeat center;
 }
 
-.benefit_list .badge.now {
+.benefit_list .badge.now::after {
   background: #EA3323 url("../svg/i-now.svg") no-repeat center;
 }
 

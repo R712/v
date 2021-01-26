@@ -152,22 +152,31 @@
         justify-content: center;
         width: 120px;
         height: 120px;
-        background: #FFF;
-        border-radius: 50%;
         vertical-align: top;
-        &.naverplus {
+        &::after {
+            content: '';
+            display: flex;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+        &.naverplus::after {
             background: #EBF6FE url('../svg/i-naverplus.svg') no-repeat center;
         }
         &.billboard {
-            background: var(--v-c-white);
-            &::before {
-                background-color: var(--v-c-black);
-            }
+            padding: 0;
+            background: #FFF;
+            border-radius: 50%;
         }
-        &.singing {
+        &.billboard::after {
+            background-color: var(--v-c-black);
+            mask: url('../svg/i-billboard.svg') no-repeat center;
+            mask-size: 84px;
+        }
+        &.singing::after {
             background: #342FA5 url('../svg/i-mic.svg') no-repeat center;
         }
-        &.now {
+        &.now::after {
             background: #EA3323 url('../svg/i-now.svg') no-repeat center;
         }
         &+.badge {
