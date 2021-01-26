@@ -16,8 +16,8 @@
     //
     //  스크롤된 상황인지 체크하여 UI 통 제어
     //
-    appContainer.on('scroll', function() {
-        let scrollY = appContainer.scrollTop();
+    $(window).scroll(function() {
+        let scrollY = $(window).scrollTop();
         console.log(scrollY);
         scrollY >= 64 ? appContainer.addClass('is_scroll') : appContainer.removeClass('is_scroll');
     });
@@ -166,7 +166,7 @@
     //
     //  ON/OFF 상태를 보유한 버튼 제어
     //
-    $('a.btn_like').click(function() {
+    $('a.btn_like, .btn_add').click(function() {
         $(this).toggleClass('on');
     });
 
@@ -320,6 +320,13 @@
     //
     $('a.btn_lyrics').click(function() {
         $('.modal_lyrics').fadeIn(200);
+    });
+
+    //
+    //  노래 가사보기 페이지 가사 영역 토글
+    //
+    $('p.lyrics').click(function() {
+        $(this).toggleClass('hide');
     });
 
     $('.sub_list').on('click', '.btn_add_item', function() {
